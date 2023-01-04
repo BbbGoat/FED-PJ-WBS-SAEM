@@ -1,0 +1,9 @@
+http://www.sjlmt.com/main/main.html
+https://www.locus-x.com/
+https://www.kma.or.kr/kr/main.do
+
+사이트 방향성 설정하기
+
+메인페이지 방향성이 x
+
+1. 전체적 브랜드소개
