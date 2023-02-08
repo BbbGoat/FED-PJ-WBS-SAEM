@@ -8,3 +8,6 @@ https://www.samsung.com/sec/
 
 [ 샌드박스 ]
 https://sandbox.co.kr/
+
+[ 자율주행사이트 ]
+https://pilot.auto/
