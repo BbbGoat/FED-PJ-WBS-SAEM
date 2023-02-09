@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
+    <!-- 1. 상단영역 -->
     <div id="wrap" class="main">
         <!-- 상단 헤더 스크롤시 메인 뒷배경 검정색으로 변하는 속성 keyvisual -->
-        <header id="header" class="keyvisual">
+        <header id="header" class="keyvisual ibx">
             <!-- 네비게이터 뒷배경 검은색 반투명값 -->
             <div class="dimmed"></div>
             <!-- 최상단  -->
@@ -25,13 +26,38 @@
                             <img src="https://images.cj.net/images/common/cj_logo.png" alt="CJ그룹 로고">
                         </a>
                     </h1>
-                    <!-- gnb메뉴 영역 -->
+                    <!-- GNB영역 -->
                     <div class="gnb" id="gnb">
-                        <!-- gnb메뉴 리스트 영역 -->
+                        <!-- 리스트 -->
+                        <div class="gnb_menu">
+                            
+                        </div>
+                    </div>
+                    <!-- 유틸영역 -->
+                    <div class="util_top">
+                        <!-- 언어 -->
+                        <div class="util_wrap">
+                            <p class="go_lang">
+                                <a href="#" title="언어선택 열기">
+                                    <span class="btn_iconPack arrow"></span>
+                                </a>
+                            </p>
+                            <div class="list_lang" id="list_lang">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:goMlngSitePc('https://english.cj.net');">ENG</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 검색 -->
+                        <button type="button" id="btn_search" class="btn_search"><span class="blind ir">검색 레이어 열기</span></button>
                     </div>
                 </div>
             </div>
         </header>
     </div>
+    <!-- 2. 메인영역 -->
+    <!-- 3. 하단영역 -->
 </body>
 </html>
