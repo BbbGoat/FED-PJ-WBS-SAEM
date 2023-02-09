@@ -1,8 +1,10 @@
 @charset "utf-8";
+
 /* 웹프로젝트 공통클래스/웹폰트 CSS - core.css */
 /* 웹폰트, 공용클래스 */
 
-/*********** 1. 웹폰트 : CDN ***********/
+/******************** 1. 웹폰트 : CDN ********************/
+
 /* Cute Font, Jua, Audiowide 체 */
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Cute+Font&family=Jua&display=swap');
 /* 
@@ -16,6 +18,18 @@ html{
     font-size: 10px;
     /* 글자 rem단위 계산편의때문~! */
 }
+/* 공사중 표시 */
+body * {
+    outline: 1px dashed gray;
+}
+
+/* 
+  [ 공통 클래스 이름정의 ]
+  1. ibx - inside box 속박스
+  2. pt1, pt2 - part1, part2 각 부분박스(비율적용)
+  3. cbx - content box 내용박스
+  4. bgi - background image 관련 속성
+*/
 
 /******************** 2. 공통 클래스 ********************/
 

@@ -2,6 +2,7 @@
 
 /* 웹프로젝트 메인 페이지 CSS - main.css */
 
-/* 외부 공통 CSS 합치기 */
+/* 외부CSS파일 합치기 */
 @import url(./reset.css);
 @import url(./core.css);
+@import url(./common.css);
