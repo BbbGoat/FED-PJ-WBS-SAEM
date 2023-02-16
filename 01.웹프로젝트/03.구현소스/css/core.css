@@ -73,9 +73,9 @@ body * {
 
 /* IR클래스 */
 /* 배경이미지 설명클래스 (Image Replacement) */
-.ir{
+/* .ir{
     display: block;
     width: 0;
     height: 0;
     overflow: hidden;
-}
+} */
