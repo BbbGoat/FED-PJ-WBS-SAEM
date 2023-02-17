@@ -6,3 +6,11 @@
 @import url(./reset.css);
 @import url(./core.css);
 @import url(./common.css);
+
+/* 상단 메인비디오 */
+.mainVid {
+    /* 임시 */
+    max-width: auto;
+    height: 1080px;
+    background-color: rgb(80, 80, 80);
+}
