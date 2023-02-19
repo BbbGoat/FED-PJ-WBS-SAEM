@@ -7,9 +7,35 @@
 .top {
     /* 최소높이 */
     min-height: 400px;
-
 }
-
+.navbx {
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+/* 네비게이션 박스 */
+.gnb_menu {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 34px 0;
+}
+.gnb_menu:hover {
+    height: 240px;
+}
+/* 상위 GNB 메뉴 */
+.gnb_menu > ul {
+    position: relative;
+    display: flex;
+    gap: 50px;
+}
+/* 하위 GNB 메뉴 */
+.depth2 {
+    position: absolute;
+    top: 55px;
+}
 /******************** 2. 메인영역 ********************/
 /* 속박스 셋팅 */
 .cont {
