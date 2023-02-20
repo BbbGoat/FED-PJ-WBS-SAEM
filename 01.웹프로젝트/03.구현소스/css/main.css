@@ -9,6 +9,8 @@
 
 /* 상단 메인비디오 */
 .mainVid {
+    position: absolute;
+    top: 0;
     /* 임시 */
     max-width: auto;
     height: 1080px;
