@@ -6,7 +6,42 @@
 /* 속박스 셋팅 */
 .top {
     /* 최소높이 */
-    min-height: 400px;
+    /* min-height: 400px; */
+}
+.topbx {
+    /* 플렉스박스 */
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+    
+    /* 박스설정 */
+    font-family: CJONLYONENEW;
+    font-size: 18px;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+/* GNB영역 */
+/* 상단리스트 */
+.gnb {
+    padding: 34px 0;
+}
+.gnb > ul {
+    position: relative;
+    /* 플렉스박스 */
+    display: flex;
+    gap: 50px;
+}
+/* 하단리스트 */
+.depth2 {
+    position: absolute;
+    top: 55px;
+    font-size: 16px;
+}
+.depth2 > li:first-child {
+    padding-top: 20px;
+}
+.depth2 > ul > li {
+    padding-top: 16px;
 }
 
 /******************** 2. 메인영역 ********************/
