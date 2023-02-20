@@ -12,17 +12,23 @@
     /* 플렉스박스 */
     display: flex;
     justify-content: space-between;
-    height: 90px;
     
     /* 박스설정 */
     font-family: CJONLYONENEW;
     font-size: 18px;
-    box-sizing: border-box;
     white-space: nowrap;
+}
+.topbx:hover .gnb {
+    height: 386px;
+    transition: height 0.25s ease-out;
 }
 /* GNB영역 */
 /* 상단리스트 */
 .gnb {
+    height: 90px;
+    transition: height 0.4s ease-out;
+    overflow: hidden;
+    box-sizing: border-box;
     padding: 34px 0;
 }
 .gnb > ul {
@@ -30,6 +36,9 @@
     /* 플렉스박스 */
     display: flex;
     gap: 50px;
+}
+.gnb > ul > li:last-child{
+    padding-right: 50px;
 }
 /* 하단리스트 */
 .depth2 {
