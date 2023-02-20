@@ -14,39 +14,54 @@ header.top {
     /* 플렉스박스 */
     display: flex;
     justify-content: space-between;
-    
+
     /* 박스설정 */
+    max-width: 1200px;
+    margin: 0 auto;
     height: 90px;
+
+    /* 폰트설정 */
     font-family: CJONLYONENEW;
     font-size: 18px;
     white-space: nowrap;
-    /* background: #000; */
 }
+/* 오버시 하단리스트 */
 .topbx:hover .gnb {
-    /* background: #000; */
     height: 386px;
     transition: height 0.25s ease-out;
-}
-.topbx:hover .inner_wrap{
-    width: 100%;
-    height: 386px;
-    background: #000;
 }
 /* 배경박스 */
 .inner_wrap {
     width: 100%;
-    /* background-color: lightgrey; */
-    /* background: transparent; */
-    transition: 0.5s ease-out,
+    height: 90px;
+    background: transparent;
+    transition: 0.4s ease-out,
     background-color 0.4s ease-out;
 }
+/* 오버시 흰색배경 */
+.top:hover .inner_wrap {
+    height: 386px;
+    background-color: #fff;
+}
+/* 가상요소 구분선 */
 .inner_wrap::before {
     content: '';
     position: absolute;
     top: 90px;
     width: 100%;
     border-bottom: 1px solid #e6e6e6;
-    transition: top 0.4s ease-out;
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+}
+/* 오버시 가상요소 구분선 */
+.inner_wrap:hover::before {
+    content: '';
+    position: absolute;
+    top: 90px;
+    width: 100%;
+    border-bottom: 1px solid #e6e6e6;
+    opacity: 1;
+    transition: opacity 0.4s ease-out;
 }
 
 /* GNB영역 */
