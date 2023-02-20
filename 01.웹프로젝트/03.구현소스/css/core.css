@@ -5,12 +5,19 @@
 
 /******************** 1. 웹폰트 : CDN ********************/
 
-/* Cute Font, Jua, Audiowide 체 */
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Cute+Font&family=Jua&display=swap');
+/* CJONLYONE체 */
+@font-face {
+    font-family: CJONLYONENEW;
+    src: url(../fonts/CJONLYONENEWbodyLight_11172.woff2) format("woff");
+}
+/* Noto sans kr */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+
 /* 
-    font-family: 'Audiowide', cursive;
-    font-family: 'Cute Font', cursive;
-    font-family: 'Jua', sans-serif;
+    font-family: CJONLYONENEW, 'Noto Sans KR', sans-serif;
+    font-family: CJONLYONENEW;
+    font-family: 'Noto Sans KR', sans-serif;
 */
 
 /* 전체 글자크기 Root 셋팅! */
