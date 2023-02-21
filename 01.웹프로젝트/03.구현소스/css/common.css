@@ -115,6 +115,19 @@ header.top {
 .depth2 > ul > li {
     padding-top: 16px;
 }
+.sep {
+    /* margin-left: 48px; */
+    padding-left: 48px;
+}
+.sep::after {
+    content: '';
+    position: absolute;
+    transform: translateX(-100px);
+    width: 1px;
+    height: 22px;
+    opacity: .8;
+    border-left: 1px solid #d8d8d8;
+}
 
 /******************** 2. 메인영역 ********************/
 /* 속박스 셋팅 */
