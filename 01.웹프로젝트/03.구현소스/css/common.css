@@ -115,8 +115,8 @@ header.top {
 .depth2 > ul > li {
     padding-top: 16px;
 }
+/* 구분선 가상요소 */
 .sep {
-    /* margin-left: 48px; */
     padding-left: 48px;
 }
 .sep::after {
@@ -125,7 +125,7 @@ header.top {
     transform: translateX(-100px);
     width: 1px;
     height: 22px;
-    opacity: .8;
+    opacity: .4;
     border-left: 1px solid #d8d8d8;
 }
 
