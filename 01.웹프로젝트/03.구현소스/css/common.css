@@ -16,7 +16,7 @@ header.top {
     justify-content: space-between;
 
     /* 박스설정 */
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     height: 90px;
 
@@ -25,10 +25,31 @@ header.top {
     font-size: 18px;
     white-space: nowrap;
 }
+/* 로고 */
+.logo {
+    position: relative;
+    top: 20px;
+    width: 58px;
+    height: 50px;
+}
+.logo a {
+    display: block;
+    width: 60px;
+    height: 52px;
+    background-image: url(../images/cj_logo2.svg) no-repeat;
+    background-size: 100% 100%;
+    transition: all 0.4s ease-out;
+}
+/* 오버시 로고 */
+.logo.hover a {
+    background-image: url(../images/cj_logo.png) no-repeat;
+}
+.logo img {
+    width: 100%;
+}
 /* 오버시 하단리스트 */
 .topbx:hover .gnb {
     height: 386px;
-    transition: height 0.25s ease-out;
 }
 /* 배경박스 */
 .inner_wrap {
