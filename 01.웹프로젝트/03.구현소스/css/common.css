@@ -71,8 +71,8 @@
 }
 .logo a {
     display: block;
-    width: 60px;
-    height: 52px;
+    /* width: 60px;
+    height: 52px; */
     background-image: url(../images/cj_logo2.svg) no-repeat;
     background-size: 100% 100%;
     transition: all 0.4s ease-out;
@@ -147,6 +147,22 @@
     opacity: .4;
     border-left: 1px solid #d8d8d8;
 }
+
+/* 언어박스 */
+.tmenu {
+    position: relative;
+    top: 35px;
+    right: 0;
+    /* transition: ; */
+}
+.lang{
+    position: relative;
+    font-size: 14px;
+}
+.lang a {
+    color: #fff;
+}
+
 
 /******************** 2. 메인영역 ********************/
 /* 속박스 셋팅 */
