@@ -62,28 +62,39 @@
     white-space: nowrap;
 }
 
-/* 로고 */
+/* 로고박스 */
 .logo {
     position: relative;
-    top: 20px;
     width: 58px;
-    height: 50px;
-}
-.logo a {
-    display: block;
-    /* width: 60px;
-    height: 52px; */
-    background-image: url(../images/cj_logo2.svg) no-repeat;
-    background-size: 100% 100%;
-    transition: all 0.4s ease-out;
-}
-/* 로고 오버시 */
-.logo.hover a {
-    background-image: url(../images/cj_logo.png) no-repeat;
+    margin-left: 10px;
 }
 .logo img {
     width: 100%;
 }
+/* 로고 공통 설정 */
+.logo a {
+    display: block;
+    padding-top: 20px;
+    width: 60px;
+    height: 52px;
+}
+/* 로고(검은색) 숨김 */
+.logo a:last-child {
+    width: 58px;
+    left: 0;
+    height: 50px;
+    top: 0;
+    display: none;
+}
+/* 로고(검은색) 오버시 보이기 */
+#top:hover .logo a:last-child {
+    display: block;
+}
+/* 로고(흰색) 오버시 숨김 */
+#top:hover .logo a:first-child {
+    display: none;
+}
+
 /* GNB 박스 */
 .gnb {
     height: 90px;
@@ -151,9 +162,7 @@
 /* 언어박스 */
 .tmenu {
     position: relative;
-    top: 35px;
     right: 0;
-    /* transition: ; */
 }
 .lang{
     position: relative;
