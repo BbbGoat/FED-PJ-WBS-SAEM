@@ -165,11 +165,15 @@
     right: 0;
 }
 .lang{
+    display: inline-block;
     position: relative;
     font-size: 14px;
 }
 .lang a {
     color: #fff;
+}
+.search {
+    display: inline-block;
 }
 
 
