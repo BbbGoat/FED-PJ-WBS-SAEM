@@ -1,1 +1,49 @@
 @charset "utf-8";
+
+/* 서브페이지 브랜드 CSS - brand.css */
+
+@import url(./reset.css);
+
+/* 공사중 */
+body * {
+    outline: 1px dashed #ccc;
+}
+/* 임시 헤더 공간 */
+main {
+    height: 200px;
+}
+/************************* 브랜드 섹션 *************************/
+/* 겉박스 */
+#cont {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+/* 속박스 */
+.cont {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0 0;
+}
+
+.tit {
+    /* font-family: serif; */
+}
+.tit h2 {
+    font-size: 24px;
+}
+.tit h3 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #888888;
+}
+
+.tab_brand {
+    display: block;
+    margin-top: 50px;
+    width: 800px;
+    
+}
+.tab_brand ul {
+    display: flex;
+    gap: 0 30px;
+}
