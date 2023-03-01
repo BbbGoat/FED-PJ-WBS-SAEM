@@ -27,7 +27,7 @@ main {
 .cont {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 100px 0 0;
+    padding: 100px 0 130px;
 }
 
 .tit {
@@ -52,8 +52,7 @@ main {
     display: block;
     width: 1000px;
     height: 40px;
-    margin: 50px auto 0;
-    
+    margin: 50px auto 50px;
 }
 .tab_brand ul {
     /* 플렉스박스 */
@@ -76,6 +75,9 @@ main {
 .tab_brand ul li:hover {
     background: #e1425d;
 }
+.tab_brand ul li.on {
+    background: #e1425d;
+}
 /*******************************/
 
 /*******************************/
@@ -90,5 +92,18 @@ main {
     font-weight: 700;
     color: #fff;
 }
+.tab_brand ul li.on > a {
+    font-weight: 700;
+    color: #fff;
+}
 /*******************************/
 
+#main {
+    width: 1000px;
+    height: auto;
+    background: #000;
+}
+
+#main img {
+    width: 100%;
+}
