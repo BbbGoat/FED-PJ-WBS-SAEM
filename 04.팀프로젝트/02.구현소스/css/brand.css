@@ -100,10 +100,12 @@ main {
 
 #main {
     width: 1000px;
-    height: auto;
-    background: #000;
+    height: 1000px;
+    /* height: 100%; */
+    margin: 0 auto;
 }
 
 #main img {
+    background: url(../images/brand_intro.jpg) no-repeat 0/100% 100%;
     width: 100%;
 }
