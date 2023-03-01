@@ -4,9 +4,14 @@
 
 @import url(./reset.css);
 
+/* 웹폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+/* font-family: 'Nanum Gothic', sans-serif; */
+
+
 /* 공사중 */
 body * {
-    outline: 1px dashed #ccc;
+    /* outline: 1px dashed #ccc; */
 }
 /* 임시 헤더 공간 */
 main {
@@ -20,30 +25,70 @@ main {
 }
 /* 속박스 */
 .cont {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 100px 0 0;
 }
 
 .tit {
-    /* font-family: serif; */
+    font-family: 'Nanum Gothic', sans-serif;
 }
 .tit h2 {
+    display: block;
+    line-height: 34px;
     font-size: 24px;
+    font-weight: 700;
+    color: #1e1e1e;
 }
 .tit h3 {
+    display: block;
+    line-height: 20px;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 700;
     color: #888888;
 }
 
 .tab_brand {
     display: block;
-    margin-top: 50px;
-    width: 800px;
+    width: 1000px;
+    height: 40px;
+    margin: 50px auto 0;
     
 }
 .tab_brand ul {
+    /* 플렉스박스 */
     display: flex;
-    gap: 0 30px;
+    justify-content: center;
+    width: 100%;
 }
+
+/*******************************/
+/* "on" 클래스 버전 따로 만들기! */
+.tab_brand ul li {
+    width: 50%;
+    height: 40px;
+    border: 1px solid #e4e4e4;
+    border-bottom: 1px solid #9f9f9f;
+    box-sizing: border-box;
+    text-align: center;
+    background: transparent;
+}
+.tab_brand ul li:hover {
+    background: #e1425d;
+}
+/*******************************/
+
+/*******************************/
+/* a 글자 설정 */
+.tab_brand ul li > a {
+    display: block;
+    padding: 12px;
+    font-size: 14px;
+    color: #4c4c4c;
+}
+.tab_brand ul li:hover > a {
+    font-weight: 700;
+    color: #fff;
+}
+/*******************************/
+
