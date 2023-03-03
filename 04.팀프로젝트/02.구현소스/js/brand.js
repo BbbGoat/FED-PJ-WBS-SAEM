@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
     **********************************/
     // 대상선정
     const tab = document.querySelectorAll(".tab_brand ul > li");
-    const main = document.querySelector("#main");
+    const main = document.querySelector("#intro");
     // console.log(tab);
     
     // 순번 변수
