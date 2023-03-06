@@ -12,10 +12,7 @@
 body * {
     /* outline: 1px dashed #ccc; */
 }
-/* 임시 헤더 공간 */
-main {
-    height: 200px;
-}
+
 /************************* 브랜드 섹션 *************************/
 /* 겉박스 */
 #cont {
@@ -97,27 +94,14 @@ main {
 }
 /*******************************/
 
-#intro {
-    width: 1000px;
-    height: 1000px;
-    /* height: 100%; */
-    margin: 0 auto;
-}
-
-/* #main img {
-    background: url(../images/brand_intro.jpg) no-repeat 0/100% 100%;
-    width: 100%;
-} */
-
-.brand .insert {
-    background-image: url(../images/brand_intro.jpg);
-}
-.history .insert {
-    background-image: url(../images/brand_history.jpg);
-}
 
 /* 배경이미지 공통셋팅 클래스 */
 .bgi {
     background-repeat: no-repeat;
     background-size: cover;
+}
+.intro img {
+    background-image: url(../images/brand_intro.jpg);
+    width: 100%;
+    height: auto;
 }
