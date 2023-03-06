@@ -1,10 +1,11 @@
 
+@import url(./css/media.css);
+@import url(./css/media1.css);
 @import url(./css/reset.css);
 @import url(./css/footer.css);
 @import url(./css/main.css);
 @import url(./css/main-media.css);
 @import url(./css/header.css);
-@import url(./css/brand.css);
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
@@ -18,5 +19,3 @@ main {
   place-items: center;
   overflow: hidden;
 }
-
-
