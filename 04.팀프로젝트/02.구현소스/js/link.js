@@ -22,46 +22,12 @@ function linkFn() {
             console.log(atxt);
 
             // 링크 get방식 변환
-            location.href = "brand.html?ban=" + encodeURIComponent(atxt);
+            x[0].location.href = "brand.html?ban=" + encodeURIComponent(atxt);
+            x[1].location.href = "history.html?ban=" + encodeURIComponent(atxt);
 
             
         }; ///////// click ///////////
     } ///////// for문 //////////////////////
-    tab.forEach((x, idx) => {
-        x.onclick = () => {
-            // 초기화함수
-            resetToggle(idx);
-            
-            // 1. on 클래스 넣기 / 빼기
-            x.classList.toggle("on");
-            
-            // 2. 이미지 변경
-            const atxt = x.innerText;
-            console.log(atxt);
-
-            // 주소할당변수
-            let chgurl;
-
-            switch (atxt) {
-                case "브랜드 소개" : chgurl = "url(images/brand_intro.jpg)"; break;
-                case "히스토리" : chgurl = "url(images/brand_history.jpg)"; break;
-            } /////// switch case ////////
-
-            main.style.backgroundImage = chgurl;
-            
-        }; ///// click //////
-    }); /////// for of /////////
-
-    function resetToggle(seq = 1000) {
-        tab.forEach((ele,idx) => {
-            // 호출한 순번과 같으면 넘어가!
-            // if (idx === seq) return;
-            // console.log("li순번: ", idx);
-
-            // 클래스 on 빼기
-            ele.classList.remove("on");
-          }); //////// forEach //////////
-    } ///////////// resetToggle //////////
 
     // 2-2. 로고 클릭시 메인페이지 이동
     for (let x of logo) {
