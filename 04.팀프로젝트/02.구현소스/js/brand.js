@@ -19,8 +19,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const chgimg = document.querySelector(".intro > img")
     console.log(chgimg);
 
-    if (pm === "히스토리") {
-        chgimg.style.backgroundImage = "url(../images/brand_intro.jpg)";
-    }
+    // if (pm === "히스토리") {
+    //     chgimg.style.backgroundImage = "url(../images/brand_intro.jpg)";
+    // }
 
 }); //////////////////// 로드구역 //////////////////////
