@@ -22,12 +22,18 @@ function linkFn() {
             console.log(atxt);
 
             // 링크 get방식 변환
-            x[0].location.href = "brand.html?ban=" + encodeURIComponent(atxt);
-            x[1].location.href = "history.html?ban=" + encodeURIComponent(atxt);
+            // x[0].location.href = "brand.html?ban=" + encodeURIComponent(atxt);
+            // x[1].location.href = "history.html?ban=" + encodeURIComponent(atxt);
 
             
         }; ///////// click ///////////
     } ///////// for문 //////////////////////
+
+    lnb.forEach((ele,idx) => {
+        ele.onclick = () => {
+            
+        }; /////// click ///////////
+    }); /////////// forEach //////////////
 
     // 2-2. 로고 클릭시 메인페이지 이동
     for (let x of logo) {

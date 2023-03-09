@@ -6,7 +6,6 @@ brand JS 다시 구성
     #intro에 클래스로 css 바꿔서 넣는방식
     .brand .history
 
-4. 이미지 높이틀 잡아두기
 5. 미디어쿼리 적용
 
 
