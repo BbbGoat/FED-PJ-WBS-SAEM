@@ -95,11 +95,20 @@
 
 
 /* 배경이미지 공통셋팅 클래스 */
-/* .bgi {
+.bgi {
     background-repeat: no-repeat;
     background-size: cover;
-} */
+}
 .intro img {
     width: 100%;
     height: auto;
+}
+
+
+.quick {
+    position: sticky;
+    top: 120px;
+    width: 80px;
+    /* background-color: #444; */
+    border: 1px solid black;
 }

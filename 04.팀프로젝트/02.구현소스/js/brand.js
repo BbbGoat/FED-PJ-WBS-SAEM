@@ -23,11 +23,9 @@ function loadFn() {
             
             if (idx === 0) {
                 location.href = "brand.html";
-                // chgBg.innerHTML += `<img src="./images/images-brand/b_intro.jpg" alt="브랜드소개배너">`;
             } //////// if
             else if (idx === 1) {
                 location.href = "history.html";
-                // chgBg.innerHTML += `<img src="./images/images-brand/b_history.jpg" alt="히스토리배너">`;
             } //////// else if 
 
         }; /////// click ///////////
