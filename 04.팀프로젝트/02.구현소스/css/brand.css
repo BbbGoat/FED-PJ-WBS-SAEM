@@ -9,11 +9,10 @@
 
 
 /* 공사중 */
-body * {
-    /* outline: 1px dashed #ccc; */
-}
+/* body * {
+    outline: 1px dashed #ccc;
+} */
 
-/************************* 브랜드 섹션 *************************/
 /* 겉박스 */
 #cont {
     max-width: 1920px;
@@ -96,12 +95,11 @@ body * {
 
 
 /* 배경이미지 공통셋팅 클래스 */
-.bgi {
+/* .bgi {
     background-repeat: no-repeat;
     background-size: cover;
-}
+} */
 .intro img {
-    background-image: url(../images/brand_intro.jpg);
     width: 100%;
     height: auto;
 }

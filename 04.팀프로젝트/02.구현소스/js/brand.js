@@ -1,26 +1,45 @@
 // 서브페이지 브랜드 JS - brand.js
 
-let pm = location.href;
+// 로딩구역 ///////////////////////////////////////
+window.addEventListener("DOMContentLoaded", loadFn);
 
-pm = pm.split("?")[1].split("=")[1];
-// pm값 특수문자 복원하기
-pm = decodeURIComponent(pm);
-console.log("받아온 링크:", pm);
+function loadFn() {
 
-// 로드구역 ////////////////////////////////////////
-window.addEventListener("DOMContentLoaded", () => {
-    console.log("로딩완료");
+    // console.log("링크 로딩완료!");
 
     // 1. 링크 대상 선정 :
-    const gnb = document.querySelectorAll(".tab_brand ul li");
-    // console.log(gnb);
-    const logo = document.querySelector(".logo a");
+    const lnb = document.querySelectorAll(".tab_brand ul li");
+    const logo = document.querySelectorAll(".logo a");
     // console.log(logo)
-    const chgimg = document.querySelector(".intro > img")
-    console.log(chgimg);
+    // logo -> 모바일, pc버전 a요소 2개
+    const chgBg = document.querySelector(".intro");
+    console.log(chgBg) 
 
-    // if (pm === "히스토리") {
-    //     chgimg.style.backgroundImage = "url(../images/brand_intro.jpg)";
-    // }
+    
+    // 2-1. 브랜드/히스토리 페이지 연결
+    lnb.forEach((ele,idx) => {
+        ele.onclick = (e) => {
+            chgBg.innerHTML = "";
+            
+            if (idx === 0) {
+                location.href = "brand.html";
+                // chgBg.innerHTML += `<img src="./images/images-brand/b_intro.jpg" alt="브랜드소개배너">`;
+            } //////// if
+            else if (idx === 1) {
+                location.href = "history.html";
+                // chgBg.innerHTML += `<img src="./images/images-brand/b_history.jpg" alt="히스토리배너">`;
+            } //////// else if 
 
-}); //////////////////// 로드구역 //////////////////////
+        }; /////// click ///////////
+    }); /////////// forEach //////////////
+
+    // 2-2. 로고 클릭시 메인페이지 이동
+    for (let x of logo) {
+        x.onclick = (e) => {
+            e.preventDefault();
+            location.href = "main_page.html";
+        }; //////// click ///////////
+    } //////// for문 ///////////////////////
+
+    
+} //////////////////// loadFn ///////////////////
