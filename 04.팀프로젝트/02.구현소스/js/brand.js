@@ -39,5 +39,17 @@ function loadFn() {
         }; //////// click ///////////
     } //////// for문 ///////////////////////
 
+
+    /**************************************** 
+        main의 height 값 구해서
+        .stkbx에 height값 적용
+    ****************************************/
+
+        const main = document.querySelector("main");
+        const stkbx = document.querySelector(".stkbx");
+
+        let mainoffset = main.offsetHeight;
+
+        console.log(mainoffset);
     
 } //////////////////// loadFn ///////////////////

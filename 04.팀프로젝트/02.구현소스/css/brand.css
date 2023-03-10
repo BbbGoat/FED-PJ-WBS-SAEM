@@ -109,15 +109,12 @@
     position: sticky;
     top: 120px;
     width: 80px;
-    /* background-color: #444; */
     border: 1px solid black;
-}
-main{
-    position: relative;
-    /* overflow: none; */
 }
 .stkbx {
     position: absolute;
-    top: 0;
-    height: 100%;
+    right: 63px;
+    top: 213px;
+    /* JS main박스 height값 구해서 여기에 적용하기! */
+    height: 2810px;
 }
