@@ -112,3 +112,12 @@
     /* background-color: #444; */
     border: 1px solid black;
 }
+main{
+    position: relative;
+    /* overflow: none; */
+}
+.stkbx {
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
