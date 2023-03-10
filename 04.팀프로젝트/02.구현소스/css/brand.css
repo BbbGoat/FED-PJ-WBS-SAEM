@@ -105,16 +105,14 @@
 }
 
 
+.stkbx {
+    position: absolute;
+    right: 60px;
+}
 .quick {
     position: sticky;
     top: 120px;
     width: 80px;
+    margin-top: 46px;
     border: 1px solid black;
-}
-.stkbx {
-    position: absolute;
-    right: 63px;
-    top: 213px;
-    /* JS main박스 height값 구해서 여기에 적용하기! */
-    height: 2810px;
 }

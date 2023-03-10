@@ -48,8 +48,9 @@ function loadFn() {
         const main = document.querySelector("main");
         const stkbx = document.querySelector(".stkbx");
 
-        let mainoffset = main.offsetHeight;
+        let mainH = main.offsetHeight;
+        // console.log(mainH);
 
-        console.log(mainoffset);
+        stkbx.style.height = mainH + "px";
     
 } //////////////////// loadFn ///////////////////
