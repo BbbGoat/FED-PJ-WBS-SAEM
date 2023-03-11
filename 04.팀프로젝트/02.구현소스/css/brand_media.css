@@ -23,6 +23,10 @@
     .intro {
         padding: 12px;
     }
+    .tab_brand ul li {
+        height: 38px;
+        line-height: 38px;
+    }
     .tab_brand ul li > a {
         display: block;
         padding: 0;
