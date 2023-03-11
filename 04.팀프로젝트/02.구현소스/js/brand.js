@@ -10,16 +10,12 @@ function loadFn() {
     // 1. 링크 대상 선정 :
     const lnb = document.querySelectorAll(".tab_brand ul li");
     const logo = document.querySelectorAll(".logo a");
-    // console.log(logo)
     // logo -> 모바일, pc버전 a요소 2개
-    const chgBg = document.querySelector(".intro");
-    console.log(chgBg) 
-
     
     // 2-1. 브랜드/히스토리 페이지 연결
     lnb.forEach((ele,idx) => {
         ele.onclick = (e) => {
-            chgBg.innerHTML = "";
+            e.preventDefault();
             
             if (idx === 0) {
                 location.href = "brand.html";
@@ -38,19 +34,5 @@ function loadFn() {
             location.href = "main_page.html";
         }; //////// click ///////////
     } //////// for문 ///////////////////////
-
-
-    /**************************************** 
-        main의 height 값 구해서
-        .stkbx에 height값 적용
-    ****************************************/
-
-        const main = document.querySelector("main");
-        const stkbx = document.querySelector(".stkbx");
-
-        let mainH = main.offsetHeight;
-        // console.log(mainH);
-
-        stkbx.style.height = mainH + "px";
     
 } //////////////////// loadFn ///////////////////
