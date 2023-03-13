@@ -65,6 +65,18 @@
     /* height: 800px; */
     background: #fff;
 }
+.title_area {
+    position: relative;
+    /* 부모자격 - morebtn */
+}
+.morebtn {
+    position: absolute;
+}
+.morebtn::before {
+    content: '';
+    display: block;
+    background: url() no-repeat;
+}
 
 
 

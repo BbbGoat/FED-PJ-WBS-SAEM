@@ -179,6 +179,9 @@
 #top:hover .main_lang a {
     color: #000;
 }
+.main_lang a:hover {
+    color: #1a7cd2 !important;
+}
 .list_lang {
     /* JS 연결 */
     display: none;
@@ -203,6 +206,9 @@
     width: 100%;
     color: #000;
     display: block;
+}
+.list_lang ul a:hover {
+    color: #1a7cd2;
 }
 
 /* 언어설정 아이콘 박스 */
