@@ -44,6 +44,21 @@ function loadFn() {
     // 함수호출
     langBtn();
 
+    /********************************************
+        함수명: scrollFade
+        기능: .fadeout 요소 스크롤에 따라 투명도 조절
+    ********************************************/
+    // 1. 대상수집
+    const fadeOut = document.querySelector(".fadeout");
+    let scrollTop = 0;
+
+    fadeOut.style.opacity = 0;
+
+    window.addEventListener("scroll", (e) => {
+        scrollTop = document.documentElement.scrollTop;
+        fadeOut.style.opacity = 0 + scrollTop / 1000 ;
+    });
+
 
     
 } ////////////////  loadFn 함수 //////////////////
