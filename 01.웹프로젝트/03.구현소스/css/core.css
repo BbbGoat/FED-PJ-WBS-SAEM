@@ -13,11 +13,11 @@
 /* @font-face {
     font-family: CJONLYONENEW_R;
     src: url(../fonts/CJONLYONENEWbodyRegular_11172.woff2) format("woff");
-}
-@font-face {
-    font-family: CJONLYONENEW_B;
-    src: url(../fonts/CJONLYONENEWtitleBold_11172.woff2) format("woff");
 } */
+@font-face {
+    font-family: CJONLYONENEW_BOLD;
+    src: url(../fonts/CJONLYONENEWtitleBold_11172.woff2) format("woff");
+}
 /* Noto sans kr */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 

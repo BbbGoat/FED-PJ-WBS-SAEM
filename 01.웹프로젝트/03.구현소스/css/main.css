@@ -11,6 +11,7 @@
 .sec {
     position: relative;
     width: 100%;
+    font-family: CJONLYONENEW;
 }
 /* 섹션 감싸기박스 공통 */
 .wrap {
@@ -69,8 +70,23 @@
     position: relative;
     /* 부모자격 - morebtn */
 }
+.title_area h3 {
+    font-size: 50px;
+    font-family: CJONLYONENEW_BOLD;
+    text-align: center;
+}
+.title_area p {
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+}
 .morebtn {
     position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 26px;
+    transform: translateY(20px);
+    font-size: 16px;
 }
 .morebtn::before {
     content: '';
