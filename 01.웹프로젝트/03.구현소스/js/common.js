@@ -15,21 +15,34 @@ function loadFn() {
         const btnIcon = document.querySelector(".btn_icon");
         const btnIconClose = document.querySelector(".btn_icon_close");
     
-        console.log(mainLang, listLang,btnIcon,btnIconClose);
-    
         // 2. 클릭 이벤트 설정
+        let btnNum = 0;
         mainLang.onclick = () => {
             console.log("클릭이벤트");
-            
-
-        }
+            if(btnNum === 0) {
+                // 열기
+                listLang.style.display = "block";
+                btnIcon.style.display = "none";
+                btnIconClose.style.display = "inline-block"
+                // 재할당
+                btnNum = 1;
+            }
+            else if (btnNum === 1) {
+                // 닫기
+                listLang.style.display = "none";
+                btnIcon.style.display = "inline-block";
+                btnIconClose.style.display = "none";
+                // 재할당
+                btnNum = 0;
+            }
+        }; /////////// click 함수 ////////////
         
-        
-
-    }
+    } /////////////// langBtn 함수 /////////////////////
 
     // 함수호출
     langBtn();
+
+    
     
 } ////////////////  loadFn 함수 //////////////////
 

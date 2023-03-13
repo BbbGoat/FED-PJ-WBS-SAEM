@@ -66,7 +66,7 @@
 .logo {
     position: relative;
     width: 58px;
-    margin-left: 10px;
+    margin: 0 10px;
 }
 .logo img {
     width: 100%;
@@ -173,7 +173,7 @@
     color: #fff;
 }
 .main_lang {
-    padding: 34px;
+    padding: 37px 20px;
 }
 /* 오버시 KOR 글자색 변경 */
 #top:hover .main_lang a {
@@ -184,8 +184,8 @@
     display: none;
     
     position: absolute;
-    top: 58px;
-    left: -4px;
+    top: 60px;
+    left: -6px;
     width: 100%;
     line-height: 35px;
     text-align: center;
@@ -218,8 +218,10 @@
 .search {
     display: inline-block;
     width: 40px;
+    font-size: 13px;
     text-align: center;
     color: #fff;
+    cursor: pointer;
 }
 #top:hover .search {
     color: #000;
