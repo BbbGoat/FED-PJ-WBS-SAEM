@@ -16,10 +16,12 @@ function loadFn() {
         const btnIconClose = document.querySelector(".btn_icon_close");
     
         // 2. 클릭 이벤트 설정
+        // 상태 분류 넘버 변수
         let btnNum = 0;
         mainLang.onclick = () => {
-            console.log("클릭이벤트");
-            if(btnNum === 0) {
+            event.preventDefault();
+            
+            if (btnNum === 0) {
                 // 열기
                 listLang.style.display = "block";
                 btnIcon.style.display = "none";
@@ -36,13 +38,13 @@ function loadFn() {
                 btnNum = 0;
             }
         }; /////////// click 함수 ////////////
-        
+
     } /////////////// langBtn 함수 /////////////////////
 
     // 함수호출
     langBtn();
 
-    
+
     
 } ////////////////  loadFn 함수 //////////////////
 
