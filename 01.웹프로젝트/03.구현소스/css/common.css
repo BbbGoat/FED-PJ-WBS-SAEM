@@ -172,8 +172,57 @@
 .lang a {
     color: #fff;
 }
+.main_lang {
+    padding: 34px;
+}
+/* 오버시 KOR 글자색 변경 */
+#top:hover .main_lang a {
+    color: #000;
+}
+.list_lang {
+    /* JS 연결 */
+    display: none;
+    
+    position: absolute;
+    top: 58px;
+    left: -4px;
+    width: 100%;
+    line-height: 35px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+.list_lang ul {
+    display: flex;
+    flex-direction: column;
+}
+.list_lang ul li:first-child {
+    border-bottom: 1px solid #ccc;
+}
+.list_lang ul a {
+    width: 100%;
+    color: #000;
+    display: block;
+}
+
+/* 언어설정 아이콘 박스 */
+.btn_icon {
+    font-size: 11px;
+}
+.btn_icon_close {
+    display: none;
+    font-size: 11px;
+}
+
+/* 돋보기 아이콘 박스 */
 .search {
     display: inline-block;
+    width: 40px;
+    text-align: center;
+    color: #fff;
+}
+#top:hover .search {
+    color: #000;
 }
 
 
