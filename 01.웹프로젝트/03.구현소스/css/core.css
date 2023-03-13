@@ -62,16 +62,16 @@ body * {
 ( 참고: -ms-(ie), -o-(오페라), -moz-(파이어폭스) */
 .scbar::-webkit-scrollbar{
     /* 전체 스크롤바 크기변경 */
-    width: 7px;
+    width: 8px;
 }
 .scbar::-webkit-scrollbar-thumb{
     /* 스크롤바 */
-    background-color: #555;
+    background-color: #6b6b6b;
     border-radius: 5px;
 }
 .scbar::-webkit-scrollbar-track{
     /* 스크롤바 트랙 */
-    background-color: #ddd;
+    background-color: #e9e9e9;
     border-radius: 5px;
 }
 

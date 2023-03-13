@@ -26,6 +26,7 @@ function loadFn() {
                 listLang.style.display = "block";
                 btnIcon.style.display = "none";
                 btnIconClose.style.display = "inline-block"
+                
                 // 재할당
                 btnNum = 1;
             }
