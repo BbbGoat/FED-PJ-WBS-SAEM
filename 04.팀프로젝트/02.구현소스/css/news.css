@@ -21,6 +21,7 @@ main{
 }
 .tit_wrap h5{
     display: inline-block;
+    margin-top: 10px;
 }
 .table_wrap{
     margin: 0 auto;
