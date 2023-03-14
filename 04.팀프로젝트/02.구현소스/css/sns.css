@@ -44,13 +44,13 @@ h3 {
   border-radius: 50%;
 }
 .circle1 > div {
-  background-image: url(./images/images_SNS/color2.jpg);
+  background-image: url(../images/images_SNS/color2.jpg);
 }
 .circle2 > div {
-  background-image: url(./images/images_SNS/color3.jpg);
+  background-image: url(../images/images_SNS/color3.jpg);
 }
 .circle3 > div {
-  background-image: url(./images/images_SNS/color4.jpg);
+  background-image: url(../images/images_SNS/color4.jpg);
 }
 
 /* 오른쪽상단 루트박스 */
@@ -72,6 +72,7 @@ h3 {
   font-size: 24px;
   font-weight: bold;
   margin: 0 0 10px;
+  color: #1e1e1e;
 }
 .tbx h3 {
   font-size: 12px;
