@@ -1,0 +1,186 @@
+@charset "utf-8";
+
+.wrapper {
+    overflow: hidden;
+}
+
+.contents_wrap {
+    padding: 60px 10px 0;
+}
+
+.contents {
+    width: 100%;
+    min-height: 300px;
+    margin: 0 auto;
+    padding: 0 0 130px;
+    text-align: left;
+}
+
+.content {
+    margin: 0;
+    display: block;
+}
+
+.content > p {
+    text-align: center;
+}
+
+.tit_cat {
+    margin-bottom: 40px;
+}
+
+.tit_cat h2 {
+    display: block;
+    line-height: 34px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e1e1e;
+}
+.tit h3 {
+    display: block;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #888888;
+}
+
+.wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+}
+
+.aboutus .way_top {
+    padding: 50px 0 100px;
+    background: #99877b;
+    text-align: center;
+}
+
+.about .company_top .bg p strong {
+    margin-bottom: 15px;
+    font-size: 40px;
+    line-height: 42px;
+}
+.about .company_top .bg p strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 30px;
+    line-height: 33px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+}
+
+
+.about .company_top .bg p {
+    padding-top: 35px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.about .company_top .bg p {
+    color: #fff;
+    font-size: 13px;
+    /* text-align: left; */
+    font-family: "Noto Sans CJK KR", "Noto Sans KR", sans-serif;
+}
+.about .company_top .bg1 {
+    position: relative;
+    margin: 0;
+    padding: 25px 20px;
+    background: url(../images/images-company/company_bg.jpg) no-repeat center;
+    background-size: cover;
+    text-align: left;
+}
+.about .company_top .bg2 {
+    position: relative;
+    margin: 0;
+    padding: 25px 20px;
+    background: url(../images/images-company/ceo_bg.jpg) no-repeat center;
+    background-size: cover;
+    text-align: center;
+}
+.about .company_top .bg3 {
+    position: relative;
+    height: 50vh;
+    margin: 0;
+    padding: 25px 20px;
+    background: url(../images/images-company/way_bg04.jpg) no-repeat center;
+    background-size: cover;
+    /* text-align: left; */
+}
+.about .company_top .bg4 {
+    position: relative;
+    margin: 0;
+    padding: 25px 20px;
+    background: url(../images/images-company/way_bg01.jpg) no-repeat center;
+    background-size: cover;
+    text-align: right;
+}
+.about .company_top .bg5 {
+    position: relative;
+    margin: 0;
+    padding: 25px 20px;
+    background: url(../images/images-company/way_bg02.jpg) no-repeat center;
+    background-size: cover;
+    text-align: left;
+}
+.about .company_top .bg6 {
+    position: relative;
+    margin: 0;
+    padding: 25px 20px;
+    background: url(../images/images-company/way_bg03.jpg) no-repeat center;
+    background-size: cover;
+    text-align: right;
+}
+
+/* media="screen and (min-width: 768px)" */
+.about .company_top .company_btn {
+    margin-top: 40px;
+}
+.about .company_top .company_btn a {
+    width: 300px;
+    height: 60px;
+    font-size: 16px;
+    line-height: 60px;
+}
+.about .company_top .company_btn a {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: 60px;
+    font-size: 17px;
+    line-height: 60px;
+    background: #000;
+    color: #fff;
+    border-radius: 7px;
+    text-align: center;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+a {
+    font-family: "Noto Sans KR", sans-serif;
+    color: inherit;
+    text-decoration: none;
+}
+a,
+img,
+input,
+select,
+button {
+    vertical-align: middle;
+}
+user agent stylesheet a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}

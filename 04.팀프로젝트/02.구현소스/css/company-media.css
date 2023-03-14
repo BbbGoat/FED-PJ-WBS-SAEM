@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 800px) {
+    .contents_wrap {
+        padding: 60px 20px 0;
+    }
+}

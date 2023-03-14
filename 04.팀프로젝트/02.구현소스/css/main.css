@@ -89,6 +89,7 @@ img{
     overflow: hidden;
 }
 .slide{
+    left: 0;
     position: relative;
     width: max-content;
     overflow: hidden;

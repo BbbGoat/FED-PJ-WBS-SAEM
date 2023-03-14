@@ -3,13 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brand</title>
-    <link rel="shortcut icon" href="http://www.periperacosmetic.com/ko/images/favicon_shortcut.ico">
+    <title>Menu</title>
     <link rel="icon" href="http://www.periperacosmetic.com/ko/images/favicon.ico">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="./styles.css" />
-    <!-- 브랜드소개 JS -->
-    <script src="./js/brand.js"></script>
+    <link rel="stylesheet" href="./css/media_page.css" />
+    <script src="./js/media_page.js"></script>
     <!-- 링크시스템 JS -->
     <script src="./js/linksys.js"></script>
   </head>
@@ -42,12 +40,12 @@
           <!-- 아래는 모바일때 숨겨진 메뉴, 버거 버튼 누르면 나옴. -->
           <div class="hiddenMenuWrapper">
               <ul>
-                <li><a href="">COMPANY</a></li>
-                <li><a href="">BRAND</a></li>
-                <li><a href="">PRODUCT</a></li>
-                <li><a href="">MEDIA</a></li>
-                <li><a href="">SNS</a></li>
-                <li><a href="">NEWS</a></li>
+                <li><a href="#">COMPANY</a></li>
+                <li><a href="#">BRAND</a></li>
+                <li><a href="#">PRODUCT</a></li>
+                <li><a href="#">MEDIA</a></li>
+                <li><a href="#">SNS</a></li>
+                <li><a href="#">NEWS</a></li>
               </ul>
           </div>
 
@@ -72,7 +70,7 @@
 
       <div class="menuWrapper">
           <h1 class="logo">
-              <a href="#">
+              <a href="#" >
                   <img src="./images/images-header/logo_new.png" alt="">
               </a>
           </h1>
@@ -109,33 +107,28 @@
 
 
     </div>
-    <main>
-      <!-- 본인 내용을 여기에 작성하세요 -->
-      <!-- 브랜드소개 컨텐츠 영역 -->
-    <div id="cont">
-        <section class="cont">
-            <!-- 타이틀 -->
-            <div class="tit">
-                <h2>페리페라 히스토리</h2>
-                <h3>페리페라를 소개합니다.</h3>
+  <!-- ***** MEDIA ***** -->
+  <main>
+    <section id="media_all">
+        <div class="media_top">
+            <div class="media_head">
+                <h2>디지털 굿즈</h2>
+                <p>다양한 매체 속 페리페라에 빠져봐!</p>
             </div>
-            <!-- 선택 탭 -->
-            <div class="tab_brand">
-                <ul>
-                    <li>
-                        <a href="#">브랜드 소개</a>
-                    </li>
-                    <li class="on">
-                        <a href="#">히스토리</a>
-                    </li>
-                </ul>
+            <div class="media_Btns">
+                <div><a href="#">영상</a></div>
+                <div><a href="#">SNS</a></div>
+                <div><a href="#">디지털굿즈</a></div>
             </div>
-            <div class="intro bgi">
-                <img src="./images/images-brand/b_history.jpg" alt="히스토리">
-            </div>
-        </section>
-    </div>
-  </main>
+        </div>
+        <div class="media_con">
+            <iframe src="https://www.youtube.com/embed/meS_hoXFfi8" frameborder="0"></iframe>
+            <img src="./images/images-media/media_main.png" alt="굿노트 다이어리">
+            <button>DOWNLOAD :)</button>
+        </div>
+    </section>
+</main>
+<!-- ***** MEDIA ***** -->
 
   <footer id="footer">
     <div class="footer_wrap">
@@ -194,8 +187,8 @@
         </address>
     </div>
 </footer>
-    <!-- javascript -->
-    <script src="./js/app-header.js"></script>
-    <script src="./js/app-footer.js"></script>
-  </body>
+   <!-- javascript -->
+   <script src="./js/app-header.js"></script>
+   <script src="./js/app-footer.js"></script>
+</body>
 </html>
