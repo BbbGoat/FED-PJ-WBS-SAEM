@@ -11,7 +11,7 @@
 /* 미디어쿼리 */
 @import url(./css/brand_media.css);
 @import url(./css/company-media.css);
-@import url(./css/sns.css);
+@import url(./css/sns_media.css);
 @import url(./css/media_page.css); /* 서브페이지 - 미디어 : CSS파일 + 미디어쿼리 파일 */
 
 /* 푸터/상단 공통 미디어쿼리 - 최하단에 위치!!! */
