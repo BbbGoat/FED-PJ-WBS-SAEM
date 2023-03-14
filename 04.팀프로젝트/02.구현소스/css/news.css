@@ -18,7 +18,8 @@ main{
 }
 .tit_wrap h2{
     display: inline-block;
-    font-size: 40px;
+    font-size: 30px;
+    font-weight: bold;
 }
 .tit_wrap h5{
     display: inline-block;

@@ -10,8 +10,8 @@ function linkFn() {
     const menuListM = document.querySelectorAll(".hiddenMenuWrapper ul li");
     // PC
     const menuList = document.querySelectorAll(".menuList ul li a");
-    const logo = document.querySelectorAll("h1 > a");
     // logo -> 모바일, pc버전 a요소 2개
+    const logo = document.querySelectorAll("h1 > a");
 
     // 2-1. 카테고리 링크 설정
 
@@ -21,7 +21,7 @@ function linkFn() {
     ***************************************/
     function link(obj) {
         obj.forEach((ele)=>{
-            console.log("호출완료")
+            // console.log("호출완료");
             ele.onclick = () => {
                 //변수
                 atxt = ele.innerText;
