@@ -192,6 +192,8 @@ Menu
   margin-bottom: 0.5rem;
 }
 .price {
+  width: 78px;
+  text-align: right;
   color: #e1425d;
 }
 .item-text {
@@ -222,6 +224,14 @@ Menu
   main {
     margin-top: 0px;
   }
+  
+  .item-text {
+    font-size: 0.8rem;
+  }
+  .item-info h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
 
 }
 
@@ -251,6 +261,13 @@ Menu
   }
   body {
     font-size: 1rem;
+  }
+  .item-text {
+    font-size: 0.8rem;
+  }
+  .item-info h4 {
+    font-size: 1rem;
+    font-weight: 600;
   }
   h1,
   h2,
