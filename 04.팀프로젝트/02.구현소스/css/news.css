@@ -20,6 +20,7 @@ main{
     display: inline-block;
     font-size: 30px;
     font-weight: bold;
+    color: #000;
 }
 .tit_wrap h5{
     display: inline-block;
