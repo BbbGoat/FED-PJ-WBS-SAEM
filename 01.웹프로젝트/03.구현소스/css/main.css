@@ -102,20 +102,92 @@
     
 }
 
-.area_wrap {
+/* 영역 감싸기 박스 */
+.area_box {
     position: relative;
+    display: flex;
+    gap: 0 100px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin: 100px 0 0;
 }
+/* 영상 박스 공통설정 */
 .img_area {
-
+    position: relative;
+    /* 부모자격 - thumb, sticker */
 }
-.video {
-
+/* 영상 박스 */
+.vid {
+    display: block;
+    width: 340px;
+    height: 524px;
+    overflow: hidden;
+    border-radius: 30px 0 30px 0;
+}
+.vid video {
+    position: relative;
+    width: auto;
+    height: 100%;
+    /* 영상 정중앙이동 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 .thumb {
-
+    position: absolute;
+    top: 330px;
+    left: 250px;
+    overflow: hidden;
+    border-radius: 20px 0 20px 0;
+}
+.thumb img {
+    width: 180px;
+    height: 240px;
 }
 .sticker {
+    position: absolute;
+    top: 230px;
+    left: 250px;
+    overflow: hidden;
+}
 
+/* 텍스트 박스 */
+.text_area {
+    margin: 50px 0 0 50px;
+    /* opacity: 0; */
+}
+/* 클래스 on 삽입 액션 */
+.on.text_area {
+    opacity: 1;
+}
+.tbx {
+    white-space: nowrap;
+
+}
+.tbx h4 {
+    line-height: 1.5;
+    font-size: min(3.5vw,40px);
+}
+.tbx p {
+    font-size: min(2.3vw,18px);
+    line-height: 1.5;
+    padding: min(2vw,30px) 0 min(4vw,40px);
+}
+.tbx .viewbtn {
+    display: block;
+    width: 140px;
+    height: 45px;
+    /* 중앙정렬 */
+    line-height: 45px;
+    text-align: center;
+    border: 1px solid #ccc;
+
+    /* 글자설정 */
+    font-size: min(2.3vw,16px);
+
+}
+.tbx .viewbtn:hover {
+    background-color: #f5f5f5;
 }
 
 
