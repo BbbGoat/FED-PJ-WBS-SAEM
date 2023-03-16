@@ -88,10 +88,18 @@
     transform: translateY(20px);
     font-size: 16px;
 }
-.morebtn::before {
+.morebtn::after {
     content: '';
     display: block;
-    background: url() no-repeat;
+    /* 포지션 앱솔루트! */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: url(../images/ico_more@2x.png) no-repeat;
+    background-size: 100%;
+    
 }
 
 
