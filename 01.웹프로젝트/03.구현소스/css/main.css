@@ -222,7 +222,7 @@
 }
 
 
-/************** section 2 - Live new cj **************/
+/************** section 3 - cjnow **************/
 .cjnow{
     background: #f1f1f1;
 }
@@ -257,16 +257,23 @@
 
 
 
+/************** section 4 - brand **************/
 
 .brand{
     background-color: rgb(80, 79, 79);
 }
+
+
+
+/************** section 5 - csv **************/
 .csv{
     background-color: #fff;
 }
+/************** section 6 - cjlog **************/
 .cjlog{
     background-color: rgb(223, 223, 223);
 }
+/************** footer **************/
 #info {
     background: #fff;
 }

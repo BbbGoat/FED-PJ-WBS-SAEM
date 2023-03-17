@@ -65,13 +65,25 @@ function loadFn() {
         기능: scroll이벤트로 section livenewcj 박스
             위치 -값이 될때 최상단 네비게이션 CSS 전환
     *********************************************/
+    // 1. 대상수집
+    const nav = document.querySelector(".top");
     const secLivecj = document.querySelector(".livenewcj");
     // console.log(secLivecj);
     
     window.addEventListener("scroll", () => {
         const retVal = (ele) => ele.getBoundingClientRect().top;
         let secTop = retVal(secLivecj);
-        console.log(secTop);
+        // console.log(secTop);
+        
+        if (secTop < 0) {
+            nav.style.display = "none";
+            secLivecj.style.zIndex = "0";
+        }
+        else if (secTop > 0) {
+            nav.style.display = "block";
+            secLivecj.style.zIndex = "9999";
+        }
+        
     }); 
 
     // 높이값 구하기
