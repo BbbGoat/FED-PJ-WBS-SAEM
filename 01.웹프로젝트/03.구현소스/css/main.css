@@ -224,7 +224,7 @@
 
 /************** section 2 - Live new cj **************/
 .cjnow{
-    background: rgb(206, 206, 206);
+    background: #f1f1f1;
 }
 .title_area2 {
     position: relative;
@@ -265,7 +265,7 @@
     background-color: #fff;
 }
 .cjlog{
-    background-color: rgb(162, 164, 167);
+    background-color: rgb(223, 223, 223);
 }
 #info {
     background: #fff;
