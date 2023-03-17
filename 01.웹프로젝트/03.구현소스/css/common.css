@@ -20,6 +20,56 @@
     background: transparent;
     transition: 0.4s ease-out;
 }
+
+/* 배경박스 */
+.top.on .inner_wrap {
+    height: 62px;
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid #e6e6e6;
+}
+.top.on .inner {
+    height: 62px;
+}
+/* 가상요소 구분선 */
+.top.on .inner_wrap::before {
+    top: 62px;
+}
+/* 가상요소 구분선 오버시 */
+.top.on .inner_wrap:hover::before {
+    top: 62px;
+}
+.top.on .depth2 {
+    top: 50px;
+}
+.top.on .gnb {
+    height: 60px;
+    padding: 20px 0;
+}
+.top.on .gnb > ul a {
+    color: #000;
+}
+.top.on .lang a {
+    color: #000;
+}
+.top.on .search {
+    color: #000;
+}
+.top.on .main_lang {
+    padding: 25px 20px;
+}
+.top.on .list_lang {
+    top: 50px;
+}
+.top.on .logo a{
+    display: none;
+    padding-top: 12px;
+}
+.top.on .logo a:last-child{
+    width: 42px;
+    height: 50px;
+    display: block;   
+}
+
 /* 배경박스 오버시 */
 .top:hover .inner_wrap {
     height: 386px;

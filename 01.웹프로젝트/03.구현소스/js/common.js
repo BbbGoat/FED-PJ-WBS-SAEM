@@ -73,16 +73,18 @@ function loadFn() {
     window.addEventListener("scroll", () => {
         const retVal = (ele) => ele.getBoundingClientRect().top;
         let secTop = retVal(secLivecj);
-        // console.log(secTop);
+        console.log(secTop);
         
-        if (secTop < 0) {
-            nav.style.display = "none";
-            secLivecj.style.zIndex = "0";
-        }
-        else if (secTop > 0) {
-            nav.style.display = "block";
-            secLivecj.style.zIndex = "9999";
-        }
+        // 순수값 변환
+        // let secTopPure = Math.abs(secTop);
+        // let chgTopPure = secTopPure;
+
+        // if (secTop < 0) {
+        //     nav.style.display = "none";
+        // }
+        // else if (secTop > 0) {
+        //     nav.style.display = "block";
+        // }
         
     }); 
 
