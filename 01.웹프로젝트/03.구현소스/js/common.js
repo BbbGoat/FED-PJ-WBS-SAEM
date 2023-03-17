@@ -46,7 +46,7 @@ function loadFn() {
     langBtn();
 
     /********************************************
-        함수명: scrollFade
+        이벤트 : scroll
         기능: .fadeout 요소 스크롤에 따라 투명도 조절
     ********************************************/
     // 1. 대상수집
@@ -60,8 +60,24 @@ function loadFn() {
         fadeOut.style.opacity = 0 + scrollTop / 700 ;
     });
 
-
+    /********************************************* 
+        함수명: scrollnav
+        기능: scroll이벤트로 section livenewcj 박스
+            위치 -값이 될때 최상단 네비게이션 CSS 전환
+    *********************************************/
+    const secLivecj = document.querySelector(".livenewcj");
+    // console.log(secLivecj);
     
+    window.addEventListener("scroll", () => {
+        const retVal = (ele) => ele.getBoundingClientRect().top;
+        let secTop = retVal(secLivecj);
+        console.log(secTop);
+    }); 
+
+    // 높이값 구하기
+    // let secHeight = secLivecj.scrollTop;
+    // console.log(secHeight)
+
 } ////////////////  loadFn 함수 //////////////////
 
 window.addEventListener("DOMContentLoaded", loadFn);

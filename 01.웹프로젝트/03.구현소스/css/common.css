@@ -45,6 +45,16 @@
     opacity: 1;
     transition: opacity 0.4s ease-out;
 }
+.top:hover .blackbx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    background: rgba(0,0,0,0.1);
+    pointer-events: none;
+}
 
 .inner {
     /* 플렉스박스 */
