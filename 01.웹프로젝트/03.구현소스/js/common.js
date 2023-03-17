@@ -79,12 +79,15 @@ function loadFn() {
         // let secTopPure = Math.abs(secTop);
         // let chgTopPure = secTopPure;
 
-        // if (secTop < 0) {
-        //     nav.style.display = "none";
-        // }
-        // else if (secTop > 0) {
-        //     nav.style.display = "block";
-        // }
+        if (secTop < 0) {
+            // nav.style.display = "none";
+            nav.classList.add("on");
+        }
+        else if (secTop > 0) {
+            // nav.style.display = "block";
+            nav.classList.remove("on");
+            // secLivecj.style.zIndex = "999999";
+        }
         
     }); 
 

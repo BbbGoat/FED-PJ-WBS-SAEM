@@ -12,16 +12,8 @@
     transition: top 0.3s ease-out;
     z-index: 999;
 }
-/* 배경박스 */
-.inner_wrap {
-    position: relative;
-    width: 100%;
-    height: 90px;
-    background: transparent;
-    transition: 0.4s ease-out;
-}
 
-/* 배경박스 */
+/* .top "on" 클래스 */
 .top.on .inner_wrap {
     height: 62px;
     background: rgba(255, 255, 255, 0.9);
@@ -70,6 +62,15 @@
     display: block;   
 }
 
+
+/* 배경박스 */
+.inner_wrap {
+    position: relative;
+    width: 100%;
+    height: 90px;
+    background: transparent;
+    transition: 0.4s ease-out;
+}
 /* 배경박스 오버시 */
 .top:hover .inner_wrap {
     height: 386px;
