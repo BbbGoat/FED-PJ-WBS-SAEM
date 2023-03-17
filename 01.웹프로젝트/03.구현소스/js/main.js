@@ -18,7 +18,6 @@ window.addEventListener("DOMContentLoaded",()=>{
         if(vid1.paused) vid1.play();
         else vid1.pause();
 
-
     }); /////////// click //////////////////
 
 

@@ -21,6 +21,15 @@
 }
 
 
+.circle_timer {
+    position: absolute;
+    right: 58px;
+    bottom: 58px;
+    width: 64px;
+    height: 64px;
+    z-index: 1;
+}
+
 
 /************** section 1 - video **************/
 
@@ -28,6 +37,7 @@
 .mainVid {
     /* 메인비디오 최상위 부모박스 */
     position: relative;
+    /* z-index: -1; */
 
     /* 임시 높이값 -> JS에서 조정예정 */
     height: 767px;
