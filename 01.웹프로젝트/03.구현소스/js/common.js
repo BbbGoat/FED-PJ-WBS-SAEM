@@ -57,7 +57,7 @@ function loadFn() {
 
     window.addEventListener("scroll", (e) => {
         scrollTop = document.documentElement.scrollTop;
-        fadeOut.style.opacity = 0 + scrollTop / 1000 ;
+        fadeOut.style.opacity = 0 + scrollTop / 700 ;
     });
 
 
