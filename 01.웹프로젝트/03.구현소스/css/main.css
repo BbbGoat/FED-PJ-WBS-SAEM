@@ -62,8 +62,6 @@
 /************** section 2 - Live new cj **************/
 
 .livenewcj {
-    /* 임시 높이값 - 섹션 내부 요소 작업후 제거!! */
-    /* height: 800px; */
     background: #fff;
 }
 .title_area {
@@ -228,6 +226,38 @@
 .cjnow{
     background: rgb(206, 206, 206);
 }
+.title_area2 {
+    position: relative;
+    /* 부모자격 - morebtn */
+}
+.title_area2 h3 {
+    font-size: 50px;
+    line-height: 1.8;
+    font-family: CJONLYONENEW_BOLD;
+}
+.title_area2 p {
+    font-size: 20px;
+    line-height: 30px;
+    /* margin-top: 10px; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .brand{
     background-color: rgb(80, 79, 79);
 }
