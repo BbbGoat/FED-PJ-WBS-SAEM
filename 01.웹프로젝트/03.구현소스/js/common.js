@@ -68,39 +68,38 @@ function loadFn() {
     // 1. 대상수집
     const nav = document.querySelector(".top");
     const secLivecj = document.querySelector(".livenewcj");
-    const logoB = document.querySelector(".logo a:last-child");
     const logoW = document.querySelector(".logo a:first-child");
+    const logoB = document.querySelector(".logo a:last-child");
     // console.log(secLivecj);
     
+    // 2. 스크롤 이벤트 설정
     window.addEventListener("scroll", () => {
+
+        // 브라우저 top을 기준으로한, 전달변수의 위치값 나타내는 함수 retVal
         const retVal = (ele) => ele.getBoundingClientRect().top;
         let secTop = retVal(secLivecj);
-        console.log(secTop);
-        
-        // 순수값 변환
-        // let secTopPure = Math.abs(secTop);
-        // let chgTopPure = secTopPure;
+        // console.log(secTop);
 
         if (secTop < 0) {
+            // 로고 클래스 on
             nav.classList.add("on");
+            // 로고 크기변환
             logoB.style.width = "42px";
             logoB.style.opacity = 1;
             logoW.style.width = "45px";
             logoW.style.opacity = 0;
         }
         else if (secTop > 0) {
+            // 로고 클래스 on
             nav.classList.remove("on");
+            // 로고 크기변환
             logoB.style.width = "100%";
             logoB.style.opacity = 0;
             logoW.style.width = "60px";
             logoW.style.opacity = 1;
         }
         
-    }); 
-
-    // 높이값 구하기
-    // let secHeight = secLivecj.scrollTop;
-    // console.log(secHeight)
+    }); //////////// scroll 이벤트 ///////////////
 
 } ////////////////  loadFn 함수 //////////////////
 

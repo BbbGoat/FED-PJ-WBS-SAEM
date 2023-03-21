@@ -15,10 +15,8 @@
         <script src="./js/common.js"></script>
         <script src="./js/main.js"></script>
         <!-- jquery -->
-        <script src="./jquery.transform2d.js"></script>
-        <!-- <script src="./jquery.transform3d.js"></script> -->
-        <script src="./jquery-3.6.3.min.js"></script>
-        <script src="./jquery-ui.min.js"></script>
+        <!-- <script src="./js/jquery-3.6.3.min.js"></script> -->
+        <!-- <script src="./js/jquery-ui.min.js"></script> -->
     </head>
     <body class="scbar">
         <!-- 1. 상단영역 -->
@@ -134,7 +132,7 @@
         <div id="cont">
             <main class="cont">
                 <section class="sec mainVid">
-                    <div class="slide">
+                    <div class="fixed_box">
                         <video
                             id="video1"
                             poster="https://images.cj.net/upfiles/main_index/0000007175520006515707371.png"
@@ -358,20 +356,59 @@
                     </div>
                 </section>
                 <section class="sec brand">
-                    <div class="wrap">
-                        <div class="title_area">
-                            <h3>
-                                <a href="#" title="BEST BRAND 바로가기"
-                                    ><span>
-                                        BEST BRAND
-                                    </span>
-                                </a>
-                            </h3>
-                            <p>
-                                <span>CJ가 제안하는 새로운 라이프 스타일로<br />당신의 평범한 일상을 새롭게!</span>
-                            </p>
-                            <a href="#" class="morebtn" title="BEST BRAND">전체보기</a>
-                        </div>
+                    <div class="title_area">
+                        <h3>
+                            <a href="#" title="BEST BRAND 바로가기"
+                                ><span>
+                                    BEST BRAND
+                                </span>
+                            </a>
+                        </h3>
+                        <p>
+                            <span>CJ가 제안하는 새로운 라이프 스타일로<br />당신의 평범한 일상을 새롭게!</span>
+                        </p>
+                        <a href="#" class="morebtn" title="BEST BRAND">전체보기</a>
+                    </div>
+                    <div class="video_box">
+                        <video
+                            id="video2"
+                            poster=""
+                            src="./images/touslesjours.mp4"
+                            autoplay
+                            muted
+                            playsinline
+                            loop
+                        ></video>
+                    </div>
+                    <div class="circle_timer">
+                        <a href="#">
+                            <svg>
+                                <defs>
+                                    <linearGradient
+                                        x1="100%"
+                                        y1="62.7855033%"
+                                        x2="-21.6259252%"
+                                        y2="62.7887056%"
+                                        id="linearGradient-1"
+                                    >
+                                        <stop stop-color="#54AFFF" offset="0%"></stop>
+                                        <stop stop-color="#FF953E" offset="36.060424%"></stop>
+                                        <stop stop-color="#FF0D00" offset="100%"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <g transform="translate(2.000000, 2.000000)">
+                                    <path
+                                        id="circle_path"
+                                        fill="none"
+                                        stroke="url(#linearGradient-1)"
+                                        stroke-width="2"
+                                        d="M 31 2 A 29 29 0 1 1 31 60 A 2 2 0 1 1 31 2 Z"
+                                        style="stroke-dasharray: 116.202, 182.278"
+                                    ></path>
+                                    <!--<circle id="circle_path" fill="none" stroke="url(#linearGradient-1)" stroke-width="2" cx="30" cy="30" r="29"/>-->
+                                </g>
+                            </svg>
+                        </a>
                     </div>
                 </section>
                 <section class="sec csv">

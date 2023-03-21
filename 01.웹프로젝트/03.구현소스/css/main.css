@@ -37,12 +37,12 @@
 .mainVid {
     /* 메인비디오 최상위 부모박스 */
     position: relative;
-    /* z-index: -1; */
 
-    /* 임시 높이값 -> JS에서 조정예정 */
+    /* 임시 높이값 -> JS에서 조정예정 clientHeight - 10vh */
     height: 767px;
 }
-.slide {
+/* 비디오영역 고정박스 */
+.fixed_box {
     position: fixed;
     top: 0;
     width: 100%;
@@ -58,8 +58,6 @@
 
 /* 페이드아웃 효과 */
 .fadeout {
-    /* display: none; */
-    /* position: absolute; */
     position: fixed;
     top: 0;
     left: 0;
@@ -280,6 +278,30 @@
 
 .brand{
     background-color: rgb(80, 79, 79);
+}
+/* 브랜드 타이틀영역 */
+.brand .title_area {
+    position: absolute;
+}
+/* 브랜드 비디오영역 박스 */
+.video_box {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    /* 박스한계 크기값 */
+    min-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#video2{
+    position: absolute;
+    top: -500px;
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+.video_box video {
+    /* width: 100%; */
 }
 
 
