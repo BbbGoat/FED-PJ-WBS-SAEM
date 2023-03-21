@@ -68,6 +68,8 @@ function loadFn() {
     // 1. 대상수집
     const nav = document.querySelector(".top");
     const secLivecj = document.querySelector(".livenewcj");
+    const logoB = document.querySelector(".logo a:last-child");
+    const logoW = document.querySelector(".logo a:first-child");
     // console.log(secLivecj);
     
     window.addEventListener("scroll", () => {
@@ -80,13 +82,18 @@ function loadFn() {
         // let chgTopPure = secTopPure;
 
         if (secTop < 0) {
-            // nav.style.display = "none";
             nav.classList.add("on");
+            logoB.style.width = "42px";
+            logoB.style.opacity = 1;
+            logoW.style.width = "45px";
+            logoW.style.opacity = 0;
         }
         else if (secTop > 0) {
-            // nav.style.display = "block";
             nav.classList.remove("on");
-            // secLivecj.style.zIndex = "999999";
+            logoB.style.width = "100%";
+            logoB.style.opacity = 0;
+            logoW.style.width = "60px";
+            logoW.style.opacity = 1;
         }
         
     }); 

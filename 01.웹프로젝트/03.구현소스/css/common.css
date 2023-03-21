@@ -53,11 +53,13 @@
     top: 50px;
 }
 .top.on .logo a{
-    display: none;
+    /* display: none; */
     padding-top: 12px;
+    /* transition: 0.3s ease-out; */
 }
 .top.on .logo a:last-child{
-    width: 42px;
+    transition: 0.3s ease-out;
+    /* width: 42px; */
     height: 50px;
     display: block;   
 }
@@ -84,7 +86,7 @@
     width: 100%;
     border-bottom: 1px solid #e6e6e6;
     opacity: 0;
-    transition: opacity 0.4s ease-out;
+    transition: opacity 0.4s ease-out, top 0.3s ease-out;
 }
 /* 가상요소 구분선 오버시 */
 .inner_wrap:hover::before {
@@ -94,7 +96,7 @@
     width: 100%;
     border-bottom: 1px solid #e6e6e6;
     opacity: 1;
-    transition: opacity 0.4s ease-out;
+    transition: opacity 0.4s ease-out, top 0.3s ease-out;
 }
 .top:hover .blackbx {
     position: absolute;
@@ -138,28 +140,31 @@
     padding-top: 20px;
     width: 60px;
     height: 52px;
+    transition: 0.3s ease-out;
 }
 /* 로고(검은색) 숨김 */
 .logo a:last-child {
+    display: block;
+    position: absolute;
     width: 58px;
-    left: 0;
     height: 50px;
     top: 0;
-    display: none;
+    left: 0;
+    opacity: 0;
 }
 /* 로고(검은색) 오버시 보이기 */
 #top:hover .logo a:last-child {
-    display: block;
+    opacity: 1 !important;
 }
 /* 로고(흰색) 오버시 숨김 */
 #top:hover .logo a:first-child {
-    display: none;
+    opacity: 0;
 }
 
 /* GNB 박스 */
 .gnb {
     height: 90px;
-    transition: height 0.4s ease-out;
+    transition: 0.3s ease-out;
     overflow: hidden;
     box-sizing: border-box;
     padding: 34px 0;
@@ -196,6 +201,7 @@
     top: 70px;
     font-size: 16px;
     font-weight: 400;
+    transition: top 0.3s ease-out;
 }
 .depth2 > li:first-child {
     padding-top: 20px;
@@ -235,6 +241,7 @@
 }
 .main_lang {
     padding: 37px 20px;
+    transition: 0.3s ease-out;
 }
 /* 오버시 KOR 글자색 변경 */
 #top:hover .main_lang a {
@@ -244,17 +251,17 @@
     color: #1a7cd2 !important;
 }
 .list_lang {
-    /* JS 연결 */
     display: none;
     
     position: absolute;
-    top: 60px;
+    top: 63px;
     left: -6px;
     width: 100%;
     line-height: 35px;
     text-align: center;
     background-color: #fff;
     border: 1px solid #ccc;
+    transition: 0.3s ease-out;
 }
 .list_lang ul {
     display: flex;
@@ -292,6 +299,12 @@
 }
 #top:hover .search {
     color: #000;
+}
+
+/************** footer **************/
+#info {
+    position: relative;
+    background: #fff;
 }
 
 
