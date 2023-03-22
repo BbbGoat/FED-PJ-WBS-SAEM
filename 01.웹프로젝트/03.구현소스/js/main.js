@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     const btn_brandvid = document.querySelector(".brand .circle_timer");
 
 
-
+    // 메인비디오 이벤트 설정
     btn_mainvid.addEventListener("click",()=>{
         // console.log("클릭",vid1.paused);
         event.preventDefault();
@@ -24,6 +24,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     }); /////////// click //////////////////
 
+    // 브랜드비디오 이벤트 설정
     btn_brandvid.addEventListener("click",()=>{
         event.preventDefault();
 
