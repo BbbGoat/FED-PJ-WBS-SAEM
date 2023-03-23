@@ -311,6 +311,32 @@
     object-fit: cover;
 }
 
+/* 재생상태 */
+.svg2 {
+    fill: none;
+    stroke:url(#linearGradient-1);
+    stroke-width: 2px;
+    stroke-linecap: round;
+
+    /* [ 데쉬선 속성 ]
+        - 선, 공백 순으로 데쉬선 셋팅함
+        -> 50%를 써본다!
+        -> 6조각 이니까 6배한다!
+        50% * 6 = 300%
+    */
+
+    /* [ 데쉬어레이 시작위치밀기 : stroke-dashoffset ]
+        stroke-dashoffset값을
+        stroke-dasharray값과 같은
+        값을 주면 공백부터 시작함!
+    */
+    stroke-dasharray: 300%;
+    stroke-dashoffset: 300%;
+}
+/* 임시!!!!!!! */
+/* .svg2 {
+    stroke-dashoffset: 0%;
+} */
 
 
 
