@@ -20,15 +20,69 @@
     padding: 140px 0;
 }
 
-
+/* 비디오 재생버튼 공통설정 */
 .circle_timer {
     position: absolute;
-    right: 58px;
-    bottom: 58px;
-    width: 64px;
-    height: 64px;
+    right: 60px;
+    bottom: 60px;
+    width: 60px;
+    height: 60px;
     z-index: 1;
 }
+.timer_icon {
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 25px;
+    /* 정중앙이동 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+}
+.timer_icon img {
+    width: 100%;
+    margin-top: -25px;
+}
+svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/* 재생상태 */
+.svg1 {
+    fill: none;
+    stroke:url(#linearGradient-1);
+    stroke-width: 2px;
+    stroke-linecap: round;
+
+    /* [ 데쉬선 속성 ]
+        - 선, 공백 순으로 데쉬선 셋팅함
+        -> 50%를 써본다!
+        -> 6조각 이니까 6배한다!
+        50% * 6 = 300%
+    */
+
+    /* [ 데쉬어레이 시작위치밀기 : stroke-dashoffset ]
+        stroke-dashoffset값을
+        stroke-dasharray값과 같은
+        값을 주면 공백부터 시작함!
+    */
+    stroke-dasharray: 300%;
+    stroke-dashoffset: 300%;
+}
+
+/* 재생상태 */
+.svg2 {
+    fill: none;
+    stroke:url(#linearGradient-1);
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-dasharray: 300%;
+    stroke-dashoffset: 300%;
+}
+
+
 
 
 /************** section 1 - video **************/
@@ -64,15 +118,6 @@
     right: 0;
     bottom: 0;
     background: rgba(0,0,0,1);
-}
-
-.circle_timer {
-    position: absolute;
-    right: 58px;
-    bottom: 58px;
-    width: 64px;
-    height: 64px;
-    z-index: 1;
 }
 
 
@@ -310,36 +355,6 @@
     height: 100%;
     object-fit: cover;
 }
-
-/* 재생상태 */
-.svg2 {
-    fill: none;
-    stroke:url(#linearGradient-1);
-    stroke-width: 2px;
-    stroke-linecap: round;
-
-    /* [ 데쉬선 속성 ]
-        - 선, 공백 순으로 데쉬선 셋팅함
-        -> 50%를 써본다!
-        -> 6조각 이니까 6배한다!
-        50% * 6 = 300%
-    */
-
-    /* [ 데쉬어레이 시작위치밀기 : stroke-dashoffset ]
-        stroke-dashoffset값을
-        stroke-dasharray값과 같은
-        값을 주면 공백부터 시작함!
-    */
-    stroke-dasharray: 300%;
-    stroke-dashoffset: 300%;
-}
-/* 임시!!!!!!! */
-/* .svg2 {
-    stroke-dashoffset: 0%;
-} */
-
-
-
 
 
 
