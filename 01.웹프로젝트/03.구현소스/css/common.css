@@ -164,7 +164,7 @@
 /* GNB 박스 */
 .gnb {
     height: 90px;
-    transition: 0.3s ease-out;
+    transition: 0.4s ease-out;
     overflow: hidden;
     box-sizing: border-box;
     padding: 34px 0;
