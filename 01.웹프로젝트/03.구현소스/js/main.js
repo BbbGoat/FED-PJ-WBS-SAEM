@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded",()=>{
 
+
     console.log("로딩완료!");
     
     // 전역 변수 선언 ///////////////////
@@ -92,27 +93,10 @@ window.addEventListener("DOMContentLoaded",()=>{
         });
     } ///////////// vidTimer 함수 ////////////////////
 
-    
-    /******************************************* 
-        함수명: chgImg
-        기능: 마우스엔터이벤트
-            마우스오버시 타겟박스 내부 이미지 변경
-    *******************************************/
-    function chgImg() {
-
-
-        
-        
-
-    } ///////////// chgImg 함수 /////////////////////
-
-
-
 
     // 이벤트 등록 ///////////////////////////////////
     circleTimer.addEventListener("click", vidClick());
     videoBox.addEventListener("timeupdate",vidTimer());
-    chgBx.addEventListener("mouseenter", chgImg());
-
 
 });///////////// load ////////////////////////////
+
