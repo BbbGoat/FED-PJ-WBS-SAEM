@@ -425,12 +425,73 @@
 .csv{
     background-color: #fff;
 }
+.csv .wrap {
+    padding: 180px 0 70px;
+}
+.csv_area {
+    margin-top: 70px;
+}
+/* 슬라이드배너 시작 */
+#slide {
+    /* 최상위부모 */
+    position: relative;
+    margin: 0 auto;
+    /* 슬라이드박스 크기설정 */
+    width: 1100px;
+    height: 350px;
+    box-sizing: border-box;
+    overflow: hidden;
+    
+    background: palevioletred;
+}
+/* 사진을 싸고 있는 슬라이드 영역 */
+#slide ul {
+    /* 플렉스박스 */
+    display: flex;
+    position: absolute;
+    gap: 0 25px;
+    top: 0;
+    left: 0;
+    /* width: 100%; */
+    /* height: 100%; */
+}
+#slide ul li {
+    /* 작은박스 크기설정 */
+    width: 350px;
+    height: 350px;
+}
+#slide ul li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 이동버튼 공통 */
+.slide_btn {
+    position: relative;
+    margin-top: 50px;
+}
+/* 왼쪽버튼 */
+.sbtn1 {
+    position: absolute;
+    left: 0;
+    /* right: 150px; */
+}
+/* 오른쪽버튼 */
+.sbtn2 {
+    position: absolute;
+    right: 0;
+}
+
+
+
+
 /************** section 6 - cjlog **************/
 .cjlog{
     background-color: #fff;
 }
 .log_area {
-    padding-top: 50px;
+    margin-top: 70px;
 }
 .log_gridbox {
     display: grid;
@@ -471,7 +532,6 @@
 .ban3 {
     grid-column: 10/13;
 }
-
 .ban4 {
     grid-column: 7/10;
 }

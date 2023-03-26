@@ -98,7 +98,6 @@ window.addEventListener("DOMContentLoaded",()=>{
     /******************************************* 
         함수명: logSetban
         기능: cjlog 배너 이미지 자동셋팅
-            마우스 오버시 트랜스폼 효과
     *******************************************/
 
     // 변경대상
@@ -116,7 +115,98 @@ window.addEventListener("DOMContentLoaded",()=>{
     } ///////////// logSetban 함수 ///////////////////
 
 
+    
+    /******************************************* 
+        함수명: csvSlide
+        기능: 버튼 클릭시 이미지 슬라이드
+    *******************************************/
+
+    // 변경대상
+    const slide = document.querySelector("#slide ul");
+    const slideBtn = document.querySelectorAll(".slide_btn a");
+
+    function csvSlide() {
+
+        // 슬라이드 개수
+        let slideList = document.querySelectorAll("#slide li");
+        console.log(slideList);
+
+        slideList.forEach((ele,idx) => {
+            ele.setAttribute("data-seq",idx);
+        }); ///// forEach ///////////////
+       
+
+        let clist = slide.querySelectorAll("li");
+        console.log(clist);
+        
+        // 버튼 개수
+        slideBtn.forEach((ele,idx) => {
+            
+            // 광클금지 변수
+            let prot = 0;
+
+            ele.onclick = function(e) {
+                e.preventDefault();
+                // clearAuto();
+
+                if (prot) return;
+                prot = 1; // 잠금!
+                setTimeout(() => {
+                    prot = 0; // 잠금해제!
+                },400);
+
+                // 왼쪽클릭
+                if (idx === 0) {
+                    console.log("왼쪽");
+                    slide.insertBefore(clist[clist.length-1], clist[0]);
+                    slide.style.left = "-34%";
+                    slide.style.transition = "none";
+                    setTimeout(() => {
+                        slide.style.left = "0";
+                        slide.style.transition = "left .4s ease-in-out";
+                    }, 0);
+                }
+                // 오른쪽클릭
+                else if (idx === 1) {
+                    console.log("오른쪽")
+                    slide.style.left = "-34%";
+                    slide.style.transition = "left .4s ease-in-out";
+    
+                    // 슬라이드 이동 후
+                    setTimeout(() => {
+                        slide.appendChild(clist[0]);
+                        slide.style.left = "0";
+                        slide.style.transition = "none";
+                    },400);
+                    
+                }
+            } ////////// click ///////////
+
+        }); /////////// forEach ////////////
+    } /////////////// csvSlide 함수 ////////////////
+
+
+    function clearAuto() { 
+        console.log("인터발멈춰!");
+        // 1. 인터발 지우기
+        clearInterval(autoI);
+
+        // 2. 타임아웃도 지우지 않으면
+        // 쌓여서 타임아웃 쓰나미실행이 발생한다!
+        clearTimeout(autoT);
+        
+        // 3. 잠시후 다시 작동하도록 타임아웃으로
+        // 인터발함수를 호출한다!
+        // 5초후 (인터발은 3초후, 토탈 8초후 작동시작)
+        autoT = setTimeout(autoSlide,5000);
+
+        
+    } ////////////// clearAuto 함수 ////////////
+
+
     // 이벤트 등록 ///////////////////////////////////
+
+    slide.addEventListener("click",csvSlide());
     circleTimer.addEventListener("click", vidClick());
     videoBox.addEventListener("timeupdate",vidTimer());
     document.addEventListener("DOMContentLoaded", logSetban());
