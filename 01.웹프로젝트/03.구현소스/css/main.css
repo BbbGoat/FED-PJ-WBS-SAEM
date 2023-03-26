@@ -427,7 +427,7 @@
 }
 /************** section 6 - cjlog **************/
 .cjlog{
-    background-color: rgb(223, 223, 223);
+    background-color: #fff;
 }
 .log_area {
     padding-top: 50px;
@@ -444,10 +444,10 @@
     grid-column-gap: 5px;
 }
 .rw1 {
-    background: #275;
+    /* background: #275; */
 }
 .rw2 {
-    background: #535;
+    /* background: #535; */
 }
 /* cjlog 배너박스 공통설정 */
 .log {
@@ -467,18 +467,42 @@
 }
 .ban2 {
     grid-column: 7/10;
-    /* background: url(../images/log02.jpg) no-repeat center/cover; */
 }
+
 .ban3 {
     grid-column: 10/13;
-    /* background: url(../images/log03.jpg) no-repeat center/cover; */
 }
+
 .ban4 {
     grid-column: 7/10;
-    /* background: url(../images/log04.png) no-repeat center/cover; */
-    /* transform: scale(1.2); */
 }
 .ban5 {
     grid-column: 10/13;
-    /* background: url(../images/log05.png) no-repeat center/cover; */
+}
+
+/* 오버시 */
+.ban1:hover img {
+    transition: 0.3s ease-out;
+    /* transform: scale(1.05); */
+    filter: opacity(0.7);
+}
+.ban2:hover img {
+    transition: 0.3s ease-out;
+    /* transform: scale(1.05); */
+    filter: opacity(0.7);
+}
+.ban3:hover img {
+    transition: 0.3s ease-out;
+    /* transform: scale(1.05); */
+    filter: opacity(0.7);
+}
+.ban4:hover img {
+    transition: 0.3s ease-out;
+    /* transform: scale(1.05); */
+    filter: opacity(0.7);
+}
+.ban5:hover img {
+    transition: 0.3s ease-out;
+    /* transform: scale(1.05); */
+    filter: opacity(0.7);
 }

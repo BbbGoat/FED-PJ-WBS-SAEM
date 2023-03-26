@@ -107,18 +107,12 @@ window.addEventListener("DOMContentLoaded",()=>{
     function logSetban() {
         console.log("셋벤로딩완료");
 
-        // 변경셋팅
+        // 이미지 갯수만큼 배너 이미지 주소 변경
         logBan.forEach((ele,idx,obj) => {
             
-            for (let i = 0; i < logBan.length; i++) {
-                // console.log(i);
-                obj[i].innerHTML = ``;
-            }
-            // console.log(obj[2])
-        }); /////// forEach /////////////
-        
-        // 출력
-        // logBan.innerHTML = chgBan;
+            obj[idx].innerHTML = `<img src="./images/log${idx}.jpg" alt="CJ로그배너">`;
+
+        }); /////// forEach /////////////        
 
     } ///////////// logSetban 함수 ///////////////////
 
