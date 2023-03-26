@@ -19,6 +19,11 @@ const newsData = {
         altData : "뉴스이미지4",
         txtData : "‘안전한 식자재 유통 앞장’ CJ프레시웨이 식품안전연구실, 경인식약청 표창 수상",
     },
+    news5 : {
+        imgData : "./images/news05.png",
+        altData : "뉴스이미지5",
+        txtData : "더미내용더미내 용더미내용더 미내용더 더미내용미내용 더미내용더미내용더미내용 더미내",
+    },
 }
 
 export { newsData };
