@@ -94,9 +94,39 @@ window.addEventListener("DOMContentLoaded",()=>{
     } ///////////// vidTimer 함수 ////////////////////
 
 
+    
+    /******************************************* 
+        함수명: logSetban
+        기능: cjlog 배너 이미지 자동셋팅
+            마우스 오버시 트랜스폼 효과
+    *******************************************/
+
+    // 변경대상
+    const logBan = document.querySelectorAll(".log a");
+
+    function logSetban() {
+        console.log("셋벤로딩완료");
+
+        // 변경셋팅
+        logBan.forEach((ele,idx,obj) => {
+            
+            for (let i = 0; i < logBan.length; i++) {
+                // console.log(i);
+                obj[i].innerHTML = ``;
+            }
+            // console.log(obj[2])
+        }); /////// forEach /////////////
+        
+        // 출력
+        // logBan.innerHTML = chgBan;
+
+    } ///////////// logSetban 함수 ///////////////////
+
+
     // 이벤트 등록 ///////////////////////////////////
     circleTimer.addEventListener("click", vidClick());
     videoBox.addEventListener("timeupdate",vidTimer());
+    document.addEventListener("DOMContentLoaded", logSetban());
 
 });///////////// load ////////////////////////////
 
