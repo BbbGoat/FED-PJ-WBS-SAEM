@@ -1,14 +1,10 @@
 // CJ now 페이지 모듈화 작업
 import { newsData } from "./newsData.js";
-console.log(newsData);
+// console.log(newsData);
 
 // 대상수집
 const newsList = document.querySelectorAll(".news_text ul li");
 const newsImg = document.querySelector(".news_img a");
-
-// 0. CJNow 기본틀 셋팅
-// 각 텍스트 배열 순서대로 삽입
-// 이미지 배열 순서대로 삽입
 
 /**************************************** 
     함수명: chgImg
@@ -18,36 +14,48 @@ const newsImg = document.querySelector(".news_img a");
 ****************************************/
 
 function chgImg() {
-    // console.log("chgImg 로딩완료!");
+    
+    // 1. 텍스트 배열 순서대로 삽입
     newsList.forEach((ele,idx) => {
-        // console.log(ele,idx);
 
+        // 변경할 텍스트 변수
+        let txt = "";
+
+        switch (idx) {
+            case 0 : txt = `<a href="#">${newsData.news1.txtData}</a>`; break;
+            case 1 : txt = `<a href="#">${newsData.news2.txtData}</a>`; break;
+            case 2 : txt = `<a href="#">${newsData.news3.txtData}</a>`; break;
+            case 3 : txt = `<a href="#">${newsData.news4.txtData}</a>`; break;
+            case 4 : txt = `<a href="#">${newsData.news5.txtData}</a>`; break;
+        }        
+        // 텍스트 출력
+        ele.innerHTML = txt;
         
-        // 마우스엔터 이벤트설정
+
+
+        // 2. 마우스엔터 이벤트설정
         ele.onmouseenter = function() {
             event.preventDefault();
-            // console.log(this,idx);
 
-            // 이미지 변경
-            // 변경할 주소 변수
+            // 변경할 이미지 주소 변수
             let src = "";
-            // console.log(newsData);
+
             switch (idx) {
-                case 0 : src = `<img src="${newsData.news1.imgData}" alt="${newsData.news1.altData}">`; break
-                case 1 : src = `<img src="${newsData.news2.imgData}" alt="${newsData.news2.altData}">`; break
-                case 2 : src = `<img src="${newsData.news3.imgData}" alt="${newsData.news3.altData}">`; break
-                case 3 : src = `<img src="${newsData.news4.imgData}" alt="${newsData.news4.altData}">`; break
-                case 4 : src = `<img src="${newsData.news5.imgData}" alt="${newsData.news5.altData}">`; break
+                case 0 : src = `<img src="${newsData.news1.imgData}" alt="${newsData.news1.altData}">`; break;
+                case 1 : src = `<img src="${newsData.news2.imgData}" alt="${newsData.news2.altData}">`; break;
+                case 2 : src = `<img src="${newsData.news3.imgData}" alt="${newsData.news3.altData}">`; break;
+                case 3 : src = `<img src="${newsData.news4.imgData}" alt="${newsData.news4.altData}">`; break;
+                case 4 : src = `<img src="${newsData.news5.imgData}" alt="${newsData.news5.altData}">`; break;
             }
 
+            // 이미지 출력
+            newsImg.innerHTML = src;
+            
+
+            // 3. 마우스 엔터시 클래스 on 넣기/빼기
             // 클래스 on 초기화함수 호출
             initMenu();
-            // 마우스엔터시 클래스 on 넣기
             this.classList.add("on");
-            
-            
-            // 출력
-            newsImg.innerHTML = src;
             
         }; //// mouseenter 이벤트 ////
         
@@ -55,20 +63,16 @@ function chgImg() {
     
 } /////////////// chgImg 함수 ////////////
 
-
-// 3. 트리거 이벤트 발생시키기 -> 인터벌로 시간지나며 하나씩 슬라이드되게
-// 첫 로드시 첫번째 영역 활성화되도록 오버이벤트 트리거 시켜놓기
-
-// 최초호출!
+// 함수 최초호출!
 chgImg();
 
 
+
 /************************************** 
-    메뉴 초기화 함수 : 처음상태로 돌림
+    클래스 초기화 함수 : 처음상태로 돌림
 **************************************/
 
 function initMenu() { 
-    
     // 각 li요소마다 클래스 remove 해주기
     newsList.forEach((ele) => {
         // 클래스 on 빼기
