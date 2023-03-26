@@ -105,7 +105,6 @@ window.addEventListener("DOMContentLoaded",()=>{
     const logBan = document.querySelectorAll(".log a");
 
     function logSetban() {
-        console.log("셋벤로딩완료");
 
         // 이미지 갯수만큼 배너 이미지 주소 변경
         logBan.forEach((ele,idx,obj) => {
