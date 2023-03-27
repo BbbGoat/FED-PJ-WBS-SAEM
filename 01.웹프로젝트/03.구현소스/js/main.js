@@ -153,7 +153,7 @@ window.addEventListener("DOMContentLoaded",()=>{
                 prot = 1; // 잠금!
                 setTimeout(() => {
                     prot = 0; // 잠금해제!
-                },400);
+                },700);
 
                 // 왼쪽클릭
                 if (idx === 0) {
@@ -163,21 +163,21 @@ window.addEventListener("DOMContentLoaded",()=>{
                     slide.style.transition = "none";
                     setTimeout(() => {
                         slide.style.left = "0";
-                        slide.style.transition = "left .4s ease-in-out";
+                        slide.style.transition = "left .7s cubic-bezier(0.38, 0.74, 0.39, 0.95)";
                     }, 0);
                 }
                 // 오른쪽클릭
                 else if (idx === 1) {
                     console.log("오른쪽")
                     slide.style.left = "-34%";
-                    slide.style.transition = "left .4s ease-in-out";
+                    slide.style.transition = "left .7s cubic-bezier(0.38, 0.74, 0.39, 0.95)";
     
                     // 슬라이드 이동 후
                     setTimeout(() => {
                         slide.appendChild(clist[0]);
                         slide.style.left = "0";
                         slide.style.transition = "none";
-                    },400);
+                    },700);
                     
                 }
             } ////////// click ///////////
