@@ -40,6 +40,7 @@ function chgImg() {
             // 변경할 이미지 주소 변수
             let src = "";
 
+            // 마우스엔터시 이미지 변경
             switch (idx) {
                 case 0 : src = `<img src="${newsData.news1.imgData}" alt="${newsData.news1.altData}">`; break;
                 case 1 : src = `<img src="${newsData.news2.imgData}" alt="${newsData.news2.altData}">`; break;
