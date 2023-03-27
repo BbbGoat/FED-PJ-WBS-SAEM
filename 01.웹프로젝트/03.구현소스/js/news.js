@@ -1,5 +1,5 @@
 // CJ now 페이지 모듈화 작업
-import { newsData } from "./newsData.js";
+import { newsData, csvData } from "./newsData.js";
 // console.log(newsData);
 
 // 대상수집
@@ -7,13 +7,13 @@ const newsList = document.querySelectorAll(".news_text ul li");
 const newsImg = document.querySelector(".news_img a");
 
 /**************************************** 
-    함수명: chgImg
+    함수명: chgNews
     기능:
     - 마우스엔터이벤트
     - 마우스오버시 타겟박스 내부 이미지 변경
 ****************************************/
 
-function chgImg() {
+function chgNews() {
     
     // 1. 텍스트 배열 순서대로 삽입
     newsList.forEach((ele,idx) => {
@@ -62,10 +62,10 @@ function chgImg() {
         
     }); ////////// forEach ////////////
     
-} /////////////// chgImg 함수 ////////////
+} /////////////// chgNews 함수 ////////////
 
 // 함수 최초호출!
-chgImg();
+chgNews();
 
 
 
@@ -82,3 +82,23 @@ function initMenu() {
     }); //////// forEach //////////
 } /////////// initMenu함수 ///////////
     
+
+/**************************************** 
+    함수명: chgCsv
+    기능: 이미지, 텍스트 배열대로 할당
+****************************************/
+
+
+function chgCsv() {
+    
+    // 대상수집
+    const slist = document.querySelectorAll("#slide li");
+    console.log(slist)
+
+    console.log(csvData);
+    
+
+}
+
+// 최초호출
+chgCsv();

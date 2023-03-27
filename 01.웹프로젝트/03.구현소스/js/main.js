@@ -129,38 +129,40 @@ window.addEventListener("DOMContentLoaded",()=>{
 
         // 슬라이드 개수
         let slideList = document.querySelectorAll("#slide li");
-        console.log(slideList);
+        // console.log(slideList);
 
         slideList.forEach((ele,idx) => {
             ele.setAttribute("data-seq",idx);
         }); ///// forEach ///////////////
        
 
-        let clist = slide.querySelectorAll("li");
-        console.log(clist);
         
         // 버튼 개수
         slideBtn.forEach((ele,idx) => {
             
             // 광클금지 변수
             let prot = 0;
-
+            
             ele.onclick = function(e) {
                 e.preventDefault();
                 // clearAuto();
-
+                
                 if (prot) return;
                 prot = 1; // 잠금!
                 setTimeout(() => {
                     prot = 0; // 잠금해제!
                 },700);
-
+                
                 // 왼쪽클릭
                 if (idx === 0) {
-                    console.log("왼쪽");
+                    // console.log("왼쪽");
+                    let clist = slide.querySelectorAll("li");
+                    // 맨 뒤 슬라이드 맨앞으로 이동
                     slide.insertBefore(clist[clist.length-1], clist[0]);
                     slide.style.left = "-34%";
                     slide.style.transition = "none";
+
+                    // 슬라이드 들어오기 설정
                     setTimeout(() => {
                         slide.style.left = "0";
                         slide.style.transition = "left .7s cubic-bezier(0.38, 0.74, 0.39, 0.95)";
@@ -168,40 +170,32 @@ window.addEventListener("DOMContentLoaded",()=>{
                 }
                 // 오른쪽클릭
                 else if (idx === 1) {
-                    console.log("오른쪽")
+                    // console.log("오른쪽")
+                    let clist = slide.querySelectorAll("li");
                     slide.style.left = "-34%";
                     slide.style.transition = "left .7s cubic-bezier(0.38, 0.74, 0.39, 0.95)";
     
-                    // 슬라이드 이동 후
+                    // 슬라이드 후 잘라내서 이동시키기
                     setTimeout(() => {
+                        // (2-1) 바깥에 나가있는 첫번째 슬라이드
+                        //       li를 잘라서 맨뒤로 보낸다!
+                        // 슬라이드li가 잘라내면 매번변경되므로
+                        // 새로읽어서 맨뒤로 이동한다!
                         slide.appendChild(clist[0]);
+                        // (2-2) 동시에 left값을 0으로 변경한다!
                         slide.style.left = "0";
+                        // (2-3) 트랜지션 없애기!
                         slide.style.transition = "none";
                     },700);
                     
                 }
+
+                
+
             } ////////// click ///////////
 
         }); /////////// forEach ////////////
     } /////////////// csvSlide 함수 ////////////////
-
-
-    function clearAuto() { 
-        console.log("인터발멈춰!");
-        // 1. 인터발 지우기
-        clearInterval(autoI);
-
-        // 2. 타임아웃도 지우지 않으면
-        // 쌓여서 타임아웃 쓰나미실행이 발생한다!
-        clearTimeout(autoT);
-        
-        // 3. 잠시후 다시 작동하도록 타임아웃으로
-        // 인터발함수를 호출한다!
-        // 5초후 (인터발은 3초후, 토탈 8초후 작동시작)
-        autoT = setTimeout(autoSlide,5000);
-
-        
-    } ////////////// clearAuto 함수 ////////////
 
 
     // 이벤트 등록 ///////////////////////////////////

@@ -26,4 +26,43 @@ const newsData = {
     },
 }
 
-export { newsData };
+const csvData = {
+    csv1 : {
+        imgData : "./images/slide1.png",
+        altData : "ESG이미지",
+        mt1 : "esg 지향점",
+        st1 : "지속 가능한 미래를 위한 esg 경영",
+    },
+    csv2 : {
+        imgData : "./images/slide2.png",
+        altData : "ESG이미지",
+        mt2 : "esg 지향점",
+        st2 : "지속 가능한 미래를 위한 esg 경영",
+    },
+    csv3 : {
+        imgData : "./images/slide3.png",
+        altData : "ESG이미지",
+        mt3 : "esg 지향점",
+        st3 : "지속 가능한 미래를 위한 esg 경영",
+    },
+    csv4 : {
+        imgData : "./images/slide4.png",
+        altData : "ESG이미지",
+        mt4 : "esg 지향점",
+        st4 : "지속 가능한 미래를 위한 esg 경영",
+    },
+    csv5 : {
+        imgData : "./images/slide5.png",
+        altData : "ESG이미지",
+        mt5 : "esg 지향점",
+        st5 : "지속 가능한 미래를 위한 esg 경영",
+    },
+    csv6 : {
+        imgData : "./images/slide6.png",
+        altData : "ESG이미지",
+        mt6 : "esg 지향점",
+        st6 : "지속 가능한 미래를 위한 esg 경영",
+    },
+}
+
+export { newsData, csvData };
