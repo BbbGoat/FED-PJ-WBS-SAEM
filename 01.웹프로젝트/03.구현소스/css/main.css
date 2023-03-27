@@ -469,13 +469,13 @@
 /* 이동버튼 공통 */
 .slide_btn {
     position: relative;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 /* 왼쪽버튼 */
 .sbtn1 {
     position: absolute;
-    left: 0;
-    /* right: 150px; */
+    /* left: 0; */
+    right: 120px;
 }
 /* 오른쪽버튼 */
 .sbtn2 {
@@ -502,7 +502,6 @@
     word-break: keep-all;
     /* border: 1px solid #ccc; */
 }
-
 
 
 

@@ -124,6 +124,9 @@ window.addEventListener("DOMContentLoaded",()=>{
     // 변경대상
     const slide = document.querySelector("#slide ul");
     const slideBtn = document.querySelectorAll(".slide_btn a");
+    
+    // 광클금지 변수
+    let prot = 0;
 
     function csvSlide() {
 
@@ -132,18 +135,15 @@ window.addEventListener("DOMContentLoaded",()=>{
         // 슬라이드 순번 확인용
         slideList.forEach((ele,idx) => {
             ele.setAttribute("data-seq",idx);
-        }); ///// forEach ///////////////       
+        }); ///// forEach ///////////////
 
         
         // 버튼 개수
         slideBtn.forEach((ele,idx) => {
             
-            // 광클금지 변수
-            let prot = 0;
             
             ele.onclick = function(e) {
                 e.preventDefault();
-                // clearAuto();
                 
                 if (prot) return;
                 prot = 1; // 잠금!
@@ -159,20 +159,22 @@ window.addEventListener("DOMContentLoaded",()=>{
                     slide.insertBefore(clist[clist.length-1], clist[0]);
                     slide.style.left = "-34%";
                     slide.style.transition = "none";
-
+                    
                     // 슬라이드 들어오기 설정
                     setTimeout(() => {
                         slide.style.left = "0";
                         slide.style.transition = "left .7s cubic-bezier(0.38, 0.74, 0.39, 0.95)";
                     }, 0);
+                    
                 }
                 // 오른쪽클릭
                 else if (idx === 1) {
+
                     // console.log("오른쪽")
                     let clist = slide.querySelectorAll("li");
                     slide.style.left = "-34%";
                     slide.style.transition = "left .7s cubic-bezier(0.38, 0.74, 0.39, 0.95)";
-    
+                    
                     // 슬라이드 후 잘라내서 이동시키기
                     setTimeout(() => {
                         // (2-1) 바깥에 나가있는 첫번째 슬라이드
@@ -191,6 +193,8 @@ window.addEventListener("DOMContentLoaded",()=>{
 
         }); /////////// forEach ////////////
     } /////////////// csvSlide 함수 ////////////////
+
+    setInterval(csvSlide(),1000);
 
 
     // 이벤트 등록 ///////////////////////////////////
