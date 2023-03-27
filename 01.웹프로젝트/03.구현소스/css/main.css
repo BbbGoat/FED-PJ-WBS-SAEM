@@ -442,7 +442,7 @@
     box-sizing: border-box;
     overflow: hidden;
     
-    background: palevioletred;
+    /* background: palevioletred; */
 }
 /* 사진을 싸고 있는 슬라이드 영역 */
 #slide ul {
@@ -481,6 +481,26 @@
 .sbtn2 {
     position: absolute;
     right: 0;
+}
+
+#slide ul li h3 {
+    position: absolute;
+    top: 22px;
+    margin-left: 35px;
+    font-size: 32px;
+    font-family: CJONLYONENEW_bold;
+    color: #1e2129b4;
+}
+#slide ul li p {
+    position: absolute;
+    width: 150px;
+    line-height: 1.5;
+    top: 72px;
+    margin-left: 35px;
+    font-size: 18px;
+    color: rgba(58, 58, 58, 0.815);
+    word-break: keep-all;
+    /* border: 1px solid #ccc; */
 }
 
 

@@ -88,16 +88,28 @@ function initMenu() {
     기능: 이미지, 텍스트 배열대로 할당
 ****************************************/
 
+// 대상수집
+const slide = document.querySelector("#slide ul");
+
 
 function chgCsv() {
     
-    // 대상수집
-    const slist = document.querySelectorAll("#slide li");
-    console.log(slist)
-
-    console.log(csvData);
     
-
+    // console.log(csv1["imgData"]);
+    // console.log(Object.keys(csvData).length)
+    let maxlength = Object.keys(csvData).length;
+    
+    for (let i = 0; i < maxlength; i++) {
+        let num = i+1;
+        let csv = csvData["csv"+num];
+        slide.innerHTML += `
+            <li>
+                <img src="${csv.imgData}" alt="${csv.altData}">
+                <h3>${csv["mt"+num]}</h3>
+                <p>${csv["st"+num]}</p>
+            </li>
+        `;
+    }
 }
 
 // 최초호출

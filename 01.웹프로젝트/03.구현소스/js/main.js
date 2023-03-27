@@ -129,12 +129,10 @@ window.addEventListener("DOMContentLoaded",()=>{
 
         // 슬라이드 개수
         let slideList = document.querySelectorAll("#slide li");
-        // console.log(slideList);
-
+        // 슬라이드 순번 확인용
         slideList.forEach((ele,idx) => {
             ele.setAttribute("data-seq",idx);
-        }); ///// forEach ///////////////
-       
+        }); ///// forEach ///////////////       
 
         
         // 버튼 개수
@@ -186,13 +184,10 @@ window.addEventListener("DOMContentLoaded",()=>{
                         slide.style.left = "0";
                         // (2-3) 트랜지션 없애기!
                         slide.style.transition = "none";
-                    },700);
-                    
+                    },700);   
                 }
 
-                
-
-            } ////////// click ///////////
+            }; ////////// click ///////////
 
         }); /////////// forEach ////////////
     } /////////////// csvSlide 함수 ////////////////
