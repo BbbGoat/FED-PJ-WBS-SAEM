@@ -128,7 +128,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     // 광클금지 변수
     let prot = 0;
 
-    function csvSlide() {
+    function csvSlide(seq) {
 
         // 슬라이드 개수
         let slideList = document.querySelectorAll("#slide li");
@@ -169,12 +169,12 @@ window.addEventListener("DOMContentLoaded",()=>{
                 }
                 // 오른쪽클릭
                 else if (idx === 1) {
-
                     // console.log("오른쪽")
                     let clist = slide.querySelectorAll("li");
                     slide.style.left = "-34%";
                     slide.style.transition = "left .7s cubic-bezier(0.38, 0.74, 0.39, 0.95)";
-                    
+                         
+
                     // 슬라이드 후 잘라내서 이동시키기
                     setTimeout(() => {
                         // (2-1) 바깥에 나가있는 첫번째 슬라이드
@@ -185,16 +185,14 @@ window.addEventListener("DOMContentLoaded",()=>{
                         // (2-2) 동시에 left값을 0으로 변경한다!
                         slide.style.left = "0";
                         // (2-3) 트랜지션 없애기!
-                        slide.style.transition = "none";
+                        slide.style.transition = "none";       
                     },700);   
                 }
 
             }; ////////// click ///////////
 
         }); /////////// forEach ////////////
-    } /////////////// csvSlide 함수 ////////////////
-
-    setInterval(csvSlide(),1000);
+    } /////////////// csvSlide 함수 ////////////////        
 
 
     // 이벤트 등록 ///////////////////////////////////
