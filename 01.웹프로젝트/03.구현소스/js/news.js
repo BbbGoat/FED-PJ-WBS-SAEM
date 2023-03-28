@@ -12,6 +12,7 @@ const newsImg = document.querySelector(".news_img a");
     - 마우스엔터이벤트
     - 마우스오버시 타겟박스 내부 이미지 변경
 ****************************************/
+const news = document.querySelector(".news_img");
 
 function chgNews() {
     
@@ -57,6 +58,7 @@ function chgNews() {
             // 클래스 on 초기화함수 호출
             initMenu();
             this.classList.add("on");
+
             
         }; //// mouseenter 이벤트 ////
         
@@ -70,8 +72,8 @@ chgNews();
 
 
 /************************************** 
-    클래스 초기화 함수 : 처음상태로 돌림
-**************************************/
+ 클래스 초기화 함수 : 처음상태로 돌림
+ **************************************/
 
 function initMenu() { 
     // 각 li요소마다 클래스 remove 해주기
