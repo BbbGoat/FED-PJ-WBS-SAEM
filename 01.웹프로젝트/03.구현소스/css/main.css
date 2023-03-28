@@ -179,23 +179,23 @@
 .area_box {
     position: relative;
     display: flex;
-    gap: 0 150px;
+    gap: 0 10%;
     /* justify-content: space-between; */
     flex-wrap: nowrap;
     margin: 100px 0 0;
 }
-.area_box.reverse {
+.reverse {
     flex-direction: row-reverse;
 }
-.area_box.reverse .img_area {
+.reverse .img_area {
     margin-left: auto;
     margin-right: 30px;
 }
-.area_box.reverse .thumb {
+.reverse .thumb {
     left: auto;
     right: 270px;
 }
-.area_box.reverse .sticker {
+.reverse .sticker {
     left: auto;
     right: 270px;
 }
@@ -259,7 +259,7 @@
 
 /* 텍스트 박스 */
 .text_area {
-    margin: 80px 0 0 50px;
+    margin: 10% 0 0 10%;
     white-space: nowrap;
     /* opacity: 0; */
 }

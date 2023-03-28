@@ -100,10 +100,6 @@ window.addEventListener("DOMContentLoaded",()=>{
         clearInterval()
 
     }); ///////////// timeupdate 이벤트 ////////////
-    
-    
-    // 비디오 끝났을 때 발생하는 이벤트
-    // video.addEventListener('ended', function(e) {});
 
 
 });///////////// load ////////////////////////////

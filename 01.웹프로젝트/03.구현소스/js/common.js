@@ -101,6 +101,33 @@ function loadFn() {
         
     }); //////////// scroll 이벤트 ///////////////
 
+
+    /********************************************* 
+        함수명: snsLink
+        기능: SNS 이동 링크
+    *********************************************/
+    function snsLink() {
+        const sns = document.querySelectorAll(".sns a");
+
+        sns.forEach((ele) => {
+
+            // console.log(ele.title);
+
+            switch(ele.title) {
+                case "페이스북" : golink = "https://www.facebook.com/enjoyCJ/"; break;
+                case "유투브" : golink = "https://www.youtube.com/user/enjoyCJ"; break;
+                case "뉴스룸" : golink = "https://cjnews.cj.net/"; break;
+                case "네이버 포스트" : golink = "https://post.naver.com/channelcj/"; break;
+                case "링크드인" : golink = "https://kr.linkedin.com/company/cj-corporation"; break;
+            }
+            ele.href = golink;
+
+            
+        }); ////// forEach //////////
+    } /////////// snsLink 함수 ////////////////
+        
+    snsLink();
+
 } ////////////////  loadFn 함수 //////////////////
 
 window.addEventListener("DOMContentLoaded", loadFn);
