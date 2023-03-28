@@ -94,7 +94,6 @@ const slide = document.querySelector("#slide ul");
 
 function chgCsv() {
     
-    
     // console.log(csv1["imgData"]);
     // console.log(Object.keys(csvData).length)
     let maxlength = Object.keys(csvData).length;

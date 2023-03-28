@@ -7,15 +7,15 @@
 
 /* CJONLYONE체 */
 @font-face {
-    font-family: CJONLYONENEW;
+    font-family: CJONLYONENEW_L;
     src: url(../fonts/CJONLYONENEWbodyLight_11172.woff2) format("woff");
 }
-/* @font-face {
+@font-face {
     font-family: CJONLYONENEW_R;
     src: url(../fonts/CJONLYONENEWbodyRegular_11172.woff2) format("woff");
-} */
+}
 @font-face {
-    font-family: CJONLYONENEW_BOLD;
+    font-family: CJONLYONENEW_B;
     src: url(../fonts/CJONLYONENEWtitleBold_11172.woff2) format("woff");
 }
 /* Noto sans kr */
@@ -23,7 +23,7 @@
 
 
 /* 
-    font-family: CJONLYONENEW, 'Noto Sans KR', sans-serif;
+    font-family: CJONLYONENEW_L, 'Noto Sans KR', sans-serif;
     font-family: CJONLYONENEW;
     font-family: 'Noto Sans KR', sans-serif;
 */
@@ -88,9 +88,9 @@ body * {
 
 /* IR클래스 */
 /* 배경이미지 설명클래스 (Image Replacement) */
-/* .ir{
+.ir{
     display: block;
     width: 0;
     height: 0;
     overflow: hidden;
-} */
+}

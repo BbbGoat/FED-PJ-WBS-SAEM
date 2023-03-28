@@ -11,7 +11,7 @@
 .sec {
     position: relative;
     width: 100%;
-    font-family: CJONLYONENEW;
+    font-family: CJONLYONENEW_L;
 }
 /* 섹션 감싸기박스 공통 */
 .wrap {
@@ -145,7 +145,7 @@
 }
 .title_area h3 {
     font-size: 50px;
-    font-family: CJONLYONENEW_BOLD;
+    font-family: CJONLYONENEW_B;
     /* text-align: center; */
 }
 .title_area p {
@@ -488,7 +488,7 @@
     top: 22px;
     margin-left: 35px;
     font-size: 32px;
-    font-family: CJONLYONENEW_bold;
+    font-family: CJONLYONENEW_B;
     color: #1e2129b4;
 }
 #slide ul li p {

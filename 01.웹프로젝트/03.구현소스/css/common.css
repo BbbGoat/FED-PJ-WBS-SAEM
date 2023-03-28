@@ -120,7 +120,7 @@
     height: 90px;
 
     /* 폰트설정 */
-    font-family: CJONLYONENEW;
+    font-family: CJONLYONENEW_R;
     font-size: 18px;
     white-space: nowrap;
 }
@@ -200,7 +200,7 @@
     position: absolute;
     top: 70px;
     font-size: 16px;
-    font-weight: 400;
+    font-family: CJONLYONENEW_L;
     transition: top 0.3s ease-out;
 }
 .depth2 > li:first-child {
@@ -301,13 +301,6 @@
     color: #000;
 }
 
-/************** footer **************/
-#info {
-    position: relative;
-    background: #fff;
-}
-
-
 /******************** 2. 메인영역 ********************/
 /* 속박스 셋팅 */
 .cont {
@@ -319,6 +312,98 @@
 /******************** 3. 하단영역 ********************/
 /* 속박스 셋팅 */
 .info {
-    /* 최소높이 */
-    min-height: 900px;
+    position: relative;
+    background: #fff;
+    border-top: 1px solid #e3e3e3;
+}
+.info .wrap {
+    padding: 50px 0;
+}
+
+/* dep 1 */
+.site_area {
+    font-family: CJONLYONENEW_L;
+    position: relative;
+}
+.sitemap {
+    display: flex;
+    justify-content: space-between;
+
+    font-family: CJONLYONENEW_R;
+    font-size: 16px;
+}
+.map_list {
+    padding-top: 20px;
+    line-height: 2.5;
+    font-family: CJONLYONENEW_L;
+    font-size: 14px;
+}
+
+/* dep 2 */
+.area_policy {
+    position: relative;
+    padding-top: 30px;
+}
+.area_policy a {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 12px;
+}
+.area_policy a + a {
+    margin-left: 20px;
+}
+.privacy {
+    color: #006ecd;
+}
+
+/* dep 3 */
+.area_copy {
+    display: flex;
+    justify-content: space-between;
+    height: 32px;
+    padding-top: 16px;
+}
+.copyright {
+    line-height: 32px;
+    font-size: 12px;
+}
+.sns {
+    display: flex;
+    gap: 15px;
+}
+.sns a:nth-child(1) {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url(../images/footer_facebook.png) no-repeat center top;
+    background-size: 100% auto;
+}
+.sns a:nth-child(2) {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url(../images/footer_youtube.png) no-repeat center top;
+    background-size: 100% auto;
+}
+.sns a:nth-child(3) {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url(../images/footer_news.png) no-repeat center top;
+    background-size: 100% auto;
+}
+.sns a:nth-child(4) {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url(../images/footer_naver.png) no-repeat center top;
+    background-size: 100% auto;
+}
+.sns a:nth-child(5) {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url(../images/footer_in.png) no-repeat center top;
+    background-size: 100% auto;
 }
