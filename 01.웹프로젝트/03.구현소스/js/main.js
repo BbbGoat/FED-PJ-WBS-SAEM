@@ -10,6 +10,14 @@ window.addEventListener("DOMContentLoaded",()=>{
     const video = document.querySelectorAll("#video");
     const svg1 = document.querySelector(".svg1");
     const svg2 = document.querySelector(".svg2");
+    
+    // 변경대상
+    const logBan = document.querySelectorAll(".log a");
+   
+    // 변경대상
+    const slide = document.querySelector("#slide ul");
+    const slideBtn = document.querySelectorAll(".slide_btn a");
+    
 
     /******************************************* 
         함수명: vidClick
@@ -99,11 +107,8 @@ window.addEventListener("DOMContentLoaded",()=>{
         함수명: logSetban
         기능: cjlog 배너 이미지 자동셋팅
     *******************************************/
-
-    // 변경대상
-    const logBan = document.querySelectorAll(".log a");
-
-    function logSetban() {
+   
+   function logSetban() {
 
         // 이미지 갯수만큼 배너 이미지 주소 변경
         logBan.forEach((ele,idx,obj) => {
@@ -115,92 +120,120 @@ window.addEventListener("DOMContentLoaded",()=>{
     } ///////////// logSetban 함수 ///////////////////
 
 
+    // 광클금지 변수
+    let prot = 0;
     
     /******************************************* 
         함수명: csvSlide
         기능: 버튼 클릭시 이미지 슬라이드
     *******************************************/
 
-    // 변경대상
-    const slide = document.querySelector("#slide ul");
-    const slideBtn = document.querySelectorAll(".slide_btn a");
-    
-    // 광클금지 변수
-    let prot = 0;
-
     function csvSlide(seq) {
+        // console.log("슬라이드 시작",seq)
 
-        // 슬라이드 개수
-        let slideList = document.querySelectorAll("#slide li");
-        // 슬라이드 순번 확인용
-        slideList.forEach((ele,idx) => {
-            ele.setAttribute("data-seq",idx);
-        }); ///// forEach ///////////////
-
+        // 광클금지 설정
+        if (prot) return;
+        prot = 1; // 잠금!
+        setTimeout(() => {
+            prot = 0; // 잠금해제!
+        },700);
         
-        // 버튼 개수
-        slideBtn.forEach((ele,idx) => {
+        // 현재 상태로 업데이트된 슬라이드 li를 수집
+        let clist = slide.querySelectorAll("li");
+        
+        // 오른쪽클릭
+        if (seq) {
+            // 왼쪽으로 이동
+            slide.style.left = "-34%";
+            slide.style.transition = "left .7s cubic-bezier(0.38, 0.74, 0.39, 0.95)";
+
+            // 슬라이드 후 잘라내서 이동시키기
+            setTimeout(() => {
+                // (2-1) 바깥에 나가있는 첫번째 슬라이드
+                //       li를 잘라서 맨뒤로 보낸다!
+                // 슬라이드li가 잘라내면 매번변경되므로
+                // 새로읽어서 맨뒤로 이동한다!
+                slide.appendChild(clist[0]);
+                // (2-2) 동시에 left값을 0으로 변경한다!
+                slide.style.left = "0";
+                // (2-3) 트랜지션 없애기!
+                slide.style.transition = "none";       
+            },700);  
+        } // if
+
+        // 왼쪽클릭
+        else {
+            // 오른쪽 마지막 슬라이드 왼쪽 첫번째로 이동
+            slide.insertBefore(clist[clist.length-1], clist[0]);
+            slide.style.left = "-34%";
+            slide.style.transition = "none";
             
-            
-            ele.onclick = function(e) {
-                e.preventDefault();
-                
-                if (prot) return;
-                prot = 1; // 잠금!
-                setTimeout(() => {
-                    prot = 0; // 잠금해제!
-                },700);
-                
-                // 왼쪽클릭
-                if (idx === 0) {
-                    // console.log("왼쪽");
-                    let clist = slide.querySelectorAll("li");
-                    // 맨 뒤 슬라이드 맨앞으로 이동
-                    slide.insertBefore(clist[clist.length-1], clist[0]);
-                    slide.style.left = "-34%";
-                    slide.style.transition = "none";
-                    
-                    // 슬라이드 들어오기 설정
-                    setTimeout(() => {
-                        slide.style.left = "0";
-                        slide.style.transition = "left .7s cubic-bezier(0.38, 0.74, 0.39, 0.95)";
-                    }, 0);
-                    
-                }
-                // 오른쪽클릭
-                else if (idx === 1) {
-                    // console.log("오른쪽")
-                    let clist = slide.querySelectorAll("li");
-                    slide.style.left = "-34%";
-                    slide.style.transition = "left .7s cubic-bezier(0.38, 0.74, 0.39, 0.95)";
-                         
+            // 슬라이드 들어오기 설정
+            setTimeout(() => {
+                slide.style.left = "0";
+                slide.style.transition = "left .7s cubic-bezier(0.38, 0.74, 0.39, 0.95)";
+            }, 0); 
+        } // else
 
-                    // 슬라이드 후 잘라내서 이동시키기
-                    setTimeout(() => {
-                        // (2-1) 바깥에 나가있는 첫번째 슬라이드
-                        //       li를 잘라서 맨뒤로 보낸다!
-                        // 슬라이드li가 잘라내면 매번변경되므로
-                        // 새로읽어서 맨뒤로 이동한다!
-                        slide.appendChild(clist[0]);
-                        // (2-2) 동시에 left값을 0으로 변경한다!
-                        slide.style.left = "0";
-                        // (2-3) 트랜지션 없애기!
-                        slide.style.transition = "none";       
-                    },700);   
-                }
+    } /////////////// csvSlide 함수 ////////////////       
 
-            }; ////////// click ///////////
+    // 버튼에 클릭 이벤트 설정하기 개수만큼
+    slideBtn.forEach((ele,idx) => {
+        ele.onclick = () => {
+            event.preventDefault();
+            // 초기화
+            clearAuto();
+            // 슬라이드 재시작
+            csvSlide(idx);
+        }; ////////// click ///////////
+    }); /////////// forEach ////////////
+    
+    // 슬라이드 순번 확인용 번호 생성
+    let slideList = document.querySelectorAll("#slide li");
+    slideList.forEach((ele,idx) => {
+        ele.setAttribute("data-seq",idx);
+    }); ///// forEach ///////////////
+    
+    
+    /******************************************* 
+        함수명: autoSlide
+        기능: 인터발함수로 슬라이드함수 호출
+    *******************************************/
 
-        }); /////////// forEach ////////////
-    } /////////////// csvSlide 함수 ////////////////        
+    // 인터발함수 지우기위한 변수
+    let autoI;
+    // 타임아웃함수 지우기위한 변수
+    let autoT;
+
+    function autoSlide() {
+        // console.log("인터발시작!");
+        // DOM로딩후 인터발함수로 슬라이드함수 최초호출하기
+        autoI = setInterval(() => csvSlide(1), 3000); // 3초마다
+    } ///////////// autoSlide 함수 /////////////
+
+    /******************************************* 
+        함수명: clearAuto
+        기능: 인터발함수를 지우고 다시 셋팅
+    *******************************************/
+    function clearAuto() { 
+        // console.log("인터발멈추기");
+        // 인터발 / 타임아웃 초기화!
+        clearInterval(autoI);
+        clearTimeout(autoT);
+        
+        // 잠시후 다시 작동하도록 타임아웃으로 재호출
+        autoT = setTimeout(autoSlide,1000);
+        
+    } ////////////// clearAuto 함수 ////////////
 
 
     // 이벤트 등록 ///////////////////////////////////
 
-    slide.addEventListener("click",csvSlide());
+
+    // slide.addEventListener("click",csvSlide());
     circleTimer.addEventListener("click", vidClick());
     videoBox.addEventListener("timeupdate",vidTimer());
-    document.addEventListener("DOMContentLoaded", logSetban());
+    document.addEventListener("DOMContentLoaded", logSetban(), autoSlide());
 
 });///////////// load ////////////////////////////
 
