@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* 미디어쿼리 CSS - media.css */
+
+
+/* 1100px 이하 */
+@media screen and (max-width: 1100px) {
+    .wrap{
+        max-width: 90vw;
+    }
+    .morebtn {
+        /* margin-right: 20px; */
+    }
+
+
+    /* section1 - livenewcj*/
+    .img_area {
+        margin-left: 2vw;
+    }
+    .reverse .img_area {
+        margin-left: auto;
+        margin-right: 2vw;
+    }
+    .text_area {
+        margin: 10% 0 0 6%;
+    }
+    .reverse .text_area {
+        margin: 10% 0 0 6%;
+    }
+    .thumb {
+        left: 235px;
+    }
+    .sticker {
+        left: 235px;
+    }
+    .reverse .thumb {
+        right: 235px;
+    }
+    .reverse .sticker {
+        right: 235px;
+    }
+
+    
+    /* section2 - cjnow */
+
+    .news_text a {
+        /* 클릭이벤트 꺼놓기 */
+        pointer-events: none;
+    }
+    
+    
+}
+/* 1100px 끝 */
+
+
+
+/* 820px 이하 */
+@media screen and (max-width: 820px) {
+    .area_box {
+        /* gap: 0; */
+    }
+    .text_area {
+        /* margin: 10% 0 0 10%; */
+    }
+    .vid {
+        width: 290px;
+        height: 420px;
+    }
+    .thumb {
+        top: 270px;
+        left: 220px;
+    }
+    .sticker {
+        top: 200px;
+        left: 220px;
+    }
+    .thumb img {
+        width: 140px;
+    }
+    .sticker img {
+        width: 140px;
+    }
+    .reverse .thumb {
+        right: 220px;
+    }
+    .reverse .sticker {
+        right: 180px;   
+    }
+}
+/* 820px 끝 */
+
+
+
+/* 650px 이하 - 모바일 */
+@media screen and (max-width: 650px) {
+    
+}
+/* 650px 끝 */
