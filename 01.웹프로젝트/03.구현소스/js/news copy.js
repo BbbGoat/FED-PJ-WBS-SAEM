@@ -18,98 +18,97 @@ const mobileImg = document.querySelectorAll(".set");
     - 마우스오버시 타겟박스 내부 이미지 변경
 ****************************************/
 
-
 function chgNews() {
-    const txtData = newsData.news0    
-    // 1. 데스크탑 텍스트 셋팅
-    setText(newsList);
-    // 2. 데스크탑 이미지 셋팅
+    
+    // 1. 텍스트 배열 순서대로 삽입
     newsList.forEach((ele,idx) => {
-        const txtDat = [newsData["news"+idx]["txtData"]];
+
         // 변경할 텍스트 변수
-        let txt = txtDat;
+        let txt = "";
+
+        switch (idx) {
+            case 0 : txt = `<a href="#">${newsData.news1.txtData}</a>`; break;
+            case 1 : txt = `<a href="#">${newsData.news2.txtData}</a>`; break;
+            case 2 : txt = `<a href="#">${newsData.news3.txtData}</a>`; break;
+            case 3 : txt = `<a href="#">${newsData.news4.txtData}</a>`; break;
+            case 4 : txt = `<a href="#">${newsData.news5.txtData}</a>`; break;
+        }        
         // 텍스트 출력
         ele.innerHTML = txt;
-        
-        // 마우스엔터 이벤트
+
+        // 2. 마우스엔터 이벤트설정
         ele.onmouseenter = function() {
             event.preventDefault();
-            const imgData = newsData["news"+idx]["imgData"];
-            const altData = newsData["news"+idx]["altData"];
-            console.log(imgData, altData);
 
             // 변경할 이미지 주소 변수
             let src = "";
+
             // 마우스엔터시 이미지 변경
-            src = `<img src="${imgData}" alt="${altData}">`
+            switch (idx) {
+                case 0 : src = `<img src="${newsData.news1.imgData}" alt="${newsData.news1.altData}">`; break;
+                case 1 : src = `<img src="${newsData.news2.imgData}" alt="${newsData.news2.altData}">`; break;
+                case 2 : src = `<img src="${newsData.news3.imgData}" alt="${newsData.news3.altData}">`; break;
+                case 3 : src = `<img src="${newsData.news4.imgData}" alt="${newsData.news4.altData}">`; break;
+                case 4 : src = `<img src="${newsData.news5.imgData}" alt="${newsData.news5.altData}">`; break;
+            }
 
             // 이미지 출력
             newsImg.innerHTML = src;
+            
 
             // 3. 마우스 엔터시 클래스 on 넣기/빼기
             // 클래스 on 초기화함수 호출
             initMenu();
             this.classList.add("on");
+
             
         }; //// mouseenter 이벤트 ////
         
     }); ////////// forEach ////////////
 
 
-    
-    // 1. 모바일버전 텍스트 셋팅
-    setText(newsListM);
-    // 클릭이벤트 클래스 on 막기
-    for (let x of newsListM) {
-        x.onclick = () => {
+    // 모바일버전 텍스트 셋팅
+    newsListM.forEach((ele,idx)=>{
+         // 변경할 텍스트 변수
+         let txt = "";
+         switch (idx) {
+            case 0 : txt = `<a href="#">${newsData.news1.txtData}</a>`; break;
+            case 1 : txt = `<a href="#">${newsData.news2.txtData}</a>`; break;
+            case 2 : txt = `<a href="#">${newsData.news3.txtData}</a>`; break;
+            case 3 : txt = `<a href="#">${newsData.news4.txtData}</a>`; break;
+            case 4 : txt = `<a href="#">${newsData.news5.txtData}</a>`; break;
+        }        
+        
+        // 텍스트 출력
+        ele.innerHTML = txt;
+
+        // 클릭이벤트 클래스 on 막기
+        ele.onclick = () => {
             initMenu();
         };
-    }
+    });
     
-    // 2. 모바일버전 이미지 셋팅
-    setImg(mobileImg);
-    
-    
-} /////////////// chgNews 함수 ////////////
-
-function setText(obj) {
-    // 모바일버전 텍스트 셋팅
-    obj.forEach((ele,idx)=>{
-        // 변경할 텍스트 변수
-        let txt = "";
-    //     switch (idx) {
-    //        case 0 : txt = `<a href="#">${newsData.news1.txtData}</a>`; break;
-    //        case 1 : txt = `<a href="#">${newsData.news2.txtData}</a>`; break;
-    //        case 2 : txt = `<a href="#">${newsData.news3.txtData}</a>`; break;
-    //        case 3 : txt = `<a href="#">${newsData.news4.txtData}</a>`; break;
-    //        case 4 : txt = `<a href="#">${newsData.news5.txtData}</a>`; break;
-    //    }        
-       
-       // 텍스트 출력
-       ele.innerHTML = txt;
-
-   });
-} /////////////// setText 함수 //////////////////
-
-function setImg(obj) {
-    obj.forEach((ele,idx)=>{
+    // 모바일버전 이미지 셋팅
+    mobileImg.forEach((ele,idx) => {
         
         // 변경할 이미지 주소 변수
         let src = "";
 
         // 마우스엔터시 이미지 변경
-        // switch (idx) {
-        //     case 0 : src = `<img src="${newsData.news1.imgData}" alt="${newsData.news1.altData}">`; break;
-        //     case 1 : src = `<img src="${newsData.news2.imgData}" alt="${newsData.news2.altData}">`; break;
-        //     case 2 : src = `<img src="${newsData.news3.imgData}" alt="${newsData.news3.altData}">`; break;
-        //     case 3 : src = `<img src="${newsData.news4.imgData}" alt="${newsData.news4.altData}">`; break;
-        //     case 4 : src = `<img src="${newsData.news5.imgData}" alt="${newsData.news5.altData}">`; break;
-        // }
-    
+        switch (idx) {
+            case 0 : src = `<img src="${newsData.news1.imgData}" alt="${newsData.news1.altData}">`; break;
+            case 1 : src = `<img src="${newsData.news2.imgData}" alt="${newsData.news2.altData}">`; break;
+            case 2 : src = `<img src="${newsData.news3.imgData}" alt="${newsData.news3.altData}">`; break;
+            case 3 : src = `<img src="${newsData.news4.imgData}" alt="${newsData.news4.altData}">`; break;
+            case 4 : src = `<img src="${newsData.news5.imgData}" alt="${newsData.news5.altData}">`; break;
+        }
+
         // 이미지 출력
         ele.innerHTML = src;
-    });
-}
+    })
+    
+    
+} /////////////// chgNews 함수 ////////////
 
 // 함수 최초호출!
 chgNews();

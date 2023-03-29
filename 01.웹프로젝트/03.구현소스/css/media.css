@@ -42,7 +42,7 @@
     
     /* section2 - cjnow */
 
-    .news_text a {
+    .news_text li > a {
         /* 클릭이벤트 꺼놓기 */
         pointer-events: none;
     }
@@ -55,6 +55,7 @@
 
 /* 820px 이하 */
 @media screen and (max-width: 820px) {
+    /* section1 - livenewcj */
     .area_box {
         /* gap: 0; */
     }
@@ -85,6 +86,28 @@
     .reverse .sticker {
         right: 180px;   
     }
+
+    /* section2 - cjnow */
+
+    .news_area {
+        flex-direction: column;
+    }
+    .news_img {
+        /* aspect-ratio: 16/9; */
+        /* width: 680px; */
+        height: 310px;
+    }
+    .news_text {
+        width: auto;
+    }
+    .news_text ul li a::after {
+        margin-top: 14px;
+    }
+    .news_text ul li.on::after {
+        height: 33px;
+    }
+
+    
 }
 /* 820px 끝 */
 
@@ -92,6 +115,15 @@
 
 /* 650px 이하 - 모바일 */
 @media screen and (max-width: 650px) {
+    
+    /* pc */
+    .news_area {
+        display: none;
+    }
+    /* 모바일 */
+    #mob.news_area {
+        display: flex;
+    }
     
 }
 /* 650px 끝 */
