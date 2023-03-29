@@ -1,7 +1,5 @@
 // CJ now 페이지 모듈화 작업
 import { newsData, csvData } from "./newsData.js";
-// console.log(newsData);
-
 
 // 슬라이드배너 대상수집
 const slide = document.querySelector("#slide ul");
@@ -13,10 +11,12 @@ const newsImg = document.querySelector(".news_img a");
 const mobileList = document.querySelectorAll(".news_text2 ul li");
 const mobileImg = document.querySelectorAll(".set");
 
+
+
 /**************************************** 
     함수명: chgNews
     기능:
-    - 마우스엔터이벤트
+    - 마우스엔터이벤트 사용
     - 마우스오버시 타겟박스 내부 이미지 변경
 ****************************************/
 function chgNews() {
@@ -54,22 +54,25 @@ function chgNews() {
     
 } /////////////// chgNews 함수 ////////////
 
+/************************************** 
+    함수명: setNewTxt
+    기능: cjnow 텍스트란 배열값으로 자동세팅
+**************************************/
+
 function setNewsTxt(obj) {
     obj.forEach((ele,idx) => {
         const txtDate = newsData["news"+idx]["txtData"];
         // 1. 데스크탑 텍스트 세팅
         ele.innerHTML = `<a href="#">${txtDate}</a>`;
     });
-}
-
-// 함수 최초호출!
-chgNews();
+} ////////// setNewsTxt 함수 /////////////
 
 
 
 /************************************** 
- 클래스 초기화 함수 : 처음상태로 돌림
- **************************************/
+    함수명: initMenu
+    클래스 초기화 함수 - 처음상태로 돌림
+**************************************/
 
 function initMenu() { 
     // 각 li요소마다 클래스 remove 해주기
@@ -103,7 +106,9 @@ function chgCsv() {
             </li>
         `;
     }
-}
+} /////////// chgCsv 함수 /////////////////
 
-// 최초호출
+
+// 함수 최초호출!
+chgNews();
 chgCsv();
