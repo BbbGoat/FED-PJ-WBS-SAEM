@@ -86,17 +86,15 @@ function initMenu() {
 
 /**************************************** 
     함수명: chgCsv
-    기능: 이미지, 텍스트 배열대로 할당
+    기능: 이미지, 텍스트 배열대로 세팅
 ****************************************/
 
 function chgCsv() {
     
-    // console.log(csv1["imgData"]);
-    // console.log(Object.keys(csvData).length)
     let maxlength = Object.keys(csvData).length;
     
     for (let i = 0; i < maxlength; i++) {
-        let num = i+1;
+        let num = i;
         let csv = csvData["csv"+num];
         slide.innerHTML += `
             <li>

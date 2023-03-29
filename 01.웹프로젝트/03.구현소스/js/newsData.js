@@ -27,41 +27,41 @@ const newsData = {
 }
 
 const csvData = {
-    csv1 : {
+    csv0 : {
         imgData : "./images/slide1.png",
         altData : "ESG 지향점",
-        mt1 : "ESG 지향점",
-        st1 : "지속 가능한 미래를 위한 ESG 경영",
+        mt0 : "ESG 지향점",
+        st0 : "지속 가능한 미래를 위한 ESG 경영",
     },
-    csv2 : {
+    csv1 : {
         imgData : "./images/slide2.png",
         altData : "ESG 성과",
-        mt2 : "ESG 성과",
-        st2 : "ESG 경영의 선도 사례로 자리매김",
+        mt1 : "ESG 성과",
+        st1 : "ESG 경영의 선도 사례로 자리매김",
     },
-    csv3 : {
+    csv2 : {
         imgData : "./images/slide3.png",
         altData : "ESG 보고서",
-        mt3 : "ESG 보고서",
-        st3 : "ESG 경영의 의지와 방향성",
+        mt2 : "ESG 보고서",
+        st2 : "ESG 경영의 의지와 방향성",
     },
-    csv4 : {
+    csv3 : {
         imgData : "./images/slide4.png",
         altData : "윤리경영",
-        mt4 : "윤리경영",
-        st4 : "투명하고 공정한 기업 활동",
+        mt3 : "윤리경영",
+        st3 : "투명하고 공정한 기업 활동",
     },
-    csv5 : {
+    csv4 : {
         imgData : "./images/slide5.png",
         altData : "CJ나눔재단",
-        mt5 : "CJ나눔재단",
-        st5 : "사람을 키우고 나라를 키우는 나눔",
+        mt4 : "CJ나눔재단",
+        st4 : "사람을 키우고 나라를 키우는 나눔",
     },
-    csv6 : {
+    csv5 : {
         imgData : "./images/slide6.png",
         altData : "CJ문화재단",
-        mt6 : "CJ문화재단",
-        st6 : "젊은 창작자들의 든든한 꿈지기",
+        mt5 : "CJ문화재단",
+        st5 : "젊은 창작자들의 든든한 꿈지기",
     },
 }
 

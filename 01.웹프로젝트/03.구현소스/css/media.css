@@ -43,6 +43,7 @@
     /* section2 - cjnow */
 
     .news_text li > a {
+        
         /* 클릭이벤트 꺼놓기 */
         pointer-events: none;
     }
@@ -107,6 +108,30 @@
         height: 33px;
     }
 
+    .log_gridbox {
+        grid-template-rows: repeat(11,1fr);
+    }
+    .ban1 {
+        aspect-ratio: 1/1.5;
+        grid-row: 1/5;
+    }
+    .ban2 {
+        grid-column: 7/13;
+        grid-row: 1/5;
+    }
+    .ban3 {
+        grid-column: 1/7;
+        grid-row: 5/9;
+    }
+    .ban4 {
+        grid-column: 7/13;
+        grid-row: 5/9;
+    }
+    .ban5 {
+        grid-column: 1/13;
+        grid-row: 9/12;
+    }
+
     
 }
 /* 820px 끝 */
@@ -115,6 +140,8 @@
 
 /* 650px 이하 - 모바일 */
 @media screen and (max-width: 650px) {
+
+    /* section2 - cjnow */
     
     /* pc */
     .news_area {
@@ -123,6 +150,36 @@
     /* 모바일 */
     .news_area2 {
         display: flex;
+    }
+
+    /* section5 - cjlog */
+    .log_gridbox {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(5,1fr);
+    }
+    .ban1{
+        /* aspect-ratio: 1/1; */
+        grid-column: 1/7;   
+    }
+    .ban2{
+        aspect-ratio: 1/1;
+        grid-column: 1/4;   
+        grid-row: 4/5;
+    }
+    .ban3{
+        aspect-ratio: 1/1;
+        grid-column: 4/7;   
+        grid-row: 4/5;
+    }
+    .ban4{
+        aspect-ratio: 1/1;
+        grid-column: 1/4;   
+        grid-row: auto;
+    }
+    .ban5{
+        aspect-ratio: 1/1;
+        grid-column: 4/7;   
+        grid-row: auto;
     }
     
 }
