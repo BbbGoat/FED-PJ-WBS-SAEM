@@ -56,6 +56,26 @@
 
 /* 820px 이하 */
 @media screen and (max-width: 820px) {
+    /* mainvid */
+    .mainVid {
+        height: 100vh;
+    }
+    .vidhide {
+        display: block;
+    }
+    .vidshow {
+        display: none;
+    }
+    .fixed_box {
+        min-width: auto;
+    }
+    .timerhide {
+        display: block;
+    }
+    .timershow {
+        display: none;
+    }
+
     /* section1 - livenewcj */
     .area_box {
         /* gap: 0; */
@@ -141,6 +161,8 @@
 /* 650px 이하 - 모바일 */
 @media screen and (max-width: 650px) {
 
+ 
+    
     /* section2 - cjnow */
     
     /* pc */

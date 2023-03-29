@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     const circleTimer = document.querySelector(".circle_timer");
     const timerBtn = document.querySelectorAll(".circle_timer a");
     const videoBox = document.querySelector(".video_box");
-    const video = document.querySelectorAll("#video");
+    const video = document.querySelectorAll(".video");
     const svg1 = document.querySelector(".svg1");
     const svg2 = document.querySelector(".svg2");
     
@@ -32,7 +32,7 @@ window.addEventListener("DOMContentLoaded",()=>{
                 event.preventDefault();
                 
                 // 클릭된 버튼에 따른 변수 설정
-                let currentVideo = this.parentElement.previousElementSibling.querySelector("#video");
+                let currentVideo = this.parentElement.previousElementSibling.querySelector(".video");
                 let timerIcon = this.querySelector(".timer_icon img");
                 
                 // 비디오 멈춤/재생 설정
@@ -67,7 +67,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 
         video.forEach((ele,idx) => {
             
-            if (idx === 0) {
+            if (idx === 1) {
                 setInterval(() => {
                     // 영상 재생시간 현재값, 최대값 변수
                     let vidsec_now = ele.currentTime;
@@ -83,7 +83,7 @@ window.addEventListener("DOMContentLoaded",()=>{
                 // 인터발초기화
                 clearInterval();
             }
-            else if (idx === 1) {
+            else if (idx === 2) {
                 setInterval(() => {
                     // 영상 재생시간 현재값, 최대값 변수
                     let vidsec_now = ele.currentTime;
