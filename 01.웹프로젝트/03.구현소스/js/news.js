@@ -2,14 +2,12 @@
 import { newsData, csvData } from "./newsData.js";
 // console.log(newsData);
 
-// 대상수집
+// 데스크탑 대상수집
 const newsList = document.querySelectorAll(".news_text ul li");
 const newsImg = document.querySelector(".news_img a");
 // 모바일 수집
-const newsListM = document.querySelectorAll("#mob .news_text ul li");
-// const newsImgM = document.querySelector("#mob .news_img a");
-const mobileImg = document.querySelectorAll(".set");
-// console.log(newsListM);
+// const newsListM = document.querySelectorAll("#mob .news_text ul li");
+// const mobileImg = document.querySelectorAll(".set");
 
 /**************************************** 
     함수명: chgNews
@@ -17,29 +15,24 @@ const mobileImg = document.querySelectorAll(".set");
     - 마우스엔터이벤트
     - 마우스오버시 타겟박스 내부 이미지 변경
 ****************************************/
-
-
 function chgNews() {
-    // 1. 데스크탑 텍스트 셋팅
-    // setText(newsList);
-    // 2. 데스크탑 이미지 셋팅
+    
     newsList.forEach((ele,idx) => {
-        const txtDate = [newsData["news"+idx]["txtData"]];
-        // 변경할 텍스트 변수
-        // 텍스트 출력
-        ele.innerHTML = txtDate;
+        const txtDate = newsData["news"+idx]["txtData"];
+        const imgData = newsData["news"+idx]["imgData"];
+        const altData = newsData["news"+idx]["altData"];
         
+        // 1. 데스크탑 텍스트 셋팅
+        ele.innerHTML = `<a href="#">${txtDate}</a>`;
+
+        // 2. 데스크탑 이미지 셋팅
         // 마우스엔터 이벤트
         ele.onmouseenter = function() {
             event.preventDefault();
-            const imgData = newsData["news"+idx]["imgData"];
-            const altData = newsData["news"+idx]["altData"];
-            console.log(imgData, altData);
 
             // 변경할 이미지 주소 변수
-            let src = "";
             // 마우스엔터시 이미지 변경
-            src = `<img src="${imgData}" alt="${altData}">`
+            let src = `<img src="${imgData}" alt="${altData}">`
 
             // 이미지 출력
             newsImg.innerHTML = src;
@@ -56,8 +49,8 @@ function chgNews() {
 
     
     // 1. 모바일버전 텍스트 셋팅
-    setText(newsListM);
     // 클릭이벤트 클래스 on 막기
+    
     for (let x of newsListM) {
         x.onclick = () => {
             initMenu();

@@ -100,6 +100,9 @@
     .news_text {
         width: auto;
     }
+    .news_text2 {
+        width: auto;
+    }
     .news_text ul li a::after {
         margin-top: 14px;
     }
@@ -121,7 +124,7 @@
         display: none;
     }
     /* 모바일 */
-    #mob.news_area {
+    .news_area2 {
         display: flex;
     }
     
