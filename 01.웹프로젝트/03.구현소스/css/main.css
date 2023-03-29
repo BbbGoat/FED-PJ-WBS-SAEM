@@ -321,7 +321,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    animation: opacityAni .5s alternate;
+    animation: opacityAni .4s;
 }
 @keyframes opacityAni {
     0% {
@@ -465,8 +465,6 @@
     height: 360px;
     box-sizing: border-box;
     overflow: hidden;
-    
-    /* background: palevioletred; */
 }
 /* 사진을 싸고 있는 슬라이드 영역 */
 #slide ul {
