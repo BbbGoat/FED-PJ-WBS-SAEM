@@ -303,6 +303,7 @@
 }
 
 /* 뉴스 전체박스 */
+/* 1. 데스크탑 */
 .news_area {
     position: relative;
     /* 플렉스박스 */
@@ -397,8 +398,8 @@
     pointer-events: none;
 }
 
-/* 모바일버전 */
 
+/* 2. 모바일버전 */
 .news_area2 {
     position: relative;
     /* 플렉스박스 */
@@ -430,7 +431,7 @@
     pointer-events: none;
 }
 .news_text2 {
-    width: 350px;
+    width: auto;
     margin: 5px 0;
     font-size: 18px;
     line-height: 1.5;
@@ -465,7 +466,7 @@
     line-height: 3;
 }
 .news_text2 ul div {
-    margin: 30px 0;
+    margin: 10% 0;
 }
 
 

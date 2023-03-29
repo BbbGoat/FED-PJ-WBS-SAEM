@@ -2,12 +2,16 @@
 import { newsData, csvData } from "./newsData.js";
 // console.log(newsData);
 
-// 데스크탑 대상수집
+
+// 슬라이드배너 대상수집
+const slide = document.querySelector("#slide ul");
+
+// 뉴스 데스크탑 대상수집
 const newsList = document.querySelectorAll(".news_text ul li");
 const newsImg = document.querySelector(".news_img a");
-// 모바일 수집
-// const newsListM = document.querySelectorAll("#mob .news_text ul li");
-// const mobileImg = document.querySelectorAll(".set");
+// 뉴스 모바일 대상수집
+const mobileList = document.querySelectorAll(".news_text2 ul li");
+const mobileImg = document.querySelectorAll(".set");
 
 /**************************************** 
     함수명: chgNews
@@ -17,88 +21,44 @@ const newsImg = document.querySelector(".news_img a");
 ****************************************/
 function chgNews() {
     
+    // 텍스트 세팅
+    setNewsTxt(newsList);
+    setNewsTxt(mobileList);
+    
     newsList.forEach((ele,idx) => {
-        const txtDate = newsData["news"+idx]["txtData"];
-        const imgData = newsData["news"+idx]["imgData"];
-        const altData = newsData["news"+idx]["altData"];
-        
-        // 1. 데스크탑 텍스트 셋팅
-        ele.innerHTML = `<a href="#">${txtDate}</a>`;
 
-        // 2. 데스크탑 이미지 셋팅
+        // 2. 데스크탑 이미지 세팅
         // 마우스엔터 이벤트
+        let imgData = newsData["news"+idx]["imgData"];
+        let altData = newsData["news"+idx]["altData"];
         ele.onmouseenter = function() {
+            
             event.preventDefault();
 
-            // 변경할 이미지 주소 변수
-            // 마우스엔터시 이미지 변경
-            let src = `<img src="${imgData}" alt="${altData}">`
-
             // 이미지 출력
-            newsImg.innerHTML = src;
+            newsImg.innerHTML = `<img src="${imgData}" alt="${altData}">`;
 
             // 3. 마우스 엔터시 클래스 on 넣기/빼기
             // 클래스 on 초기화함수 호출
             initMenu();
             this.classList.add("on");
             
-        }; //// mouseenter 이벤트 ////
-        
+        }; //// mouseenter 이벤트 //// 
     }); ////////// forEach ////////////
-
-
     
-    // 1. 모바일버전 텍스트 셋팅
-    // 클릭이벤트 클래스 on 막기
-    
-    for (let x of newsListM) {
-        x.onclick = () => {
-            initMenu();
-        };
-    }
-    
-    // 2. 모바일버전 이미지 셋팅
-    setImg(mobileImg);
-    
+    mobileImg.forEach((ele,idx) => {
+        let imgData = newsData["news"+idx]["imgData"];
+        let altData = newsData["news"+idx]["altData"];
+        ele.innerHTML = `<img src="${imgData}" alt="${altData}">`;
+    });
     
 } /////////////// chgNews 함수 ////////////
 
-function setText(obj) {
-    // 모바일버전 텍스트 셋팅
-    obj.forEach((ele,idx)=>{
-        // 변경할 텍스트 변수
-        let txt = "";
-    //     switch (idx) {
-    //        case 0 : txt = `<a href="#">${newsData.news1.txtData}</a>`; break;
-    //        case 1 : txt = `<a href="#">${newsData.news2.txtData}</a>`; break;
-    //        case 2 : txt = `<a href="#">${newsData.news3.txtData}</a>`; break;
-    //        case 3 : txt = `<a href="#">${newsData.news4.txtData}</a>`; break;
-    //        case 4 : txt = `<a href="#">${newsData.news5.txtData}</a>`; break;
-    //    }        
-       
-       // 텍스트 출력
-       ele.innerHTML = txt;
-
-   });
-} /////////////// setText 함수 //////////////////
-
-function setImg(obj) {
-    obj.forEach((ele,idx)=>{
-        
-        // 변경할 이미지 주소 변수
-        let src = "";
-
-        // 마우스엔터시 이미지 변경
-        // switch (idx) {
-        //     case 0 : src = `<img src="${newsData.news1.imgData}" alt="${newsData.news1.altData}">`; break;
-        //     case 1 : src = `<img src="${newsData.news2.imgData}" alt="${newsData.news2.altData}">`; break;
-        //     case 2 : src = `<img src="${newsData.news3.imgData}" alt="${newsData.news3.altData}">`; break;
-        //     case 3 : src = `<img src="${newsData.news4.imgData}" alt="${newsData.news4.altData}">`; break;
-        //     case 4 : src = `<img src="${newsData.news5.imgData}" alt="${newsData.news5.altData}">`; break;
-        // }
-    
-        // 이미지 출력
-        ele.innerHTML = src;
+function setNewsTxt(obj) {
+    obj.forEach((ele,idx) => {
+        const txtDate = newsData["news"+idx]["txtData"];
+        // 1. 데스크탑 텍스트 세팅
+        ele.innerHTML = `<a href="#">${txtDate}</a>`;
     });
 }
 
@@ -125,10 +85,6 @@ function initMenu() {
     함수명: chgCsv
     기능: 이미지, 텍스트 배열대로 할당
 ****************************************/
-
-// 대상수집
-const slide = document.querySelector("#slide ul");
-
 
 function chgCsv() {
     
