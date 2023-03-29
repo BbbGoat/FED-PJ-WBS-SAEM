@@ -20,16 +20,14 @@ const mobileImg = document.querySelectorAll(".set");
 
 
 function chgNews() {
-    const txtData = newsData.news0    
     // 1. 데스크탑 텍스트 셋팅
-    setText(newsList);
+    // setText(newsList);
     // 2. 데스크탑 이미지 셋팅
     newsList.forEach((ele,idx) => {
-        const txtDat = [newsData["news"+idx]["txtData"]];
+        const txtDate = [newsData["news"+idx]["txtData"]];
         // 변경할 텍스트 변수
-        let txt = txtDat;
         // 텍스트 출력
-        ele.innerHTML = txt;
+        ele.innerHTML = txtDate;
         
         // 마우스엔터 이벤트
         ele.onmouseenter = function() {
