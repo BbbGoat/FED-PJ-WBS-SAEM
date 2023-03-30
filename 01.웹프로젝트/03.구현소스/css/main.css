@@ -539,8 +539,32 @@
     border-color: #fff;
     color: #fff;
 }
+
 .brand .tbx .viewbtn:hover {
     background-color: rgba(255, 255, 255, 0.2);
+}
+
+.title_area h3 {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.7s ease-out ,opacity 0.7s ease-out ;
+}
+.title_area p {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.7s ease-out .2s ,opacity 0.7s ease-out .2s;
+}
+.title_area.on h3 {
+    opacity: 1;
+    transform: translateY(0%);
+}
+.title_area.on p {
+    opacity: 1;
+    transform: translateY(0%);
+}
+.title_area.on .tbx .viewbtn {
+    opacity: 1;
+    transform: translateY(0%);
 }
 
 

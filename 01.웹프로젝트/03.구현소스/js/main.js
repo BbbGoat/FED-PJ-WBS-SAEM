@@ -276,23 +276,49 @@ window.addEventListener("DOMContentLoaded",()=>{
         기능: 스크롤 특정 위치값에서 클래스 on 넣기
     *******************************************/
     function fadeInTxt() {
-        console.log("페이드 로딩완료!");
-
+        
+        
         // 대상수집
         const fadeTxt = document.querySelectorAll(".text_area");
+        const titleTxt = document.querySelectorAll(".title_area");
         // 브라우저 top을 기준으로한, 전달변수의 위치값 나타내는 함수 retVal
         const retVal = (ele) => ele.getBoundingClientRect().top;
-        // let secTop = retVal(secLivecj);
-        // console.log(secTop);
+        
+        // 화면높이값의 절반구하기
+        const hv = (window.innerHeight / 3) * 2.5;
+        // console.log("2/3높이:",hv);
 
-        console.log(fadeTxt);
-        fadeTxt.forEach((ele) => {
-            window.addEventListener("scroll",()=>{
-                // 조건 : 브라우저 하단 3/1지점에서 발생
-                
-                // 각 요소별 클래스 on 삽입
-            }); //////// scroll 이벤트 /////////
-        })
+        ////////////////////////////////
+        // 클래스 넣기 함수 /////////////
+        ////////////////////////////////
+        const addClass = (x) => {
+            // x - 등장요소
+            // 대상요소의 현재스크롤 위치
+            let xval = retVal(x);
+            
+
+            // 구간적용여부 검사하기
+            // 0보다 크고 화면의 2/3보다 작은 구간!
+            // 범위지정
+            if (xval < hv && xval > 0) {
+                // 해당요소에 클래스 넣기
+                x.classList.add("on");
+            }
+        }; //////////// addClass //////////
+
+
+        window.addEventListener("scroll",()=>{
+            
+            for (let x of fadeTxt) addClass(x);
+            for (let i of titleTxt) addClass(i);
+            
+            // 스크롤시 스크롤 위치값  찍기
+            // => window.scrollY
+            let scTop = window.scrollY;
+            console.log(scTop);
+
+
+        }); //////// scroll 이벤트 /////////
         
     } //////////// fadeIntxt 함수 //////////////
 
