@@ -1,8 +1,5 @@
 // CJ now 페이지 모듈화 작업
-import { newsData, csvData } from "./newsData.js";
-
-// 슬라이드배너 대상수집
-const slide = document.querySelector("#slide ul");
+import { newsData } from "./setData.js";
 
 // 뉴스 데스크탑 대상수집
 const newsList = document.querySelectorAll(".news_text ul li");
@@ -10,7 +7,6 @@ const newsImg = document.querySelector(".news_img a");
 // 뉴스 모바일 대상수집
 const mobileList = document.querySelectorAll(".news_text2 ul li");
 const mobileImg = document.querySelectorAll(".set");
-
 
 
 /**************************************** 
@@ -84,29 +80,5 @@ function initMenu() {
 } /////////// initMenu함수 ///////////
     
 
-/**************************************** 
-    함수명: chgCsv
-    기능: 이미지, 텍스트 배열대로 세팅
-****************************************/
-
-function chgCsv() {
-    
-    let maxlength = Object.keys(csvData).length;
-    
-    for (let i = 0; i < maxlength; i++) {
-        let num = i;
-        let csv = csvData["csv"+num];
-        slide.innerHTML += `
-            <li>
-                <img src="${csv.imgData}" alt="${csv.altData}">
-                <h3>${csv["mt"+num]}</h3>
-                <p>${csv["st"+num]}</p>
-            </li>
-        `;
-    }
-} /////////// chgCsv 함수 /////////////////
-
-
 // 함수 최초호출!
 chgNews();
-chgCsv();
