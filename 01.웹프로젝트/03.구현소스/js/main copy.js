@@ -338,44 +338,68 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     fadeInTxt();
 
-
-    /******************************************* 
-        함수명: scrMove
-        기능: 스크롤시 특정 영역 내에서 object 움직임
-    ///////// 생성자함수 만들어서 스크롤액션 3개 셋팅하기 //////////////////
-    *******************************************/
-   
+    // 등장액션 대상: .setit
+    const thumb = document.querySelectorAll(".thumb");
+    // console.log(setit);
+    
+    // 윈도우 높이값
+    const winH = window.innerHeight;
+    // console.log("윈도우 높이: ", winH)
+    
     // 전체문서 높이값
     const docH = document.body.clientHeight;
     // console.log("문서전체높이: ", docH);
 
+    // 스크롤한계값
+    const scLimit = docH-winH;
+    // console.log("스크롤한계값: ",scLimit);
 
     // 브라우저 top을 기준으로한, 전달변수의 위치값 나타내는 함수 retVal
     const retVal = (ele) => ele.getBoundingClientRect().top;
 
-    // 등장액션 대상: .thumb
-    const thumb = document.querySelectorAll(".thumb");
-    // 함수 사용할 대상
-    const areaBox = document.querySelector(".area_box");
-    
-    // 생성자함수
-    // 각 박스내부마다 아래 함수로 이벤트 부여한다!
-    function scrMove(obj) {
-        window.addEventListener("scroll",()=>{
+    // 화면높이값의 절반구하기
+    const hv = (window.innerHeight / 3) * 2.5;
+    // console.log("2/3높이:",hv);
+    const hv2 = (window.innerHeight / 3) * 2;
 
+
+    /******************************************* 
+        함수명: scrMove
+        기능: 스크롤시 특정 영역 내에서 object 움직임
+    *******************************************/
+    function scrMove() {
+        const areaBox = document.querySelector(".area_box");
+        const thumb = document.querySelectorAll(".thumb");
+        window.addEventListener("scroll",()=>{
+                        
+            
             // 스크롤시 스크롤 위치값  찍기
+            // => window.scrollY
             let value = window.scrollY;
-            // console.log("윈도우전체높이",value);
+            // console.log("전체높이값",value);
             let scrBoxH = retVal(areaBox);
+            // console.log("스크롤된 box높이:",scrBoxH);
+            let val = winH * value / scLimit;
+            // console.log("계산된값:",val);
             let boxH = areaBox.offsetHeight;
             // console.log("박스고정크기",boxH);
 
-            // 기존 비례식
-            // x = winH * scTop / docH 
+            // 구현내용: 여자이미지가 맨위에서부터 보이는화면에서
+            // 스크롤 맨 아래까지 동일한 비율로 떨어지게 한다!
+
+            // 비례식으로 비율을 계산한다!
+            // 필요한 조건은 다음과 같다!
+            // 페이지전체길이 : 윈도우높이 = 스크롤이동값 : 이미지이동값
+            // 그러므로,
+            // 이미지이동값 = 윈도우높이 * 스크롤이동값 / 페이지전체길이
+            
+            // x = winH * scTop / docH
+            // x = winH * scTop / scLimit
+            // docH(페이지전체길이) 대신 scLimit(스크롤한계값) 사용!
+            
             // 페이지전체길이 : 이동할박스높이 = 스크롤이동값 : 이미지이동값
             // docH : boxH = value : x
             
-            // 비례식 결과
             let result = boxH * value / docH;
 
             
@@ -395,7 +419,11 @@ window.addEventListener("DOMContentLoaded",()=>{
         }); ///////// scroll 이벤트 ////////
     } ////////////// scrMove 함수 ///////////////
 
+    
 
+    ///////// 생성자함수 만들어서 스크롤액션 3개 셋팅하기 //////////////////
+
+    
     
     scrMove();
     
