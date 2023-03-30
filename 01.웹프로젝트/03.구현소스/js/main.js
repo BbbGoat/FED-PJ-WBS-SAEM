@@ -67,7 +67,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 
         video.forEach((ele,idx) => {
             
-            if (idx === 1) {
+            if (idx === 0) {
                 setInterval(() => {
                     // 영상 재생시간 현재값, 최대값 변수
                     let vidsec_now = ele.currentTime;
@@ -83,7 +83,7 @@ window.addEventListener("DOMContentLoaded",()=>{
                 // 인터발초기화
                 clearInterval();
             }
-            else if (idx === 2) {
+            else if (idx === 1) {
                 setInterval(() => {
                     // 영상 재생시간 현재값, 최대값 변수
                     let vidsec_now = ele.currentTime;

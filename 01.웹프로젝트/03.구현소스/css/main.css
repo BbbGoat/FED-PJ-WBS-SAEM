@@ -81,20 +81,6 @@
     stroke-dasharray: 300%;
     stroke-dashoffset: 300%;
 }
-.svg3 {
-    fill: none;
-    stroke:url(#linearGradient-1);
-    stroke-width: 2px;
-    stroke-linecap: round;
-    stroke-dasharray: 300%;
-    stroke-dashoffset: 300%;
-}
-.timerhide {
-    display: none;
-}
-
-
-
 
 /************** section 1 - video **************/
 
@@ -105,9 +91,6 @@
 
     /* 임시 높이값 -> JS에서 조정예정 clientHeight - 10vh */
     height: 767px;
-}
-.vidhide {
-    display: none;
 }
 /* 비디오영역 고정박스 */
 .fixed_box {

@@ -60,21 +60,6 @@
     .mainVid {
         height: 100vh;
     }
-    .vidhide {
-        display: block;
-    }
-    .vidshow {
-        display: none;
-    }
-    .fixed_box {
-        min-width: auto;
-    }
-    .timerhide {
-        display: block;
-    }
-    .timershow {
-        display: none;
-    }
 
     /* section1 - livenewcj */
     .area_box {
