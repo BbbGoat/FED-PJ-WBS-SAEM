@@ -673,7 +673,7 @@
 .log_area {
     margin-top: 70px;
     opacity: 0;
-    transform: translateY(30%);
+    transform: translateY(10%);
     transition: transform 0.7s ease-out ,opacity 0.7s ease-out;
 }
 .log_area.on {

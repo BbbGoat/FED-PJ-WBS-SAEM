@@ -230,14 +230,14 @@ window.addEventListener("DOMContentLoaded",()=>{
     // 이벤트 등록 ///////////////////////////////////
 
     /******************************************* 
-        함수명: chgMov
+        함수명: chgVid
         기능: 모바일사이즈에서 영상 url 변경
     *******************************************/
 
     // 대상
     const mainVid = document.querySelector("#mainVid");
 
-    function chgMov() {
+    function chgVid() {
         
         // 현재 가로화면 크기
         let currWidth = window.innerWidth;
@@ -253,9 +253,9 @@ window.addEventListener("DOMContentLoaded",()=>{
             mainVid.setAttribute("src","./images/mainmov.mp4");
         }
 
-    } ///////////// chgMov 함수 //////////////////
+    } ///////////// chgVid 함수 //////////////////
 
-    chgMov();
+    chgVid();
 
     window.addEventListener("resize",function(){
         let currWidth = this.innerWidth;
@@ -271,18 +271,18 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     })
     /******************************************* 
-        함수명: scrMov
+        함수명: scrVid
         기능: 로드후 .3초 후 height 변경
     *******************************************/
 
     const section1Vid = document.querySelector(".mainVid");
 
-    function scrMov() {
+    function scrVid() {
         setTimeout(()=>{
             section1Vid.style.height = "80vh";
             section1Vid.transition = "height 1s ease-out";
         },1000);
-    } ///////////// scrMov 함수 /////////////////
+    } ///////////// scrVid 함수 /////////////////
 
 
     /******************************************* 
@@ -291,15 +291,12 @@ window.addEventListener("DOMContentLoaded",()=>{
     *******************************************/
     function fadeInTxt() {
         
-        
         // 대상수집
         const fadeTxt = document.querySelectorAll(".text_area");
         const titleTxt = document.querySelectorAll(".title_area");
         const newsField = document.querySelector(".news_text");
         const csvField = document.querySelector(".csv_area");
         const logField = document.querySelector(".log_area");
-        // 브라우저 top을 기준으로한, 전달변수의 위치값 나타내는 함수 retVal
-        const retVal = (ele) => ele.getBoundingClientRect().top;
         
         // 화면높이값의 절반구하기
         const hv = (window.innerHeight / 3) * 2.5;
@@ -313,7 +310,6 @@ window.addEventListener("DOMContentLoaded",()=>{
             // 대상요소의 현재스크롤 위치
             let xval = retVal(x);
             
-
             // 구간적용여부 검사하기
             // 0보다 크고 화면의 2/3보다 작은 구간!
             // 범위지정
@@ -338,71 +334,79 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     fadeInTxt();
 
+    // 브라우저 top을 기준으로한, 전달변수의 위치값 나타내는 함수 retVal
+    const retVal = (ele) => ele.getBoundingClientRect().top;
+
 
     /******************************************* 
         함수명: scrMove
         기능: 스크롤시 특정 영역 내에서 object 움직임
     ///////// 생성자함수 만들어서 스크롤액션 3개 셋팅하기 //////////////////
     *******************************************/
-   
-    // 전체문서 높이값
-    const docH = document.body.clientHeight;
-    // console.log("문서전체높이: ", docH);
-
-
-    // 브라우저 top을 기준으로한, 전달변수의 위치값 나타내는 함수 retVal
-    const retVal = (ele) => ele.getBoundingClientRect().top;
 
     // 등장액션 대상: .thumb
     const thumb = document.querySelectorAll(".thumb");
     // 함수 사용할 대상
     const areaBox = document.querySelector(".area_box");
-    
-    // 생성자함수
-    // 각 박스내부마다 아래 함수로 이벤트 부여한다!
-    function scrMove(obj) {
-        window.addEventListener("scroll",()=>{
 
+
+    
+    function scrMove() {
+        window.addEventListener("scroll",()=>{
+            
             // 스크롤시 스크롤 위치값  찍기
             let value = window.scrollY;
-            // console.log("윈도우전체높이",value);
-            let scrBoxH = retVal(areaBox);
+            // console.log("현재 스크롤 위치",value);
+            
+            // 전체문서 높이값
+            const docH = document.body.clientHeight;
+            // console.log("문서전체높이: ", docH);
+
+            // 윈도우 높이값
+            const winH = window.innerHeight;
+            // console.log("윈도우 높이: ", winH)
+
+            
+            // 기존 비례식
+            // x = winH * scTop / docH 
+            // 페이지전체길이 : 영역으로 잡을 박스크기(스크롤 속도가 됨!) = 스크롤이동값 : 이미지이동값
+            // docH : boxH = value : x
+            // 결과값 = boxH * value / docH;
+            
             let boxH = areaBox.offsetHeight;
             // console.log("박스고정크기",boxH);
 
-            // 기존 비례식
-            // x = winH * scTop / docH 
-            // 페이지전체길이 : 이동할박스높이 = 스크롤이동값 : 이미지이동값
-            // docH : boxH = value : x
-            
             // 비례식 결과
-            let result = boxH * value / docH;
-
+            let result = 200 * value / docH;
             
-            for (let x of thumb) {
-                const thumbH = retVal(x);
-                console.log("각 x요소 높이값",thumbH);
-                // console.log("썸네일 위치",thumbH)
-                if (scrBoxH < 850 && scrBoxH > -1000) {
-                    console.log("여기부터 작동")
 
+            // 이벤트 시작점 위치 변수 (첫번째 area_box)
+            let firstAreaBox = retVal(areaBox);
+            // console.log(firstAreaBox);
+
+            thumb.forEach((ele) => {
+    
+                if (firstAreaBox < winH && retVal(ele) > 0) { // 각 요소마다 0보다 작아질 경우 이벤트 종료
+                    // console.log("여기부터 작동")
                     // 움직임 적용 출력
-                    x.style.transform = `translateY(${-result}%)`;
-                }
-            } /////////////////////
+                    ele.style.transform = `translateY(${-result}%)`;
+                } ////// if
 
+            });
 
         }); ///////// scroll 이벤트 ////////
     } ////////////// scrMove 함수 ///////////////
 
 
-    
     scrMove();
+
+
+
     
 
     circleTimer.addEventListener("click", vidClick());
     videoBox.addEventListener("timeupdate",vidTimer());
-    document.addEventListener("DOMContentLoaded", logSetban(), autoSlide(), scrMov());
+    document.addEventListener("DOMContentLoaded", logSetban(), autoSlide(), scrVid());
 
 
 
