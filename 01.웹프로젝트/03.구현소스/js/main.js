@@ -229,11 +229,81 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     // 이벤트 등록 ///////////////////////////////////
 
+    /******************************************* 
+        함수명: chgMov
+        기능: 모바일사이즈에서 영상 url 변경
+    *******************************************/
 
-    // slide.addEventListener("click",csvSlide());
+    // 대상
+    const mainVid = document.querySelector("#mainVid");
+
+    function chgMov() {
+        
+        // 현재 가로화면 크기
+        let currWidth = window.innerWidth;
+
+        // 모바일 사이즈
+        if (currWidth <= 650) {
+            console.log(window.innerWidth);
+            mainVid.setAttribute("src","./images/mainmov_m.mp4");
+        }
+        // 데스크탑 사이즈
+        else if (currWidth > 650) {
+            mainVid.setAttribute("src","./images/mainmov.mp4");
+        }
+
+    } ///////////// chgMov 함수 //////////////////
+
+    chgMov();
+
+    /******************************************* 
+        함수명: scrMov
+        기능: 로드후 .3초 후 height 변경
+    *******************************************/
+
+    const section1Vid = document.querySelector(".mainVid");
+
+    function scrMov() {
+        setTimeout(()=>{
+            section1Vid.style.height = "80vh";
+            section1Vid.transition = "height 1s ease-out";
+        },1000);
+    } ///////////// scrMov 함수 /////////////////
+
+
+    /******************************************* 
+        함수명: fadeInTxt
+        기능: 스크롤 특정 위치값에서 클래스 on 넣기
+    *******************************************/
+    function fadeInTxt() {
+        console.log("페이드 로딩완료!");
+
+        // 대상수집
+        const fadeTxt = document.querySelectorAll(".text_area");
+        // 브라우저 top을 기준으로한, 전달변수의 위치값 나타내는 함수 retVal
+        const retVal = (ele) => ele.getBoundingClientRect().top;
+        // let secTop = retVal(secLivecj);
+        // console.log(secTop);
+
+        console.log(fadeTxt);
+        fadeTxt.forEach((ele) => {
+            window.addEventListener("scroll",()=>{
+                // 조건 : 브라우저 하단 3/1지점에서 발생
+                
+                // 각 요소별 클래스 on 삽입
+            }); //////// scroll 이벤트 /////////
+        })
+        
+    } //////////// fadeIntxt 함수 //////////////
+
+    fadeInTxt();
+    
+
     circleTimer.addEventListener("click", vidClick());
     videoBox.addEventListener("timeupdate",vidTimer());
-    document.addEventListener("DOMContentLoaded", logSetban(), autoSlide());
+    document.addEventListener("DOMContentLoaded", logSetban(), autoSlide(), scrMov());
+
+
 
 });///////////// load ////////////////////////////
 
