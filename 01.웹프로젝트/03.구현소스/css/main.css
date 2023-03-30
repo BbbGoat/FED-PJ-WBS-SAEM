@@ -365,6 +365,13 @@
     margin: 5px 0;
     font-size: 18px;
     line-height: 1.5;
+    opacity: 0;
+    /* transform: translateY(30%); */
+    transition: transform 0.7s ease-out ,opacity 0.7s ease-out;
+}
+.news_text.on {
+    opacity: 1;
+    transform: translateY(0%);
 }
 .news_text ul li {
     position: relative;
@@ -577,6 +584,13 @@
 }
 .csv_area {
     margin-top: 70px;
+    opacity: 0;
+    transform: translateY(30%);
+    transition: transform 0.7s ease-out ,opacity 0.7s ease-out;
+}
+.csv_area.on {
+    opacity: 1;
+    transform: translateY(0%);
 }
 /* 슬라이드배너 시작 */
 #slide {
@@ -656,6 +670,13 @@
 }
 .log_area {
     margin-top: 70px;
+    opacity: 0;
+    transform: translateY(30%);
+    transition: transform 0.7s ease-out ,opacity 0.7s ease-out;
+}
+.log_area.on {
+    opacity: 1;
+    transform: translateY(0%);
 }
 .log_gridbox {
     display: grid;
@@ -667,12 +688,6 @@
     grid-row-gap: 5px;
     /* 좌우갭 */
     grid-column-gap: 5px;
-}
-.rw1 {
-    /* background: #275; */
-}
-.rw2 {
-    /* background: #535; */
 }
 /* cjlog 배너박스 공통설정 */
 .log {

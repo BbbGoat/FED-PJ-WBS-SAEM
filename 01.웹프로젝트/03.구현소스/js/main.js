@@ -281,6 +281,9 @@ window.addEventListener("DOMContentLoaded",()=>{
         // 대상수집
         const fadeTxt = document.querySelectorAll(".text_area");
         const titleTxt = document.querySelectorAll(".title_area");
+        const newsField = document.querySelector(".news_text");
+        const csvField = document.querySelector(".csv_area");
+        const logField = document.querySelector(".log_area");
         // 브라우저 top을 기준으로한, 전달변수의 위치값 나타내는 함수 retVal
         const retVal = (ele) => ele.getBoundingClientRect().top;
         
@@ -311,6 +314,9 @@ window.addEventListener("DOMContentLoaded",()=>{
             
             for (let x of fadeTxt) addClass(x);
             for (let i of titleTxt) addClass(i);
+            addClass(csvField);
+            addClass(logField);
+            addClass(newsField);
             
             // 스크롤시 스크롤 위치값  찍기
             // => window.scrollY
