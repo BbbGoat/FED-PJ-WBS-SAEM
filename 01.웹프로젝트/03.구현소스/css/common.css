@@ -440,11 +440,15 @@ dt a {
 }
 /* 하위메뉴 */
 .submenu > dd {
+    /* display: none; */
     font-size: 16px;
     font-family: CJONLYONENEW_L;
 }
 .submenu > dd:first-child {
     border-top: 1px solid #e6e6e6;
+}
+.submenu dd:first-child {
+    /* border-bottom: 1px solid #e6e6e6; */
 }
 .submenu > dd {
     padding: 12px 0;
@@ -467,22 +471,29 @@ dt a {
     background-color: transparent;
 }
 
+/* 법적고지 */
 .m_footer .area_policy {
     display: flex;
-    width: 300px;
+    justify-content: center;
+    text-align: center;
+}
+.m_footer .area_policy p {
+    max-width: 80vw;
 }
 .m_footer .area_policy p a {
     display: inline-block;
-    width: 100px;
-    margin-right: 30px;
+    /* width: 50px; */
+    padding: 0 20px;
     /* border: 1px solid #ccc; */
 }
 .m_footer .area_policy a + a {
     margin-left: 0;
 }
 
+/* 저작권자 */
 .m_footer .area_copy {
     flex-direction: column-reverse;
     height: 80px;
-    margin-top: 20px;
+    padding-top: 36px;
+    align-items: center;
 }
