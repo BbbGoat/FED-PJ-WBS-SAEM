@@ -439,6 +439,10 @@ dt a {
     font-weight: 400;
 }
 /* 하위메뉴 */
+.submenu {
+    height: 0;
+    overflow: hidden;
+}
 .submenu > dd {
     /* display: none; */
     font-size: 16px;

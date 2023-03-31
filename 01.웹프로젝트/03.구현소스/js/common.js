@@ -125,8 +125,52 @@ function loadFn() {
             
         }); ////// forEach //////////
     } /////////// snsLink 함수 ////////////////
-        
+
     snsLink();
+    
+        
+    /********************************************* 
+        함수명: mFooter
+        기능: btn_m_footer 클릭시 서브메뉴 height 조절
+    *********************************************/
+
+    function mFooter() {
+
+        // 대상선정
+        const showBtn = document.querySelectorAll(".btn_m_footer");
+        const submenu = document.querySelectorAll(".submenu");
+
+        showBtn.forEach((ele,idx) => {
+
+            // 서브메뉴 열림/닫힘 상태 식별 변수
+            let toggle = 0;
+            
+            // 클릭이벤트 설정
+            ele.onclick = () => {
+                
+                // 서브메뉴 할당
+                let showmenu = submenu[idx];
+                
+                // 닫혔을때
+                if (toggle === 0 ) {
+                    showmenu.style.height = "145px"
+                    toggle = 1;
+                }
+                // 열렸을때
+                else if (toggle === 1) {
+                    showmenu.style.height = "0"
+                    toggle = 0;
+                }
+                
+            }; //////// click //////////
+        }); ////////// forEach /////////////////
+
+        
+    } ////////////// mFooter 함수 /////////////////
+
+
+            
+    mFooter();
 
 } ////////////////  loadFn 함수 //////////////////
 
