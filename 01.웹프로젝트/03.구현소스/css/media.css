@@ -188,6 +188,12 @@
         grid-column: 4/7;   
         grid-row: auto;
     }
+    footer {
+        display: none;
+    }
+    .m_footer {
+        display: block;
+    }
     
 }
 /* 650px 끝 */

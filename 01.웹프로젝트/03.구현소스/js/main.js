@@ -386,7 +386,7 @@ window.addEventListener("DOMContentLoaded",()=>{
                 // 각 thumb요소들 top기준 위치값
                 let thumbHeight = retVal(ele);
 
-                if (thumbHeight < winH && thumbHeight > 0) { // 각 요소 0보다 작아질 경우 이벤트 종료
+                if (thumbHeight < winH + 200 && thumbHeight > 0) { // 각 요소 0보다 작아질 경우 이벤트 종료
                     // 이벤트 출력
                     ele.style.transform = `translateY(${-imgMove}px)`;
                 } ////// if

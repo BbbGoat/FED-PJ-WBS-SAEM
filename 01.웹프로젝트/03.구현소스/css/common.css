@@ -407,3 +407,33 @@
     background: url(../images/footer_in.png) no-repeat center top;
     background-size: 100% auto;
 }
+
+/* 모바일 푸터 */
+
+.m_footer {
+    display: none;
+}
+
+.m_sitemap {
+    display: flex;
+    flex-direction: column;
+    font-family: CJONLYONENEW_R;
+    font-size: 18px;
+}
+dt {
+    border-top: 1px solid #e6e6e6;
+}
+.m_sitemap dl {
+    font-size: 16px;
+    font-family: CJONLYONENEW_L;
+}
+.submenu dd {
+    padding: 12px 0;
+}
+.submenu dd a {
+    display: block;
+    font-size: 16px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    color: #000;
+}
