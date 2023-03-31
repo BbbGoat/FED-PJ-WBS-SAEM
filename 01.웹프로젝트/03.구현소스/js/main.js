@@ -371,14 +371,14 @@ window.addEventListener("DOMContentLoaded",()=>{
             // x = winH * scTop / docH 
             // 페이지전체길이 : 영역으로 잡을 박스크기(스크롤 속도가 됨!) = 스크롤이동값 : 이미지이동값
             // 이미지이동값 = 윈도우높이 * 스크롤이동값 / 페이지전체길이
-            // docH : boxH = scrollY : x
-            // 결과값 = boxH * scrollY / docH;
+            // docH : boxOffsetH = scrollY : x
+            // 결과값 = boxOffsetH * scrollY / docH;
             
-            let boxH = areaBox.offsetHeight;
-            // console.log("박스고정크기",boxH);
+            let boxOffsetH = areaBox.offsetHeight;
+            // console.log("박스고정크기",boxOffsetH);
 
             // 비례식 결과
-            let result = boxH * scrollY / docH;
+            let result = boxOffsetH * scrollY / docH;
             
 
             thumb.forEach((ele,idx) => {
