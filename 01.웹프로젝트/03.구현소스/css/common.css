@@ -466,3 +466,23 @@ dt a {
     line-height: 1.4;
     background-color: transparent;
 }
+
+.m_footer .area_policy {
+    display: flex;
+    width: 300px;
+}
+.m_footer .area_policy p a {
+    display: inline-block;
+    width: 100px;
+    margin-right: 30px;
+    /* border: 1px solid #ccc; */
+}
+.m_footer .area_policy a + a {
+    margin-left: 0;
+}
+
+.m_footer .area_copy {
+    flex-direction: column-reverse;
+    height: 80px;
+    margin-top: 20px;
+}
