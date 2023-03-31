@@ -405,7 +405,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     circleTimer.addEventListener("click", vidClick());
     videoBox.addEventListener("timeupdate",vidTimer());
-    document.addEventListener("DOMContentLoaded", logSetban(), autoSlide(), scrVid());
+    document.addEventListener("DOMContentLoaded", logSetban(), autoSlide());
 
 
 
