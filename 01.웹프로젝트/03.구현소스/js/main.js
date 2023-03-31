@@ -364,12 +364,13 @@ window.addEventListener("DOMContentLoaded",()=>{
 
             // 윈도우 높이값
             const winH = window.innerHeight;
-            // console.log("윈도우 높이: ", winH)
+            console.log("윈도우 높이: ", winH)
 
             
             // 기존 비례식
             // x = winH * scTop / docH 
             // 페이지전체길이 : 영역으로 잡을 박스크기(스크롤 속도가 됨!) = 스크롤이동값 : 이미지이동값
+            // 이미지이동값 = 윈도우높이 * 스크롤이동값 / 페이지전체길이
             // docH : boxH = value : x
             // 결과값 = boxH * value / docH;
             
@@ -377,7 +378,7 @@ window.addEventListener("DOMContentLoaded",()=>{
             // console.log("박스고정크기",boxH);
 
             // 비례식 결과
-            let result = 200 * value / docH;
+            let result = boxH * value / docH;
             
 
             // 이벤트 시작점 위치 변수 (첫번째 area_box)
@@ -389,7 +390,7 @@ window.addEventListener("DOMContentLoaded",()=>{
                 if (firstAreaBox < winH && retVal(ele) > 0) { // 각 요소마다 0보다 작아질 경우 이벤트 종료
                     // console.log("여기부터 작동")
                     // 움직임 적용 출력
-                    ele.style.transform = `translateY(${-result}%)`;
+                    ele.style.transform = `translateY(${-result}px)`;
                 } ////// if
 
             });
