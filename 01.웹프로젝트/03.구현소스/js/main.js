@@ -347,7 +347,8 @@ window.addEventListener("DOMContentLoaded",()=>{
     // 등장액션 대상: .thumb
     const thumb = document.querySelectorAll(".thumb");
     // 함수 사용할 대상
-    const areaBox = document.querySelector(".area_box");
+    const bxsize = document.querySelector(".area_box");
+    const areaBox = document.querySelectorAll(".area_box");
 
 
     
@@ -367,18 +368,17 @@ window.addEventListener("DOMContentLoaded",()=>{
             // console.log("윈도우 높이: ", winH)
 
             
-            // 기존 비례식
             // x = winH * scTop / docH 
             // 페이지전체길이 : 영역으로 잡을 박스크기(스크롤 속도가 됨!) = 스크롤이동값 : 이미지이동값
             // 이미지이동값 = 윈도우높이 * 스크롤이동값 / 페이지전체길이
-            // docH : boxOffsetH = scrollY : x
-            // 결과값 = boxOffsetH * scrollY / docH;
+            // docH : boxOffsetH = scrollY : imgMove
+            // imgMove = boxOffsetH * scrollY / docH;
             
-            let boxOffsetH = areaBox.offsetHeight;
-            // console.log("박스고정크기",boxOffsetH);
+            let boxOffsetH = bxsize.offsetHeight;
+            console.log("박스고정크기",boxOffsetH);
 
             // 비례식 결과
-            let result = boxOffsetH * scrollY / docH;
+            let imgMove = boxOffsetH * scrollY / docH;
             
 
             thumb.forEach((ele,idx) => {
@@ -388,7 +388,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 
                 if (thumbHeight < winH && thumbHeight > 0) { // 각 요소 0보다 작아질 경우 이벤트 종료
                     // 이벤트 출력
-                    ele.style.transform = `translateY(${-result}px)`;
+                    ele.style.transform = `translateY(${-imgMove}px)`;
                 } ////// if
 
             });
