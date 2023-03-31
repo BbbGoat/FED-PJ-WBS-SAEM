@@ -138,38 +138,52 @@ function loadFn() {
 
         // 대상선정
         const showBtn = document.querySelectorAll(".btn_m_footer");
+        const chgBtn = document.querySelectorAll(".btn_m_footer span");
         const submenu = document.querySelectorAll(".submenu");
         const dd = document.querySelector("dd");
 
+        // 지우기
+        chgBtn[0].style.display = "none";
+        chgBtn[1].style.display = "none";
+        
         showBtn.forEach((ele,idx) => {
 
             // 서브메뉴 열림/닫힘 상태 식별 변수
             let toggle = 0;
             
+            // 클릭이벤트 설정
             ele.onclick = function() {
                 // 서브메뉴 할당
                 let showmenu = submenu[idx];
                 
-                // 클릭이벤트 설정
-                
-                let count = this.parentElement.nextElementSibling.childElementCount;
-                // dd높이 * 갯수 = 각 smenu 순수 offsetHeight값
+                // dd높이 * 전체dd갯수 = 각 smenu 순수 offsetHeight값
+                let ddLength = this.parentElement.nextElementSibling.childElementCount;
                 let ddHeight = dd.offsetHeight;
-                console.log(ddHeight)
                 
                 // 닫혔을때
                 if (toggle === 0 ) {
-                    showmenu.style.height = ddHeight * count + "px";
+                    showmenu.style.height = ddHeight * ddLength + "px";
+                    this.firstElementChild.style.backgroundPosition = "center bottom";
+                    this.setAttribute("alt","하위메뉴 열기");
+                    // console.log(this)
                     toggle = 1;
                 }
                 // 열렸을때
                 else if (toggle === 1) {
                     showmenu.style.height = "0"
+                    this.firstElementChild.style.backgroundPosition = "center top";
+                    this.setAttribute("alt","하위메뉴 닫기");
                     toggle = 0;
                 }
                 
             }; //////// click //////////
         }); ////////// forEach /////////////////
+
+        // chgBtn.forEach((ele) => {
+        //     ele.onclick = function() {
+        //         this.style.backgroundPosition = "center bottom";
+        //     }
+        // })
 
         
     } ////////////// mFooter 함수 /////////////////

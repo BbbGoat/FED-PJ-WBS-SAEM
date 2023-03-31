@@ -472,7 +472,16 @@ dt a {
     cursor: pointer;
 }
 button {
-    /* border: 0 none; */
+    border: 0 none;
+}
+.btn_m_footer span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url(../images/gnb_arrow.png) no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+    overflow: hidden;
 }
 
 /* 법적고지 */
