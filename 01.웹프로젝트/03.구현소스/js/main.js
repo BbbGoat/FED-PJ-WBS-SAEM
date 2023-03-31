@@ -346,6 +346,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     // 등장액션 대상: .thumb
     const thumb = document.querySelectorAll(".thumb");
+    const tb = document.querySelectorAll(".thumb img");
     // 함수 사용할 대상
     const bxsize = document.querySelector(".area_box");
     const areaBox = document.querySelectorAll(".area_box");
@@ -377,18 +378,22 @@ window.addEventListener("DOMContentLoaded",()=>{
             let boxOffsetH = bxsize.offsetHeight;
             console.log("박스고정크기",boxOffsetH);
 
-            // 비례식 결과
-            let imgMove = boxOffsetH * scrollY / docH;
+           
             
 
-            thumb.forEach((ele,idx) => {
+            tb.forEach((ele,idx) => {
     
                 // 각 thumb요소들 top기준 위치값
                 let thumbHeight = retVal(ele);
 
-                if (thumbHeight < winH + 200 && thumbHeight > 0) { // 각 요소 0보다 작아질 경우 이벤트 종료
+                if (thumbHeight < winH && thumbHeight > 0) { // 각 요소 0보다 작아질 경우 이벤트 종료 // 비례식
+                    // 보이는 화면:스크롤이동위치=기준전체이동크기:x
+                    // x = 스크롤이동위치*기준전체이동크기/보이는화면
+                    // 비례식 결과
+                    let imgMove = thumbHeight * 100  / winH;
+                    console.log(imgMove)
                     // 이벤트 출력
-                    ele.style.transform = `translateY(${-imgMove}px)`;
+                    ele.parentElement.style.transform = `translateY(${imgMove}px)`;
                 } ////// if
 
             });
