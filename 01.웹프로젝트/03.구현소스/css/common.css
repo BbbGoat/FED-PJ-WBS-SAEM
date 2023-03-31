@@ -442,7 +442,7 @@ dt a {
 .submenu {
     height: 0;
     overflow: hidden;
-    transition: .3s ease-out;
+    transition: .4s ease-out;
 }
 .submenu > dd {
     font-size: 16px;

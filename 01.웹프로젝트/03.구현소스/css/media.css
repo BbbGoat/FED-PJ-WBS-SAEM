@@ -188,11 +188,18 @@
         grid-column: 4/7;   
         grid-row: auto;
     }
+
+    
+    /* 푸터 */
+    
     footer {
         display: none;
     }
     .m_footer {
         display: block;
+    }
+    .info {
+        border-top: none;
     }
     
 }
