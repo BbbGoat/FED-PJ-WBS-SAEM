@@ -427,6 +427,9 @@ dt {
     font-size: 16px;
     font-family: CJONLYONENEW_L;
 }
+.submenu dd:first-child {
+    border-top: 1px solid #e6e6e6;
+}
 .submenu dd {
     padding: 12px 0;
 }
