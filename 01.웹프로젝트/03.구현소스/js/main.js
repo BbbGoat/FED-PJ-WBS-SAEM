@@ -355,8 +355,8 @@ window.addEventListener("DOMContentLoaded",()=>{
         window.addEventListener("scroll",()=>{
             
             // 스크롤시 스크롤 위치값  찍기
-            let value = window.scrollY;
-            // console.log("현재 스크롤 위치",value);
+            let scrollY = window.scrollY;
+            // console.log("현재 스크롤 위치",scrollY);
             
             // 전체문서 높이값
             const docH = document.body.clientHeight;
@@ -364,32 +364,30 @@ window.addEventListener("DOMContentLoaded",()=>{
 
             // 윈도우 높이값
             const winH = window.innerHeight;
-            console.log("윈도우 높이: ", winH)
+            // console.log("윈도우 높이: ", winH)
 
             
             // 기존 비례식
             // x = winH * scTop / docH 
             // 페이지전체길이 : 영역으로 잡을 박스크기(스크롤 속도가 됨!) = 스크롤이동값 : 이미지이동값
             // 이미지이동값 = 윈도우높이 * 스크롤이동값 / 페이지전체길이
-            // docH : boxH = value : x
-            // 결과값 = boxH * value / docH;
+            // docH : boxH = scrollY : x
+            // 결과값 = boxH * scrollY / docH;
             
             let boxH = areaBox.offsetHeight;
             // console.log("박스고정크기",boxH);
 
             // 비례식 결과
-            let result = boxH * value / docH;
+            let result = boxH * scrollY / docH;
             
 
-            // 이벤트 시작점 위치 변수 (첫번째 area_box)
-            let firstAreaBox = retVal(areaBox);
-            // console.log(firstAreaBox);
-
-            thumb.forEach((ele) => {
+            thumb.forEach((ele,idx) => {
     
-                if (firstAreaBox < winH && retVal(ele) > 0) { // 각 요소마다 0보다 작아질 경우 이벤트 종료
-                    // console.log("여기부터 작동")
-                    // 움직임 적용 출력
+                // 각 thumb요소들 top기준 위치값
+                let thumbHeight = retVal(ele);
+
+                if (thumbHeight < winH && thumbHeight > 0) { // 각 요소 0보다 작아질 경우 이벤트 종료
+                    // 이벤트 출력
                     ele.style.transform = `translateY(${-result}px)`;
                 } ////// if
 

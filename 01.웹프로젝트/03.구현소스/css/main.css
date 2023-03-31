@@ -228,12 +228,20 @@
 }
 .thumb {
     position: absolute;
-    top: 350px;
+    top: 400px;
     left: 250px;
     overflow: hidden;
     border-radius: 20px 0 20px 0;
-    /* transform: translateY(50%); */
-    transition: .7s ease-out;
+    /* transition: .7s ease-out; */
+}
+.thb1 {
+    /* margin-top: 10px; */
+}
+.thb2 {
+    /* margin-top: 70px; */
+}
+.thb3 {
+    /* margin-top: 120px; */
 }
 .thumb img {
     width: 180px;
@@ -247,6 +255,9 @@
 }
 .sticker img {
     width: 100%;
+}
+.stk1 {
+
 }
 .stk2  {
     top: 230px;
