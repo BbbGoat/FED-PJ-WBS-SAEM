@@ -139,21 +139,27 @@ function loadFn() {
         // 대상선정
         const showBtn = document.querySelectorAll(".btn_m_footer");
         const submenu = document.querySelectorAll(".submenu");
+        const dd = document.querySelector("dd");
 
         showBtn.forEach((ele,idx) => {
 
             // 서브메뉴 열림/닫힘 상태 식별 변수
             let toggle = 0;
             
-            // 클릭이벤트 설정
-            ele.onclick = () => {
-                
+            ele.onclick = function() {
                 // 서브메뉴 할당
                 let showmenu = submenu[idx];
                 
+                // 클릭이벤트 설정
+                
+                let count = this.parentElement.nextElementSibling.childElementCount;
+                // dd높이 * 갯수 = 각 smenu 순수 offsetHeight값
+                let ddHeight = dd.offsetHeight;
+                console.log(ddHeight)
+                
                 // 닫혔을때
                 if (toggle === 0 ) {
-                    showmenu.style.height = "145px"
+                    showmenu.style.height = ddHeight * count + "px";
                     toggle = 1;
                 }
                 // 열렸을때
