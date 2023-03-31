@@ -442,20 +442,16 @@ dt a {
 .submenu {
     height: 0;
     overflow: hidden;
+    transition: .3s ease-out;
 }
 .submenu > dd {
-    /* display: none; */
     font-size: 16px;
     font-family: CJONLYONENEW_L;
+    padding: 12px 0;
+    padding-left: 30px;
 }
 .submenu > dd:first-child {
     border-top: 1px solid #e6e6e6;
-}
-.submenu dd:first-child {
-    /* border-bottom: 1px solid #e6e6e6; */
-}
-.submenu > dd {
-    padding: 12px 0;
 }
 .submenu > dd a {
     display: block;
@@ -467,12 +463,15 @@ dt a {
 
 /* 버튼설정 */
 .btn_m_footer {
-    /* width: 54px;
-    height: 52px; */
+    width: 54px;
+    /* height: 52px; */
     padding-top: 18px;
     box-sizing: border-box;
     line-height: 1.4;
     background-color: transparent;
+}
+button {
+    /* border: 0 none; */
 }
 
 /* 법적고지 */
