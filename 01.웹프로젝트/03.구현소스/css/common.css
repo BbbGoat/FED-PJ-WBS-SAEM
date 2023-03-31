@@ -414,29 +414,55 @@
     display: none;
 }
 
+/* 공통설정 */
 .m_sitemap {
     display: flex;
     flex-direction: column;
+
     font-family: CJONLYONENEW_R;
     font-size: 18px;
 }
+/* 상위메뉴 */
 dt {
+    display: flex;
+    justify-content: space-between;
     border-top: 1px solid #e6e6e6;
 }
-.m_sitemap dl {
+dt a {
+    position: relative;
+    display: block;
+    height: 60px;
+    line-height: 62px;
+    font-weight: 100;
+    font-size: 16px;
+    color: #000;
+    font-weight: 400;
+}
+/* 하위메뉴 */
+.submenu > dd {
     font-size: 16px;
     font-family: CJONLYONENEW_L;
 }
-.submenu dd:first-child {
+.submenu > dd:first-child {
     border-top: 1px solid #e6e6e6;
 }
-.submenu dd {
+.submenu > dd {
     padding: 12px 0;
 }
-.submenu dd a {
+.submenu > dd a {
     display: block;
     font-size: 16px;
     line-height: 1.5;
     box-sizing: border-box;
     color: #000;
+}
+
+/* 버튼설정 */
+.btn_m_footer {
+    /* width: 54px;
+    height: 52px; */
+    padding-top: 18px;
+    box-sizing: border-box;
+    line-height: 1.4;
+    background-color: transparent;
 }
