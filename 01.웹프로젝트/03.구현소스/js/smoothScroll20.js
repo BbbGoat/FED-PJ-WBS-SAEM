@@ -4,7 +4,7 @@
 
 // startSS()함수를 호출하여 사용
 function startSS() {
-    new SmoothScroll(document, 80, 15)
+    new SmoothScroll(document, 100, 15)
     // SmoothScroll(스크롤대상, 스피드, 부드러운정도)
     // 1. 스크롤대상 : 스크롤바를 부드럽게 만들 대상
     // 2. 스피드 : 스크롤 델타값에 곱해서 처리하는 빠르기정도
