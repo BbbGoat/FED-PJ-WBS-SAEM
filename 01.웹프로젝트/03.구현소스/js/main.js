@@ -344,12 +344,10 @@ window.addEventListener("DOMContentLoaded",()=>{
     ///////// 생성자함수 만들어서 스크롤액션 3개 셋팅하기 //////////////////
     *******************************************/
 
-    // 등장액션 대상: .thumb
-    const thumb = document.querySelectorAll(".thumb");
+    // 등장액션 대상: .thumb img
     const tb = document.querySelectorAll(".thumb img");
     // 함수 사용할 대상
     const bxsize = document.querySelector(".area_box");
-    const areaBox = document.querySelectorAll(".area_box");
 
 
     
@@ -376,7 +374,7 @@ window.addEventListener("DOMContentLoaded",()=>{
             // imgMove = boxOffsetH * scrollY / docH;
             
             let boxOffsetH = bxsize.offsetHeight;
-            console.log("박스고정크기",boxOffsetH);
+            // console.log("박스고정크기",boxOffsetH);
 
            
             
@@ -390,8 +388,8 @@ window.addEventListener("DOMContentLoaded",()=>{
                     // 보이는 화면:스크롤이동위치=기준전체이동크기:x
                     // x = 스크롤이동위치*기준전체이동크기/보이는화면
                     // 비례식 결과
-                    let imgMove = thumbHeight * 100  / winH;
-                    console.log(imgMove)
+                    let imgMove = thumbHeight * 50  / winH;
+                    // console.log(imgMove)
                     // 이벤트 출력
                     ele.parentElement.style.transform = `translateY(${imgMove}px)`;
                 } ////// if

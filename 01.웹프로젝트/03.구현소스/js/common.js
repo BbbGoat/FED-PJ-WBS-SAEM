@@ -179,13 +179,6 @@ function loadFn() {
             }; //////// click //////////
         }); ////////// forEach /////////////////
 
-        // chgBtn.forEach((ele) => {
-        //     ele.onclick = function() {
-        //         this.style.backgroundPosition = "center bottom";
-        //     }
-        // })
-
-        
     } ////////////// mFooter 함수 /////////////////
 
     // 호출!

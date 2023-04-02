@@ -11,6 +11,11 @@
         /* margin-right: 20px; */
     }
 
+    /* 헤더 */
+    header {
+        display: none;
+    }    
+
 
     /* section1 - livenewcj*/
     .img_area {
@@ -146,6 +151,9 @@
 /* 650px 이하 - 모바일 */
 @media screen and (max-width: 650px) {
 
+    .wrap {
+        padding: 5vh 0;
+    }
  
     
     /* section2 - cjnow */
@@ -189,6 +197,15 @@
         grid-row: auto;
     }
 
+    /* section3 - brand */
+    .brand {
+        height: 80vh;
+    }
+
+    /* section4 - csv */
+    .csv .wrap {
+        padding: 10vh 0;
+    }
     
     /* 푸터 */
     

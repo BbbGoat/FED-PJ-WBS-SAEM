@@ -301,6 +301,74 @@
     color: #000;
 }
 
+/*********** 모바일 헤더 ***********/
+
+.mtop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: top 0.3s ease-out;
+    z-index: 999;
+}
+.mtop .m_inner_wrap {
+    position: relative;
+    height: 60px;
+    background: transparent;
+    transition: 0.4s ease-out;   
+}
+.mtop.on .m_inner_wrap {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid #e6e6e6;
+}
+.mtop .inner {
+    /* 플렉스박스 */
+    display: flex;
+    justify-content: space-between;
+    
+    /* 박스설정 */
+    width: 100%;
+    height: 60px;
+
+    /* 폰트설정 */
+    font-family: CJONLYONENEW_R;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+/* 로고박스 */
+.mlogo {
+    position: relative;
+    margin: 0 10px;
+}
+.mlogo img {
+    width: 100%;
+}
+/* 로고 공통 설정 */
+.mlogo a {
+    display: block;
+    padding-top: 10px;
+    width: 50px;
+    transition: 0.3s ease-out;
+}
+/* 로고(검은색) 숨김 */
+.mlogo a:last-child {
+    display: block;
+    position: absolute;
+    width: 48px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.mtop.on .mlogo a:first-child {
+    opacity: 0;
+}
+.mtop.on .mlogo a:last-child {
+    opacity: 1;
+}
+
 /******************** 2. 메인영역 ********************/
 /* 속박스 셋팅 */
 .cont {

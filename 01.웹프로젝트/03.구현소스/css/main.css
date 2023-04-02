@@ -228,7 +228,7 @@
 }
 .thumb {
     position: absolute;
-    top: 310px;
+    top: 300px;
     left: 250px;
     border-radius: 20px 0 20px 0;
     overflow: hidden;
