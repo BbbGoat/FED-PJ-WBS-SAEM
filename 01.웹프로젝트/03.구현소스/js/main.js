@@ -285,6 +285,7 @@ window.addEventListener("DOMContentLoaded",()=>{
         },1000);
     } ///////////// scrVid 함수 /////////////////
 
+    scrVid();
 
     /******************************************* 
         함수명: fadeInTxt
@@ -347,9 +348,6 @@ window.addEventListener("DOMContentLoaded",()=>{
     // 등장액션 대상: .thumb img / .sticker img
     const tb = document.querySelectorAll(".thumb img");
     const stk = document.querySelectorAll(".sticker img");
-    // 함수 사용할 대상
-    const bxsize = document.querySelector(".area_box");
-
 
     
     function scrMove() {
@@ -367,7 +365,7 @@ window.addEventListener("DOMContentLoaded",()=>{
             // imgMove = boxOffsetH * scrollY / docH;
             
 
-            tb.forEach((ele,idx) => {
+            tb.forEach((ele) => {
     
                 // 각 thumb요소들 top기준 위치값
                 let thumbHeight = retVal(ele);
