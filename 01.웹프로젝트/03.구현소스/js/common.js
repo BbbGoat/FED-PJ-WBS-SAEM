@@ -177,8 +177,8 @@ function loadFn() {
         const dd = document.querySelector("dd");
 
         // 지우기
-        chgBtn[0].style.display = "none";
-        chgBtn[1].style.display = "none";
+        // chgBtn[0].style.display = "none";
+        // chgBtn[1].style.display = "none";
         
         showBtn.forEach((ele,idx) => {
 
