@@ -45,6 +45,39 @@ function loadFn() {
     // 함수호출
     langBtn();
 
+    /************************************************ 
+        함수명 : subOpen
+        기능 : .main_lang > a 클릭시 .list_lang 박스 노출
+                .btn_icon / .btn_icon_close 클래스의
+                display 속성 변경
+    ************************************************/
+    function subOpen(){
+
+        // 1. 대상수집
+        // const mainLang = document.querySelector(".main_lang > a");
+        // const btnIcon = document.querySelector(".btn_icon");
+        // const btnIconClose = document.querySelector(".btn_icon_close");
+        const ham = document.querySelector(".ham");
+        const sub_close = document.querySelector(".sub_close");
+        const nav_subpage = document.querySelector(".nav_subpage");
+    
+        // 2. 클릭 이벤트 설정
+        // 상태 분류 넘버 변수
+        ham.onclick = () => {
+            event.preventDefault();
+            console.log("햄")
+            nav_subpage.style.transform = "translateX(0)"
+        }
+        sub_close.onclick = () => {
+            event.preventDefault();
+            console.log("형님")
+            nav_subpage.style.transform = "translateX(100%)";
+        }
+
+    } /////////////// subOpen 함수 /////////////////////
+            
+    subOpen();
+
     /********************************************
         이벤트 : scroll
         기능: .fadeout 요소 스크롤에 따라 투명도 조절
@@ -67,6 +100,7 @@ function loadFn() {
     *********************************************/
     // 1. 대상수집
     const nav = document.querySelector(".top");
+    const mnav = document.querySelector(".mtop");
     const secLivecj = document.querySelector(".livenewcj");
     const logoW = document.querySelector(".logo a:first-child");
     const logoB = document.querySelector(".logo a:last-child");
@@ -78,20 +112,23 @@ function loadFn() {
         // 브라우저 top을 기준으로한, 전달변수의 위치값 나타내는 함수 retVal
         const retVal = (ele) => ele.getBoundingClientRect().top;
         let secTop = retVal(secLivecj);
+        let mtop = retVal(mnav);
         // console.log(secTop);
 
-        if (secTop < 0) {
+        if (secTop < 0 || mtop < 0) {
             // 로고 클래스 on
             nav.classList.add("on");
+            mnav.classList.add("on");
             // 로고 크기변환
             logoB.style.width = "42px";
             logoB.style.opacity = 1;
             logoW.style.width = "45px";
             logoW.style.opacity = 0;
         }
-        else if (secTop > 0) {
+        else if (secTop > 0 || mtop > 0) {
             // 로고 클래스 on
             nav.classList.remove("on");
+            mnav.classList.remove("on");
             // 로고 크기변환
             logoB.style.width = "100%";
             logoB.style.opacity = 0;

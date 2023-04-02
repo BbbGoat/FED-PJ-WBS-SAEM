@@ -5,6 +5,7 @@
 /******************** 1. 상단영역 ********************/
 /* 속박스 셋팅 */
 .top {
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
@@ -304,6 +305,8 @@
 /*********** 모바일 헤더 ***********/
 
 .mtop {
+    display: none;
+
     position: fixed;
     top: 0;
     left: 0;
@@ -319,7 +322,7 @@
 }
 .mtop.on .m_inner_wrap {
     position: relative;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255);
     border-bottom: 1px solid #e6e6e6;
 }
 .mtop .inner {
@@ -349,6 +352,7 @@
 .mlogo a {
     display: block;
     padding-top: 10px;
+    padding-left: 10px;
     width: 50px;
     transition: 0.3s ease-out;
 }
@@ -361,7 +365,6 @@
     left: 0;
     opacity: 0;
 }
-
 .mtop.on .mlogo a:first-child {
     opacity: 0;
 }
@@ -370,7 +373,6 @@
 }
 
 /* 햄버거 버튼 */
-
 .ham {
     display: block;
     margin: 15px;
@@ -379,6 +381,103 @@
     background: url(../images/btn_ham.png) no-repeat;
     background-size: 28px auto;
 }
+.mtop.on .ham {
+    display: block;
+    margin: 15px;
+    width: 28px;
+    height: 28px;
+    background: url(../images/btn_ham2.png) no-repeat;
+    background-size: 28px auto;
+}
+
+/********* 모바일 네비게이션 *********/
+.nav_subpage {
+    display: none;
+    font-family: CJONLYONENEW_L;
+    position: fixed;
+    padding: 60px 0;
+    left: 0px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+    z-index: 999;
+
+    transform: translateX(100%);
+    transition: all 0.4s;
+}
+.sub_header {
+    position: absolute;
+    top: 0;
+    height: 60px;
+    background: transparent;
+    transition: 0.4s ease-out;
+}
+.sub_header .inner {
+    position: fixed;
+}
+/* 로고박스 */
+.sub_header .mlogo {
+    position: relative;
+    margin: 0 10px;
+}
+/* 로고 공통 설정 */
+.sub_header .mlogo a {
+    display: block;
+    padding-top: 10px;
+    width: 50px;
+    transition: 0.3s ease-out;
+    position: absolute;
+    width: 48px;
+    top: 0;
+    left: 0;
+    opacity: 1;
+}
+.sub_close {
+    display: block;
+    margin: 15px;
+    width: 28px;
+    height: 28px;
+    background: url(../images/btn_close.png) no-repeat;
+    background-size: 28px auto;
+}
+.sub_sitemap {
+    padding: 10px 20px;
+}
+.sub_list dt > a {
+    font-family: CJONLYONENEW_R;
+}
+
+/* dep 2 */
+.sub_policy {
+    position: relative;
+    margin: 20px;
+}
+.sub_policy a {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    color: #666;
+}
+.sub_policy a + a {
+    margin-left: 20px;
+}
+
+/* dep 3 */
+.sub_copy {
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #666;
+}
+.sub_copy .sns {
+    margin-top: 30px;
+}
+
+
+
 
 /******************** 2. 메인영역 ********************/
 /* 속박스 셋팅 */
