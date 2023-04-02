@@ -340,6 +340,19 @@
     white-space: nowrap;
 }
 
+.m_blackbx {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: 100;
+    background: rgba(0,0,0,0.7);
+    pointer-events: none;
+}
+
 /* 로고박스 */
 .mlogo {
     position: relative;
@@ -642,7 +655,7 @@ dt a {
 /* 버튼설정 */
 .btn_m_footer {
     width: 54px;
-    /* height: 52px; */
+    height: 52px;
     padding-top: 18px;
     box-sizing: border-box;
     line-height: 1.4;

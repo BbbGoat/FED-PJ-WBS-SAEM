@@ -54,23 +54,23 @@ function loadFn() {
     function subOpen(){
 
         // 1. 대상수집
-        // const mainLang = document.querySelector(".main_lang > a");
-        // const btnIcon = document.querySelector(".btn_icon");
-        // const btnIconClose = document.querySelector(".btn_icon_close");
+
         const ham = document.querySelector(".ham");
         const sub_close = document.querySelector(".sub_close");
         const nav_subpage = document.querySelector(".nav_subpage");
+        const m_blackbx = document.querySelector(".m_blackbx");
     
         // 2. 클릭 이벤트 설정
-        // 상태 분류 넘버 변수
+        // 열림버튼
         ham.onclick = () => {
             event.preventDefault();
-            console.log("햄")
-            nav_subpage.style.transform = "translateX(0)"
+            nav_subpage.style.transform = "translateX(0)";
+            m_blackbx.style.display = "block";
         }
+        // 닫힘버튼
         sub_close.onclick = () => {
             event.preventDefault();
-            console.log("형님")
+            m_blackbx.style.display = "none";
             nav_subpage.style.transform = "translateX(100%)";
         }
 
