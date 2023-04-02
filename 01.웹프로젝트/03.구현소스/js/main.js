@@ -270,6 +270,7 @@ window.addEventListener("DOMContentLoaded",()=>{
         }
 
     })
+    
     /******************************************* 
         함수명: scrVid
         기능: 로드후 .3초 후 height 변경

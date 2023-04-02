@@ -369,6 +369,17 @@
     opacity: 1;
 }
 
+/* 햄버거 버튼 */
+
+.ham {
+    display: block;
+    margin: 15px;
+    width: 28px;
+    height: 28px;
+    background: url(../images/btn_ham.png) no-repeat;
+    background-size: 28px auto;
+}
+
 /******************** 2. 메인영역 ********************/
 /* 속박스 셋팅 */
 .cont {
