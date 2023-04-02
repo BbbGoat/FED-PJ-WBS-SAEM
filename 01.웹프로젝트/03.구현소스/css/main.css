@@ -249,9 +249,10 @@
 }
 .sticker {
     position: absolute;
-    top: 230px;
+    top: 180px;
     left: 250px;
     overflow: hidden;
+    transition: .3s ease-out;
 }
 .sticker img {
     width: 100%;
@@ -260,12 +261,12 @@
 
 }
 .stk2  {
-    top: 230px;
+    /* top: 230px; */
     /* left: 250px; */
     width: 200px;
 }
 .stk3 {
-    top: 230px;
+    /* top: 230px; */
     left: 250px;
     width: 200px;
 }

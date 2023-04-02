@@ -342,11 +342,11 @@ window.addEventListener("DOMContentLoaded",()=>{
     /******************************************* 
         함수명: scrMove
         기능: 스크롤시 특정 영역 내에서 object 움직임
-    ///////// 생성자함수 만들어서 스크롤액션 3개 셋팅하기 //////////////////
     *******************************************/
 
-    // 등장액션 대상: .thumb img
+    // 등장액션 대상: .thumb img / .sticker img
     const tb = document.querySelectorAll(".thumb img");
+    const stk = document.querySelectorAll(".sticker img");
     // 함수 사용할 대상
     const bxsize = document.querySelector(".area_box");
 
@@ -355,14 +355,6 @@ window.addEventListener("DOMContentLoaded",()=>{
     function scrMove() {
         window.addEventListener("scroll",()=>{
             
-            // 스크롤시 스크롤 위치값  찍기
-            let scrollY = window.scrollY;
-            // console.log("현재 스크롤 위치",scrollY);
-            
-            // 전체문서 높이값
-            const docH = document.body.clientHeight;
-            // console.log("문서전체높이: ", docH);
-
             // 윈도우 높이값
             const winH = window.innerHeight;
             // console.log("윈도우 높이: ", winH)
@@ -373,11 +365,6 @@ window.addEventListener("DOMContentLoaded",()=>{
             // 이미지이동값 = 윈도우높이 * 스크롤이동값 / 페이지전체길이
             // docH : boxOffsetH = scrollY : imgMove
             // imgMove = boxOffsetH * scrollY / docH;
-            
-            let boxOffsetH = bxsize.offsetHeight;
-            // console.log("박스고정크기",boxOffsetH);
-
-           
             
 
             tb.forEach((ele,idx) => {
@@ -391,11 +378,29 @@ window.addEventListener("DOMContentLoaded",()=>{
                     // 비례식 결과
                     let imgMove = thumbHeight * 50  / winH;
                     // console.log(imgMove)
+
                     // 이벤트 출력
                     ele.parentElement.style.transform = `translateY(${imgMove}px)`;
                 } ////// if
-
             });
+
+            stk.forEach((ele) => {
+                // 각 thumb요소들 top기준 위치값
+                let stkHeight = retVal(ele);
+
+                if (stkHeight < winH + 500 && stkHeight > 0) { // 각 요소 0보다 작아질 경우 이벤트 종료 // 비례식
+                    // 보이는 화면:스크롤이동위치=기준전체이동크기:x
+                    // x = 스크롤이동위치*기준전체이동크기/보이는화면
+                    // 비례식 결과
+                    let imgMove = stkHeight * 100  / winH;
+                    // console.log(imgMove)
+
+                    // 이벤트 출력
+                    ele.parentElement.style.transform = `translateY(${imgMove}px)`;
+                } ////// if
+            }); 
+
+
 
         }); ///////// scroll 이벤트 ////////
     } ////////////// scrMove 함수 ///////////////

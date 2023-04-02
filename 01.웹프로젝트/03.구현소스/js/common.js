@@ -47,14 +47,11 @@ function loadFn() {
 
     /************************************************ 
         함수명 : subOpen
-        기능 : .main_lang > a 클릭시 .list_lang 박스 노출
-                .btn_icon / .btn_icon_close 클래스의
-                display 속성 변경
+        기능 : 모바일 네비게이션 버튼클릭시 열림/닫힘
     ************************************************/
     function subOpen(){
 
         // 1. 대상수집
-
         const ham = document.querySelector(".ham");
         const sub_close = document.querySelector(".sub_close");
         const nav_subpage = document.querySelector(".nav_subpage");
