@@ -172,7 +172,6 @@ function loadFn() {
 
         // 대상선정
         const showBtn = document.querySelectorAll(".btn_m_footer");
-        const chgBtn = document.querySelectorAll(".btn_m_footer span");
         const submenu = document.querySelectorAll(".submenu");
         const dd = document.querySelector("dd");
 
@@ -218,6 +217,21 @@ function loadFn() {
     // 호출!
     mFooter();
 
+    // 로드구역
+    console.log("공통JS 로딩완료");
+
+    // 부드러운 스크롤 JS 호출!
+    startSS();
+
+    // 만약 스크롤바를 직접 드래그할 경우
+    // mouseup (즉, 스크롤바를 놓는경우)
+    // 이벤트 발생시 y축 스크롤바 위치를
+    // pos전역변수에 업데이트 한다!
+    window.addEventListener("mouseup", () => {
+        pos = window.scrollY;
+        console.log(pos);
+    }); /////////// scroll ////////////
+    
 } ////////////////  loadFn 함수 //////////////////
 
 window.addEventListener("DOMContentLoaded", loadFn);

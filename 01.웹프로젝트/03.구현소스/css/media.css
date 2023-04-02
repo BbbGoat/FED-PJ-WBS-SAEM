@@ -175,7 +175,7 @@
     .title_area p {
         font-size: 18px;
     }
-    .title_area:first-child > a {
+    .morebtn {
         display: none;
     }
 
