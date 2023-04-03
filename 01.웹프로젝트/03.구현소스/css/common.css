@@ -713,3 +713,16 @@ button {
     padding-top: 36px;
     align-items: center;
 }
+
+/* 최상단으로 이동하기 버튼 */
+.btn_top {
+    position: fixed;
+    width: 65px;
+    height: 65px;
+    background: #000;
+    opacity: 0;
+    bottom: 0;
+    z-index: 9999;
+    right: 0;
+    transition: opacity .4s;
+}
