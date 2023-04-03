@@ -259,7 +259,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     window.addEventListener("resize",function(){
         let currWidth = this.innerWidth;
-        console.log(window.innerWidth);
+        // console.log(window.innerWidth);
         if (currWidth <= 650) {
             mainVid.setAttribute("src","./images/mainmov_m.mp4");
             // mainVid.innerHTML="./images/mainmov_m.mp4";
@@ -280,9 +280,9 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     function scrVid() {
         setTimeout(()=>{
-            section1Vid.style.height = "80vh";
+            section1Vid.style.height = "90vh";
             section1Vid.transition = "height 1s ease-out";
-        },1000);
+        },1500);
     } ///////////// scrVid 함수 /////////////////
 
     scrVid();

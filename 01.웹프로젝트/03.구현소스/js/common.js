@@ -217,18 +217,9 @@ function loadFn() {
     // 호출!
     mFooter();
 
-    // 로드구역
-    console.log("공통JS 로딩완료");
-
     // 부드러운 스크롤 JS 호출!
     startSS();
 
-    // 부드러운 스크롤 전역 스크롤값을
-    // 0으로 변경하여 최상단으로 이동!
-    pos = 0;
-
-    // 위치이동하기
-    window.scrollTo(0, 0);
     // 만약 스크롤바를 직접 드래그할 경우
     // mouseup (즉, 스크롤바를 놓는경우)
     // 이벤트 발생시 y축 스크롤바 위치를
@@ -237,6 +228,42 @@ function loadFn() {
         pos = window.scrollY;
         console.log(pos);
     }); /////////// scroll ////////////
+    
+    /******************************************* 
+        함수명 : movTop
+        기능: 클릭시 최상위로 이동
+    *******************************************/
+    function movTop() {
+        
+        const btnTop = document.querySelector(".btn_top");
+    
+        btnTop.onclick = function() {
+            
+            // 부드러운 스크롤 전역 스크롤값을
+            // 0으로 변경하여 최상단으로 이동!
+            pos = 0;
+    
+            // 위치이동하기
+            window.scrollTo(0, 0);    
+        };
+    
+        window.addEventListener("scroll",() => {
+    
+            if (pos > 900) {
+                btnTop.style.opacity = 0.7;
+            }
+            else if (pos < 900) {
+                btnTop.style.opacity = 0;
+            }
+    
+        });
+        
+    } //////////// movTop 함수 ///////////////////
+
+    // 함수호출!
+    movTop();
+
+
     
 } ////////////////  loadFn 함수 //////////////////
 
