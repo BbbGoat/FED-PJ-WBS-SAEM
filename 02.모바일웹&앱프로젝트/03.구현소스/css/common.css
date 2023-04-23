@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+/* 웹&앱PJ 공통모듈 CSS - common.css */
+
+/* 초기화 */
+@import url(./core.css);
+@import url(./reset.css);
+
+
+/* 네비게이션 전체박스 */
+nav {
+    /* 플렉스박스 */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    white-space: nowrap;
+    padding: 0 30px;
+    font-size: 1.5rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    height: 80px;
+}
+
+/* 로고/카테고리 플렉스박스 */
+.gnb {
+    display: flex;
+}
+/* 1. 로고영역 */
+.logo {
+    height: 80px;
+}
+.logo img {
+    height: 100%;
+}
+/* 2. 카테고리영역 */
+.catbx {
+    position: relative;
+    display: flex;
+    gap: 30px;
+    margin-left: 80px;
+    line-height: 80px;
+    color: #333;
+}
+.sub {
+    position: absolute;
+    display: flex;
+    top: 100px;
+    gap: 100px;
+    line-height: 35px;
+}
+/* 3. 사이드영역 */
+.side {
+    display: flex;    
+    gap: 30px;
+    line-height: 80px;
+    color: #333;
+}
