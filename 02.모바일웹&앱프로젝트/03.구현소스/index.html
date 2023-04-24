@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="./css/common.css">
     <!-- 메인 CSS -->
     <link rel="stylesheet" href="./css/main.css">
+    <!-- 제이쿼리 라이브러리 -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
     <!-- 외부 JS -->
     <script src="./js/main.js"></script>
 </head>
@@ -104,12 +107,49 @@
     <main id="cont">
         <!-- 속박스 -->
         <div class="cont">
-            <!-- 비디오 슬라이드 -->
-            <section id="vidslide">
-                <div class="vidslide">
-                    <video id="mainvid1" src=""></video>
-                    <video id="mainvid2" src=""></video>
-                    <video id="mainvid3" src=""></video>
+            <!-- 비디오 슬라이드 영역 -->
+            <section id="vidbx">
+                <!-- 슬라이드 -->
+                <ul class="vidslide">
+                    <li class="ban3">
+                        <video id="mainvid3" class="video" src="../00.자료수집/03.동영상데이터/Aesop_A_Guide_to_Fragrance_Web_Secondary_Mid_01_Rose_Desktop_1920x1080px.mp4" autoplay muted loop></video>
+                    </li>
+                    <li class="ban1">
+                        <video id="mainvid1" class="video" src="" autoplay muted loop></video>
+                    </li>
+                    <li class="ban2">
+                        <video id="mainvid2" class="video" src="" autoplay muted loop></video>
+                    </li>
+                </ul>
+                <!-- 블릿박스 -->
+                <ol class="indic">
+                    <li class="on">
+                        <a href="#">
+                            <span class="bld">블릿</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="bld">블릿</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="bld">블릿</span>
+                        </a>
+                    </li>
+                </ol>
+                <!-- 슬라이드 커버 -->
+                <div class="cover"></div>
+
+                <!-- 양쪽이동버튼 -->
+                <!-- 왼쪽 -->
+                <div class="lbtn">
+                    <span class="btntit">Prev</span>
+                </div>
+                <!-- 오른쪽 -->
+                <div class="rbtn">
+                    <span class="btntit">Next</span>
                 </div>
             </section>
         </div>
