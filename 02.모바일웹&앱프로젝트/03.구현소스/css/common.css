@@ -32,6 +32,11 @@ nav {
     height: 100%;
 }
 /* 2. 카테고리영역 */
+
+.catbx ol {
+    /* 임시 가리기 */
+    display: none;
+}
 .catbx {
     position: relative;
     display: flex;
