@@ -26,11 +26,12 @@ main {
     position: absolute;
     display: flex;
     top: 0;
-    /* left: -100%; */
+    left: -100%;
     width: 300%;
     height: 100%;
 }
 .vidslide li {
+    position: relative;
     /* 등분할 */
     flex: 1;
 }
@@ -70,6 +71,17 @@ main {
     opacity: .7;
     background-color: #000;
     transition: .3s ease-out;
+}
+/* 슬라이드 커버 */
+.cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* background-color: #f00;
+    opacity: 0.5; */
+    display: none;
 }
 
 
