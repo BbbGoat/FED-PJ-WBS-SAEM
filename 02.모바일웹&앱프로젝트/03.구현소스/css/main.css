@@ -20,6 +20,7 @@ main {
     /* 부모박스 */
     position: relative;
     height: 700px;
+    width: 100%;
 }
 .vidslide {
     position: absolute;
@@ -44,14 +45,20 @@ main {
 .indic {
     position: absolute;
     display: flex;
+    /* gap: 20px; */
     bottom: 0;
     width: 100%;
     z-index: 10;
+    padding: 0 10px;
 }
 .indic li {
-    /* margin: 20px; */
+    display: inline-flex;
+    margin: 20px;
+    height: 10px;
     flex: 1;
-    background-color: rgba(255, 255, 255, 0.3)
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
 }
 .bld {
     display: inline-block;
