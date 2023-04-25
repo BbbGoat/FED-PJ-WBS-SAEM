@@ -49,10 +49,16 @@ main {
     z-index: 10;
 }
 .indic li {
+    /* margin: 20px; */
     flex: 1;
-    background-color: #028a6c;
+    background-color: rgba(255, 255, 255, 0.3)
 }
-
+.bld {
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    background-color: #000;
+}
 
 
 /*************** 하단영역 ***************/

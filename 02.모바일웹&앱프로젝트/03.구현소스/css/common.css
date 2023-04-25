@@ -8,6 +8,12 @@
 
 
 /* 네비게이션 전체박스 */
+.fxbx {
+    /* 픽스드박스 */
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+}
 nav {
     /* 플렉스박스 */
     display: flex;
