@@ -59,16 +59,23 @@ main {
     height: 7px;
     /* 사이간격 */
     margin: min(1vw,10px);
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     overflow: hidden;
+}
+/* 클래스 on */
+.indic li.on {
+}
+.indic li.on .bld {
+    width: 100%;
+    opacity: .7;
 }
 .bld {
     display: inline-block;
     /* 게이지바 */
-    width: 30%;
+    width: 0;
     height: 100%;
-    opacity: .7;
+    opacity: 0;
     background-color: #000;
     transition: .3s ease-out;
 }
