@@ -76,6 +76,7 @@ window.addEventListener("DOMContentLoaded",()=>{
                 // 블릿 변경함수 호출!
                 addOn(2);
                 // 영상 재생함수 호출!
+                vidOn(2);
                 
             } ///// if : 왼쪽이동 /////
             
@@ -93,6 +94,7 @@ window.addEventListener("DOMContentLoaded",()=>{
                 // 블릿 변경함수 호출!
                 addOn(0);
                 // 영상 재생함수 호출!
+                vidOn(0);
                 
             } ///// else if : 오른쪽이동 /////
             
@@ -148,45 +150,79 @@ window.addEventListener("DOMContentLoaded",()=>{
             // 해당 슬라이드와 동일순번 블릿에 클래스 on
             indic.eq(getseq).addClass("on")
             .siblings().removeClass("on");
+    
+        } ////////////// addOn 함수 ///////////////
 
 
-            
+
+
+
+        
+        // $(window).on("load",function() {
+        //     // 로드시 자동재생
+        //     vidOn()
+        //     videoAutoPlay();
+        // });
+        
+        
+        function vidOn(seq) {
+
             // 타임업데이트 ///////////////////////////
-
-            // 현재 비디오
-            let curVid = slide.find("li").eq(seq).find("video");
+            
+            let getseq = slide.find("li").eq(seq).attr("data-seq");
+            
+            // 타겟 비디오
+            let tgVid = slide.find("li").eq(seq).find("video");
+            // 타겟 제외
+            let noneTg = tgVid.parent().siblings().find("video");
             // 출력대상
             let chgVar = indic.eq(getseq).find(".bld");
+            let noneVar = chgVar.parent().siblings().find(".bld");
             
-            console.log(curVid, chgVar)
 
-            let dd = document.querySelector("#mainvid2");
+            // 비디오재생
+            play(tgVid);
             
-            setInterval(() => {
-                // 영상 재생시간 현재값, 최대값 변수
-                let vidsec_now = dd.currentTime;
-                let vidsec_max = dd.duration;
-                console.log(vidsec_now)
+            // 타이머 작동 이벤트
+            $(document).ready(function(){
+                tgVid.on("timeupdate",function(event){
+                    // console.log(this.currentTime)
+                    let nowTime = this.currentTime;
+                    let maxTime = this.duration;
 
-                // 결과값
-                let timer = (100 * vidsec_now / vidsec_max);
-                // 출력 + 트랜지션
-                // svg1.style.strokeDashoffset = (300-timer)+"%";
-                // svg1.style.transition = "0.3s ease 0";
-                // chgVar.style.width = timer+"%";
-            },500);
+                    let timer = (100*nowTime / maxTime);
+                    
+                    // 출력
+                    chgVar.css({
+                        width: timer+"%",
+                        transition: ".1s ease 0"
+                    });
+
+                    noneTg.off("timeupdate",stop(noneTg));
+                })
+            });
+
+            // 재생함수
+            function play(tg) {
+                tg.get(0).currentTime = 0;
+                tg.get(0).play();
+            }
+
+            // 멈춤함수
+            function stop(tg) {
+                tg.get(0).pause();
+                // 재생시간 초기화
+                tg.get(0).currentTime = 0;
+                noneVar.css({width:"0"});
+            }
             
-    
-        } ////////////// addOn 함수 ///////////////    
-    
-        // 타임업데이트 이벤트 등록
-        const videoBox = document.querySelector(".vidslide");
-        videoBox.addEventListener("timeupdate",addOn());
+        } ////////////////////// vidOn 함수 //////////////////////
+        
         
     } ///////////////// slideFn 함수 /////////////////////
+
     
     // 최초호출
     slideFn();
-
-
+    
 }); ///////////////////// 로드구역 ///////////////////////
