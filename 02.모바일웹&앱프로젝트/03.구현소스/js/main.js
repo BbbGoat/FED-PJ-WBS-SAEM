@@ -221,10 +221,15 @@ window.addEventListener("DOMContentLoaded",()=>{
         ////// 각 배너 등장 타이틀 셋팅 /////////
         ///////////////////////////////////////
         const mainTxtData = {
-            "ban1": "Men's Season<br>Collection",
-            "ban2": "2023 Special<br>Collection",
-            "ban3": "T-Shirt<br>Collection"
+            "ban1": "Gloam",
+            "ban2": "Data",
+            "ban3": "T-Shirt"
         }; /////////// mainTxtData 객체 ///////////
+        const subtxtData = {
+            "ban1": "sdfsdafssdsfdsfdsdsdadf<br>sadfsadsfdfdssfdsfdfasf",
+            "ban2": "sdfsdfsdfssfdsfdsfdsdafsadfs<br>adfsadsfdfdssfdsfdfasf",
+            "ban3": "sdfsdafsdsdfsfdsfdsfdsadfs<br>adsfdsfdsfdsfdfsadfasf",
+        }
     
         function showTit() {
 
@@ -234,37 +239,75 @@ window.addEventListener("DOMContentLoaded",()=>{
             let clsName = mainBan.attr("class");
             // 클래스명에 해당하는 객체값 읽어오기
             let mainTxt = mainTxtData[clsName];
-            console.log(mainBan,clsName,mainTxt);
+            let subtxt = subtxtData[clsName];
+            // console.log(mainBan,clsName,mainTxt);
 
             // append 초기화
-            $(".btit").remove();
+            $(".txtbx").remove();
+            // $(".btit").remove();
+            // $(".stit").remove();
             
             // 1. 요소추가하기
-            mainBan.append(`<h2 class="btit"></h2>`);
+            mainBan.append(`
+            <span class="txtbx">
+                <h2 class="btit"></h2>
+                <h3 class="stit"></h3>
+                </span>
+            `);
+            // mainBan.append(`<h2 class="btit"></h2>`);
+            // mainBan.append(`<h3 class="stit"></h3>`);
 
-            
-            // 타이틀 left 위치 변수처리
-            // ban2, ban3만 오른쪽위치
-            let lval = "30%";
-            // if(clsName === "ban2" || clsName === "ban3") lval="70%";
+
 
             // 2. 배너넣기
-            mainBan.find(".btit").html(mainTxt)
-            .css({
-                position: "absolute",
-                top: "55%", // 약간아래
-                left: lval,
-                transform: "translate(-50%, -50%)",
-                font: "bold 4.5vmax Verdana",
-                color: "#fff",
-                textShadow: "1px 1px 3px #777",
+            // 2-1. 공통박스 설정
+            mainBan.find(".txtbx").css({
+                position:"absolute",
+                left: "min(5vw,100px)",
+                bottom:"12vh",
+                zIndex: 10,
                 whiteSpace: "nowrap",
                 opacity: 0 // 처음에 투명
             })
             .animate({
-                top: "50%",
-                opacity: 1,
-            },1000,"easeInOutQuart")
+                bottom:"15vh",
+                opacity: 1
+            },1000);
+            
+            // 2-2. .btit / .stit 설정
+            // .btit
+            mainBan.find(".btit").html(mainTxt)
+            .css({
+                font: "min(10vw,100px) Noto Sans KR",
+                color: "#fff",
+                marginBottom: "20px",
+                textShadow: "1px 1px 3px rgb(64 64 64)",
+            })
+            // .stit
+            .parent().find(".stit").html(subtxt)
+            .css({
+                font: "min(3vw,20px) normal Noto Sans KR",
+                color: "#fff",
+                textShadow: "1px 1px 3px rgb(64 64 64)",
+            })
+
+            // mainBan.find(".stit").html(subtxt)
+            // .css({
+            //     position: "absolute",
+            //     // top: "65%", // 약간아래
+            //     bottom: "20%",
+            //     left: "min(5vw,100px)",
+            //     font: "min(3vw,20px) normal Noto Sans KR",
+            //     color: "#fff",
+            //     textShadow: "1px 1px 3px rgb(64 64 64)",
+            //     whiteSpace: "nowrap",
+            //     zIndex: 10,
+            //     // opacity: 0 // 처음에 투명
+            // })
+            // .animate({
+            //     // top: "80%",
+            //     // opacity: 1,
+            // },2000,"easeInOutQuart")
 
 
         } ////////////// showTit 함수 ///////////////
