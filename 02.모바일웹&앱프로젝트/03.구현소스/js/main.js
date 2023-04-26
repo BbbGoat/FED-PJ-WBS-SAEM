@@ -218,4 +218,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     // 최초호출
     slideFn();
 
+
+    
+
 }); ///////////////////// 로드구역 ///////////////////////
