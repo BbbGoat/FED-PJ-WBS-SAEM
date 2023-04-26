@@ -222,13 +222,13 @@ window.addEventListener("DOMContentLoaded",()=>{
         ///////////////////////////////////////
         const mainTxtData = {
             "ban1": "Gloam",
-            "ban2": "Data",
-            "ban3": "T-Shirt"
+            "ban2": "Package",
+            "ban3": "SkinCare"
         }; /////////// mainTxtData 객체 ///////////
         const subtxtData = {
-            "ban1": "sdfsdafssdsfdsfdsdsdadf<br>sadfsadsfdfdssfdsfdfasf",
-            "ban2": "sdfsdfsdfssfdsfdsfdsdafsadfs<br>adfsadsfdfdssfdsfdfasf",
-            "ban3": "sdfsdafsdsdfsfdsfdsfdsadfs<br>adsfdsfdsfdsfdfsadfasf",
+            "ban1": "이솝만의 2023 시그니처 향수 글롬<br>한폭의 꿈결을 담아낸 글롬을 만나보세요",
+            "ban2": "이솝의 고급스러운 패키지와 맞춤형 제품 구성<br>당신의 특별한 마음을 특별한 사람에게 전하세요.",
+            "ban3": "친환경 제품만 사용하는 자연을 담은 이솝<br>놀랍도록 순수한 스킨케어를 경험해보세요.",
         }
     
         function showTit() {
@@ -244,20 +244,14 @@ window.addEventListener("DOMContentLoaded",()=>{
 
             // append 초기화
             $(".txtbx").remove();
-            // $(".btit").remove();
-            // $(".stit").remove();
             
             // 1. 요소추가하기
             mainBan.append(`
             <span class="txtbx">
                 <h2 class="btit"></h2>
-                <h3 class="stit"></h3>
+                <p class="stit"></p>
                 </span>
             `);
-            // mainBan.append(`<h2 class="btit"></h2>`);
-            // mainBan.append(`<h3 class="stit"></h3>`);
-
-
 
             // 2. 배너넣기
             // 2-1. 공통박스 설정
@@ -278,7 +272,7 @@ window.addEventListener("DOMContentLoaded",()=>{
             // .btit
             mainBan.find(".btit").html(mainTxt)
             .css({
-                font: "min(10vw,100px) Noto Sans KR",
+                font: "min(10vw,100px) Merriweather",
                 color: "#fff",
                 marginBottom: "20px",
                 textShadow: "1px 1px 3px rgb(64 64 64)",
@@ -286,7 +280,11 @@ window.addEventListener("DOMContentLoaded",()=>{
             // .stit
             .parent().find(".stit").html(subtxt)
             .css({
-                font: "min(3vw,20px) normal Noto Sans KR",
+                // font: "min(3vw,20px) Noto Sans KR",
+                fontFamily: "Noto Sans KR",
+                fontSize: "min(3vw,18px)",
+                fontWeight: "300",
+                lineHeight: "1.8",
                 color: "#fff",
                 textShadow: "1px 1px 3px rgb(64 64 64)",
             })

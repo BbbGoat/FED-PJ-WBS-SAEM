@@ -6,10 +6,17 @@
 /******************** 1. 웹폰트 : CDN ********************/
 
 /* Noto sans kr */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+/* Merriweather */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+/* Poltawski Nowy */
+@import url('https://fonts.googleapis.com/css2?family=Poltawski+Nowy:wght@400;600;700&display=swap');
+
 
 /* 
     font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Poltawski Nowy', serif;
 */
 
 /* 전체 글자크기 Root 셋팅! */
