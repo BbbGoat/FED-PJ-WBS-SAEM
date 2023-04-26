@@ -108,6 +108,15 @@ window.addEventListener("DOMContentLoaded",()=>{
             } ///// else : 제자리 /////
             
         }); ////////////////// slide dragstop 이벤트 //////////////////
+
+        /**************************************** 
+            영상바로재생
+        ****************************************/
+        // 이벤트대상
+        const mainVid = $("#mainvid1");
+
+        // 트리거발생
+        mainVid.trigger("dragstop");
     
         /*************************************** 
             함수명 : setSeq
@@ -154,16 +163,6 @@ window.addEventListener("DOMContentLoaded",()=>{
         } ////////////// addOn 함수 ///////////////
 
 
-
-
-
-        
-        // $(window).on("load",function() {
-        //     // 로드시 자동재생
-        //     vidOn()
-        //     videoAutoPlay();
-        // });
-        
         
         function vidOn(seq) {
 
@@ -195,11 +194,12 @@ window.addEventListener("DOMContentLoaded",()=>{
                     // 출력
                     chgVar.css({
                         width: timer+"%",
-                        transition: ".1s ease 0"
+                        transition: ".3s ease 0"
                     });
 
+                    // 제외대상들 초기화
                     noneTg.off("timeupdate",stop(noneTg));
-                })
+                }); //////////// timeupdate ///////////////
             });
 
             // 재생함수
@@ -219,10 +219,12 @@ window.addEventListener("DOMContentLoaded",()=>{
         } ////////////////////// vidOn 함수 //////////////////////
         
         
+        addOn(1);
+        vidOn(1);
+        
     } ///////////////// slideFn 함수 /////////////////////
 
     
     // 최초호출
     slideFn();
-    
 }); ///////////////////// 로드구역 ///////////////////////
