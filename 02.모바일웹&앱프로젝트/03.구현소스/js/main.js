@@ -53,14 +53,14 @@ window.addEventListener("DOMContentLoaded",()=>{
     
         // 드래그 종료후 발생하는 이벤트 함수
         slide.on("dragstop",function(){
-            console.log("드래그멈춤");
+            // console.log("드래그멈춤");
     
             // 광드래그 방지 커버 보이기
             cover.show();
     
             // 슬라이드 left위치값
             let sleft = $(this).offset().left;
-            console.log(sleft);
+            // console.log(sleft);
     
             // 분기점 : -110%보다 작을때
             if (sleft < -winW*1.1) {
@@ -218,13 +218,13 @@ window.addEventListener("DOMContentLoaded",()=>{
             
         } ////////////////////// vidOn 함수 //////////////////////
         
-        
+        // 최초호출!
         addOn(1);
         vidOn(1);
         
     } ///////////////// slideFn 함수 /////////////////////
 
-    
     // 최초호출
     slideFn();
+
 }); ///////////////////// 로드구역 ///////////////////////

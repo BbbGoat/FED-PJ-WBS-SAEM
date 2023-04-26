@@ -67,7 +67,7 @@ main {
 .indic li.on {
 }
 .indic li.on .bld {
-    width: 100%;
+    width: 0;
     opacity: .7;
 }
 .bld {
