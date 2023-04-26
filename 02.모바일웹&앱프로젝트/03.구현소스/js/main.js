@@ -71,8 +71,10 @@ window.addEventListener("DOMContentLoaded",()=>{
                     slide.append(slide.find("li").first()).css({left:"-100%"});
                     // 커버제거하기
                     cover.hide();
+                    // 메인배너 타이틀함수 호추
+                    showTit();
                 }); // animate
-    
+                
                 // 블릿 변경함수 호출!
                 addOn(2);
                 // 영상 재생함수 호출!
@@ -89,6 +91,8 @@ window.addEventListener("DOMContentLoaded",()=>{
                     slide.prepend(slide.find("li").last()).css({left:"-100%"});
                     // 커버제거하기
                     cover.hide();
+                    // 메인배너 타이틀함수 호추
+                    showTit();
                 });
                 
                 // 블릿 변경함수 호출!
@@ -209,14 +213,80 @@ window.addEventListener("DOMContentLoaded",()=>{
             
         } ////////////////////// vidOn 함수 //////////////////////
         
+    
+        /************************************************** 
+            배너 타이틀 셋팅
+        **************************************************/
+        ///////////////////////////////////////
+        ////// 각 배너 등장 타이틀 셋팅 /////////
+        ///////////////////////////////////////
+        const mainTxtData = {
+            "ban1": "Men's Season<br>Collection",
+            "ban2": "2023 Special<br>Collection",
+            "ban3": "T-Shirt<br>Collection"
+        }; /////////// mainTxtData 객체 ///////////
+    
+        function showTit() {
+
+            // 대표배너
+            const mainBan = slide.find("li").eq(1);
+            // 클래스명 읽어오기
+            let clsName = mainBan.attr("class");
+            // 클래스명에 해당하는 객체값 읽어오기
+            let mainTxt = mainTxtData[clsName];
+            console.log(mainBan,clsName,mainTxt);
+
+            // append 초기화
+            $(".btit").remove();
+            
+            // 1. 요소추가하기
+            mainBan.append(`<h2 class="btit"></h2>`);
+
+            
+            // 타이틀 left 위치 변수처리
+            // ban2, ban3만 오른쪽위치
+            let lval = "30%";
+            // if(clsName === "ban2" || clsName === "ban3") lval="70%";
+
+            // 2. 배너넣기
+            mainBan.find(".btit").html(mainTxt)
+            .css({
+                position: "absolute",
+                top: "55%", // 약간아래
+                left: lval,
+                transform: "translate(-50%, -50%)",
+                font: "bold 4.5vmax Verdana",
+                color: "#fff",
+                textShadow: "1px 1px 3px #777",
+                whiteSpace: "nowrap",
+                opacity: 0 // 처음에 투명
+            })
+            .animate({
+                top: "50%",
+                opacity: 1,
+            },1000,"easeInOutQuart")
+
+
+        } ////////////// showTit 함수 ///////////////
+
+        showTit();
+
+
+
+
+
         // 최초호출!
         addOn(1);
         vidOn(1);
         
-    } ///////////////// slideFn 함수 /////////////////////
+        
+
+    } ///////////////// slideFn 함수 /////////////////////    
 
     // 최초호출
     slideFn();
+    
+
 
 
     
