@@ -158,7 +158,12 @@ window.addEventListener("DOMContentLoaded",()=>{
         } ////////////// addOn 함수 ///////////////
 
 
-        
+        /***************************************** 
+            함수명: vidOn
+            기능 : 1) 타겟된 동영상 재생/나머지 멈춤
+                    2) 하단 타이머 작동
+                    3) 영상끝나면 다음영상으로 이동
+        *****************************************/
         function vidOn(seq) {
 
             // 타임업데이트 ///////////////////////////
@@ -177,13 +182,39 @@ window.addEventListener("DOMContentLoaded",()=>{
             // 비디오재생
             play(tgVid);
             
+            // 비디오 종료후 다음 슬라이드 이동
+            tgVid.on("ended", function(){
+                if (event) {
+                    console.log("ended");
+                    slide.animate({
+                        left: -winW*2 + "px"
+                    },1000,"easeOutQuint",()=>{
+                        // 이동후 첫번째 li 이동
+                        slide.append(slide.find("li").first()).css({left:"-100%"});
+                        // 커버제거하기
+                        cover.hide();
+                        // 메인배너 타이틀함수 호추
+                        showTit();
+                    }); // animate
+                    
+                    // 블릿 변경함수 호출!
+                    addOn(2);
+                    // 영상 재생함수 호출!
+                    vidOn(2);
+                }
+            });
+            
             // 타이머 작동 이벤트
             $(document).ready(function(){
                 tgVid.on("timeupdate",function(event){
-                    // console.log(this.currentTime)
+                    // 큐 초기화
+                    slide.clearQueue();
+
+                    // console.log(slide.queue);
+
                     let nowTime = this.currentTime;
                     let maxTime = this.duration;
-
+                    
                     let timer = (100*nowTime / maxTime);
                     
                     // 출력
@@ -191,9 +222,11 @@ window.addEventListener("DOMContentLoaded",()=>{
                         width: timer+"%",
                         transition: ".3s ease 0"
                     });
-
+                    
                     // 제외대상들 초기화
                     noneTg.off("timeupdate",stop(noneTg));
+                    
+                    
                 }); //////////// timeupdate ///////////////
             });
 
@@ -210,6 +243,8 @@ window.addEventListener("DOMContentLoaded",()=>{
                 tg.get(0).currentTime = 0;
                 noneVar.css({width:"0"});
             }
+
+
             
         } ////////////////////// vidOn 함수 //////////////////////
         
@@ -272,7 +307,7 @@ window.addEventListener("DOMContentLoaded",()=>{
             // .btit
             mainBan.find(".btit").html(mainTxt)
             .css({
-                font: "min(10vw,100px) Merriweather",
+                font: "min(10vw,100px) EB Garamond",
                 color: "#fff",
                 marginBottom: "20px",
                 textShadow: "1px 1px 3px rgb(64 64 64)",
@@ -281,7 +316,7 @@ window.addEventListener("DOMContentLoaded",()=>{
             .parent().find(".stit").html(subtxt)
             .css({
                 // font: "min(3vw,20px) Noto Sans KR",
-                fontFamily: "Noto Sans KR",
+                fontFamily: "IBM Plex Sans KR",
                 fontSize: "min(3vw,18px)",
                 fontWeight: "300",
                 lineHeight: "1.8",
@@ -289,36 +324,17 @@ window.addEventListener("DOMContentLoaded",()=>{
                 textShadow: "1px 1px 3px rgb(64 64 64)",
             })
 
-            // mainBan.find(".stit").html(subtxt)
-            // .css({
-            //     position: "absolute",
-            //     // top: "65%", // 약간아래
-            //     bottom: "20%",
-            //     left: "min(5vw,100px)",
-            //     font: "min(3vw,20px) normal Noto Sans KR",
-            //     color: "#fff",
-            //     textShadow: "1px 1px 3px rgb(64 64 64)",
-            //     whiteSpace: "nowrap",
-            //     zIndex: 10,
-            //     // opacity: 0 // 처음에 투명
-            // })
-            // .animate({
-            //     // top: "80%",
-            //     // opacity: 1,
-            // },2000,"easeInOutQuart")
 
 
         } ////////////// showTit 함수 ///////////////
 
-        showTit();
-
-
-
-
-
+        
+        
+        
         // 최초호출!
         addOn(1);
         vidOn(1);
+        showTit();
         
         
 
@@ -326,10 +342,6 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     // 최초호출
     slideFn();
-    
-
-
-
     
 
 }); ///////////////////// 로드구역 ///////////////////////

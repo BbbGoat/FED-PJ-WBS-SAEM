@@ -7,16 +7,25 @@
 
 /* Noto sans kr */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
-/* Merriweather */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
-/* Poltawski Nowy */
-@import url('https://fonts.googleapis.com/css2?family=Poltawski+Nowy:wght@400;600;700&display=swap');
+/* IBM Plex Sans KR */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;700&display=swap');
 
+/* EB Garamond */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&display=swap');
+/* Cormorant Garamond */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+/* Newsreader */
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@300;400;500;600;700&display=swap');
 
 /* 
+    // 한글
     font-family: 'Noto Sans KR', sans-serif;
-    font-family: 'Merriweather', serif;
-    font-family: 'Poltawski Nowy', serif;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+
+    // 영문
+    font-family: 'EB Garamond', serif;
+    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Newsreader', serif;
 */
 
 /* 전체 글자크기 Root 셋팅! */
