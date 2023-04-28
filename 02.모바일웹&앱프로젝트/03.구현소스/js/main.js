@@ -185,8 +185,6 @@ window.addEventListener("DOMContentLoaded",()=>{
             $(document).ready(function(){
                 tgVid.on("timeupdate",function(event){
 
-                    // console.log(slide.queue);
-
                     let nowTime = this.currentTime;
                     let maxTime = this.duration;
                     
@@ -229,11 +227,15 @@ window.addEventListener("DOMContentLoaded",()=>{
             let playVid1 = $("#mainvid1");
             let playVid2 = $("#mainvid2");
             let playVid3 = $("#mainvid3");
-    
+            
             // 1번 비디오 종료후 다음 슬라이드 이동
             playVid1.on("ended", function(){
                 if (event) {
                     console.log("ended1");
+                    
+                    // 광드래그 방지 커버 보이기
+                    cover.show();
+                    
                     slide.animate({
                         left: -winW*2 + "px"
                     },1000,"easeOutQuint",()=>{
@@ -250,11 +252,18 @@ window.addEventListener("DOMContentLoaded",()=>{
                     // 영상 재생함수 호출!
                     vidOn(2);
                 }
+                // 제외대상들 초기화
+                let stopVid = playVid1.parent().siblings().find(".video");
+                stopVid.off("timeupdate",stop(stopVid));
             });
             // 2번 비디오 종료후 다음 슬라이드 이동
             playVid2.on("ended", function(){
                 if (event) {
                     console.log("ended2");
+                    
+                    // 광드래그 방지 커버 보이기
+                    cover.show();
+                    
                     slide.animate({
                         left: -winW*2 + "px"
                     },1000,"easeOutQuint",()=>{
@@ -271,11 +280,19 @@ window.addEventListener("DOMContentLoaded",()=>{
                     // 영상 재생함수 호출!
                     vidOn(2);
                 }
+                // 제외대상들 초기화
+                let stopVid = playVid2.parent().siblings().find(".video");
+                stopVid.off("timeupdate",stop(stopVid));
+                
             });
             // 3번 비디오 종료후 다음 슬라이드 이동
             playVid3.on("ended", function(){
                 if (event) {
                     console.log("ended3");
+                    
+                    // 광드래그 방지 커버 보이기
+                    cover.show();
+                    
                     slide.animate({
                         left: -winW*2 + "px"
                     },1000,"easeOutQuint",()=>{
@@ -292,6 +309,9 @@ window.addEventListener("DOMContentLoaded",()=>{
                     // 영상 재생함수 호출!
                     vidOn(2);
                 }
+                // 제외대상들 초기화
+                let stopVid = playVid3.parent().siblings().find(".video");
+                stopVid.off("timeupdate",stop(stopVid));
             });
         } //////////////// autoSlide 함수 ///////////////////
         
