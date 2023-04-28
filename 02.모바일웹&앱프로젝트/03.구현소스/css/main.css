@@ -39,6 +39,8 @@ main {
     left: -100%;
     width: 300%;
     height: 100%;
+    cursor: move;
+    /* 드래그방지 */
     app-region: no-drag;
     user-select: none;
     -webkit-user-drag: none;
@@ -77,8 +79,6 @@ main {
     overflow: hidden;
 }
 /* 클래스 on */
-.indic li.on {
-}
 .indic li.on .bld {
     width: 0;
     opacity: .7;

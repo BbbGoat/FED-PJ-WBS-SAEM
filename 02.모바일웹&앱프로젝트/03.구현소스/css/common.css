@@ -22,8 +22,9 @@ nav {
     white-space: nowrap;
     padding: 0 30px;
     font-size: 1.5rem;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'IBM Plex Sans KR', sans-serif;
     height: 80px;
+
 }
 
 /* 로고/카테고리 플렉스박스 */
@@ -39,29 +40,39 @@ nav {
 }
 /* 2. 카테고리영역 */
 
-.catbx ol {
-    /* 임시 가리기 */
-    display: none;
-}
+/* gnb 대분류 */
 .catbx {
     position: relative;
     display: flex;
-    gap: 30px;
+    gap: 70px;
     margin-left: 80px;
     line-height: 80px;
-    color: #333;
+}
+.catbx > li a {
+    color: #fff;
+}
+/* gnb 소분류 */
+.catbx ol {
+    /* 임시 가리기 */
+    /* display: none; */
 }
 .sub {
     position: absolute;
-    display: flex;
+    /* display: flex; */
+    /* gap: 100px; */
     top: 100px;
-    gap: 100px;
-    line-height: 35px;
+    line-height: 30px;
+}
+.sub > li a {
+    font-size: 12px;
+    color: #333;
 }
 /* 3. 사이드영역 */
 .side {
     display: flex;    
     gap: 30px;
     line-height: 80px;
-    color: #333;
+}
+.side > li a {
+    color: #fff;
 }

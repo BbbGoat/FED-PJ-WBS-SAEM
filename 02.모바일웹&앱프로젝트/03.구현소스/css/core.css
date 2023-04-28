@@ -35,7 +35,7 @@ html{
 }
 /* 공사중 표시 */
 body * {
-    outline: 1px dashed #ccc;
+    /* outline: 1px dashed #ccc; */
 }
 
 /* 
