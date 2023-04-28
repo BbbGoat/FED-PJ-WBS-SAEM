@@ -183,19 +183,27 @@ window.addEventListener("DOMContentLoaded",()=>{
             
             // 타이머 작동 이벤트
             $(document).ready(function(){
+                
+                let nowTime = 0;
+                let maxTime = 0;
+                let timer = 0;
+                
                 tgVid.on("timeupdate",function(event){
 
-                    let nowTime = this.currentTime;
-                    let maxTime = this.duration;
+                    nowTime = this.currentTime;
+                    maxTime = this.duration;
+
+                    console.log(nowTime, maxTime);
                     
-                    let timer = (100*nowTime / maxTime);
+                    timer = (100*nowTime / maxTime);
                     
                     // 출력
                     chgVar.css({
-                        width: timer+"%",
+                        width: timer+5+"%",
                         transition: ".3s ease 0"
                     });
                     
+
                     // 제외대상들 초기화
                     noneTg.off("timeupdate",stop(noneTg));
                     
@@ -252,9 +260,6 @@ window.addEventListener("DOMContentLoaded",()=>{
                     // 영상 재생함수 호출!
                     vidOn(2);
                 }
-                // 제외대상들 초기화
-                let stopVid = playVid1.parent().siblings().find(".video");
-                stopVid.off("timeupdate",stop(stopVid));
             });
             // 2번 비디오 종료후 다음 슬라이드 이동
             playVid2.on("ended", function(){
@@ -279,11 +284,7 @@ window.addEventListener("DOMContentLoaded",()=>{
                     addOn(2);
                     // 영상 재생함수 호출!
                     vidOn(2);
-                }
-                // 제외대상들 초기화
-                let stopVid = playVid2.parent().siblings().find(".video");
-                stopVid.off("timeupdate",stop(stopVid));
-                
+                }         
             });
             // 3번 비디오 종료후 다음 슬라이드 이동
             playVid3.on("ended", function(){
@@ -309,9 +310,6 @@ window.addEventListener("DOMContentLoaded",()=>{
                     // 영상 재생함수 호출!
                     vidOn(2);
                 }
-                // 제외대상들 초기화
-                let stopVid = playVid3.parent().siblings().find(".video");
-                stopVid.off("timeupdate",stop(stopVid));
             });
         } //////////////// autoSlide 함수 ///////////////////
         
