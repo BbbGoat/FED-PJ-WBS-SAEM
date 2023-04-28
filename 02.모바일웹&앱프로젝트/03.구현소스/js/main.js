@@ -162,7 +162,6 @@ window.addEventListener("DOMContentLoaded",()=>{
             함수명: vidOn
             기능 : 1) 타겟된 동영상 재생/나머지 멈춤
                     2) 하단 타이머 작동
-                    3) 영상끝나면 다음영상으로 이동
         *****************************************/
         function vidOn(seq) {
 
@@ -182,33 +181,9 @@ window.addEventListener("DOMContentLoaded",()=>{
             // 비디오재생
             play(tgVid);
             
-            // 비디오 종료후 다음 슬라이드 이동
-            tgVid.on("ended", function(){
-                if (event) {
-                    console.log("ended");
-                    slide.animate({
-                        left: -winW*2 + "px"
-                    },1000,"easeOutQuint",()=>{
-                        // 이동후 첫번째 li 이동
-                        slide.append(slide.find("li").first()).css({left:"-100%"});
-                        // 커버제거하기
-                        cover.hide();
-                        // 메인배너 타이틀함수 호추
-                        showTit();
-                    }); // animate
-                    
-                    // 블릿 변경함수 호출!
-                    addOn(2);
-                    // 영상 재생함수 호출!
-                    vidOn(2);
-                }
-            });
-            
             // 타이머 작동 이벤트
             $(document).ready(function(){
                 tgVid.on("timeupdate",function(event){
-                    // 큐 초기화
-                    slide.clearQueue();
 
                     // console.log(slide.queue);
 
@@ -244,9 +219,81 @@ window.addEventListener("DOMContentLoaded",()=>{
                 noneVar.css({width:"0"});
             }
 
-
-            
         } ////////////////////// vidOn 함수 //////////////////////
+
+        /******************************************* 
+            함수명: autoSlide
+            기능: 영상 끝나면 다음 슬라이드로 이동하는 이벤트함수  
+        *******************************************/
+        function autoSlide() {
+            let playVid1 = $("#mainvid1");
+            let playVid2 = $("#mainvid2");
+            let playVid3 = $("#mainvid3");
+    
+            // 1번 비디오 종료후 다음 슬라이드 이동
+            playVid1.on("ended", function(){
+                if (event) {
+                    console.log("ended1");
+                    slide.animate({
+                        left: -winW*2 + "px"
+                    },1000,"easeOutQuint",()=>{
+                        // 이동후 첫번째 li 이동
+                        slide.append(slide.find("li").first()).css({left:"-100%"});
+                        // 커버제거하기
+                        cover.hide();
+                        // 메인배너 타이틀함수 호추
+                        showTit();
+                    }); // animate
+                    
+                    // 블릿 변경함수 호출!
+                    addOn(2);
+                    // 영상 재생함수 호출!
+                    vidOn(2);
+                }
+            });
+            // 2번 비디오 종료후 다음 슬라이드 이동
+            playVid2.on("ended", function(){
+                if (event) {
+                    console.log("ended2");
+                    slide.animate({
+                        left: -winW*2 + "px"
+                    },1000,"easeOutQuint",()=>{
+                        // 이동후 첫번째 li 이동
+                        slide.append(slide.find("li").first()).css({left:"-100%"});
+                        // 커버제거하기
+                        cover.hide();
+                        // 메인배너 타이틀함수 호추
+                        showTit();
+                    }); // animate
+                    
+                    // 블릿 변경함수 호출!
+                    addOn(2);
+                    // 영상 재생함수 호출!
+                    vidOn(2);
+                }
+            });
+            // 3번 비디오 종료후 다음 슬라이드 이동
+            playVid3.on("ended", function(){
+                if (event) {
+                    console.log("ended3");
+                    slide.animate({
+                        left: -winW*2 + "px"
+                    },1000,"easeOutQuint",()=>{
+                        // 이동후 첫번째 li 이동
+                        slide.append(slide.find("li").first()).css({left:"-100%"});
+                        // 커버제거하기
+                        cover.hide();
+                        // 메인배너 타이틀함수 호추
+                        showTit();
+                    }); // animate
+                    
+                    // 블릿 변경함수 호출!
+                    addOn(2);
+                    // 영상 재생함수 호출!
+                    vidOn(2);
+                }
+            });
+        } //////////////// autoSlide 함수 ///////////////////
         
     
         /************************************************** 
@@ -335,7 +382,7 @@ window.addEventListener("DOMContentLoaded",()=>{
         addOn(1);
         vidOn(1);
         showTit();
-        
+        autoSlide();
         
 
     } ///////////////// slideFn 함수 /////////////////////    
