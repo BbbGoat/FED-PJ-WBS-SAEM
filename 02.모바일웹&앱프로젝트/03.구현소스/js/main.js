@@ -28,7 +28,6 @@ window.addEventListener("DOMContentLoaded",()=>{
     **********************************************/
 
     // 전역변수!!!!!!!!!!!!!!!!!
-        
     // 슬라이드 대상수집
     const slide = $(".vidslide");
     // 광드래그 방지 커버
@@ -37,6 +36,10 @@ window.addEventListener("DOMContentLoaded",()=>{
     const indic = $(".indic li");
 
 
+    /*********************************************** 
+        함수명: slideFn
+        기능: 메인 동영상 슬라이드 구성하는 전체함수
+    ***********************************************/
     function slideFn() {
         
         // 드래그설정
@@ -169,10 +172,9 @@ window.addEventListener("DOMContentLoaded",()=>{
         let num = 0;
         function vidOn(seq) {
 
-            // 타임업데이트 ///////////////////////////
-            
-            let getseq = slide.find("li").eq(seq).attr("data-seq");
-            
+            // 변수설정
+            // 타겟 슬라이드 data-seq 구해오기
+            let getseq = slide.find("li").eq(seq).attr("data-seq");            
             // 타겟 비디오
             let tgVid = slide.find("li").eq(seq).find("video");
             // 타겟 제외
@@ -181,12 +183,17 @@ window.addEventListener("DOMContentLoaded",()=>{
             let chgVar = indic.eq(getseq).find(".bld");
             let noneVar = chgVar.parent().siblings().find(".bld");
             
+
+            // 현재 비디오재생
+            play(tgVid);
+            // 나머지 비디오 초기화 (멈춤 + 타임업데이트 이벤트 종료)
+            noneTg.off("timeupdate",stop(noneTg));
+            
                         
             // 재생함수
             function play(tg) {
                 tg.get(0).currentTime = 0;
                 tg.get(0).play();
-                num = 1;
             }
 
             // 멈춤함수
@@ -195,133 +202,77 @@ window.addEventListener("DOMContentLoaded",()=>{
                 // 재생시간 초기화
                 tg.get(0).currentTime = 0;
                 noneVar.css({width:"0"});
-                num = 0;
             }
 
 
-            // 비디오재생
-            play(tgVid);
+            // 타겟영상 timeupdate 이벤트 등록
+            tgVid.on("timeupdate",vidTimer);
             
-            // 제외대상들 초기화
-            noneTg.off("timeupdate",stop(noneTg));
-            
-            // 타이머 작동 이벤트
-            // $(document).ready(function(){
+            /****************************************** 
+                함수명: vidTimer (vidOn 내부함수)
+                기능: timeupdate 등록용 setInterval 기능 함수!
+                      타겟영상 시간 측정, 대상출력,
+                      종료시 자동 슬라이드 기능 구현
+            ******************************************/
+            function vidTimer() {
                 
-            //     let nowTime = 0;
-            //     let maxTime = 0;
-            //     let timer = 0;
-                
-            //     tgVid.on("timeupdate",function(event){
+                // 변수선언
+                let nowTime;
+                let maxTime;
+                let timer;
 
-            //         nowTime = this.currentTime;
-            //         maxTime = this.duration;
+                // setinterval 할당 변수
+                let countNum = setInterval(callback,100)
+                // 콜백함수
+                function callback() {
+                    nowTime = tgVid.get(0).currentTime;
+                    maxTime = tgVid.get(0).duration;
+                    // console.log(nowTime, maxTime)
 
-            //         console.log(nowTime, maxTime);
+                    timer = (100 * nowTime / maxTime);
+                    // 출력
+                    chgVar.css({width: timer+"%", transition: "0.3s linear"});
                     
-            //         timer = (100*nowTime / maxTime);
+                    // 타이머바 100%일 경우
+                    if (nowTime === maxTime) {
+                        // 중복실행 방지위해 타겟영상정지
+                        stop(tgVid);
+                        console.log("타이머바 100%")
+                        
+                        // 광드래그 방지 커버 보이기
+                        cover.show();
+                        // 슬라이드 이동
+                        
+                        slide.animate({
+                            left: -winW*2 + "px"
+                        },1000,"easeOutQuint",()=>{
+                            // 이동후 첫번째 li 이동
+                            slide.append(slide.find("li").first()).css({left:"-100%"});
+                            // 커버제거하기
+                            cover.hide();
+                            // 메인배너 타이틀함수 호추
+                            showTit();
+                        }); // animate
+                        
+                        // 블릿 변경함수 호출!
+                        addOn(2);
+                        // 영상 재생함수 호출!
+                        vidOn(2);
+                        // 한계값시 쌓임방지 인터벌초기화
+                        clearInterval(countNum);
+                    } /////// if ////////////
+
+                    // 쌓임방지 인터벌초기화
+                    clearInterval(countNum);
                     
-            //         // 출력
-            //         chgVar.css({
-            //             width: timer+5+"%",
-            //             transition: ".3s ease 0"
-            //         });
-                    
+                } //////////// callback 함수 ///////////
 
-            //         // 제외대상들 초기화
-            //         noneTg.off("timeupdate",stop(noneTg));
-            
-            
-            //     }); //////////// timeupdate ///////////////
-            // });
-
-
-
+            } ////////////////////// vidTimer 함수 ///////////////////////
         } ////////////////////// vidOn 함수 //////////////////////
 
-        /******************************************* 
-            함수명: autoSlide
-            기능: 영상 끝나면 다음 슬라이드로 이동하는 이벤트함수  
-        *******************************************/
-        function autoSlide() {
-            let playVid1 = $("#mainvid1");
-            let playVid2 = $("#mainvid2");
-            let playVid3 = $("#mainvid3");
-            
-            // 1번 비디오 종료후 다음 슬라이드 이동
-            playVid1.on("ended", function(){
-                    console.log("ended1");
-                    
-                    // 광드래그 방지 커버 보이기
-                    cover.show();
-                    
-                    slide.animate({
-                        left: -winW*2 + "px"
-                    },1000,"easeOutQuint",()=>{
-                        // 이동후 첫번째 li 이동
-                        slide.append(slide.find("li").first()).css({left:"-100%"});
-                        // 커버제거하기
-                        cover.hide();
-                        // 메인배너 타이틀함수 호추
-                        showTit();
-                    }); // animate
-                    
-                    // 블릿 변경함수 호출!
-                    addOn(2);
-                    // 영상 재생함수 호출!
-                    vidOn(2);
-            });
-            // 2번 비디오 종료후 다음 슬라이드 이동
-            playVid2.on("ended", function(){
-                    console.log("ended2");
-                    
-                    // 광드래그 방지 커버 보이기
-                    cover.show();
-                    
-                    slide.animate({
-                        left: -winW*2 + "px"
-                    },1000,"easeOutQuint",()=>{
-                        // 이동후 첫번째 li 이동
-                        slide.append(slide.find("li").first()).css({left:"-100%"});
-                        // 커버제거하기
-                        cover.hide();
-                        // 메인배너 타이틀함수 호추
-                        showTit();
-                    }); // animate
-                    
-                    // 블릿 변경함수 호출!
-                    addOn(2);
-                    // 영상 재생함수 호출!
-                    vidOn(2);
-            });
-            // 3번 비디오 종료후 다음 슬라이드 이동
-            playVid3.on("ended", function(){
-                    console.log("ended3");
-                    
-                    // 광드래그 방지 커버 보이기
-                    cover.show();
-                    
-                    slide.animate({
-                        left: -winW*2 + "px"
-                    },1000,"easeOutQuint",()=>{
-                        // 이동후 첫번째 li 이동
-                        slide.append(slide.find("li").first()).css({left:"-100%"});
-                        // 커버제거하기
-                        cover.hide();
-                        // 메인배너 타이틀함수 호추
-                        showTit();
-                    }); // animate
-                    
-                    // 블릿 변경함수 호출!
-                    addOn(2);
-                    // 영상 재생함수 호출!
-                    vidOn(2);
-            });
-        } //////////////// autoSlide 함수 ///////////////////
-        
     
         /************************************************** 
-            배너 타이틀 셋팅
+            배너 타이틀 데이터 셋팅!
         **************************************************/
         ///////////////////////////////////////
         ////// 각 배너 등장 타이틀 셋팅 /////////
@@ -396,89 +347,18 @@ window.addEventListener("DOMContentLoaded",()=>{
             })
 
 
-
         } ////////////// showTit 함수 ///////////////
 
-        
-        
-        
-        // 최초호출!
+
+        // 함수 최초호출 모음! //////////////
         addOn(1);
         vidOn(1);
         showTit();
-        autoSlide();
         
 
     } ///////////////// slideFn 함수 /////////////////////    
 
-    // 최초호출
+    // 전체 싸고있는 함수 최초호출
     slideFn();
-
-    /******************************************* 
-        함수명: vidTimer
-        기능: 타임업데이트이벤트 svg 설정 변경
-    *******************************************/
-
-    // 동영상전체길이 : dashoffset전체길이 = 동영상이동값 : dashoffset이동값
-    // dashoffset이동값 = svgdashoffset전체길이 * 동영상이동값 / 동영상전체길이
-    // x = 300% * vidsec_now / vidsec_max
-    // x = 300% * vid2.currentTime / vid2.duration
-
-    function vidTimer() {
-
-        const video = document.querySelectorAll(".video");
-        const bld = document.querySelectorAll(".bld");
-        
-        video.forEach((ele,idx) => {
-
-            if (idx === 0) {
-
-            }
-
-            else if (idx === 1) {
-   
-                // 반복시작
-                let interval = setInterval(callback, 100);
-
-                // 콜백함수
-                function callback() {
-
-                    // 영상 재생시간 현재값, 최대값 변수
-                    let vidsec_now = ele.currentTime;
-                    let vidsec_max = ele.duration;
-                    // 결과값
-                    console.log(vidsec_now, vidsec_max)
-                    let timer = (100 * vidsec_now / vidsec_max);
-                    // 출력 + 트랜지션
-                    bld[0].style.transition = "0.3s ease 0";
-                    bld[0].style.width = timer + "%";
-                    
-                    // 한계값시 멈춤
-                    if(vidsec_now===vidsec_max){
-                        // console.log("끝!");
-                        clearInterval(interval);
-                        // autoSlide();
-                    }
-
-                } ///////////// callback 함수 ////////////////
-
-                // li 두번째 위치일때 재할당하여 재시작
-                if (slide.eq(1)) {
-                    console.log("재할당")
-                    interval = setInterval(callback, 100);
-                }
-                
-                
-                // console.log(indic.is(".on"))
-                // console.log(!($("video").get(0).paused))
-                // 인터발초기화
-                clearInterval();
-
-            }
-        });
-    } ///////////// vidTimer 함수 ////////////////////
-    
-    const videoBox = document.querySelector(".vidslide");
-    videoBox.addEventListener("timeupdate",vidTimer());
 
 }); ///////////////////// 로드구역 ///////////////////////
