@@ -35,6 +35,7 @@ html{
 }
 /* 공사중 표시 */
 body * {
+    font-family: 'IBM Plex Sans KR';
     /* outline: 1px dashed #ccc; */
 }
 
