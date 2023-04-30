@@ -231,7 +231,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 
                     timer = (100 * nowTime / maxTime);
                     // 출력
-                    chgVar.css({width: timer+"%", transition: "0.3s linear"});
+                    chgVar.css({width: 3+timer+"%", transition: "0.3s linear"});
                     
                     // 타이머바 100%일 경우
                     if (nowTime === maxTime) {
