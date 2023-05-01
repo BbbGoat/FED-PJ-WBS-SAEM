@@ -135,7 +135,7 @@ main {
     color: #333;
 }
 .tit > h2 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 500;
 }
 .tit > h3 {
@@ -143,7 +143,8 @@ main {
     font-weight: 500;
 }
 .tit > p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    line-height: 1.7;
     font-weight: 400;
 }
 
@@ -189,7 +190,41 @@ main {
 .morebtn {
     font-size: 1.4rem;
     text-decoration: none;
+    width: 150px;
+    height: 40px;
+
+    background-color: transparent;
+    margin-top: 50px;
+    border: 1px solid rgba(51,51,51,.2);
+    transition: .3s ease-out;
 }
+.morebtn:hover {
+    background-color: #333;
+}
+.morebtn span{
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    width: 100%;
+    height: 100%;
+    color: #333;
+    font-weight: 500;
+}
+.morebtn:hover span{
+    color: #fffef2;
+}
+.morebtn span i {
+    font-size: 1.2rem;
+    padding-left: 15px;
+    color: #333;
+}
+.morebtn:hover span i {
+    font-size: 1.2rem;
+    padding-left: 15px;
+    color: #fffef2;
+}
+
+
 
 /********* section3 *********/
 #gocat {
@@ -248,7 +283,50 @@ main {
 /* 텍스트박스 */
 .storetit {
     position: absolute;
-    top: 10px;
+    display: flex;
+    top: 100px;
+    left: 5%;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+    font-family: 'IBM Plex Sans KR', 'EB Garamond';
+    color: #fff;
+    text-shadow: 1px 1px 2px #33333350;
+}
+.storetit > h2 {
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+.storetit > h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.storetit > p {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+.storetit > .morebtn {
+    width: 200px;
+    height: 40px;
+
+    margin-top: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+.storetit > .morebtn:hover {
+    background-color: #ffffff2c;
+    border: 1px solid #fff;
+}
+.storetit > .morebtn span{
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+.storetit > .morebtn i {
+    color: rgba(255, 255, 255, 0.7);
 }
 .storeimg {
     height: 100%;
@@ -258,7 +336,7 @@ main {
     position: absolute;
     display: block;
     width: 100%;
-    height: 30%;
+    height: 70%;
     bottom: 0;
     background: linear-gradient(transparent,rgba(0, 0, 0, 0.5));
 }
@@ -304,10 +382,6 @@ main {
     color: #fff;
     opacity: 0;
     transition: .3s ease-out;
-}
-.pip span::before {
-    display: inline-block;
-    content: '💖';
 }
 /* 클래스 on */
 .pip.on span {
