@@ -163,11 +163,12 @@ main {
     display: flex;
 }
 /* 제품 구성 박스 */
-.goods {
+.listbx {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 30px;
+    flex: 1;
+    margin: 0 2vw;
 }
 .imgarea {
     /* 이미지크기 */
@@ -212,17 +213,33 @@ main {
     /* 최상위 부모박스 */
     position: relative;
     width: 100%;
-    height: 1500px;
-    padding-top: 150px;
+    padding: 150px 0;
     background-color: #fffef2;
 }
+/* 감싸기박스 */
 .btxwrap {
-    position: absolute;
     display: flex;
     width: 100%;
 }
+/* 이미지영역 */
+#goods {
+    /* 이미지박스 최상위부모 */
+    position: relative;
+    width: 100%;
+    margin-right: 5%;
+    box-sizing: border-box;
+}
+.goods {
+    /* 플렉스박스 */
+    position: relative;
+    display: flex;
+    margin-bottom: 50px;
+}
+.goods .listbx .imgarea {
+    width: 100%;
+}
 
-
+/********* section5 *********/
 
 
 
