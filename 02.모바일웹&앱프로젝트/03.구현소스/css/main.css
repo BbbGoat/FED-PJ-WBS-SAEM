@@ -309,6 +309,7 @@ main {
     display: inline-block;
     content: '💖';
 }
+/* 클래스 on */
 .pip.on span {
     opacity: 1;
 }
