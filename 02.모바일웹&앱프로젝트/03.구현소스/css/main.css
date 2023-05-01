@@ -240,7 +240,28 @@ main {
 }
 
 /********* section5 *********/
-
+.store {
+    /* 부모박스 */
+    position: relative;
+    height: 800px;
+}
+.pipbx {
+    position: absolute;
+    bottom: 10px;
+    z-index: 10;
+}
+.storetit {
+    position: absolute;
+    top: 10px;
+}
+.storeimg {
+    height: 100%;
+}
+.storeimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 
 /*************** 하단영역 ***************/
