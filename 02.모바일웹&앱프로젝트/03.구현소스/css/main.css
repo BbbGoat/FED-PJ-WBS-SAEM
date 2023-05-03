@@ -3,12 +3,6 @@
 /* 웹&앱PJ 메인페이지 CSS - main.css */
 
 
-/*************** 상단영역 ***************/
-header {
-    /* height: 800px; */
-}
-
-
 
 /*************** 메인영역 ***************/
 main {
@@ -448,11 +442,4 @@ main {
     line-height: 1.7;
     font-weight: 400;
     padding: 3% 0;
-}
-
-
-/*************** 하단영역 ***************/
-footer {
-    /* position: relative;
-    height: 500px; */
 }

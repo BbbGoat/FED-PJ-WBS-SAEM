@@ -6,6 +6,12 @@
 @import url(./core.css);
 @import url(./reset.css);
 
+/*************** 상단영역 ***************/
+header {
+    /* height: 800px; */
+    /* opacity: .5; */
+}
+
 
 /* 네비게이션 전체박스 */
 .fxbx {
@@ -82,5 +88,6 @@ nav {
 footer {
     position: relative;
     height: 500px;
-    background-color: rgb(213, 213, 204);
+    background-color: #252525;
+    /* background-color: rgb(213, 213, 204); */
 }
