@@ -395,21 +395,24 @@ main {
 }
 /* 속박스 */
 .post {
-    /* max-width: 1200px;
-    margin: 0 auto; */
+    padding: 5% 0;
 }
 /* 타이틀 */
 .post > .tit {
-    margin-left: 0;
+    width: auto;
+    margin: auto;
+
+}
+.post > .tit h2 {
+    margin-left: 5%;
 }
 /* 공통박스  */
 .postbx {
     display: flex;
     justify-content: center;
     gap: 50px;
-    max-width: 1800px;
     margin: 0 auto;
-    padding: 150px 5%;
+    padding: 10px 5%;
 }
 .arti {
     
