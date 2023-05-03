@@ -453,6 +453,6 @@ main {
 
 /*************** 하단영역 ***************/
 footer {
-    position: relative;
-    height: 500px;
+    /* position: relative;
+    height: 500px; */
 }

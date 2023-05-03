@@ -76,3 +76,11 @@ nav {
 .side > li a {
     color: #fff;
 }
+
+
+/*************** 하단영역 ***************/
+footer {
+    position: relative;
+    height: 500px;
+    background-color: rgb(213, 213, 204);
+}
