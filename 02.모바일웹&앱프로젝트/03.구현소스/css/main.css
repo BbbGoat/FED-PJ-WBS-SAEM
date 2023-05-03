@@ -398,9 +398,11 @@ main {
     /* max-width: 1200px;
     margin: 0 auto; */
 }
+/* 타이틀 */
 .post > .tit {
     margin-left: 0;
 }
+/* 공통박스  */
 .postbx {
     display: flex;
     justify-content: center;
@@ -412,6 +414,7 @@ main {
 .arti {
     
 }
+/* 이미지영역 */
 .pimg {
     display: block;
     aspect-ratio: 1/1;
@@ -421,7 +424,29 @@ main {
     height: 100%;
     object-fit: cover;
 }
-
+/* 텍스트영역 */
+.ptxt {
+    color: #333;
+}
+.ptxt h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.7;
+    margin-top: 10%;
+}
+.ptxt h3::after {
+    content: '';
+    display: block;
+    outline: 1px solid #eee;
+    margin: 3% 0;
+}
+.ptxt span {
+    display: block;
+    font-size: min(2.2vw,3rem);
+    line-height: 1.7;
+    font-weight: 400;
+    padding: 3% 0;
+}
 
 
 /*************** 하단영역 ***************/
