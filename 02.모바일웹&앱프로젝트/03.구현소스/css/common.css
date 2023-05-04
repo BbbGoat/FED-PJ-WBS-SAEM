@@ -45,7 +45,6 @@ nav {
     height: 100%;
 }
 /* 2. 카테고리영역 */
-
 /* gnb 대분류 */
 .catbx {
     position: relative;
@@ -58,19 +57,26 @@ nav {
     color: #fff;
 }
 /* gnb 소분류 */
-.catbx ol {
-    /* 임시 가리기 */
-    /* display: none; */
-}
-.sub {
+.subbx {
     position: absolute;
-    /* display: flex; */
-    /* gap: 100px; */
     top: 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+/* 소분류 공통박스 */
+.sub {
+    color: #000;
+    font-weight: 400;
     line-height: 30px;
 }
-.sub > li a {
-    font-size: 12px;
+.sub > dt {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.sub > dd {
+    font-size: 1.5rem;
     color: #333;
 }
 /* 3. 사이드영역 */
@@ -81,6 +87,24 @@ nav {
 }
 .side > li a {
     color: #fff;
+}
+/* 4. 썸네일영역 */
+.thumb {
+    display: flex;
+    flex-direction: column;
+    width: 340px;
+}
+.thumb img {
+    width: 100%;
+    object-fit: cover;
+}
+.thumb h5 {
+    line-height: 2;
+}
+.thumb span {
+    width: 100%;
+    white-space: pre-wrap;
+    line-height: 1.2;
 }
 
 
