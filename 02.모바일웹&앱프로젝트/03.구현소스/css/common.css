@@ -31,6 +31,45 @@ nav {
     font-family: 'IBM Plex Sans KR', sans-serif;
     height: 80px;
 
+    border-bottom: 1px solid #ccc;
+    transition: .3s ease;
+    overflow: hidden;
+}
+/* 클래스 on */
+.top.on nav {
+    /* 플렉스박스 */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    white-space: nowrap;
+    padding: 0 30px;
+    font-size: 1.5rem;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    height: 500px;
+
+    border-bottom: 1px solid #ccc;
+    background: #fffef2;
+    transition: .3s ease-out;
+    overflow: hidden;
+}
+.top::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    opacity: .0;
+    background-color: #000;
+    transition: .3s ease-out;
+}
+.top.on::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    opacity: .3;
+    background-color: #000;
 }
 
 /* 로고/카테고리 플렉스박스 */
@@ -53,8 +92,30 @@ nav {
     margin-left: 80px;
     line-height: 80px;
 }
-.catbx > li a {
+.catbx > li > a {
+    display: block;
     color: #fff;
+}
+.catbx > li > a::before {
+    content: '';
+    position: relative;
+    display: block;
+    top: 55px;
+    width: 0%;
+    border-bottom: 1px solid #333;
+    transition: .3s ease;
+}
+.catbx > li.on > a::before {
+    content: '';
+    position: relative;
+    display: block;
+    top: 55px;
+    width: 100%;
+    border-bottom: 1px solid #333;
+}
+.top.on .catbx > li > a {
+    font-weight: 500;
+    color: #333;
 }
 /* gnb 소분류 */
 .subbx {
@@ -66,19 +127,59 @@ nav {
 }
 /* 소분류 공통박스 */
 .sub {
-    color: #000;
     font-weight: 400;
-    line-height: 30px;
+    line-height: 1.7;
+    font-size: 1.5rem;
+}
+.sub dt.all {
+    pointer-events: auto;
 }
 .sub > dt {
+    pointer-events: none;
     margin: 10px 0;
-    font-size: 1.5rem;
-    font-weight: 500;
 }
-.sub > dd {
+.sub > dd + dd {
+    margin-top: 5px;
+}
+.sub > dt a {
+    display: inline-block;
+    color: #505050;
+    font-weight: 500;
+    display: block;
+}
+.sub > dt a::after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid #ccc;
+    width: 0;
+    transition: .3s ease;
+}
+.sub > dt a:hover::after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+
+.sub > dd a {
+    display: inline-block;
     font-size: 1.5rem;
     color: #333;
 }
+.sub > dd a::after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid #ccc;
+    width: 0;
+    transition: .3s ease;
+}
+.sub > dd a:hover::after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+
 /* 3. 사이드영역 */
 .side {
     display: flex;    
@@ -87,6 +188,9 @@ nav {
 }
 .side > li a {
     color: #fff;
+}
+.top.on .side > li a {
+    color: #333;
 }
 /* 4. 썸네일영역 */
 .thumb {
