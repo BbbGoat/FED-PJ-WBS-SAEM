@@ -55,7 +55,7 @@ nav {
 .top::after {
     position: absolute;
     content: '';
-    display: block;
+    display: none;
     width: 100vw;
     height: 100vh;
     opacity: .0;
