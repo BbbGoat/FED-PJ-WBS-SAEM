@@ -1,79 +1,116 @@
-// import
-
-/*************************************************** 
-    함수: navFn
-    기능: 네비게이션 함수
-    1. li 클릭시 .top 클래스 on 넣기
-    2. .top 구역 mouseleave시 클래스 on 제거
-    3. 클릭한 li 클래스 on 넣기/나머지 빼기
-    4. scrolltop값 -되면 박스 디자인 변경
-***************************************************/
-function navFn() {
-    console.log("네비게이션!")
-
-    // 0. 대상수집
-    const top = document.querySelector(".top");
-    const tglist = document.querySelectorAll(".catbx li > a");
-    const nav = document.querySelector("nav");
-
-    // 1. 대분류 li 클릭시 클래스 on
-    tglist.forEach((ele,idx,val)=>{
-        ele.onclick = function(e) {
-            e.preventDefault();
-
-            // li 클래스 초기화
-            clearClass(val);
-
-            // li 클래스 on
-            this.parentElement.classList.add("on")
-            // .top 클래스 on
-            top.classList.add("on")
-
-        }; ///// click 이벤트 //////////
-
-        
-        // 마우스리브 이벤트
-        nav.onmouseleave = function(e) {
-            e.stopPropagation();
-
-            // 클래스 전체제거
-            top.classList.remove("on");
-            clearClass(val);
-        }
-    
-    });
-
-    /*********************************** 
-        함수명: clearClass
-        기능: 클래스 초기화
-    ***********************************/
-    function clearClass(val) {
-    const list = document.querySelectorAll(".catbx li");
-        for (let i = 0; i < val.length; i++) {
-            list[i].classList.remove("on")
-        }
-    } /////////// clearClass ////////////
-
-
-} ///////////////////// navFn //////////////////////
-
-
-// 최초호출!
-navFn();
-
+// 스토어 불러오기
+import store from "./store.js";
 
 /***************************************************** 
     뷰 컴포넌트로 데이터 셋업하기
 *****************************************************/
-Vue.component("gnb-comp",{
+// 1. 핸드스킨 컴포넌트
+Vue.component("skin-comp",{
     template: `
-
-    
+    <ul class="catbx">
+        <li>
+            <a href="#" v-on:click="chgData('skin')">핸드&amp;스킨</a>
+        </li>
+        <li>
+            <a href="#" v-on:click="chgData('perfume')">향수</a>
+        </li>
+        <li>
+            <a href="#" v-on:click="chgData('home')">홈</a>
+        </li>
+        <li>
+            <a href="#" v-on:click="chgData('gift')">기프트</a>
+        </li>
+        <li>
+            <a href="#">칼럼</a>
+        </li>
+        <sub-comp></sub-comp>
+    </ul>
     `,
     data() {
         return {
-            
+        }
+    },
+    methods: {
+        // v-on 클릭시 데이터 변경 발생
+        chgData(parm) {
+            event.preventDefault();
+            // console.log("내용업데이트!");
+
+            // [1] 업데이트!!
+            // thumb박스
+            store.state.setimgsrc = store.state.gnb[parm].imgsrc;
+            store.state.settit = store.state.gnb[parm].imgtit;
+            store.state.setdesc = store.state.gnb[parm].desc;
+
+            // dd박스
+            store.state.setsubtit1 = store.state.gnb[parm].subtit[0];
+            store.state.setsubtit2 = store.state.gnb[parm].subtit[1];
+            store.state.setsubtit3 = store.state.gnb[parm].subtit[2];
+            store.state.setdd1 = store.state.gnb[parm].dd1;
+            store.state.setdd2 = store.state.gnb[parm].dd2;
+            store.state.setdd3 = store.state.gnb[parm].dd3;
         }
     }
-
 }); ///////////////// Vue 컴포넌트 ////////////////////
+
+Vue.component("sub-comp",{
+    template: `
+    <div class="subbx">
+        <div class="thumb">
+            <img v-bind:src="$store.state.setimgsrc" alt="썸네일">
+            <h5 v-text="$store.state.settit"></h5>
+            <span v-text="$store.state.setdesc"></span>
+        </div>
+        <dl class="sub">
+            <dt class="all"><a href="#" v-text="$store.state.setsubtit1"></a></dt>
+            <dd v-for="(v,n) in $store.state.setdd1"><a href="#">{{v}}</a></dd>
+        </dl>
+        <dl class="sub">
+            <dt><a href="#" v-text="$store.state.setsubtit2"></a></dt>
+            <dd v-for="(v,n) in $store.state.setdd2"><a href="#">{{v}}</a></dd>
+            </dl>
+            <dl class="sub">
+            <dt><a href="#" v-text="$store.state.setsubtit3"></a></dt>
+            <dd v-for="(v,n) in $store.state.setdd3"><a href="#">{{v}}</a></dd>
+        </dl>
+    </div>
+    `
+}); //////////////////// Vue 컴포넌트 ///////////////////////
+
+
+
+
+
+
+new Vue({
+    el: "#top",
+    store,
+    data: {},
+    methods: {},
+    
+    created() {
+        // store.commit("setData",{
+        //     imgsrc: "",
+        // });
+    },
+    
+    mounted() {
+        console.log("뷰JS 연결!!!")
+        // 클릭시 li에 클래스 on
+        $(".catbx li > a").click(function(e){
+            e.preventDefault();
+            $(this).parent().addClass("on")
+            .siblings().removeClass("on");
+            $(".top").addClass("on");
+            $(".thumb").fadeIn(400);
+        })
+        // 마우스아웃시 전체 클래스 빼기
+        $("nav").mouseleave(function(){
+            $(".top").removeClass("on");
+            $(".catbx li").removeClass("on");
+            $(".thumb").fadeOut(400);
+        });
+
+    } ////////// mounted ///////////
+
+}); ////////////////// Vue 인스턴스 //////////////////////

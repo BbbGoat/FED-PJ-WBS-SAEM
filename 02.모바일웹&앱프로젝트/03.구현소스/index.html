@@ -13,14 +13,16 @@
     <!-- 메인 CSS -->
     <link rel="stylesheet" href="./css/main.css">
     
-    <!-- 뷰JS 프레임워크 스텐드얼론 버전 가져오기 -->
+    <!-- 뷰JS 스탠드얼론 버전 가져오기! -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-    <!-- 엑시오스 라이브러리 스텐드얼론 버전 가져오기(제이슨불러오기) -->
-    <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
+    <!-- 뷰JS vuex CDN -->
+    <script src="https://unpkg.com/vuex@3.0.0"></script>  
+
     
     <!-- 제이쿼리 라이브러리 -->
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/jquery-ui.min.js"></script>
+    
     <!-- 메인페이지 JS -->
     <script src="./js/common.js" type="module"></script>
     <script src="./js/main.js"></script>
@@ -38,78 +40,7 @@
                         <a href="./index.html"><img src="./images/logo.png" alt="이솝로고"></a>
                     </div>
                     <!-- 2. 카테고리영역 -->
-                    <ul class="catbx">
-                        <li>
-                            <a href="#">핸드&amp;스킨</a>
-                            <div class="subbx">
-                                <dl class="sub">
-                                    <dt class="all"><a href="#">제품 모두보기</a></dt>
-                                    <dd><a href="#">핸드크림</a></dd>
-                                    <dd><a href="#">바디</a></dd>
-                                    <dd><a href="#">클렌저</a></dd>
-                                    <dd><a href="#">토너</a></dd>
-                                    <dd><a href="#">세럼&amp;에센스</a></dd>
-                                    <dd><a href="#">립&amp;아이</a></dd>
-                                    <dd><a href="#">선케어</a></dd>
-                                </dl>
-                                <dl class="sub">
-                                    <dt><a href="#">유형</a></dt>
-                                    <dd><a href="#">중성</a></dd>
-                                    <dd><a href="#">건성</a></dd>
-                                    <dd><a href="#">지성</a></dd>
-                                    <dd><a href="#">복합성</a></dd>
-                                </dl>
-                                <dl class="sub">
-                                    <dt><a href="#">사랑받는 제품</a></dt>
-                                    <dd><a href="#">파슬리 씨드 안티 옥시던트 인텐스 세럼</a></dd>
-                                    <dd><a href="#">이그절티드 아이 세럼</a></dd>
-                                    <dd><a href="#">비 트리플 씨 페이셜 밸런싱 젤</a></dd>
-                                </dl>
-                                <div class="thumb">
-                                    <img src="./images/gnb_1.jpg" alt="썸네일">
-                                    <h5>아더토피아</h5>
-                                    <span>독특한 프래그런스 5종으로 구성된 아더토피아는 현실이면서 상상 속에 있는 세계로 이끌도록 고안된 오 드 퍼퓸 시리즈입니다.</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">향수</a>
-                            <!-- <ol class="sub">
-                                <li><a href="#">신제품:글롬 오 드 퍼퓸</a></li>
-                                <li><a href="#">플로럴</a></li>
-                                <li><a href="#">프레쉬</a></li>
-                                <li><a href="#">우디</a></li>
-                                <li><a href="#">오퓰런트</a></li>
-                            </ol> -->
-                        </li>
-                        <li>
-                            <a href="#">홈</a>
-                            <!-- <ol class="sub">
-                                <li><a href="#">인센스</a></li>
-                                <li><a href="#">캔들</a></li>
-                                <li><a href="#">룸스프레이</a></li>
-                                <li><a href="#">문학</a></li>
-                            </ol> -->
-                        </li>
-                        <li>
-                            <a href="#">기프트 키트</a>
-                            <!-- <ol class="sub">
-                                <li><a href="#">시즈널 기프트 키트</a></li>
-                                <li><a href="#">스킨 케어 키트</a></li>
-                                <li><a href="#">바디&amp;핸드 케어 키트</a></li>
-                                <li><a href="#">트래블</a></li>
-                            </ol> -->
-                        </li>
-                        <li>
-                            <a href="#">칼럼</a>
-                            <!-- <ol class="sub">
-                                <li><a href="#">글롬 오 드 퍼퓸</a></li>
-                                <li><a href="#">홈 프래그런스 가이드</a></li>
-                                <li><a href="#">정원에서의 사색</a></li>
-                                <li><a href="#">섬세한 눈가 피부 관리법</a></li>
-                            </ol> -->
-                        </li>
-                    </ul>
+                    <skin-comp></skin-comp>
                 </div>
                 <ul class="side">
                     <!-- 3. 사이드영역 -->
