@@ -262,9 +262,59 @@ nav.scl .side > li a {
 
 
 /*************** 하단영역 ***************/
-footer {
+
+/* 푸터 공통 셋팅 */
+footer .info {
     position: relative;
-    height: 500px;
     background-color: #252525;
-    /* background-color: rgb(213, 213, 204); */
+    border-top: 1px solid #e3e3e3;
+    color: #fff;
+    font-size: 1.5rem;
 }
+
+/******* PC 푸터 *******/
+
+
+
+
+#dt {
+    position: relative;
+    padding: 50px 100px 80px;
+}
+/* 고객센터 */
+.cs_center {
+    display: flex;
+    flex-direction: column;
+    /* color: #fff; */
+}
+/* 사이트맵 */
+.sitemap {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    top: 50px;
+    right: 100px;
+    gap: 70px;
+}
+dd.list {
+    display: flex;
+    flex-direction: column;
+}
+/* 저작권고지 */
+.company {
+    border-top: solid 1px #b3b0a9;
+    margin-top: 150px;
+    padding: 22px 0;
+    font-size: 12px;
+    line-height: 20px;
+    word-break: keep-all;
+}
+
+
+
+
+
+
+
+/******* 모바일용 푸터 *******/
+

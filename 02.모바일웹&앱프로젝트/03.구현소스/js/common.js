@@ -5,7 +5,7 @@ import store from "./store.js";
     뷰 컴포넌트로 데이터 셋업하기
 *****************************************************/
 // 1. 핸드스킨 컴포넌트
-Vue.component("skin-comp",{
+Vue.component("category-comp",{
     template: `
     <ul class="catbx">
         <li>
