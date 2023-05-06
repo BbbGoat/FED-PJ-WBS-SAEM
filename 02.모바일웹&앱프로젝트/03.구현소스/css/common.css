@@ -97,10 +97,15 @@ nav.scl {
 }
 /* 1. 로고영역 */
 .logo {
-    transition: .4s ease-out;
+    filter: brightness(50);
     height: 80px;
+    transition: .4s ease-out;
+}
+.top.on .logo {
+    filter: brightness(0);
 }
 nav.scl .logo {
+    filter: brightness(0);
     height: 60px;
 }
 .logo img {
