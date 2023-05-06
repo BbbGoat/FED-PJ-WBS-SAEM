@@ -52,7 +52,7 @@ nav.scl {
     padding: 0 30px;
     font-size: 1.5rem;
     font-family: 'IBM Plex Sans KR', sans-serif;
-    height: 440px;
+    height: 420px;
 
     border-bottom: 1px solid #ccc;
     background: #fffef2;
@@ -274,9 +274,6 @@ footer .info {
 
 /******* PC 푸터 *******/
 
-
-
-
 #dt {
     position: relative;
     padding: 50px 100px 80px;
@@ -287,6 +284,22 @@ footer .info {
     flex-direction: column;
     /* color: #fff; */
 }
+.cs_center .title {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #fffef2;
+    line-height: 34px;
+    float: none;
+}
+.cs_number {
+    display: block;
+    font-size: 3rem;
+    color: #fffef2;
+    line-height: 42px;
+    text-decoration: none;
+}
+
 /* 사이트맵 */
 .sitemap {
     position: absolute;
@@ -296,18 +309,35 @@ footer .info {
     right: 100px;
     gap: 70px;
 }
+dt.title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 50px;
+    color: #fffef2;
+}
 dd.list {
     display: flex;
     flex-direction: column;
+    line-height: 26px;
+    font-size: 1.5rem;
 }
+dd.list > a {
+    color: #ddd;
+}
+
 /* 저작권고지 */
 .company {
-    border-top: solid 1px #b3b0a9;
-    margin-top: 150px;
+    border-top: solid 1px #b3b0a948;
+    margin-top: 200px;
     padding: 22px 0;
     font-size: 12px;
     line-height: 20px;
     word-break: keep-all;
+}
+address {
+    display: inline-block;
+    text-decoration: none;
+    font-style: normal;
 }
 
 
