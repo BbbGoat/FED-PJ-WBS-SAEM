@@ -111,6 +111,29 @@ new Vue({
             $(".thumb").fadeOut(400);
         });
 
+        // 스크롤이벤트
+        $(window).on("scroll",function(){
+            console.log("스크롤~")
+
+            // 스크롤시작!
+            let scStart = $(window).scrollTop();
+            // console.log(scStart)
+
+            if (scStart > 0) {
+                console.log("변경!")
+                // $("nav").css({
+                //     height: "60px",
+                //     background: "#fffef2",
+                // })
+                $("nav").addClass("scl")
+            }
+            else if (scStart <= 0) {
+                console.log("원상태")
+                $("nav").removeClass("scl");
+            }
+            
+        })
+
     } ////////// mounted ///////////
 
 }); ////////////////// Vue 인스턴스 //////////////////////

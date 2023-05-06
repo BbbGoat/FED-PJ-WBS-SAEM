@@ -34,6 +34,14 @@ nav {
     transition: .3s ease;
     overflow: hidden;
 }
+nav.scl {
+    height: 60px;
+    background-color: #fffef2;
+    transition: .4s ease-out;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+}
+
 /* 클래스 on */
 .top.on nav {
     /* 플렉스박스 */
@@ -59,6 +67,10 @@ nav {
     left: 0;
     width: 100%;
     border-bottom: 1px solid #ccc;
+    transition: .4s ease-out;
+}
+.top.on nav.scl::after {
+    top: 60px;
 }
 .top::after {
     position: absolute;
@@ -68,7 +80,6 @@ nav {
     height: 100vh;
     opacity: .0;
     background-color: #000;
-    transition: .3s ease-out;
 }
 .top.on::after {
     position: absolute;
@@ -86,7 +97,11 @@ nav {
 }
 /* 1. 로고영역 */
 .logo {
+    transition: .4s ease-out;
     height: 80px;
+}
+nav.scl .logo {
+    height: 60px;
 }
 .logo img {
     height: 100%;
@@ -99,27 +114,33 @@ nav {
     gap: 70px;
     margin-left: 80px;
     line-height: 80px;
+    transition: .4s ease;
+}
+nav.scl .catbx{
+    line-height: 60px;
 }
 .catbx > li > a {
     display: block;
     color: #fff;
 }
+nav.scl .catbx > li > a {
+    color: #333;
+}
 .catbx > li > a::before {
     content: '';
     position: relative;
     display: block;
-    top: 55px;
+    top: 79px;
     width: 0%;
     border-bottom: 1px solid #333;
-    transition: .3s ease;
+    transition: .4s ease-out;
 }
 .catbx > li.on > a::before {
-    content: '';
-    position: relative;
-    display: block;
-    top: 55px;
     width: 100%;
-    border-bottom: 1px solid #333;
+}
+nav.scl .catbx > li > a::before {
+    /* top: 45px; */
+    top: 59px;
 }
 .top.on .catbx > li > a {
     font-weight: 500;
@@ -193,9 +214,16 @@ nav {
     display: flex;    
     gap: 30px;
     line-height: 80px;
+    transition: .4s ease-out;
+}
+nav.scl .side {
+    line-height: 60px;
 }
 .side > li a {
     color: #fff;
+}
+nav.scl .side > li a {
+    color: #333;
 }
 .top.on .side > li a {
     color: #333;
@@ -206,8 +234,6 @@ nav {
     flex-direction: column;
     margin-top: 10px;
     width: 300px;
-    /* opacity: 1;
-    transition: .3s ease; */
 }
 .thumb img {
     width: 100%;
