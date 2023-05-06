@@ -361,4 +361,37 @@ window.addEventListener("DOMContentLoaded",()=>{
     // 전체 싸고있는 함수 최초호출
     slideFn();
 
+
+    /*********************************************** 
+        함수명: storeFn()
+        기능: 좌측하단 이미지 클릭시 배경 이미지변경
+    ***********************************************/
+    function storeFn() {
+
+        // 클릭시 클래스 on / off
+        $(".pip").each((idx,ele)=>{
+            $(ele).click(function(){
+                
+                // 클래스 넣기/빼기
+                $(this).addClass("on").siblings().removeClass("on");
+
+                // src 읽어오기
+                let getimg = $(this).find("img").attr("src");
+                console.log(getimg);
+
+                // src 업데이트
+                $(".storeimg").find("img").attr("src",getimg);
+
+                
+            }); //////// click ///////
+
+        }); ///////// each 메서드 //////////
+
+    } ///////////////// storeFn 함수 ////////////////
+
+    // 최초호출!
+    storeFn();
+    
+    
+
 }); ///////////////////// 로드구역 ///////////////////////

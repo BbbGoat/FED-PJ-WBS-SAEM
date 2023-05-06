@@ -95,7 +95,8 @@ new Vue({
     },
     
     mounted() {
-        console.log("뷰JS 연결!!!")
+        // console.log("뷰JS 연결!!!")
+
         // 클릭시 li에 클래스 on
         $(".catbx li > a").click(function(e){
             e.preventDefault();
@@ -103,36 +104,30 @@ new Vue({
             .siblings().removeClass("on");
             $(".top").addClass("on");
             $(".thumb").fadeIn(400);
-        })
+        }) ///////// click ////////////
+        
         // 마우스아웃시 전체 클래스 빼기
         $("nav").mouseleave(function(){
             $(".top").removeClass("on");
             $(".catbx li").removeClass("on");
             $(".thumb").fadeOut(400);
-        });
+        }); ///////// mouseout //////////
+
 
         // 스크롤이벤트
         $(window).on("scroll",function(){
-            console.log("스크롤~")
-
             // 스크롤시작!
             let scStart = $(window).scrollTop();
             // console.log(scStart)
 
             if (scStart > 0) {
-                console.log("변경!")
-                // $("nav").css({
-                //     height: "60px",
-                //     background: "#fffef2",
-                // })
-                $("nav").addClass("scl")
+                $("nav").addClass("scl");
             }
             else if (scStart <= 0) {
-                console.log("원상태")
+                // console.log("원상태");
                 $("nav").removeClass("scl");
             }
-            
-        })
+        }); /////// scroll 이벤트 ///////
 
     } ////////// mounted ///////////
 
