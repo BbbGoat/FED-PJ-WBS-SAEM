@@ -158,7 +158,11 @@ nav.scl .catbx > li > a::before {
     display: flex;
     flex-direction: row;
     gap: 100px;
+    transition: .4s ease-out;
 }
+/* nav.scl .subbx {
+    top: 80px;
+} */
 /* 소분류 공통박스 */
 .sub {
     font-weight: 400;
