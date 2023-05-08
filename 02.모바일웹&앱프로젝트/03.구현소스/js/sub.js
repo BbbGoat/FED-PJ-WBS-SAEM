@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded",()=>{
         const stkimg = document.querySelector(".stkimg");
         const tgbox = document.querySelector(".stkbx");
         const pageL = document.querySelector(".pageL");
+        const pagewrap = document.querySelector(".pagewrap");
         
         
         // 타겟 가로사이즈 변수
@@ -27,32 +28,43 @@ window.addEventListener("DOMContentLoaded",()=>{
         window.onscroll = () => {
             console.log("스크롤");
 
-            let chgFixbx = retVal(tgbox);
-            let resetbx = retVal(pageL);
-            // console.log(chgFixbx);
-            console.log(resetbx);
+            // 변수
+            let startFix = retVal(tgbox);
+            let toplimit = retVal(pageL);
+            let botlimit = window.innerHeight - retValB(pagewrap);
+            console.log(botlimit);
 
-            if (chgFixbx < 100) {
-                console.log("여기서멈춰");
-                tgbox.style.position = "fixed";
-                tgbox.style.top = "90px";
-                if (resetbx > 70) {
-                    // 픽스드 지우기
-                    tgbox.removeAttribute("style");
+
+            // 스크롤 시작점 - 픽스드박스 시작
+            if (startFix < 100 || botlimit < 0) {
+                console.log("fixed변경");
+                stkimg.style.position = "fixed";
+                stkimg.style.top = "90px";
+                tgChg();
+
+                // 상단에서 픽스드 지우기
+                if (toplimit > 70) {
+                    stkimg.removeAttribute("style");
                 }
-                else if (resetbx < -800 || resetbx < -850) {
-                    // tgbox.removeAttribute("style");
-                    tgbox.style.position = "absolute";
-                    tgbox.style.bottom = "0";
-                    tgbox.style.top = "auto";
-                    // tgbox.removeAttribute("style");
+                // 하단에서 픽스드 지우기
+                else if (botlimit > 0) {
+                    stkimg.style.position = "absolute";
+                    stkimg.style.bottom = "30px";
+                    stkimg.style.top = "auto";
                 }
-            }
+            } /////////////// if /////////////////
 
-        }
+        }; ///////////////// onscroll 이벤트 ////////////////////////
 
+
+        // 상단 한계값 구하기 함수
         function retVal(x) {
-            return x = x.getBoundingClientRect().top
+            return x = x.getBoundingClientRect().top;
+        }
+        
+        // 하단 한계값 구하기 함수
+        function retValB(x) {
+            return x = x.getBoundingClientRect().bottom;
         }
 
 
@@ -69,6 +81,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     // 최초호출
     chgFixed();
+    // tgChg();
     
     
 });
