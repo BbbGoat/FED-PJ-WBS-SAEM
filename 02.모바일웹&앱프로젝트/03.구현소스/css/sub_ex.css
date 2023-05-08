@@ -127,7 +127,6 @@
 
 .prdList  {
     position: relative;
-    /* display: table; */
     padding: 0;
     margin-left: -1px;
     width: calc(100% + 2px);
@@ -147,14 +146,13 @@
 .prd_thumb {
     position: relative;
     width: 100%;
-    /* height: 390.281px; */
     margin-bottom: 8px;
     text-align: center;
 }
 .prdImg {
     position: relative;
     margin: 0;
-    /* background-color: #f0efe1; */
+    background-color: #f0efe1;
     aspect-ratio: 1/1.3;
 }
 .prdImg img {
@@ -166,32 +164,17 @@
     margin: 0 auto;
     object-fit: cover;
 }
+
+
 /* 설명영역 */
 .description {
     position: relative;
     width: 100%;
-    height: 96px;
+    /* height: 96px; */
     bottom: 0px;
     left: 0px;
     text-align: center;
     overflow: hidden;   
-}
-.floatleft.per_70 {
-    box-sizing: border-box;
-    padding-right: 15px;
-}
-.floatleft {
-    float: left;
-}
-.floatright {
-    box-sizing: border-box;
-    float: right;
-}
-.per_70 {
-    width: 65%;
-}
-.per_30 {
-    width: 30%;
 }
 .description span {
     position: relative;
@@ -217,9 +200,51 @@
     font-size: 1.5rem;
     color: #000000;
 }
-.floatright li > span {
-    text-align: right;
+.pdInfo {
+    width: 100%;
+    height: 90px;
+    font-size: 1.4rem;
+    text-align: center;
 }
+.pdInfo-name {
+    /* font-family: Suisse Medium,sans-serif; */
+    color: #252525;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.pdInfo-info {
+    color: #666;
+    display: flex;
+    display: -ms-flexbox;
+    -ms-flex-pack: center;
+    justify-content: center;
+    transition: opacity .3s cubic-bezier(.215,.61,.355,1);
+}
+.pdInfo-info span {
+    font-size: 1.4rem;
+    color: #666;
+}
+.pdInfo-info .separator {
+    font-size: 1.4rem;
+    color: rgba(51,51,51,.2);
+    display: inline-block;
+    margin: 0 5px;
+}
+
+/******************************* 여기부터 작업 이어서 *******************************/
+.pdDetail {
+    animation: subcat-product-details-enter-lg 1s cubic-bezier(.215,.61,.355,1) .9s forwards, fade-in 1s cubic-bezier(.215,.61,.355,1) 1.1s forwards;
+    padding: 0 40px;
+    font-size: 1.4rem;
+    /* padding: 30px 20px; */
+    width: 100%;
+}
+
+
+
+
+
+/* 구매 버튼영역 */
 .btn_wrap {
     position: relative;
 }
