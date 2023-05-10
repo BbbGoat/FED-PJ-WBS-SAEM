@@ -18,8 +18,8 @@
     /* padding: 20px; */
     padding: 0 10px 0 30px;
 }
-.product.top {
-    margin-top: 70px;
+.product_top {
+    margin-top: 200px;
     position: relative;
 }
 .cate_main_title {
@@ -111,12 +111,32 @@
 }
 .menu {
     list-style: none;
+
+    list-style: none;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 20px
+    ;
+}
+.menu > dd + dd::before {
+    content: '';
+    display: inline-block;
+    height: 10px;
+    border-left: 1px solid #ccc;
+    margin-right: 20px;
 }
 .menu > dt {
     display: none;
 }
 .menu > dd {
     display: inline-block;
+}
+.menu > dd a {
+    color: #333;
+}
+.menu > dd.on {
+    font-weight: 600;
+    
 }
 
 /* 상품영역 */
@@ -127,7 +147,6 @@
 
 .prdList  {
     position: relative;
-    /* display: table; */
     padding: 0;
     margin-left: -1px;
     width: calc(100% + 2px);
@@ -137,6 +156,10 @@
     box-sizing: border-box;
     padding: 20px;
     width: 33.333333333333333%;
+    transition: .3s ease;
+}
+.gridbox:hover {
+    /* background-color: #f0efe1; */
 }
 .gridbox > a {
     overflow: hidden;
@@ -147,51 +170,35 @@
 .prd_thumb {
     position: relative;
     width: 100%;
-    /* height: 390.281px; */
     margin-bottom: 8px;
     text-align: center;
 }
 .prdImg {
     position: relative;
     margin: 0;
-    /* background-color: #f0efe1; */
-    aspect-ratio: 1/1.3;
+    background-color: #f0efe1;
+    aspect-ratio: 1/1;
 }
 .prdImg img {
     position: relative;
     display: block;
-    width: 80%;
+    width: 60%;
     transform: translateY(-50%);
     top: 50%;
     margin: 0 auto;
     object-fit: cover;
 }
+
+
 /* 설명영역 */
 .description {
     position: relative;
     width: 100%;
-    height: 96px;
+    /* height: 96px; */
     bottom: 0px;
     left: 0px;
     text-align: center;
     overflow: hidden;   
-}
-.floatleft.per_70 {
-    box-sizing: border-box;
-    padding-right: 15px;
-}
-.floatleft {
-    float: left;
-}
-.floatright {
-    box-sizing: border-box;
-    float: right;
-}
-.per_70 {
-    width: 65%;
-}
-.per_30 {
-    width: 30%;
 }
 .description span {
     position: relative;
@@ -217,9 +224,69 @@
     font-size: 1.5rem;
     color: #000000;
 }
-.floatright li > span {
-    text-align: right;
+.pdInfo {
+    width: 100%;
+    height: 80px;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-top: 20px;
 }
+.pdInfo-name {
+    /* font-family: Suisse Medium,sans-serif; */
+    color: #252525;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.pdInfo-info {
+    color: #666;
+    display: flex;
+    display: -ms-flexbox;
+    -ms-flex-pack: center;
+    justify-content: center;
+    transition: opacity .3s cubic-bezier(.215,.61,.355,1);
+}
+.pdInfo-info span {
+    font-size: 1.4rem;
+    color: #666;
+}
+.pdInfo-info .separator {
+    font-size: 1.4rem;
+    color: rgba(51,51,51,.2);
+    display: inline-block;
+    margin: 0 5px;
+}
+.pdDetail {
+    font-size: 1.4rem;
+    width: 100%;
+}
+.pdDetail-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-top: 2px solid #252525;
+}
+.pdDetail-listItem {
+    display: flex;
+    width: 100%;
+    text-align: left;
+    padding: 20px 0;
+}
+.pdDetail-title {
+    margin: 0 20px 0 0;
+    flex-shrink: 0;
+    color: #333;
+    font-weight: 500;
+}
+.pdDetail-content {
+    color: #666;
+}
+.pdDetail-list li {
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+/* 구매 버튼영역 */
 .btn_wrap {
     position: relative;
 }
@@ -236,9 +303,39 @@
     font-weight: 500;
 }
 .btn.fill {
-    background: #e7e6e4;
+    background: #ebeade;
     border: #e7e6e4;
     color: #8b8b8b;
     padding: 0 30px;
+    font-size: 1.4rem;
+    font-weight: normal;
     transition: background-color 0.3s
 }
+.gridbox:hover .fill {
+    background-color: #252525;
+    color: #fffef2;
+}
+
+.prdList::after {
+    content: '';
+    display: block;
+    height: 10px;
+    width: 100%;
+    padding-bottom: 20px;
+    float: left;
+}
+
+/* 인디케이터 */
+/* .paginate {
+    float: left;
+    width: 100%;
+    height: 50px;
+    background-color: #8b8b8b;
+    padding-bottom: 20px;
+}
+.paginate span {
+    display: block;
+    width: 100%;
+    font-size: 1.4rem;
+    text-align: center;
+} */
