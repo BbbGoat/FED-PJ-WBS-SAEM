@@ -8,20 +8,8 @@ import store from "./store.js";
 Vue.component("category-comp",{
     template: `
     <ul class="catbx">
-        <li>
-            <a href="#" v-on:click="chgData('skin')">핸드&amp;스킨</a>
-        </li>
-        <li>
-            <a href="#" v-on:click="chgData('perfume')">향수</a>
-        </li>
-        <li>
-            <a href="#" v-on:click="chgData('home')">홈</a>
-        </li>
-        <li>
-            <a href="#" v-on:click="chgData('gift')">기프트</a>
-        </li>
-        <li>
-            <a href="#">칼럼</a>
+        <li v-for="(v,i) in $store.state.gnb">
+            <a href="#" v-on:click="chgData(i)">{{v['maintit']}}</a>
         </li>
         <sub-comp></sub-comp>
     </ul>
@@ -70,7 +58,7 @@ Vue.component("sub-comp",{
             <dt><a href="#" v-text="$store.state.setsubtit2"></a></dt>
             <dd v-for="(v,n) in $store.state.setdd2"><a href="#">{{v}}</a></dd>
             </dl>
-            <dl class="sub">
+        <dl class="sub">
             <dt><a href="#" v-text="$store.state.setsubtit3"></a></dt>
             <dd v-for="(v,n) in $store.state.setdd3"><a href="#">{{v}}</a></dd>
         </dl>
