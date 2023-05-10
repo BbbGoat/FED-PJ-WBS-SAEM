@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded",()=>{
         
         // 최초 로딩시 변경
         window.onload = () => {
-            tgChg();
+            // tgChg();
         }
 
         // 리사이즈시 업데이트
@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded",()=>{
         }
 
         // 스크롤이벤트
-        window.onscroll = () => {
+        $(window).on("scroll load", () => {
             console.log("스크롤");
 
             // 변수
@@ -54,7 +54,7 @@ window.addEventListener("DOMContentLoaded",()=>{
                 }
             } /////////////// if /////////////////
 
-        }; ///////////////// onscroll 이벤트 ////////////////////////
+        }); ///////////////// onscroll 이벤트 ////////////////////////
 
 
         // 상단 한계값 구하기 함수
