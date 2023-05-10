@@ -1,5 +1,6 @@
 // 스토어 불러오기
 import store from "./store.js";
+import footData from "./temData/footerData.js";
 
 /***************************************************** 
     뷰 컴포넌트로 데이터 셋업하기
@@ -69,72 +70,68 @@ Vue.component("sub-comp",{
 
 // [2] 뷰컴포넌트 - 푸터
 Vue.component("foot-comp",{
-    template: `
-    <!-- pc용 푸터 -->
-    <section id="dt">
-        <div class="cs_center">
-            <span class="title">고객센터</span>
-            <a href="tel:123-4567" class="cs_number">123:4567</a>
-            <span class="cs_time">월-금 / 10-17시 (점심시간 13-14)</span>
-        </div>
-        <div class="sitemap">
-            <dl class="depth">
-                <dt class="title">주문 및 문의</dt>
-                <dd class="list">
-                    <a href="#">문의하기</a>
-                    <a href="#">자주 묻는 질문</a>
-                    <a href="#">배송</a>
-                    <a href="#">반품</a>
-                    <a href="#">배송 조회하기</a>
-                    <a href="#">주문 내역</a>
-                </dd>
-            </dl>
-            <dl class="depth">
-                <dt class="title">소셜미디어</dt>
-                <dd class="list">
-                    <a href="#">Instagram</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Kakao Plus Friend</a>
-                </dd>
-            </dl>
-            <dl class="depth">
-                <dt class="title">소개</dt>
-                <dd class="list">
-                    <a href="#">브랜드 스토리</a>
-                    <a href="#">이솝 재단</a>
-                    <a href="#">채용</a>
-                    <a href="#">개인정보처리방침</a>
-                </dd>
-            </dl>
-            <dl class="depth">
-                <dt class="title">서비스</dt>
-                <dd class="list">
-                    <a href="#">기업체 구매</a>
-                    <a href="#">페이셜 어포인트먼트</a>
-                    <a href="#">1:1 채팅 상담</a>
-                    <a href="#">린스 앤 리턴 캠페인</a>
-                </dd>
-            </dl>
-        </div>
-        <div class="company">
-            <h2>© Aesop</h2>
-            <address class="address">
-                서울특별시 강남구 도산대로45길 10-6 이솝코리아 | 대표자: 프레데리크미셸어완세일러 | 대표전화: 1800-1987 | 대표 이메일: aesop@aesop.com | 
-            </address>
-            <span class="company_number">사업자 등록 번호: 220-88-56014 | </span>
-            <span class="company_infomem">통신판매업 신고번호: 2014-서울강남-02300</span>
-            <p id="copyright">
-                © 2023 Aesop All rights reserved. In God we trust.
-            </p>
-        </div>
-    </section>
-    `,
+    template: footData.footarea,
 }); //////////////////// Vue 컴포넌트 ///////////////////////
 
 
+// [3] 뷰컴포넌트 - 서브페이지 상품
+
+Vue.component("goods-comp",{
+    template: `
+    <div class="prdList">
+        <!-- 상품리스트 -->
+        <div class="gridbox" v-for="(v,i) in $store.state.cnt">
+                <a href="#">
+                <div class="prd_thumb">
+                    <div class="prdImg">
+                        <img v-bind:src="$store.state.goods.prdImg+v+'.png'" alt="prdimage">
+                    </div>
+                    <!-- <div class="icon"></div> -->
+                </div>
+                </a>
+                <div class="description">
+                    <!-- 주요정보: 상품명/용량/가격 -->
+                    <div class="pdInfo">
+                        <a href="#">
+                            <h5 class="pdInfo-name">상품명들어가는란</h5>
+                            <div class="pdInfo-info">
+                                <span>180 ml</span>
+                                <span class="separator">/</span>
+                                <span>₩00,000</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- 서브정보: 디테일 정보 -->
+                    <div class="pdDetail">
+                        <ul class="pdDetail-list">
+                            <li class="pdDetail-listItem">
+                                <div class="pdDetail-title">사용감</div>
+                                <div class="pdDetail-content">부드러움, 매끄러움, 상쾌함</div>
+                            </li>
+                            <li class="pdDetail-listItem">
+                                <div class="pdDetail-title">향</div>
+                                <div class="pdDetail-content">신선함, 알파인향, 캠포릭</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            <div class="btn_wrap">
+                <div class="btn fill">CART</div>
+            </div>
+        </div>
+    </div>
+    `,
+
+    methods: {
+        // 함수영역
+    }
+}); /////////////////// Vue 컴포넌트 ////////////////////////
 
 
+new Vue({
+    el: "#cont",
+    store,
+}); /////////
 
 
 
@@ -154,6 +151,7 @@ new Vue({
         // store.commit("setData",{
         //     imgsrc: "",
         // });
+        store.commit("setGoods");
     },
     
     mounted() {

@@ -1,3 +1,5 @@
+// 서브 페이지 뷰엑스 스토어 셋팅 JS - store.js
+
 export default new Vuex.Store({
   // (1) 데이터 셋팅구역:
   state: {
@@ -58,6 +60,20 @@ export default new Vuex.Store({
       },
     }, ////////// gnb /////////
 
+    // 서브페이지 제품 데이터셋업
+    goods:{
+      prdImg: "./images/goods_",
+      pdInfo: {
+          name: "상품명출력",
+          info: "120ml",
+          price: "00,000",
+      },
+      pdDetail: {
+          title: ["사용감","향"],
+          content: ["부드러움, 매끄러움, 상쾌함","신선함, 알파인향, 캠포릭"],
+      },
+  }, //////// goods ////////
+
     //////////////////////////////////////
 
     // 대분류/중분류 변수
@@ -71,15 +87,22 @@ export default new Vuex.Store({
     settit: "",
     setdesc: "",
     
-
+    // 굿즈박스 변수
+    name: "상품명출력",
+    info: "120ml",
+    price: "00,000",
+    title: ["사용감","향"],
+    content: ["부드러움, 매끄러움, 상쾌함","신선함, 알파인향, 캠포릭"],
+    cnt: 10,
 
   }, /////// state 구역 ////////
 
   // (2) 데이터 변경 메서드구역:
   mutations: {
-    // setData(state,parameter) {
-    //     console.log("setData mutations!");
-    //     // 데이터셋업
-    // }
+    setGoods(state,pm) {
+      console.log("데이터변경!:",pm);
+      state.name = state.goods.pdInfo.name,
+      console.log("상품명출력:",state.name);
+    }
   },
 }); ///////////// 뷰엑스 인스턴스 /////////////

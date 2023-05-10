@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesop</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <!-- 폰트어썸 외부 링크 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" href="./css/common.css">
+    <!-- 메인 CSS -->
+    <link rel="stylesheet" href="./css/sub.css">
+    
+    <!-- 뷰JS 스탠드얼론 버전 가져오기! -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!-- 뷰JS vuex CDN -->
+    <script src="https://unpkg.com/vuex@3.0.0"></script>  
+
+    
+    <!-- 제이쿼리 라이브러리 -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    
+    <!-- 서브페이지 JS -->
+    <script src="./js/common.js" type="module"></script>
+    <script src="./js/sub.js" type="module"></script>
+</head>
+<body>
+    <!-- 상단영역 -->
+    <header id="top">
+        <!-- 속박스 -->
+        <div class="top fxbx">
+            <!-- GNB -->
+            <nav>
+                <div class="gnb">
+                    <!-- 1. 로고영역 -->
+                    <div class="logo">
+                        <a href="./index.html"><img src="./images/logo.png" alt="이솝로고"></a>
+                    </div>
+                    <!-- 2. 카테고리영역 -->
+                    <category-comp></category-comp>
+                </div>
+                <ul class="side">
+                    <!-- 3. 사이드영역 -->
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">위시리스트</a></li>
+                    <li><a href="#">카트</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- 메인영역 -->
+    <main id="cont">
+        <!-- 속박스 -->
+        <div class="cont">
+            <section>
+                <div class="container">
+                    <div class="pagewrap">
+                        <!-- 상단영역 -->
+                        <div class="product_top">
+                            <div class="titbx">
+                                <!-- 타이틀 -->
+                                <div class="cate_main_title">
+                                    <h3>스킨케어</h3>
+                                    <p>노말텍스트</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 스티키박스 영역 -->
+                        <div class="clearfix">
+                            <div class="pageL">
+                                <div class="stkbx">
+                                    <div class="stkimg">
+                                        <img src="./images/cat_hand.jpg" alt="카테고리배너">
+                                        <div class="stktxt">
+                                            <h4>스킨케어</h4>
+                                            <span>스킨케어 모두보기</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pageR">
+                                <div class="inner">                                    
+                                    <div class="menuarea">
+                                        <div class="menu_wrap">
+                                            <dl class="menu" data-name="스킨케어">
+                                                <dt><a href="#">skin</a></dt>
+                                                <dd class="on"><a href="#">스킨케어 모두 보기</a></dd>
+                                                <dd><a href="#">제품 타입</a></dd>
+                                                <dd><a href="#">라인</a></dd>
+                                                <dd><a href="#">기능</a></dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <!-- 일반상품 -->
+                                    <div class="product_wrap">
+                                        <div class="prdList">
+                                            <!-- 상품리스트 -->
+                                            <div class="gridbox">
+                                                    <a href="#">
+                                                    <div class="prd_thumb">
+                                                        <div class="prdImg">
+                                                            <img src="./images/goods_4.png" alt="prdimage">
+                                                        </div>
+                                                        <!-- <div class="icon"></div> -->
+                                                    </div>
+                                                    </a>
+                                                    <div class="description">
+                                                        <!-- 주요정보: 상품명/용량/가격 -->
+                                                        <div class="pdInfo">
+                                                            <a href="#">
+                                                                <h5 class="pdInfo-name">상품명들어가는란</h5>
+                                                                <div class="pdInfo-info">
+                                                                    <span>180 ml</span>
+                                                                    <span class="separator">/</span>
+                                                                    <span>₩00,000</span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <!-- 서브정보: 디테일 정보 -->
+                                                        <div class="pdDetail">
+                                                            <ul class="pdDetail-list">
+                                                                <li class="pdDetail-listItem">
+                                                                    <div class="pdDetail-title">사용감</div>
+                                                                    <div class="pdDetail-content">부드러움, 매끄러움, 상쾌함</div>
+                                                                </li>
+                                                                <li class="pdDetail-listItem">
+                                                                    <div class="pdDetail-title">향</div>
+                                                                    <div class="pdDetail-content">신선함, 알파인향, 캠포릭</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                <div class="btn_wrap">
+                                                    <div class="btn fill">CART</div>
+                                                </div>
+                                            </div>
+                                            <div class="gridbox">
+                                                    <a href="#">
+                                                    <div class="prd_thumb">
+                                                        <div class="prdImg">
+                                                            <img src="./images/goods_4.png" alt="prdimage">
+                                                        </div>
+                                                        <!-- <div class="icon"></div> -->
+                                                    </div>
+                                                    </a>
+                                                    <div class="description">
+                                                        <!-- 주요정보: 상품명/용량/가격 -->
+                                                        <div class="pdInfo">
+                                                            <a href="#">
+                                                                <h5 class="pdInfo-name">상품명들어가는란</h5>
+                                                                <div class="pdInfo-info">
+                                                                    <span>180 ml</span>
+                                                                    <span class="separator">/</span>
+                                                                    <span>₩00,000</span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <!-- 서브정보: 디테일 정보 -->
+                                                        <div class="pdDetail">
+                                                            <ul class="pdDetail-list">
+                                                                <li class="pdDetail-listItem">
+                                                                    <div class="pdDetail-title">사용감</div>
+                                                                    <div class="pdDetail-content">부드러움, 매끄러움, 상쾌함</div>
+                                                                </li>
+                                                                <li class="pdDetail-listItem">
+                                                                    <div class="pdDetail-title">향</div>
+                                                                    <div class="pdDetail-content">신선함, 알파인향, 캠포릭</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                <div class="btn_wrap">
+                                                    <div class="btn fill">CART</div>
+                                                </div>
+                                            </div>
+                                            <div class="gridbox">
+                                                    <a href="#">
+                                                    <div class="prd_thumb">
+                                                        <div class="prdImg">
+                                                            <img src="./images/goods_4.png" alt="prdimage">
+                                                        </div>
+                                                        <!-- <div class="icon"></div> -->
+                                                    </div>
+                                                    </a>
+                                                    <div class="description">
+                                                        <!-- 주요정보: 상품명/용량/가격 -->
+                                                        <div class="pdInfo">
+                                                            <a href="#">
+                                                                <h5 class="pdInfo-name">상품명들어가는란</h5>
+                                                                <div class="pdInfo-info">
+                                                                    <span>180 ml</span>
+                                                                    <span class="separator">/</span>
+                                                                    <span>₩00,000</span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <!-- 서브정보: 디테일 정보 -->
+                                                        <div class="pdDetail">
+                                                            <ul class="pdDetail-list">
+                                                                <li class="pdDetail-listItem">
+                                                                    <div class="pdDetail-title">사용감</div>
+                                                                    <div class="pdDetail-content">부드러움, 매끄러움, 상쾌함</div>
+                                                                </li>
+                                                                <li class="pdDetail-listItem">
+                                                                    <div class="pdDetail-title">향</div>
+                                                                    <div class="pdDetail-content">신선함, 알파인향, 캠포릭</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                <div class="btn_wrap">
+                                                    <div class="btn fill">CART</div>
+                                                </div>
+                                            </div>
+                                            <div class="gridbox">
+                                                    <a href="#">
+                                                    <div class="prd_thumb">
+                                                        <div class="prdImg">
+                                                            <img src="./images/goods_4.png" alt="prdimage">
+                                                        </div>
+                                                        <!-- <div class="icon"></div> -->
+                                                    </div>
+                                                    </a>
+                                                    <div class="description">
+                                                        <!-- 주요정보: 상품명/용량/가격 -->
+                                                        <div class="pdInfo">
+                                                            <a href="#">
+                                                                <h5 class="pdInfo-name">상품명들어가는란</h5>
+                                                                <div class="pdInfo-info">
+                                                                    <span>180 ml</span>
+                                                                    <span class="separator">/</span>
+                                                                    <span>₩00,000</span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <!-- 서브정보: 디테일 정보 -->
+                                                        <div class="pdDetail">
+                                                            <ul class="pdDetail-list">
+                                                                <li class="pdDetail-listItem">
+                                                                    <div class="pdDetail-title">사용감</div>
+                                                                    <div class="pdDetail-content">부드러움, 매끄러움, 상쾌함</div>
+                                                                </li>
+                                                                <li class="pdDetail-listItem">
+                                                                    <div class="pdDetail-title">향</div>
+                                                                    <div class="pdDetail-content">신선함, 알파인향, 캠포릭</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                <div class="btn_wrap">
+                                                    <div class="btn fill">CART</div>
+                                                </div>
+                                            </div>
+                                            <div class="gridbox">
+                                                    <a href="#">
+                                                    <div class="prd_thumb">
+                                                        <div class="prdImg">
+                                                            <img src="./images/goods_4.png" alt="prdimage">
+                                                        </div>
+                                                        <!-- <div class="icon"></div> -->
+                                                    </div>
+                                                    </a>
+                                                    <div class="description">
+                                                        <!-- 주요정보: 상품명/용량/가격 -->
+                                                        <div class="pdInfo">
+                                                            <a href="#">
+                                                                <h5 class="pdInfo-name">상품명들어가는란</h5>
+                                                                <div class="pdInfo-info">
+                                                                    <span>180 ml</span>
+                                                                    <span class="separator">/</span>
+                                                                    <span>₩00,000</span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <!-- 서브정보: 디테일 정보 -->
+                                                        <div class="pdDetail">
+                                                            <ul class="pdDetail-list">
+                                                                <li class="pdDetail-listItem">
+                                                                    <div class="pdDetail-title">사용감</div>
+                                                                    <div class="pdDetail-content">부드러움, 매끄러움, 상쾌함</div>
+                                                                </li>
+                                                                <li class="pdDetail-listItem">
+                                                                    <div class="pdDetail-title">향</div>
+                                                                    <div class="pdDetail-content">신선함, 알파인향, 캠포릭</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                <div class="btn_wrap">
+                                                    <div class="btn fill">CART</div>
+                                                </div>
+                                            </div>
+                                            <div class="gridbox">
+                                                    <a href="#">
+                                                    <div class="prd_thumb">
+                                                        <div class="prdImg">
+                                                            <img src="./images/goods_4.png" alt="prdimage">
+                                                        </div>
+                                                        <!-- <div class="icon"></div> -->
+                                                    </div>
+                                                    </a>
+                                                    <div class="description">
+                                                        <!-- 주요정보: 상품명/용량/가격 -->
+                                                        <div class="pdInfo">
+                                                            <a href="#">
+                                                                <h5 class="pdInfo-name">상품명들어가는란</h5>
+                                                                <div class="pdInfo-info">
+                                                                    <span>180 ml</span>
+                                                                    <span class="separator">/</span>
+                                                                    <span>₩00,000</span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <!-- 서브정보: 디테일 정보 -->
+                                                        <div class="pdDetail">
+                                                            <ul class="pdDetail-list">
+                                                                <li class="pdDetail-listItem">
+                                                                    <div class="pdDetail-title">사용감</div>
+                                                                    <div class="pdDetail-content">부드러움, 매끄러움, 상쾌함</div>
+                                                                </li>
+                                                                <li class="pdDetail-listItem">
+                                                                    <div class="pdDetail-title">향</div>
+                                                                    <div class="pdDetail-content">신선함, 알파인향, 캠포릭</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                <div class="btn_wrap">
+                                                    <div class="btn fill">CART</div>
+                                                </div>
+                                            </div>
+                                            <div class="gridbox">
+                                                    <a href="#">
+                                                    <div class="prd_thumb">
+                                                        <div class="prdImg">
+                                                            <img src="./images/goods_4.png" alt="prdimage">
+                                                        </div>
+                                                        <!-- <div class="icon"></div> -->
+                                                    </div>
+                                                    </a>
+                                                    <div class="description">
+                                                        <!-- 주요정보: 상품명/용량/가격 -->
+                                                        <div class="pdInfo">
+                                                            <a href="#">
+                                                                <h5 class="pdInfo-name">상품명들어가는란</h5>
+                                                                <div class="pdInfo-info">
+                                                                    <span>180 ml</span>
+                                                                    <span class="separator">/</span>
+                                                                    <span>₩00,000</span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <!-- 서브정보: 디테일 정보 -->
+                                                        <div class="pdDetail">
+                                                            <ul class="pdDetail-list">
+                                                                <li class="pdDetail-listItem">
+                                                                    <div class="pdDetail-title">사용감</div>
+                                                                    <div class="pdDetail-content">부드러움, 매끄러움, 상쾌함</div>
+                                                                </li>
+                                                                <li class="pdDetail-listItem">
+                                                                    <div class="pdDetail-title">향</div>
+                                                                    <div class="pdDetail-content">신선함, 알파인향, 캠포릭</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                <div class="btn_wrap">
+                                                    <div class="btn fill">CART</div>
+                                                </div>
+                                            </div>
+                                            <div class="gridbox">
+                                                    <a href="#">
+                                                    <div class="prd_thumb">
+                                                        <div class="prdImg">
+                                                            <img src="./images/goods_4.png" alt="prdimage">
+                                                        </div>
+                                                        <!-- <div class="icon"></div> -->
+                                                    </div>
+                                                    </a>
+                                                    <div class="description">
+                                                        <!-- 주요정보: 상품명/용량/가격 -->
+                                                        <div class="pdInfo">
+                                                            <a href="#">
+                                                                <h5 class="pdInfo-name">상품명들어가는란</h5>
+                                                                <div class="pdInfo-info">
+                                                                    <span>180 ml</span>
+                                                                    <span class="separator">/</span>
+                                                                    <span>₩00,000</span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <!-- 서브정보: 디테일 정보 -->
+                                                        <div class="pdDetail">
+                                                            <ul class="pdDetail-list">
+                                                                <li class="pdDetail-listItem">
+                                                                    <div class="pdDetail-title">사용감</div>
+                                                                    <div class="pdDetail-content">부드러움, 매끄러움, 상쾌함</div>
+                                                                </li>
+                                                                <li class="pdDetail-listItem">
+                                                                    <div class="pdDetail-title">향</div>
+                                                                    <div class="pdDetail-content">신선함, 알파인향, 캠포릭</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                <div class="btn_wrap">
+                                                    <div class="btn fill">CART</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="paginate">
+                                        <span>&lt; 1 | 2 | 3 &gt;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- 하단영역 -->
+    <footer id="info">
+        <!-- 속박스 -->
+        <div class="info">
+            <!-- 푸터영역 -->
+            <foot-comp></foot-comp>
+        </div>
+    </footer>
+</body>
+</html>
