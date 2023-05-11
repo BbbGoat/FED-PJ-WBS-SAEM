@@ -8,7 +8,7 @@ export default new Vuex.Store({
             skin: {
                 maintit: "핸드&스킨",
                 subtit: ["제품 모두 보기", "유형", "사랑받는 제품"],
-                dd1: ["핸드크림", "바디", "클렌저", "토너", "세럼&에센스"],
+                dd1: ["핸드크림", "바디", "하이드레이터", "토너", "쉐이빙"],
                 dd2: ["중성", "건성", "지성", "복합성"],
                 dd3: ["파슬리 씨드 안티 옥시던트 인텐스 세럼", "이그절티드 아이 세럼", "비 트리플 씨 페이셜 밸런싱 젤"],
                 imgsrc: "./images/gnb_1.jpg",
@@ -69,66 +69,6 @@ export default new Vuex.Store({
             },
         }, ////////// gnb /////////
 
-        // 서브페이지 제품 데이터셋업
-        goods: {
-            skin: {
-                pd1: {
-                    prdImg: "./images/goods/hand/pd-1.png",
-                    pdInfo: {
-                        name: "상품명출력",
-                        info: "120ml",
-                        price: "000000",
-                    },
-                    pdDetail: {
-                        title: ["사용감", "향"],
-                        content: ["부드러움, 매끄러움, 상쾌함", "신선함, 알파인향, 캠포릭"],
-                    },
-                    data: "AWYB847G",
-                },
-                pd2: {
-                    prdImg: "./images/goods/hand/pd-2.png",
-                    pdInfo: {
-                        name: "상품명출력2",
-                        info: "100ml",
-                        price: "100000",
-                    },
-                    pdDetail: {
-                        title: ["사용감", "향"],
-                        content: ["sadf, sadf, 상쾌fd함", "a, b, c"],
-                    },
-                    data: "MDIB547",
-                },
-            }, //////// hand
-            perfume: {
-                pd1: {
-                    prdImg: "./images/goods/perfume/pd-1.png",
-                    pdInfo: {
-                        name: "상품명출력",
-                        info: "120ml",
-                        price: "000000",
-                    },
-                    pdDetail: {
-                        title: ["사용감", "향"],
-                        content: ["부드러움, 매끄러움, 상쾌함", "신선함, 알파인향, 캠포릭"],
-                    },
-                    data: "AWYB847G",
-                },
-                pd2: {
-                    prdImg: "./images/goods/hand/pd-2.png",
-                    pdInfo: {
-                        name: "상품명출력2",
-                        info: "100ml",
-                        price: "100000",
-                    },
-                    pdDetail: {
-                        title: ["사용감", "향"],
-                        content: ["sadf, sadf, 상쾌fd함", "a, b, c"],
-                    },
-                    data: "MDIB547",
-                },
-            }, /////// perfume
-        }, //////// goods ////////
-        
 
         //////////////////////////////////////
 
@@ -143,13 +83,17 @@ export default new Vuex.Store({
         settit: "",
         setdesc: "",
 
+        // 카테고리 분류 변수
+        // tit: "",
+
         // 굿즈박스 변수
-        name: "상품명출력",
-        info: "120ml",
-        price: "00,000",
-        title: ["사용감", "향"],
-        content: ["부드러움, 매끄러움, 상쾌함", "신선함, 알파인향, 캠포릭"],
-        cnt: 10,
+        // name: "상품명출력",
+        // info: "120ml",
+        // price: "00,000",
+        // title: ["사용감", "향"],
+        // content: ["부드러움, 매끄러움, 상쾌함", "신선함, 알파인향, 캠포릭"],
+        // cnt: 10,
+
     }, /////// state 구역 ////////
 
     // (2) 데이터 변경 메서드구역:

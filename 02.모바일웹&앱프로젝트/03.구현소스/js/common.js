@@ -10,7 +10,7 @@ import { skinData } from "./gdsData/goodsData.js";
 Vue.component("category-comp",{
     template: `
     <ul class="catbx">
-        <li v-for="(v,i) in $store.state.gnb">
+        <li v-for="(v,i) in $store.state.gnb" :key="i">
             <a href="#" v-on:click="chgData(i)">{{v['maintit']}}</a>
         </li>
         <sub-comp></sub-comp>
@@ -65,7 +65,27 @@ Vue.component("sub-comp",{
             <dd v-for="(v,n) in $store.state.setdd3"><a href="#">{{v}}</a></dd>
         </dl>
     </div>
-    `
+    `,
+    methods: {
+        // 서브페이지 경로 이동 메서드
+        // chgHref(pm) {
+        //     console.log("링크 변경할 코드구역:",pm);
+
+        //     let src = "";
+
+        //     // 스위치케이스로 분기
+        //     switch(pm) {
+        //         case pm = 0 : src = "asdf"; break;
+        //         case pm = 1 : src = "defbc"; break;
+        //         case pm = 2 : src = "ewrweqr"; break;
+        //         case pm = 3 : src = "zxcv"; break;
+        //     }
+
+        //     // 이동
+        //     location.href = `./${src}.html`;
+        // },
+        
+    }
 }); //////////////////// Vue 컴포넌트 ///////////////////////
 
 
@@ -78,44 +98,90 @@ Vue.component("foot-comp",{
 // [3] 뷰컴포넌트 - 서브페이지 상품
 Vue.component("goods-comp",{
     template: `
-    <div class="prdList">
-        <!-- 상품리스트 -->
-        <div class="gridbox" v-for="(v,i) in skinData" :key="i" v-if="v.cat != 'body'">
-                <a href="#">
-                <div class="prd_thumb">
-                    <div class="prdImg">
-                        <img v-bind:src="skinData[i].prdImg" alt="prdimage">
+    <section>
+        <div class="container">
+            <div class="pagewrap">
+                <!-- 상단영역 -->
+                <div class="product_top">
+                    <div class="titbx">
+                        <!-- 타이틀 -->
+                        <div class="cate_main_title">
+                            <h3>스킨케어</h3>
+                            <p>노말텍스트</p>
+                        </div>
                     </div>
-                    <!-- <div class="icon"></div> -->
                 </div>
-                </a>
-                <div class="description">
-                    <!-- 주요정보: 상품명/용량/가격 -->
-                    <div class="pdInfo">
-                        <a href="#">
-                            <h5 class="pdInfo-name" v-text="skinData[i].pdInfo['name']"></h5>
-                            <div class="pdInfo-info">
-                                <span v-text="skinData[i].pdInfo['info']"></span>
-                                <span class="separator">/</span>
-                                <span>{{numberWithCommas(skinData[i].pdInfo['price'])}}</span>
+                <!-- 스티키박스 영역 -->
+                <div class="clearfix">
+                    <div class="pageL">
+                        <div class="stkbx">
+                            <div class="stkimg">
+                                <img src="./images/cat_hand.jpg" alt="카테고리배너">
+                                <div class="stktxt">
+                                    <h4>스킨케어</h4>
+                                    <span>스킨케어 모두보기</span>
+                                </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
-                    <!-- 서브정보: 디테일 정보 -->
-                    <div class="pdDetail">
-                        <ul class="pdDetail-list">
-                            <li class="pdDetail-listItem" v-for="(c,n) in cnt">
-                                <div class="pdDetail-title" v-text="skinData[i].pdDetail.title[n]"></div>
-                                <div class="pdDetail-content" v-text="skinData[i].pdDetail.content[n]"></div>
-                            </li>
-                        </ul>
+                    <div class="pageR">
+                        <div class="inner">                                    
+                            <div class="menuarea">
+                                <div class="menu_wrap">
+                                    <dl class="menu" data-name="스킨케어">
+                                        <dt><a href="#">skin</a></dt>
+                                        <dd class="on"><a href="#">스킨케어 모두 보기</a></dd>
+                                        <dd v-for="(v,n) in $store.state.gnb.skin.dd1"><a href="#">{{v}}</a></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <!-- 일반상품 -->
+                            <div class="product_wrap">
+                                <div class="prdList">
+                                    <!-- 상품리스트 -->
+                                    <div class="gridbox" v-for="(v,i) in skinData" :key="i">
+                                            <a href="#">{{i}}
+                                            <div class="prd_thumb">
+                                                <div class="prdImg">
+                                                    <img v-bind:src="skinData[i].prdImg" alt="prdimage">
+                                                </div>
+                                                <!-- <div class="icon"></div> -->
+                                            </div>
+                                            </a>
+                                            <div class="description">
+                                                <!-- 주요정보: 상품명/용량/가격 -->
+                                                <div class="pdInfo">
+                                                    <a href="#">
+                                                        <h5 class="pdInfo-name" v-text="skinData[i].pdInfo['name']"></h5>
+                                                        <div class="pdInfo-info">
+                                                            <span v-text="skinData[i].pdInfo['info']"></span>
+                                                            <span class="separator">/</span>
+                                                            <span>{{numberWithCommas(skinData[i].pdInfo['price'])}}₩</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <!-- 서브정보: 디테일 정보 -->
+                                                <div class="pdDetail">
+                                                    <ul class="pdDetail-list">
+                                                        <li class="pdDetail-listItem" v-for="(c,n) in cnt">
+                                                            <div class="pdDetail-title" v-text="skinData[i].pdDetail.title[n]"></div>
+                                                            <div class="pdDetail-content" v-text="skinData[i].pdDetail.content[n]"></div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        <div class="btn_wrap" v-on:click="addCart(skinData[i].data)">
+                                            <div class="btn fill">CART</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            <div class="btn_wrap" v-on:click="addCart(skinData[i].data)">
-                <div class="btn fill">CART</div>
             </div>
         </div>
-    </div>
+    </section>
     `,
     data() {
         return {
@@ -138,16 +204,6 @@ Vue.component("goods-comp",{
         },
     }
 }); /////////////////// Vue 컴포넌트 ////////////////////////
-
-
-// [3] 뷰인스턴스 - 서브페이지
-new Vue({
-    el: "#cont",
-    store,
-    methods: {
-
-    },
-}); /////////
 
 
 
@@ -211,7 +267,17 @@ new Vue({
 }); ////////////////// Vue 인스턴스 //////////////////////
 
 
-// [2] 뷰인스턴스 - 푸터
+// [2] 뷰인스턴스 - 서브메인
+new Vue({
+    el: "#cont",
+    store,
+    methods: {
+
+    },
+}); ////////////////// Vue 인스턴스 //////////////////////
+
+
+// [3] 뷰인스턴스 - 푸터
 new Vue({
     el:"#info",
     store,
