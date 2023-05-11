@@ -1,6 +1,7 @@
 // 스토어 불러오기
 import store from "./store.js";
 import footData from "./temData/footerData.js";
+import { skinData } from "./gdsData/goodsData.js";
 
 /***************************************************** 
     뷰 컴포넌트로 데이터 셋업하기
@@ -75,16 +76,15 @@ Vue.component("foot-comp",{
 
 
 // [3] 뷰컴포넌트 - 서브페이지 상품
-
 Vue.component("goods-comp",{
     template: `
     <div class="prdList">
         <!-- 상품리스트 -->
-        <div class="gridbox" v-for="(v,i) in $store.state.cnt">
+        <div class="gridbox" v-for="(v,i) in skinData" :key="i" v-if="v.cat != 'body'">
                 <a href="#">
                 <div class="prd_thumb">
                     <div class="prdImg">
-                        <img v-bind:src="$store.state.goods.prdImg+v+'.png'" alt="prdimage">
+                        <img v-bind:src="skinData[i].prdImg" alt="prdimage">
                     </div>
                     <!-- <div class="icon"></div> -->
                 </div>
@@ -93,44 +93,60 @@ Vue.component("goods-comp",{
                     <!-- 주요정보: 상품명/용량/가격 -->
                     <div class="pdInfo">
                         <a href="#">
-                            <h5 class="pdInfo-name">상품명들어가는란</h5>
+                            <h5 class="pdInfo-name" v-text="skinData[i].pdInfo['name']"></h5>
                             <div class="pdInfo-info">
-                                <span>180 ml</span>
+                                <span v-text="skinData[i].pdInfo['info']"></span>
                                 <span class="separator">/</span>
-                                <span>₩00,000</span>
+                                <span>{{numberWithCommas(skinData[i].pdInfo['price'])}}</span>
                             </div>
                         </a>
                     </div>
                     <!-- 서브정보: 디테일 정보 -->
                     <div class="pdDetail">
                         <ul class="pdDetail-list">
-                            <li class="pdDetail-listItem">
-                                <div class="pdDetail-title">사용감</div>
-                                <div class="pdDetail-content">부드러움, 매끄러움, 상쾌함</div>
-                            </li>
-                            <li class="pdDetail-listItem">
-                                <div class="pdDetail-title">향</div>
-                                <div class="pdDetail-content">신선함, 알파인향, 캠포릭</div>
+                            <li class="pdDetail-listItem" v-for="(c,n) in cnt">
+                                <div class="pdDetail-title" v-text="skinData[i].pdDetail.title[n]"></div>
+                                <div class="pdDetail-content" v-text="skinData[i].pdDetail.content[n]"></div>
                             </li>
                         </ul>
                     </div>
                 </div>
-            <div class="btn_wrap">
+            <div class="btn_wrap" v-on:click="addCart(skinData[i].data)">
                 <div class="btn fill">CART</div>
             </div>
         </div>
     </div>
     `,
+    data() {
+        return {
+            skinData: skinData,
+            cnt: 2,
+        }
+    },
 
     methods: {
-        // 함수영역
+        // 카트 추가 메서드
+        addCart(data) {
+            console.log("해당제품 카트에 추카 시키기:", data, skinData[data]);
+
+            // 뱉어내기
+            return skinData[data]
+        },
+        // 정규식함수(숫자 세자리마다 콤마해주는 기능)
+        numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        },
     }
 }); /////////////////// Vue 컴포넌트 ////////////////////////
 
 
+// [3] 뷰인스턴스 - 서브페이지
 new Vue({
     el: "#cont",
     store,
+    methods: {
+
+    },
 }); /////////
 
 
@@ -151,7 +167,7 @@ new Vue({
         // store.commit("setData",{
         //     imgsrc: "",
         // });
-        store.commit("setGoods");
+        // store.commit("setGoods");
     },
     
     mounted() {
@@ -188,6 +204,7 @@ new Vue({
                 $("nav").removeClass("scl");
             }
         }); /////// scroll 이벤트 ///////
+        
 
     } ////////// mounted ///////////
 

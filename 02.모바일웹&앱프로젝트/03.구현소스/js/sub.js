@@ -26,18 +26,18 @@ window.addEventListener("DOMContentLoaded",()=>{
 
         // 스크롤이벤트
         $(window).on("scroll load", () => {
-            console.log("스크롤");
+            // console.log("스크롤");
 
             // 변수
             let startFix = retVal(tgbox);
             let toplimit = retVal(pageL);
             let botlimit = window.innerHeight - retValB(pagewrap);
-            console.log(botlimit);
+            // console.log(botlimit);
 
 
             // 스크롤 시작점 - 픽스드박스 시작
             if (startFix < 100 || botlimit < 0) {
-                console.log("fixed변경");
+                // console.log("fixed변경");
                 stkimg.style.position = "fixed";
                 stkimg.style.top = "90px";
                 tgChg();
@@ -72,7 +72,7 @@ window.addEventListener("DOMContentLoaded",()=>{
             사이즈변경함수
         **********************/
         function tgChg() {
-            console.log("사이즈변경")
+            // console.log("사이즈변경")
             tg = tgbox.offsetWidth;
             stkimg.style.width = tg + "px";
         } //////// tgchg //////////////////
