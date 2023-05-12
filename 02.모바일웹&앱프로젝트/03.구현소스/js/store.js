@@ -94,6 +94,9 @@ export default new Vuex.Store({
         // content: ["부드러움, 매끄러움, 상쾌함", "신선함, 알파인향, 캠포릭"],
         // cnt: 10,
 
+        lnbsrc : "",
+        catnum: "",
+
     }, /////// state 구역 ////////
 
     // (2) 데이터 변경 메서드구역:

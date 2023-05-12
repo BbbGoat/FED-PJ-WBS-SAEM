@@ -1,5 +1,6 @@
 const skinData = {
     hand1: {
+        catnum: 0,
         cat: "hand",
         prdImg: "./images/goods/hand/pd-1.webp",
         pdInfo: {
@@ -14,6 +15,7 @@ const skinData = {
         data: "hand1",
     },
     hand2: {
+        catnum: 0,
         cat: "hand",
         prdImg: "./images/goods/hand/pd-2.webp",
         pdInfo: {
@@ -28,6 +30,7 @@ const skinData = {
         data: "hand2",
     },
     hand3: {
+        catnum: 0,
         cat: "hand",
         prdImg: "./images/goods/hand/pd-3.webp",
         pdInfo: {
@@ -42,6 +45,7 @@ const skinData = {
         data: "hand3",
     },
     hand4: {
+        catnum: 0,
         cat: "hand",
         prdImg: "./images/goods/hand/pd-4.webp",
         pdInfo: {
@@ -56,6 +60,7 @@ const skinData = {
         data: "hand4",
     },
     hand5: {
+        catnum: 0,
         cat: "hand",
         prdImg: "./images/goods/hand/pd-5.webp",
         pdInfo: {
@@ -70,6 +75,7 @@ const skinData = {
         data: "hand5",
     },
     hand6: {
+        catnum: 0,
         cat: "hand",
         prdImg: "./images/goods/hand/pd-6.webp",
         pdInfo: {
@@ -84,6 +90,7 @@ const skinData = {
         data: "hand6",
     },
     hand7: {
+        catnum: 0,
         cat: "hand",
         prdImg: "./images/goods/hand/pd-7.webp",
         pdInfo: {
@@ -98,6 +105,7 @@ const skinData = {
         data: "hand7",
     },
     hand8: {
+        catnum: 0,
         cat: "hand",
         prdImg: "./images/goods/hand/pd-8.webp",
         pdInfo: {
@@ -112,6 +120,7 @@ const skinData = {
         data: "hand8",
     },
     hand9: {
+        catnum: 0,
         cat: "hand",
         prdImg: "./images/goods/hand/pd-9.webp",
         pdInfo: {
@@ -126,6 +135,7 @@ const skinData = {
         data: "hand9",
     },
     hand10: {
+        catnum: 0,
         cat: "hand",
         prdImg: "./images/goods/hand/pd-10.webp",
         pdInfo: {
@@ -140,6 +150,7 @@ const skinData = {
         data: "hand10",
     },
     hand11: {
+        catnum: 0,
         cat: "hand",
         prdImg: "./images/goods/hand/pd-11.webp",
         pdInfo: {
@@ -154,6 +165,7 @@ const skinData = {
         data: "hand11",
     },
     hand12: {
+        catnum: 0,
         cat: "hand",
         prdImg: "./images/goods/hand/pd-12.webp",
         pdInfo: {
@@ -170,6 +182,7 @@ const skinData = {
 
     // 바디카테고리
     body1: {
+        catnum: 1,
         cat: "body",
         prdImg: "./images/goods/hand/pd-13.webp",
         pdInfo: {
@@ -184,6 +197,7 @@ const skinData = {
         data: "body1",
     },
     body2: {
+        catnum: 1,
         cat: "body",
         prdImg: "./images/goods/hand/pd-14.webp",
         pdInfo: {
@@ -198,6 +212,7 @@ const skinData = {
         data: "body2",
     },
     body3: {
+        catnum: 1,
         cat: "body",
         prdImg: "./images/goods/hand/pd-15.webp",
         pdInfo: {
@@ -212,6 +227,7 @@ const skinData = {
         data: "body3",
     },
     body4: {
+        catnum: 1,
         cat: "body",
         prdImg: "./images/goods/hand/pd-16.webp",
         pdInfo: {
@@ -226,6 +242,7 @@ const skinData = {
         data: "body4",
     },
     body5: {
+        catnum: 1,
         cat: "body",
         prdImg: "./images/goods/hand/pd-17.webp",
         pdInfo: {
@@ -240,6 +257,7 @@ const skinData = {
         data: "body5",
     },
     body6: {
+        catnum: 1,
         cat: "body",
         prdImg: "./images/goods/hand/pd-18.webp",
         pdInfo: {
@@ -254,6 +272,7 @@ const skinData = {
         data: "body6",
     },
     body7: {
+        catnum: 1,
         cat: "body",
         prdImg: "./images/goods/hand/pd-19.webp",
         pdInfo: {
@@ -270,6 +289,7 @@ const skinData = {
 
     // 하이드레이터 카테고리
     cream1: {
+        catnum: 2,
         cat: "cream",
         prdImg: "./images/goods/hand/pd-20.webp",
         pdInfo: {
@@ -284,6 +304,7 @@ const skinData = {
         data: "cream1",
     },
     cream2: {
+        catnum: 2,
         cat: "cream",
         prdImg: "./images/goods/hand/pd-21.webp",
         pdInfo: {
@@ -298,6 +319,7 @@ const skinData = {
         data: "cream2",
     },
     cream3: {
+        catnum: 2,
         cat: "cream",
         prdImg: "./images/goods/hand/pd-22.webp",
         pdInfo: {
@@ -312,6 +334,7 @@ const skinData = {
         data: "cream3",
     },
     cream4: {
+        catnum: 2,
         cat: "cream",
         prdImg: "./images/goods/hand/pd-23.webp",
         pdInfo: {
@@ -326,6 +349,7 @@ const skinData = {
         data: "cream4",
     },
     cream5: {
+        catnum: 2,
         cat: "cream",
         prdImg: "./images/goods/hand/pd-24.webp",
         pdInfo: {
@@ -342,6 +366,7 @@ const skinData = {
     
     // 토너 카테고리
     toner1: {
+        catnum: 3,
         cat: "toner",
         prdImg: "./images/goods/hand/pd-25.webp",
         pdInfo: {
@@ -356,6 +381,7 @@ const skinData = {
         data: "toner1",
     },
     toner2: {
+        catnum: 3,
         cat: "toner",
         prdImg: "./images/goods/hand/pd-26.webp",
         pdInfo: {
@@ -370,6 +396,7 @@ const skinData = {
         data: "toner2",
     },
     toner3: {
+        catnum: 3,
         cat: "toner",
         prdImg: "./images/goods/hand/pd-27.webp",
         pdInfo: {
@@ -384,6 +411,7 @@ const skinData = {
         data: "toner3",
     },
     toner4: {
+        catnum: 3,
         cat: "toner",
         prdImg: "./images/goods/hand/pd-28.webp",
         pdInfo: {
@@ -400,6 +428,7 @@ const skinData = {
     
     // 쉐이빙 카테고리
     shave1: {
+        catnum: 4,
         cat: "shave",
         prdImg: "./images/goods/hand/pd-29.webp",
         pdInfo: {
@@ -414,6 +443,7 @@ const skinData = {
         data: "shave1",
     },
     shave2: {
+        catnum: 4,
         cat: "shave",
         prdImg: "./images/goods/hand/pd-30.webp",
         pdInfo: {
@@ -428,6 +458,7 @@ const skinData = {
         data: "shave2",
     },
     shave3: {
+        catnum: 4,
         cat: "shave",
         prdImg: "./images/goods/hand/pd-31.webp",
         pdInfo: {
@@ -442,6 +473,7 @@ const skinData = {
         data: "shave3",
     },
     shave4: {
+        catnum: 4,
         cat: "shave",
         prdImg: "./images/goods/hand/pd-32.webp",
         pdInfo: {
@@ -456,6 +488,7 @@ const skinData = {
         data: "shave4",
     },
     shave5: {
+        catnum: 4,
         cat: "shave",
         prdImg: "./images/goods/hand/pd-33.webp",
         pdInfo: {

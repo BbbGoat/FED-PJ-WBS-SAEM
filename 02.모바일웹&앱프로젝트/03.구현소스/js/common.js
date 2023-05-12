@@ -24,7 +24,10 @@ Vue.component("category-comp",{
         // v-on 클릭시 데이터 변경 발생
         chgData(parm) {
             event.preventDefault();
-            // console.log("내용업데이트!");
+
+            // gnb에서 파라미터 받아오기
+            store.state.lnbsrc = parm;            
+            console.log("내용업데이트!",store.state.lnbsrc);
 
             // [1] 업데이트!!
             // thumb박스
@@ -131,7 +134,7 @@ Vue.component("goods-comp",{
                                     <dl class="menu" data-name="스킨케어">
                                         <dt><a href="#">skin</a></dt>
                                         <dd class="on"><a href="#">스킨케어 모두 보기</a></dd>
-                                        <dd v-for="(v,n) in $store.state.gnb.skin.dd1"><a href="#">{{v}}</a></dd>
+                                        <dd v-for="(v,n) in $store.state.gnb.skin.dd1" v-on:click="setCatnum(n)"><a href="#">{{v}}</a></dd>
                                     </dl>
                                 </div>
                             </div>
@@ -139,13 +142,12 @@ Vue.component("goods-comp",{
                             <div class="product_wrap">
                                 <div class="prdList">
                                     <!-- 상품리스트 -->
-                                    <div class="gridbox" v-for="(v,i) in skinData" :key="i">
+                                    <div class="gridbox" v-for="(v,i) in skinData" :key="i" v-if="v.catnum == $store.state.catnum">
                                             <a href="#">{{i}}
                                             <div class="prd_thumb">
                                                 <div class="prdImg">
                                                     <img v-bind:src="skinData[i].prdImg" alt="prdimage">
                                                 </div>
-                                                <!-- <div class="icon"></div> -->
                                             </div>
                                             </a>
                                             <div class="description">
@@ -201,6 +203,12 @@ Vue.component("goods-comp",{
         // 정규식함수(숫자 세자리마다 콤마해주는 기능)
         numberWithCommas(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        },
+        setCatnum(num) {
+            console.log("setCatnum lnbsrc 전달값:",store.state.lnbsrc);
+            console.log("setCatnum num전달값:",num)
+            // 클릭된 lnb 넘버링 변수에담기
+            store.state.catnum = num;
         },
     }
 }); /////////////////// Vue 컴포넌트 ////////////////////////
@@ -274,6 +282,12 @@ new Vue({
     methods: {
 
     },
+    mounted() {
+        $(".menu dd").click(function(e){
+            e.preventDefault();
+            $(this).addClass("on").siblings().removeClass("on");
+        });
+    }
 }); ////////////////// Vue 인스턴스 //////////////////////
 
 
