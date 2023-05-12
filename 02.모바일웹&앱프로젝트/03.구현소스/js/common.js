@@ -133,7 +133,7 @@ Vue.component("goods-comp",{
                                 <div class="menu_wrap">
                                     <dl class="menu" data-name="스킨케어">
                                         <dt><a href="#">skin</a></dt>
-                                        <dd class="on" v-on:click="setCatnum('전체보기')"><a href="#">스킨케어 모두 보기</a></dd>
+                                        <dd class="on" v-on:click="setCatnum('전체보기')"><a href="#">제품 모두 보기</a></dd>
                                         <dd v-for="(v,n) in $store.state.gnb.skin.dd1" v-on:click="setCatnum(n)"><a href="#">{{v}}</a></dd>
                                     </dl>
                                 </div>
@@ -289,6 +289,15 @@ new Vue({
 
     },
     mounted() {
+        function initCatnum() {
+            // 초기데이터 셋팅
+            // 클릭된 lnb 넘버링 변수에담기
+            store.state.catnum = '전체보기'
+        }
+        // 최초호출!
+        initCatnum();
+        
+        // lnb 메뉴 클릭시 클래스on 추가/제거
         $(".menu dd").click(function(e){
             e.preventDefault();
             $(this).addClass("on").siblings().removeClass("on");
