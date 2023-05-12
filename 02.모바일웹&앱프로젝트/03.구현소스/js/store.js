@@ -96,6 +96,7 @@ export default new Vuex.Store({
 
         lnbsrc : "",
         catnum: "",
+        maxlength: "",
 
     }, /////// state 구역 ////////
 

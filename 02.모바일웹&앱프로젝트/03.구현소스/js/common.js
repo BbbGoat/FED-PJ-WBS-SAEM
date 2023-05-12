@@ -133,7 +133,7 @@ Vue.component("goods-comp",{
                                 <div class="menu_wrap">
                                     <dl class="menu" data-name="스킨케어">
                                         <dt><a href="#">skin</a></dt>
-                                        <dd class="on"><a href="#">스킨케어 모두 보기</a></dd>
+                                        <dd class="on" v-on:click="setCatnum('전체보기')"><a href="#">스킨케어 모두 보기</a></dd>
                                         <dd v-for="(v,n) in $store.state.gnb.skin.dd1" v-on:click="setCatnum(n)"><a href="#">{{v}}</a></dd>
                                     </dl>
                                 </div>
@@ -142,7 +142,7 @@ Vue.component("goods-comp",{
                             <div class="product_wrap">
                                 <div class="prdList">
                                     <!-- 상품리스트 -->
-                                    <div class="gridbox" v-for="(v,i) in skinData" :key="i" v-if="v.catnum == $store.state.catnum">
+                                    <div class="gridbox" v-for="(v,i) in skinData" :key="i" v-if="v.catnum === $store.state.catnum || $store.state.catnum === '전체보기'">
                                             <a href="#">{{i}}
                                             <div class="prd_thumb">
                                                 <div class="prdImg">
@@ -204,11 +204,17 @@ Vue.component("goods-comp",{
         numberWithCommas(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         },
+        // lnb 클릭시 v-if 조건값 설정하는 메서드
         setCatnum(num) {
             console.log("setCatnum lnbsrc 전달값:",store.state.lnbsrc);
             console.log("setCatnum num전달값:",num)
+            
             // 클릭된 lnb 넘버링 변수에담기
             store.state.catnum = num;
+            
+            if (num === '전체보기') {
+                console.log("전체보기됐음!")
+            }
         },
     }
 }); /////////////////// Vue 컴포넌트 ////////////////////////
