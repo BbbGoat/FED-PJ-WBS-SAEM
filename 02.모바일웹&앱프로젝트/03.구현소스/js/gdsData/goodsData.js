@@ -1,4 +1,5 @@
 const skinData = {
+    // 1. 핸드크림 제품
     hand1: {
         catnum: 0,
         cat: "hand",
@@ -180,7 +181,7 @@ const skinData = {
         data: "hand12",
     },
 
-    // 바디카테고리
+    // 2. 바디 제품
     body1: {
         catnum: 1,
         cat: "body",
@@ -287,7 +288,7 @@ const skinData = {
         data: "body7",
     },
 
-    // 하이드레이터 카테고리
+    // 3. 하이드레이터 제품
     cream1: {
         catnum: 2,
         cat: "cream",
@@ -364,7 +365,7 @@ const skinData = {
         data: "cream5",
     },
     
-    // 토너 카테고리
+    // 4. 토너 제품
     toner1: {
         catnum: 3,
         cat: "toner",
@@ -426,7 +427,7 @@ const skinData = {
         data: "toner4",
     },
     
-    // 쉐이빙 카테고리
+    // 5. 쉐이빙 제품
     shave1: {
         catnum: 4,
         cat: "shave",

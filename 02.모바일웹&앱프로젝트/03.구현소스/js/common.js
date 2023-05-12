@@ -57,7 +57,7 @@ Vue.component("sub-comp",{
         </div>
         <dl class="sub">
             <dt class="all"><a href="#" v-text="$store.state.setsubtit1"></a></dt>
-            <dd v-for="(v,n) in $store.state.setdd1"><a href="#">{{v}}</a></dd>
+            <dd v-for="(v,n) in $store.state.setdd1" v-on:click="linksys($store.state.lnbsrc,v)"><a href="#">{{v}}</a></dd>
         </dl>
         <dl class="sub">
             <dt><a href="#" v-text="$store.state.setsubtit2"></a></dt>
@@ -70,24 +70,11 @@ Vue.component("sub-comp",{
     </div>
     `,
     methods: {
-        // 서브페이지 경로 이동 메서드
-        // chgHref(pm) {
-        //     console.log("링크 변경할 코드구역:",pm);
-
-        //     let src = "";
-
-        //     // 스위치케이스로 분기
-        //     switch(pm) {
-        //         case pm = 0 : src = "asdf"; break;
-        //         case pm = 1 : src = "defbc"; break;
-        //         case pm = 2 : src = "ewrweqr"; break;
-        //         case pm = 3 : src = "zxcv"; break;
-        //     }
-
-        //     // 이동
-        //     location.href = `./${src}.html`;
-        // },
-        
+        linksys(gnb,src) {
+            console.log(gnb,src);
+            // 링크시스템
+            location.href = "sub.html?cat=" + encodeURIComponent(gnb) +'&'+ encodeURIComponent(src);
+        }
     }
 }); //////////////////// Vue 컴포넌트 ///////////////////////
 
@@ -234,10 +221,8 @@ new Vue({
     methods: {},
     
     created() {
-        // store.commit("setData",{
-        //     imgsrc: "",
-        // });
         // store.commit("setGoods");
+
     },
     
     mounted() {
@@ -274,6 +259,7 @@ new Vue({
                 $("nav").removeClass("scl");
             }
         }); /////// scroll 이벤트 ///////
+
         
 
     } ////////// mounted ///////////
@@ -313,3 +299,24 @@ new Vue({
     data: {},
 }); ////////////////// Vue 인스턴스 //////////////////////
 
+        
+
+            
+    // Get방식으로 넘어온 값 받기!
+    // location.href로 받는다!!!
+    // 페이지이동 : location.href = url주소 
+    // url값 읽기 : 변수 = location.href
+    // let pm = location.href;
+    // console.log("넘어온 url 주소 ",pm);
+    // console.log(pm.indexOf("?"));
+
+    // // url에서 물음표로 값을 잘라오기 중 뒤엣값[1]
+    // // split(자를기준문자열) -> 배열에 담긴다!
+    // pm = pm.split("?")[1];
+    // // 이퀄(=)로 잘라서 뒤엣값[1] -> (키=값) 중 (값)만!
+    // pm = pm.split("=")[1];
+    
+    // // encodeURIComponent로 변환해서 보냈으므로 
+    // // decodeURIComponent로 재변환!
+    // pm = decodeURIComponent(pm);
+    // console.log("넘어온 url 복원값:",pm);
