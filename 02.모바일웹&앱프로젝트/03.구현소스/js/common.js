@@ -163,7 +163,7 @@ Vue.component("goods-comp",{
                                                 <!-- 서브정보: 디테일 정보 -->
                                                 <div class="pdDetail">
                                                     <ul class="pdDetail-list">
-                                                        <li class="pdDetail-listItem" v-for="(c,n) in cnt">
+                                                        <li class="pdDetail-listItem" v-for="(v,n) in cnt">
                                                             <div class="pdDetail-title" v-text="skinData[i].pdDetail.title[n]"></div>
                                                             <div class="pdDetail-content" v-text="skinData[i].pdDetail.content[n]"></div>
                                                         </li>
