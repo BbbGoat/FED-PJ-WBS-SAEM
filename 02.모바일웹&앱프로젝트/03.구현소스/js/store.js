@@ -83,30 +83,60 @@ export default new Vuex.Store({
         settit: "",
         setdesc: "",
 
-        // 카테고리 분류 변수
-        // tit: "",
-
-        // 굿즈박스 변수
-        // name: "상품명출력",
-        // info: "120ml",
-        // price: "00,000",
-        // title: ["사용감", "향"],
-        // content: ["부드러움, 매끄러움, 상쾌함", "신선함, 알파인향, 캠포릭"],
-        // cnt: 10,
-
+        // lnb 사용 변수
         lnbsrc : "",
         catnum: "",
-        maxlength: "",
+
+        // 현재 url 변수
+        curUrl: "",
+        curUrl0: "",
+        curUrl1: "",
+        navnum: "",
 
     }, /////// state 구역 ////////
 
     // (2) 데이터 변경 메서드구역:
     mutations: {
-        catData(state, pm) {
-            console.log("임시 뮤테이트");
+        // catData(state, pm) {
+        //     // console.log("임시 뮤테이트");
 
-            let product = state.goods[pm];
-            console.log("결과값:",product.pd1.prdImg);
+        //     // let product = state.goods[pm];
+        //     // console.log("결과값:",product.pd1.prdImg);
+        // },
+        chgNavdt(st, pm) {
+            //////// 클릭된 gnb 번호로 업데이트하기 //////////////
+
+            st.navnum = pm;
+            console.log("뮤테이션구역 넘어온 값:",st.navnum)
+            
+            ///////////////////////////////////////////////
         },
+        getLink(st,pm) {
+
+
+            // 1. Get방식으로 넘어온 값 받기!
+            st.curUrl = location.href;
+            // console.log("넘어온 url 주소 ",st.curUrl);
+            // console.log(st.curUrl.indexOf("?"));
+
+            // 2. index페이지에선 작동 안하게하기
+            if(st.curUrl.indexOf("?") === -1)return;
+
+            // url에서 물음표로 값을 잘라오기 중 뒤엣값[1]
+            // split(자를기준문자열) -> 배열에 담긴다!
+            st.curUrl = st.curUrl.split("?")[1];
+            // // 이퀄(=)로 잘라서 뒤엣값[1] -> (키=값) 중 (값)만!
+            st.curUrl = st.curUrl.split("=")[1];
+            st.curUrl0 = st.curUrl.split("&")[0];
+            st.curUrl1 = st.curUrl.split("&")[1];
+
+            
+            // // encodeURIComponent로 변환해서 보냈으므로 
+            // // decodeURIComponent로 재변환!
+            st.curUrl = decodeURIComponent(st.curUrl);
+            st.curUrl0 = decodeURIComponent(st.curUrl0);
+            st.curUrl1 = decodeURIComponent(st.curUrl1);
+            console.log("넘어온 url 복원값:",st.curUrl,"/",st.curUrl0,"/",st.curUrl1);
+        }
     },
 }); ///////////// 뷰엑스 인스턴스 /////////////
