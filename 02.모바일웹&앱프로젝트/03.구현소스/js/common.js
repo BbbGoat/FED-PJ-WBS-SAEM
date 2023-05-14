@@ -107,9 +107,9 @@ Vue.component("goods-comp",{
                     <div class="pageL">
                         <div class="stkbx">
                             <div class="stkimg">
-                                <img src="./images/cat_hand.jpg" alt="카테고리배너">
+                                <img v-bind:src="'./images/cat_'+$store.state.curUrl0+'.jpg'" alt="카테고리배너">
                                 <div class="stktxt">
-                                    <h4>스킨케어</h4>
+                                    <h4 v-text="titSet()"></h4>
                                     <span>스킨케어 모두보기</span>
                                 </div>
                             </div>
@@ -219,6 +219,23 @@ Vue.component("goods-comp",{
             
             // 분기한 결과값 뱉어내기!
             return result;
+        },
+        titSet() {
+            // left영역 상단타이틀 변경
+            let leftTit = $(".cate_main_title > h3");
+            let stkTit = $(".stktxt > h4");
+            let subTit = $(".cate_main_title > p");
+
+            let pm = store.state.curUrl0;
+            let chgtit = store.state.gnb[pm].maintit
+            // console.log(chgtit)
+            
+            // 타이틀 셋팅!
+            leftTit.text(chgtit);
+            stkTit.text(chgtit);
+            // 서브타이틀 셋팅!
+            subTit.text("여기도변경예정!!!");
+            
         }
     }
 }); /////////////////// Vue 컴포넌트 ////////////////////////
@@ -298,21 +315,30 @@ new Vue({
             ary.each(function(idx,ele){
                 // url 경로 일치할 경우 클릭이벤트 강제발생 / 클래스 on 넣기/빼기
                 if($(ele).text() === store.state.curUrl1) {
+                    // 1. 트리거 셋팅
                     $(this).trigger("click")
                     .addClass("on").siblings().removeClass("on");
+                    
+                    // 2. 왼쪽설명박스 서브타이틀 변경
+                    $(".stktxt > span").text(store.state.curUrl1);
                 }
             });
-                
-        }
+        } ////////////// initCatnum 함수 ////////////////
         // 최초호출!
         initCatnum();
         
+
         // lnb 메뉴 클릭시 클래스on 추가/제거
         $(".menu dd").click(function(e){
             e.preventDefault();
             $(this).addClass("on").siblings().removeClass("on");
-        });
-    }
+            
+            let menuTxt = $(this).text();
+            $(".stktxt > span").text(menuTxt);
+        }); ////////// click ///////////
+
+
+    } ////////////// mounted ////////////////////
 }); ////////////////// Vue 인스턴스 //////////////////////
 
 

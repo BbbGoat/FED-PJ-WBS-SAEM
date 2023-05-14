@@ -9,7 +9,8 @@ window.addEventListener("DOMContentLoaded",()=>{
         const tgbox = document.querySelector(".stkbx");
         const pageL = document.querySelector(".pageL");
         const pagewrap = document.querySelector(".pagewrap");
-        
+        const stktxt = document.querySelector(".stktxt");
+
         
         // 타겟 가로사이즈 변수
         let tg = tgbox.offsetWidth;
@@ -37,17 +38,28 @@ window.addEventListener("DOMContentLoaded",()=>{
 
             // 스크롤 시작점 - 픽스드박스 시작
             if (startFix < 100 || botlimit < 0) {
-                // console.log("fixed변경");
+                // 이미지박스
                 stkimg.style.position = "fixed";
                 stkimg.style.top = "90px";
+                // 텍스트박스
+                stktxt.style.top = "40px";
+                stktxt.style.opacity = 1;
+                stktxt.style.transition = "opacity .4s ease";
                 tgChg();
-
+                
+                
                 // 상단에서 픽스드 지우기
                 if (toplimit > 70) {
+                    // 이미지박스
                     stkimg.removeAttribute("style");
+                    // 텍스트박스
+                    stktxt.style.top = 0;
+                    stktxt.style.opacity = 0;
+                    stktxt.style.transition = "0";
                 }
                 // 하단에서 픽스드 지우기
                 else if (botlimit > 0) {
+                    // 이미지박스
                     stkimg.style.position = "absolute";
                     stkimg.style.bottom = "30px";
                     stkimg.style.top = "auto";
