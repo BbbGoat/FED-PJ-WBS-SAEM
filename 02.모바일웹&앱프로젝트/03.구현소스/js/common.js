@@ -198,35 +198,26 @@ Vue.component("goods-comp",{
             console.log("setCatnum num전달값:",num);
             store.state.catnum = num;
         },
-        
         // 서브페이지 최상위 경로 설정해주는 함수
         initSetSubSrc() {
             // 각 카테고리별 lnb 대분류 경로 설정
             store.state.setlnb = store.state.gnb[store.state.curUrl0].dd1;
-            // 
         },
+        // url 읽어와서 카테고리마다 고유넘버 적용시키고 결과값으로 보내기
         dataNum(){
 
-            // url 읽어와서 카테고리마다 고유넘버 적용시키고 결과값으로 보내기
-
-            const gnbLeng = $(".catbx li")
-            // console.log(gnbLeng);
-            
-            let chgIdx = "";
-
+            let result = "";
             let cat = store.state.curUrl0;
-            
+
+            // 분기시키기
             switch(cat) {
-                case cat = "skin" : chgIdx = "0"; break;
-                case cat = "perfume" : chgIdx = "1"; break;
-                case cat = "home" : chgIdx = "2"; break;
-                case cat = "gift" : chgIdx = "3"; break;
+                case cat = "skin" : result = "0"; break;
+                case cat = "perfume" : result = "1"; break;
+                case cat = "home" : result = "2"; break;
+                case cat = "gift" : result = "3"; break;
             }
             
-            // 결과값은 무조건 숫자로 출력되어야함
-            let result = chgIdx;
-            
-            // 뱉어내기!
+            // 분기한 결과값 뱉어내기!
             return result;
         }
     }
