@@ -1,510 +1,401 @@
 const homeData = {
-    // 1. 핸드크림 제품
-    perfume1: {
+    // 인센스
+    incense1: {
         catnum: 0,
-        cat: "perfume",
-        prdImg: "./images/goods/perfume/pd-1.webp",
+        cat: "home",
+        prdImg: "./images/goods/home/pd-1.webp",
         pdInfo: {
-            name: "레버런스 아로마틱 핸드 밤",
-            info: "75ml",
-            price: "33000",
+            name: "카게로우 아로마틱 인센스",
+            info: "스틱 33개",
+            price: "45000",
         },
         pdDetail: {
-            title: ["사용감", "향"],
-            content: ["부드러운, 유분기 없는","우드, 흙내음, 스모키"],
+            title: ["향", "주요 성분"],
+            content: ["그린, 허브, 우디","베티버, 이구사, 샌달우드"],
         },
-        data: "perfume1",
+        data: "incense1",
     },
-    perfume2: {
+    incense2: {
         catnum: 0,
-        cat: "perfume",
-        prdImg: "./images/goods/perfume/pd-1.webp",
+        cat: "home",
+        prdImg: "./images/goods/home/pd-2.webp",
         pdInfo: {
-            name: "레저렉션 아로마틱 핸드 밤",
-            info: "75ml",
-            price: "33000",
+            name: "사라시나 아로마틱 인센스",
+            info: "스틱 33개",
+            price: "45000",
         },
         pdDetail: {
-            title: ["사용감", "향"],
-            content: ["부드러운, 유분기 없는", "시트러스, 우드, 허브"],
+            title: ["향", "주요 성분"],
+            content: ["우디, 따뜻한, 달콤한","샌달우드, 클로브, 시나몬"],
         },
-        data: "perfume2",
+        data: "incense2",
     },
-    perfume3: {
+    incense3: {
         catnum: 0,
-        cat: "perfume",
-        prdImg: "./images/goods/perfume/pd-1.webp",
+        cat: "home",
+        prdImg: "./images/goods/home/pd-3.webp",
         pdInfo: {
-            name: "레버런스 아로마틱 핸드 워시",
-            info: "500ml",
-            price: "47000",
+            name: "무라사키 아로마틱 인센스",
+            info: "스틱 33개",
+            price: "45000",
         },
         pdDetail: {
-            title: ["사용감", "향"],
-            content: ["깔끔한, 매끄러운, 부드러운", "우드, 흙내음, 스모키"],
+            title: ["향", "주요 성분"],
+            content: ["우디, 스파이시, 유향","히노키, 시나몬, 클로브"],
         },
-        data: "perfume3",
+        data: "incense3",
     },
-    perfume4: {
+    incense4: {
         catnum: 0,
-        cat: "perfume",
-        prdImg: "./images/goods/perfume/pd-1.webp",
+        cat: "home",
+        prdImg: "./images/goods/home/pd-3.webp",
         pdInfo: {
-            name: "레저렉션 아로마틱 핸드 워시",
-            info: "500ml",
-            price: "47000",
+            name: "하야오 아로마틱 인센스",
+            info: "스틱 33개",
+            price: "45000",
         },
         pdDetail: {
-            title: ["사용감", "향"],
-            content: ["깔끔한, 상쾌한", "시트러스, 우드, 허브"],
+            title: ["향", "주요 성분"],
+            content: ["플로럴, 우디, 유향","탠저린, 샌달우드, 클로브"],
         },
-        data: "perfume4",
+        data: "incense4",
     },
-    perfume5: {
+    incense5: {
         catnum: 0,
-        cat: "perfume",
-        prdImg: "./images/goods/perfume/pd-1.webp",
+        cat: "home",
+        prdImg: "./images/goods/home/pd-3.webp",
         pdInfo: {
-            name: "레버런스 듀엣",
-            info: "500ml",
-            price: "151000",
+            name: "브루클린 아로마틱 인센스",
+            info: "스틱 33개",
+            price: "45000",
         },
         pdDetail: {
-            title: ["듀엣소개", "구성품"],
-            content: ["손을 부드럽게 가꿔주며 따뜻하고 우디한 아로마를 선사하는 핸드 케어 듀엣", "레버런스 아로마틱 핸드 워시, 레버런스 아로마틱 핸드 밤"],
+            title: ["향", "주요 성분"],
+            content: ["하이퍼, 달란, 허브","이구사, 버티버, 시나몬"],
         },
-        data: "perfume5",
+        data: "incense5",
     },
-    perfume6: {
+    incense6: {
         catnum: 0,
-        cat: "perfume",
-        prdImg: "./images/goods/perfume/pd-1.webp",
+        cat: "home",
+        prdImg: "./images/goods/home/pd-1.webp",
         pdInfo: {
-            name: "레저렉션 듀엣",
-            info: "500ml",
-            price: "151000",
+            name: "카게로우 아로마틱 인센스",
+            info: "스틱 33개",
+            price: "45000",
         },
         pdDetail: {
-            title: ["듀엣소개", "구성품"],
-            content: ["시트러스, 우디, 허브 아로마가 어우러진 탁월한 핸드 케어 2종", "레저렉션 아로마틱 핸드 워시, 레저렉션 아로마틱 핸드 밤"],
+            title: ["향", "주요 성분"],
+            content: ["그린, 허브, 우디","베티버, 이구사, 샌달우드"],
         },
-        data: "perfume6",
+        data: "incense6",
     },
-    perfume7: {
+    incense7: {
         catnum: 0,
-        cat: "perfume",
-        prdImg: "./images/goods/perfume/pd-1.webp",
+        cat: "home",
+        prdImg: "./images/goods/home/pd-2.webp",
         pdInfo: {
-            name: "로즈 앙상블",
-            info: "150ml",
-            price: "264000",
+            name: "사라시나 아로마틱 인센스",
+            info: "스틱 33개",
+            price: "45000",
         },
         pdDetail: {
-            title: ["번들소개", "구성품"],
-            content: ["활기찬 플로럴과 상쾌한 시트러스 아로마가 어우러진 제품 3종", "로즈 오 드 퍼퓸, 에이 로즈 바이 애니 아더 네임 바디 클렌저, 레저렉션 아로마 핸드 밤"],
+            title: ["향", "주요 성분"],
+            content: ["우디, 따뜻한, 달콤한","샌달우드, 클로브, 시나몬"],
         },
-        data: "perfume7",
+        data: "incense7",
     },
-    perfume8: {
+    incense8: {
         catnum: 0,
-        cat: "perfume",
-        prdImg: "./images/goods/perfume/pd-1.webp",
+        cat: "home",
+        prdImg: "./images/goods/home/pd-4.webp",
         pdInfo: {
-            name: "로즈 앙상블",
-            info: "150ml",
-            price: "264000",
+            name: "브론즈 인센스 홀더",
+            info: "1개",
+            price: "173000",
         },
         pdDetail: {
-            title: ["번들소개", "구성품"],
-            content: ["핸드 및 바디 케어를 위한 인기제품 3종", "레저렉션 아로마틱 핸드 밤, 레저렉션 아로마틱 핸드 워시, 제라늄 리프 바디 클렌저"],
+            title: ["제품 상세", "사용법"],
+            content: ["모든 실내 공간에 적합하며 테이블이나 가정, 서가를 보완하는 오브제","인센스 스틱을 홀더에 고정시키고 태웁니다. 타고 난 재는 접시에 모입니다."],
         },
-        data: "perfume8",
-    },
-    perfume9: {
-        catnum: 0,
-        cat: "perfume",
-        prdImg: "./images/goods/perfume/pd-9.webp",
-        pdInfo: {
-            name: "휠 앙상블",
-            info: "150ml",
-            price: "231000",
-        },
-        pdDetail: {
-            title: ["번들소개", "구성품"],
-            content: ["흙내음과 독특한 아로마를 선사하는 제품 3종", "휠 오 드 퍼퓸, 제라늄 리프 바디 스크럽, 레버런스 아로마틱 핸드 밤"],
-        },
-        data: "perfume9",
-    },
-    perfume10: {
-        catnum: 0,
-        cat: "perfume",
-        prdImg: "./images/goods/perfume/pd-10.webp",
-        pdInfo: {
-            name: "에센셜 바디 앤 핸드 케어 듀오",
-            info: "180ml",
-            price: "66000",
-        },
-        pdDetail: {
-            title: ["번들소개", "구성품"],
-            content: ["바디를 깨끗하게 세정하고 핸드에 수분을 공급하는 욕실의 필수품 2종", "바디 클렌징 슬랩, 레저렉션 아로마틱 핸드 밤"],
-        },
-        data: "perfume10",
-    },
-    perfume11: {
-        catnum: 0,
-        cat: "perfume",
-        prdImg: "./images/goods/perfume/pd-11.webp",
-        pdInfo: {
-            name: "콤팩트 바디 앤 핸드 케어 듀오",
-            info: "200ml",
-            price: "54000",
-        },
-        pdDetail: {
-            title: ["번들소개", "구성품"],
-            content: ["협소한 공간이나 여행 중에 사용할 수 있도록 콤팩트한 사이즈의 향기로운 제품 2종", "시트러스 멜란지 바디 클렌저, 레버런스 아로마틱 핸드 밤"],
-        },
-        data: "perfume11",
-    },
-    perfume12: {
-        catnum: 0,
-        cat: "perfume",
-        prdImg: "./images/goods/perfume/pd-12.webp",
-        pdInfo: {
-            name: "어드벤처러 페이스&핸드 듀오",
-            info: "200ml",
-            price: "54000",
-        },
-        pdDetail: {
-            title: ["번들소개", "구성품"],
-            content: ["스킨을 상쾌하게 가꾸고 핸드에 수분과 영양을 채워주는 휴대용 듀오", "이미디에이트 모이스처 페이셜 하이드로졸, 레저렉션 아로마틱 핸드 밤"],
-        },
-        data: "perfume12",
-    },
-
-    // 2. 바디 제품
-    body1: {
-        catnum: 1,
-        cat: "body",
-        prdImg: "./images/goods/perfume/pd-13.webp",
-        pdInfo: {
-            name: "에이 로즈 바이 애니 아더 네임 바디 클렌저",
-            info: "100ml",
-            price: "21000",
-        },
-        pdDetail: {
-            title: ["사용감", "향"],
-            content: ["따뜻함, 깨끗함, 상쾌함", "플로랄, 스파이시, 따뜻함"],
-        },
-        data: "body1",
-    },
-    body2: {
-        catnum: 1,
-        cat: "body",
-        prdImg: "./images/goods/perfume/pd-14.webp",
-        pdInfo: {
-            name: "코리안더 씨드 바디 클렌저",
-            info: "500ml",
-            price: "21000",
-        },
-        pdDetail: {
-            title: ["사용감", "향"],
-            content: ["생기있는, 따뜻함, 깨끗함", "스파이시, 우디, 따뜻한 향"],
-        },
-        data: "body2",
-    },
-    body3: {
-        catnum: 1,
-        cat: "body",
-        prdImg: "./images/goods/perfume/pd-15.webp",
-        pdInfo: {
-            name: "제라늄 리프 바디 클렌저",
-            info: "100ml",
-            price: "21000",
-        },
-        pdDetail: {
-            title: ["사용감", "향"],
-            content: ["상쾌함, 깨끗함", "그린, 시트러스, 상쾌함"],
-        },
-        data: "body3",
-    },
-    body4: {
-        catnum: 1,
-        cat: "body",
-        prdImg: "./images/goods/perfume/pd-16.webp",
-        pdInfo: {
-            name: "시트러스 멜란지 바디 클렌저",
-            info: "100ml",
-            price: "21000",
-        },
-        pdDetail: {
-            title: ["사용감", "향"],
-            content: ["깨끗한, 상쾌한", "시트러스, 상쾌한"],
-        },
-        data: "body4",
-    },
-    body5: {
-        catnum: 1,
-        cat: "body",
-        prdImg: "./images/goods/perfume/pd-17.webp",
-        pdInfo: {
-            name: "제라늄 리프 바디 밤",
-            info: "100ml",
-            price: "41000",
-        },
-        pdDetail: {
-            title: ["사용감", "향"],
-            content: ["탄력, 부드러움, 촉촉함", "그린, 시트러스, 상쾌함"],
-        },
-        data: "body5",
-    },
-    body6: {
-        catnum: 1,
-        cat: "body",
-        prdImg: "./images/goods/perfume/pd-18.webp",
-        pdInfo: {
-            name: "레쥬비네이트 인텐시브 바디 밤",
-            info: "100ml",
-            price: "41000",
-        },
-        pdDetail: {
-            title: ["사용감", "향"],
-            content: ["촉촉한, 균형잡힌", "시트러스, 바닐라, 우드"],
-        },
-        data: "body6",
-    },
-    body7: {
-        catnum: 1,
-        cat: "body",
-        prdImg: "./images/goods/perfume/pd-19.webp",
-        pdInfo: {
-            name: "레졸루트 하이드레이팅 바디 밤",
-            info: "100ml",
-            price: "41000",
-        },
-        pdDetail: {
-            title: ["사용감", "향"],
-            content: ["생기, 부드러움, 탄력", "스파이시, 우디, 따뜻한 향"],
-        },
-        data: "body7",
-    },
-
-    // 3. 하이드레이터 제품
-    cream1: {
-        catnum: 2,
-        cat: "cream",
-        prdImg: "./images/goods/perfume/pd-20.webp",
-        pdInfo: {
-            name: "세이지 앤 징크 페이셜 하이드레이팅 로션 SPF15",
-            info: "50ml",
-            price: "60000",
-        },
-        pdDetail: {
-            title: ["피부 타입", "사용감"],
-            content: ["민감성 피부를 비롯한 대부분의 피부 타입", "피부 보호 및 수분 공급과 지속되는 마무리감"],
-        },
-        data: "cream1",
-    },
-    cream2: {
-        catnum: 2,
-        cat: "cream",
-        prdImg: "./images/goods/perfume/pd-21.webp",
-        pdInfo: {
-            name: "카멜리아 너트 페이셜 하이드레이팅 크림",
-            info: "60ml",
-            price: "63000",
-        },
-        pdDetail: {
-            title: ["피부 타입", "사용감"],
-            content: ["중성, 건성, 민감성 피부", "부드러운, 매트한"],
-        },
-        data: "cream2",
-    },
-    cream3: {
-        catnum: 2,
-        cat: "cream",
-        prdImg: "./images/goods/perfume/pd-22.webp",
-        pdInfo: {
-            name: "엘레멘탈 페이셜 배리어 크림",
-            info: "60ml",
-            price: "71000",
-        },
-        pdDetail: {
-            title: ["피부 타입", "사용감"],
-            content: ["건성, 민감성 피부 혹은 춥고 건조한 날씨의 피부", "피부가 보호된, 진정된"],
-        },
-        data: "cream3",
-    },
-    cream4: {
-        catnum: 2,
-        cat: "cream",
-        prdImg: "./images/goods/perfume/pd-23.webp",
-        pdInfo: {
-            name: "만다린 페이셜 하이드레이팅 크림",
-            info: "60ml",
-            price: "63000",
-        },
-        pdDetail: {
-            title: ["피부 타입", "사용감"],
-            content: ["중성 및 복합성 피부, 추운 기후의 지성 피부, 덥고 습한 날씨", "시원한, 가벼운"],
-        },
-        data: "cream4",
-    },
-    cream5: {
-        catnum: 2,
-        cat: "cream",
-        prdImg: "./images/goods/perfume/pd-24.webp",
-        pdInfo: {
-            name: "퍼펙트 페이셜 하이드레이팅 크림",
-            info: "60ml",
-            price: "143000",
-        },
-        pdDetail: {
-            title: ["피부 타입", "사용감"],
-            content: ["중성 피부, 건성 피부, 악건성 피부, 겨울 및 추운 기후에 노출된 피부", "부드러움, 수분 공급, 매트한 마무리"],
-        },
-        data: "cream5",
+        data: "incense8",
     },
     
-    // 4. 토너 제품
-    toner1: {
-        catnum: 3,
-        cat: "toner",
-        prdImg: "./images/goods/perfume/pd-25.webp",
+    // 캔들
+    candle1: {
+        catnum: 1,
+        cat: "home",
+        prdImg: "./images/goods/home/pd-5.webp",
         pdInfo: {
-            name: "파슬리 씨드 안티 옥시던트 페이셜 토너",
-            info: "100ml",
-            price: "47000",
+            name: "브라스 오일 버너",
+            info: "1개",
+            price: "230000",
         },
         pdDetail: {
-            title: ["피부 타입", "사용감"],
-            content: ["모든 피부", "진정된, 부드러운, 가벼운"],
+            title: ["사용 공간", "사용법"],
+            content: ["브루탈리즘 양식의 벽감에서부터 미드센트리 모던 스타일의 거실에 이르기까지의 모든 인테리어","선호하는 이솝 오일 버너 블렌드 3-5방울을 오일 그릇에 떨어뜨려주세요. 표준 사이즈의 티라이트 캔들을 함께 사용해주세요."],
         },
-        data: "toner1",
+        data: "candle1",
     },
-    toner2: {
-        catnum: 3,
-        cat: "toner",
-        prdImg: "./images/goods/perfume/pd-26.webp",
+    candle2: {
+        catnum: 1,
+        cat: "home",
+        prdImg: "./images/goods/home/pd-6.webp",
         pdInfo: {
-            name: "비터 오렌지 아스트린젠트 토너",
-            info: "100ml",
-            price: "47000",
+            name: "프톨레미 아로마틱 캔들",
+            info: "300g",
+            price: "135000",
         },
         pdDetail: {
-            title: ["피부 타입", "사용감"],
-            content: ["지성, 문제성 피부", "시원한, 깨끗한, 매트한 마무리"],
+            title: ["향", "제품 상세"],
+            content: ["우디, 흙 내음, 유향","지름 86 mm/3.4” x 높이 104 mm/4.1”, 연소시간 약 55-65시간"],
         },
-        data: "toner2",
+        data: "candle2",
     },
-    toner3: {
-        catnum: 3,
-        cat: "toner",
-        prdImg: "./images/goods/perfume/pd-27.webp",
+    candle3: {
+        catnum: 1,
+        cat: "home",
+        prdImg: "./images/goods/home/pd-7.webp",
         pdInfo: {
-            name: "비 앤 티 밸런싱 토너",
-            info: "100ml",
-            price: "39000",
+            name: "칼리푸스 아로마틱 캔들",
+            info: "300g",
+            price: "135000",
         },
         pdDetail: {
-            title: ["피부 타입", "사용감"],
-            content: ["모든 피부 타입", "균형감, 상쾌함, 수분 공급, 가벼운 마무리"],
+            title: ["향", "제품 상세"],
+            content: ["우디, 흙 내음, 그린","지름 86 mm/3.4” x 높이 104 mm/4.1”, 연소시간 약 55-65시간"],
         },
-        data: "toner3",
+        data: "candle3",
     },
-    toner4: {
-        catnum: 3,
-        cat: "toner",
-        prdImg: "./images/goods/perfume/pd-28.webp",
+    candle4: {
+        catnum: 1,
+        cat: "home",
+        prdImg: "./images/goods/home/pd-8.webp",
         pdInfo: {
-            name: "인 투 마인즈 페이셜 토너",
-            info: "100ml",
-            price: "39000",
+            name: "아가니스 아로마틱 캔들",
+            info: "300g",
+            price: "135000",
         },
         pdDetail: {
-            title: ["피부 타입", "사용감"],
-            content: ["복합성 피부", "진정, 균형감, 상쾌함"],
+            title: ["향", "제품 상세"],
+            content: ["플로럴, 스파이시, 상쾌한","지름 86 mm/3.4” x 높이 104 mm/4.1”, 연소시간 약 55-65시간"],
         },
-        data: "toner4",
+        data: "candle4",
     },
-    
-    // 5. 쉐이빙 제품
-    shave1: {
-        catnum: 4,
-        cat: "shave",
-        prdImg: "./images/goods/perfume/pd-29.webp",
+    candle5: {
+        catnum: 1,
+        cat: "home",
+        prdImg: "./images/goods/home/pd-8.webp",
         pdInfo: {
-            name: "모로칸 네롤리 포스트 쉐이브 로션",
-            info: "60ml",
-            price: "65000",
+            name: "이카루스 아로마틱 캔들",
+            info: "300g",
+            price: "135000",
         },
         pdDetail: {
-            title: ["피부 타입", "사용감"],
-            content: ["중성, 복합성, 민감성 피부", "진정, 수딩, 가벼운 마무리"],
+            title: ["향", "제품 상세"],
+            content: ["허브, 스파이시, 머스크","지름 86 mm/3.4” x 높이 104 mm/4.1”, 연소시간 약 55-65시간"],
         },
-        data: "shave1",
+        data: "candle5",
     },
-    shave2: {
-        catnum: 4,
-        cat: "shave",
-        prdImg: "./images/goods/perfume/pd-30.webp",
+    candle6: {
+        catnum: 1,
+        cat: "home",
+        prdImg: "./images/goods/home/pd-8.webp",
         pdInfo: {
-            name: "쉐이빙 브러쉬",
-            info: "20mm",
-            price: "73000",
+            name: "디스마스 아로마틱 캔들",
+            info: "300g",
+            price: "135000",
         },
         pdDetail: {
-            title: ["어울리는 대상", "사용감"],
-            content: ["안목있는 쉐이버", "부드러움, 매끄러움"],
+            title: ["향", "제품 상세"],
+            content: ["베리, 플로럴, 탠저린","지름 86 mm/3.4” x 높이 104 mm/4.1”, 연소시간 약 55-65시간"],
         },
-        data: "shave2",
-    },
-    shave3: {
-        catnum: 4,
-        cat: "shave",
-        prdImg: "./images/goods/perfume/pd-31.webp",
-        pdInfo: {
-            name: "더블 엣지 레이저",
-            info: "20mm",
-            price: "120000",
-        },
-        pdDetail: {
-            title: ["어울리는 대상", "사용감"],
-            content: ["안목있는 쉐이버", "영국 장인이 제작한 핸드 메이드"],
-        },
-        data: "shave3",
-    },
-    shave4: {
-        catnum: 4,
-        cat: "shave",
-        prdImg: "./images/goods/perfume/pd-32.webp",
-        pdInfo: {
-            name: "더블 엣지 레이저 블레이드",
-            info: "3mm",
-            price: "29000",
-        },
-        pdDetail: {
-            title: ["어울리는 대상", "사용감"],
-            content: ["안목있는 쉐이버", "영국 장인이 제작한 핸드 메이드"],
-        },
-        data: "shave4",
-    },
-    shave5: {
-        catnum: 4,
-        cat: "shave",
-        prdImg: "./images/goods/perfume/pd-33.webp",
-        pdInfo: {
-            name: "모로칸 네롤리 쉐이빙 듀엣",
-            info: "120ml",
-            price: "103000",
-        },
-        pdDetail: {
-            title: ["듀엣 소개", "구성품"],
-            content: ["완벽한 쉐이빙을 도와주는 정교하고 세련된 제품 2종", "모로칸 네롤리 쉐이빙 세럼, 모로칸 네롤리 포스트 쉐이브 로션"],
-        },
-        data: "shave5",
+        data: "candle6",
     },
     
+    // 룸스프레이
+    spray1: {
+        catnum: 2,
+        cat: "home",
+        prdImg: "./images/goods/home/pd-9.webp",
+        pdInfo: {
+            name: "이스트로스 아로마틱 룸 스프레이",
+            info: "100ml",
+            price: "70000",
+        },
+        pdDetail: {
+            title: ["향", "사용법"],
+            content: ["생기 넘치는, 플로랄, 스모키","원하는 공간에 2-3회 펌핑 또는 필요 시 수시로 뿌려줍니다. 아로마는 몇 시간 동안 지속됩니다."],
+        },
+        data: "spray1",
+    },
+    spray2: {
+        catnum: 2,
+        cat: "home",
+        prdImg: "./images/goods/home/pd-10.webp",
+        pdInfo: {
+            name: "올루스 아로마틱 룸 스프레이",
+            info: "100ml",
+            price: "70000",
+        },
+        pdDetail: {
+            title: ["향", "사용법"],
+            content: ["상쾌한, 우드, 시트러스","원하는 공간에 2-3회 펌핑 또는 필요 시 수시로 뿌려줍니다. 아로마는 몇 시간 동안 지속됩니다."],
+        },
+        data: "spray2",
+    },
+    spray3: {
+        catnum: 2,
+        cat: "home",
+        prdImg: "./images/goods/home/pd-11.webp",
+        pdInfo: {
+            name: "포스트-푸 드롭스",
+            info: "100ml",
+            price: "35000",
+        },
+        pdDetail: {
+            title: ["향", "사용법"],
+            content: ["시트러스, 플로럴, 상쾌한","화장실 이용시, 변기안에 1~2방울 소량을 떨어뜨립니다."],
+        },
+        data: "spray3",
+    },
+    spray4: {
+        catnum: 2,
+        cat: "home",
+        prdImg: "./images/goods/home/pd-12.webp",
+        pdInfo: {
+            name: "키테라 아로마틱 룸 스프레이",
+            info: "100ml",
+            price: "70000",
+        },
+        pdDetail: {
+            title: ["향", "사용법"],
+            content: ["우드, 풍부한, 스파이시","원하는 공간에 2-3회 펌핑 또는 필요 시 수시로 뿌려줍니다. 아로마는 몇 시간 동안 지속됩니다."],
+        },
+        data: "spray4",
+    },
+    spray5: {
+        catnum: 2,
+        cat: "home",
+        prdImg: "./images/goods/home/pd-13.webp",
+        pdInfo: {
+            name: "존재의 상태: 아로마틱 룸 스프레이 트리오",
+            info: "kit",
+            price: "123000",
+        },
+        pdDetail: {
+            title: ["키트 구성", "상세 정보"],
+            content: ["공간을 한층 더 아름답게 만들어 주는 세 가지 제품","키테라 아로마틱 룸 스프레이, 이스트로스 아로마틱 룸 스프레이, 올루스 아로마틱 룸 스프레이"],
+        },
+        data: "spray5",
+    },
+    spray6: {
+        catnum: 2,
+        cat: "home",
+        prdImg: "./images/goods/home/pd-9.webp",
+        pdInfo: {
+            name: "아탈란테 아로마틱 룸 스프레이",
+            info: "100ml",
+            price: "70000",
+        },
+        pdDetail: {
+            title: ["향", "사용법"],
+            content: ["생기 넘치는, 플로랄, 스모키","원하는 공간에 2-3회 펌핑 또는 필요 시 수시로 뿌려줍니다. 아로마는 몇 시간 동안 지속됩니다."],
+        },
+        data: "spray6",
+    },
+    spray7: {
+        catnum: 2,
+        cat: "home",
+        prdImg: "./images/goods/home/pd-10.webp",
+        pdInfo: {
+            name: "히포메네스 아로마틱 룸 스프레이",
+            info: "100ml",
+            price: "70000",
+        },
+        pdDetail: {
+            title: ["향", "사용법"],
+            content: ["상쾌한, 우드, 시트러스","원하는 공간에 2-3회 펌핑 또는 필요 시 수시로 뿌려줍니다. 아로마는 몇 시간 동안 지속됩니다."],
+        },
+        data: "spray7",
+    },
 
+    // 문학
+    book1: {
+        catnum: 3,
+        cat: "home",
+        prdImg: "./images/goods/home/pd-14.webp",
+        pdInfo: {
+            name: "이솝:더 북",
+            info: "1개",
+            price: "95000",
+        },
+        pdDetail: {
+            title: ["어울리는 대상", "주요 참여자"],
+            content: ["디자인 매니아, 호기심 많은 독자, 예술 애호가","데니스 파피티스와 제니퍼 다운 공저, 야마모토 유타카 사진"],
+        },
+        data: "book1",
+    },
+    book2: {
+        catnum: 3,
+        cat: "home",
+        prdImg: "./images/goods/home/pd-14.webp",
+        pdInfo: {
+            name: "이솝:더 아테네움",
+            info: "1개",
+            price: "95000",
+        },
+        pdDetail: {
+            title: ["어울리는 대상", "주요 참여자"],
+            content: ["디자인 매니아, 호기심 많은 독자, 예술 애호가","데니스 파피티스와 제니퍼 다운 공저, 야마모토 유타카 사진"],
+        },
+        data: "book2",
+    },
+    book3: {
+        catnum: 3,
+        cat: "home",
+        prdImg: "./images/goods/home/pd-14.webp",
+        pdInfo: {
+            name: "이솝:홈 프래그런스",
+            info: "1개",
+            price: "95000",
+        },
+        pdDetail: {
+            title: ["어울리는 대상", "주요 참여자"],
+            content: ["디자인 매니아, 호기심 많은 독자, 예술 애호가","데니스 파피티스와 제니퍼 다운 공저, 야마모토 유타카 사진"],
+        },
+        data: "book3",
+    },
+    book4: {
+        catnum: 3,
+        cat: "home",
+        prdImg: "./images/goods/home/pd-14.webp",
+        pdInfo: {
+            name: "정원에서의 사색",
+            info: "1개",
+            price: "95000",
+        },
+        pdDetail: {
+            title: ["어울리는 대상", "주요 참여자"],
+            content: ["디자인 매니아, 호기심 많은 독자, 예술 애호가","데니스 파피티스와 제니퍼 다운 공저, 야마모토 유타카 사진"],
+        },
+        data: "book4",
+    },
+    book5: {
+        catnum: 3,
+        cat: "home",
+        prdImg: "./images/goods/home/pd-14.webp",
+        pdInfo: {
+            name: "이솝 사진집",
+            info: "1개",
+            price: "95000",
+        },
+        pdDetail: {
+            title: ["어울리는 대상", "주요 참여자"],
+            content: ["디자인 매니아, 호기심 많은 독자, 예술 애호가","데니스 파피티스와 제니퍼 다운 공저, 야마모토 유타카 사진"],
+        },
+        data: "book5",
+    },
 
 
 

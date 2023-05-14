@@ -4,6 +4,7 @@ import footData from "./temData/footerData.js";
 import skinData from "./gdsData/skinData.js";
 import perfumeData from "./gdsData/perfumeData.js";
 import homeData from "./gdsData/homeData.js";
+import giftData from "./gdsData/giftData.js";
 
 /***************************************************** 
     뷰 컴포넌트로 데이터 셋업하기
@@ -23,15 +24,14 @@ Vue.component("category-comp",{
         }
     },
     methods: {
-        // v-on 클릭시 데이터 변경 발생
+        // v-on 클릭시 gnb sub-comp 데이터 변경 발생
         chgData(parm) {
             event.preventDefault();
 
             // gnb에서 파라미터 받아오기
             store.state.lnbsrc = parm;            
-            console.log("내용업데이트!",store.state.lnbsrc);
 
-            // [1] 업데이트!!
+            // [ 업데이트!! ]
             // thumb박스
             store.state.setimgsrc = store.state.gnb[parm].imgsrc;
             store.state.settit = store.state.gnb[parm].imgtit;
@@ -175,7 +175,7 @@ Vue.component("goods-comp",{
     data() {
         return {
             // 외부 서브페이지 데이터
-            prdData: [skinData,perfumeData,homeData],
+            prdData: [skinData,perfumeData,homeData,giftData],
             // 리스트 갯수 변수
             listCnt: 2,
         }
@@ -184,7 +184,7 @@ Vue.component("goods-comp",{
     methods: {
         // 카트 추가 메서드
         addCart(data) {
-            console.log("해당제품 카트에 추카 시키기:", data, skinData[data]);
+            // console.log("해당제품 카트에 추가 시키기:", data, skinData[data]);
 
             // 뱉어내기
             return skinData[data]
@@ -195,7 +195,7 @@ Vue.component("goods-comp",{
         },
         // lnb 클릭시 v-if 조건값 설정하는 메서드
         setCatnum(num) {
-            console.log("setCatnum num전달값:",num);
+            // console.log("setCatnum num전달값:",num);
             store.state.catnum = num;
         },
         // 서브페이지 최상위 경로 설정해주는 함수
@@ -292,18 +292,12 @@ new Vue({
         // 서브페이지 초기데이터 셋팅
         function initCatnum() {
             
-            console.log("*********작업 구간**********:",store.state.curUrl1);
-
             // lnb 텍스트 저장 변수
             const ary = $(".menu dd");
-            console.log("배열 텍스트 읽어오기:",ary)
-
             // 각 변수에 셋팅하기
             ary.each(function(idx,ele){
-                // console.log($(ele).text());
-
+                // url 경로 일치할 경우 클릭이벤트 강제발생 / 클래스 on 넣기/빼기
                 if($(ele).text() === store.state.curUrl1) {
-                    // 클릭이벤트 강제발생 / 클래스 on 넣기/빼기
                     $(this).trigger("click")
                     .addClass("on").siblings().removeClass("on");
                 }
