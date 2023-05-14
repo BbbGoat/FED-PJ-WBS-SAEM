@@ -1,7 +1,9 @@
 // 스토어 불러오기
 import store from "./store.js";
 import footData from "./temData/footerData.js";
-import { skinData } from "./gdsData/goodsData.js";
+import skinData from "./gdsData/skinData.js";
+import perfumeData from "./gdsData/perfumeData.js";
+import homeData from "./gdsData/homeData.js";
 
 /***************************************************** 
     뷰 컴포넌트로 데이터 셋업하기
@@ -56,8 +58,8 @@ Vue.component("sub-comp",{
             <span v-text="$store.state.setdesc"></span>
         </div>
         <dl class="sub">
-            <dt class="all"><a href="#" v-text="$store.state.setsubtit1"></a></dt>
-            <dd v-for="(v,n) in $store.state.setdd1" :key="n" v-on:click="linksys($store.state.lnbsrc,v)"><a href="#">{{v}}{{n}}</a></dd>
+            <dt class="all" v-on:click="linksys($store.state.lnbsrc,'제품 모두 보기')"><a href="#" v-text="$store.state.setsubtit1"></a></dt>
+            <dd v-for="(v,n) in $store.state.setdd1" :key="n" v-on:click="linksys($store.state.lnbsrc,v)"><a href="#">{{v}}</a></dd>
         </dl>
         <dl class="sub">
             <dt><a href="#" v-text="$store.state.setsubtit2"></a></dt>
@@ -70,11 +72,6 @@ Vue.component("sub-comp",{
     </div>
     `,
     methods: {
-        // getnavnum(num){
-        //     // 스토어에 넘버링 업데이트
-        //     store.state.navnum = num;
-        //     console.log("업데이트된 navnum",store.state.navnum);
-        // },
         linksys(gnb,src) {
             // 링크시스템
             location.href = "sub.html?cat=" + encodeURIComponent(gnb) +'&'+ encodeURIComponent(src);
@@ -94,14 +91,14 @@ Vue.component("goods-comp",{
     template: `
     <section>
         <div class="container">
-            <div class="pagewrap">
+            <div class="pagewrap" v-on="initSetSubSrc()">
                 <!-- 상단영역 -->
                 <div class="product_top">
                     <div class="titbx">
                         <!-- 타이틀 -->
                         <div class="cate_main_title">
                             <h3>스킨케어</h3>
-                            <p>노말텍스트</p>
+                            <p>천연성분으로 순수한 스킨케어를 경험해보세요</p>
                         </div>
                     </div>
                 </div>
@@ -122,10 +119,9 @@ Vue.component("goods-comp",{
                         <div class="inner">                                    
                             <div class="menuarea">
                                 <div class="menu_wrap">
-                                    <dl class="menu" data-name="스킨케어">
-                                        <dt><a href="#">skin</a></dt>
+                                    <dl class="menu">
                                         <dd class="on" v-on:click="setCatnum('전체보기')"><a href="#">제품 모두 보기</a></dd>
-                                        <dd v-for="(v,n) in $store.state.gnb.skin.dd1" v-on:click="setCatnum(n)"><a href="#">{{v}}</a></dd>
+                                        <dd v-for="(v,n) in $store.state.setlnb" v-on:click="setCatnum(n)"><a href="#">{{v}}</a></dd>
                                     </dl>
                                 </div>
                             </div>
@@ -133,11 +129,11 @@ Vue.component("goods-comp",{
                             <div class="product_wrap">
                                 <div class="prdList">
                                     <!-- 상품리스트 -->
-                                    <div class="gridbox" v-for="(v,i) in skinData" :key="i" v-if="v.catnum === $store.state.catnum || $store.state.catnum === '전체보기'">
+                                    <div class="gridbox" v-for="(v,i) in this.prdData[dataNum()]" :key="i" v-if="v.catnum === $store.state.catnum || $store.state.catnum === '전체보기'">
                                             <a href="#">{{i}}
                                             <div class="prd_thumb">
                                                 <div class="prdImg">
-                                                    <img v-bind:src="skinData[i].prdImg" alt="prdimage">
+                                                    <img v-bind:src="prdData[dataNum()][i].prdImg" alt="prdimage">
                                                 </div>
                                             </div>
                                             </a>
@@ -145,25 +141,25 @@ Vue.component("goods-comp",{
                                                 <!-- 주요정보: 상품명/용량/가격 -->
                                                 <div class="pdInfo">
                                                     <a href="#">
-                                                        <h5 class="pdInfo-name" v-text="skinData[i].pdInfo['name']"></h5>
+                                                        <h5 class="pdInfo-name" v-text="prdData[dataNum()][i].pdInfo['name']"></h5>
                                                         <div class="pdInfo-info">
-                                                            <span v-text="skinData[i].pdInfo['info']"></span>
+                                                            <span v-text="prdData[dataNum()][i].pdInfo['info']"></span>
                                                             <span class="separator">/</span>
-                                                            <span>{{numberWithCommas(skinData[i].pdInfo['price'])}}₩</span>
+                                                            <span>{{numberWithCommas(prdData[dataNum()][i].pdInfo['price'])}}₩</span>
                                                         </div>
                                                     </a>
                                                 </div>
                                                 <!-- 서브정보: 디테일 정보 -->
                                                 <div class="pdDetail">
                                                     <ul class="pdDetail-list">
-                                                        <li class="pdDetail-listItem" v-for="(v,n) in cnt">
-                                                            <div class="pdDetail-title" v-text="skinData[i].pdDetail.title[n]"></div>
-                                                            <div class="pdDetail-content" v-text="skinData[i].pdDetail.content[n]"></div>
+                                                        <li class="pdDetail-listItem" v-for="(v,n) in listCnt">
+                                                            <div class="pdDetail-title" v-text="prdData[dataNum()][i].pdDetail.title[n]"></div>
+                                                            <div class="pdDetail-content" v-text="prdData[dataNum()][i].pdDetail.content[n]"></div>
                                                         </li>
                                                     </ul>
                                                 </div>
                                             </div>
-                                        <div class="btn_wrap" v-on:click="addCart(skinData[i].data)">
+                                        <div class="btn_wrap" v-on:click="addCart(prdData[dataNum()][i].data)">
                                             <div class="btn fill">CART</div>
                                         </div>
                                     </div>
@@ -178,8 +174,10 @@ Vue.component("goods-comp",{
     `,
     data() {
         return {
-            skinData: skinData,
-            cnt: 2,
+            // 외부 서브페이지 데이터
+            prdData: [skinData,perfumeData,homeData],
+            // 리스트 갯수 변수
+            listCnt: 2,
         }
     },
 
@@ -197,18 +195,40 @@ Vue.component("goods-comp",{
         },
         // lnb 클릭시 v-if 조건값 설정하는 메서드
         setCatnum(num) {
-            console.log("setCatnum lnbsrc 전달값:",store.state.lnbsrc);
             console.log("setCatnum num전달값:",num);
-            console.log(store.state.navnum)
-            
-            // 클릭된 lnb 넘버링 변수에담기
             store.state.catnum = num;
-            
-            // 만약 전체보기 클릭일 경우
-            if (num === '전체보기') {
-                console.log("전체보기됐음!");
-            }
         },
+        
+        // 서브페이지 최상위 경로 설정해주는 함수
+        initSetSubSrc() {
+            // 각 카테고리별 lnb 대분류 경로 설정
+            store.state.setlnb = store.state.gnb[store.state.curUrl0].dd1;
+            // 
+        },
+        dataNum(){
+
+            // url 읽어와서 카테고리마다 고유넘버 적용시키고 결과값으로 보내기
+
+            const gnbLeng = $(".catbx li")
+            // console.log(gnbLeng);
+            
+            let chgIdx = "";
+
+            let cat = store.state.curUrl0;
+            
+            switch(cat) {
+                case cat = "skin" : chgIdx = "0"; break;
+                case cat = "perfume" : chgIdx = "1"; break;
+                case cat = "home" : chgIdx = "2"; break;
+                case cat = "gift" : chgIdx = "3"; break;
+            }
+            
+            // 결과값은 무조건 숫자로 출력되어야함
+            let result = chgIdx;
+            
+            // 뱉어내기!
+            return result;
+        }
     }
 }); /////////////////// Vue 컴포넌트 ////////////////////////
 
@@ -227,7 +247,7 @@ new Vue({
     methods: {},
     
     created() {
-        // store.commit("setGoods");
+        store.commit('getLink')
     },
     
     mounted() {
@@ -275,48 +295,28 @@ new Vue({
     methods: {
 
     },
-    created() {
-
-        // 뮤테이션 연결하기 (양방향!)
-        // store.commit('chgNavdt',setNum());
-        
-        // function setNum() {
-
-        //     /******************************************************************************** 
-        //         함수로 gnb dd 넘버링 구해서 결과값을 store state로 보내 업데이트 시킨다!
-        //         그리고 아래 마운티드 구역에서 그 값과 lnb 구역의 넘버링 일치시키는 조건문 세워 트리거 구동시키기
-        //     ********************************************************************************/
-
-        //     console.log("created 구역 작업중입니다!:",store.state.navnum);
-           
-        //     // 결과값 보내기
-        //     return 2
-        // }
-    },
     
     mounted() {
         
         // 서브페이지 초기데이터 셋팅
         function initCatnum() {
             
-            // 클릭된 lnb 넘버링 변수에담기
-            // store.state.catnum = '전체보기'
             console.log("*********작업 구간**********:",store.state.curUrl1);
-            console.log("마운티드에서 가져오는 넘버링:", store.state.navnum)
 
-            if(store.state.curUrl1 === "바디") {
-                console.log("일치!! 여기서 셋팅해야함 트리거!")
-                // console.log($(".menu > dd").hasClass("on"));
-                // console.log($(".menu dd").eq(1));
-                $(".menu dd").eq(store.state.catnum + 1).trigger("click")
-                .addClass("on").siblings().removeClass("on");
+            // lnb 텍스트 저장 변수
+            const ary = $(".menu dd");
+            console.log("배열 텍스트 읽어오기:",ary)
 
-            }
+            // 각 변수에 셋팅하기
+            ary.each(function(idx,ele){
+                // console.log($(ele).text());
 
-            // if ($(".menu > dd").text() == '토너') {
-            //     console.log("일치")
-            // }
-            // $(this).eq(4).trigger("click");
+                if($(ele).text() === store.state.curUrl1) {
+                    // 클릭이벤트 강제발생 / 클래스 on 넣기/빼기
+                    $(this).trigger("click")
+                    .addClass("on").siblings().removeClass("on");
+                }
+            });
                 
         }
         // 최초호출!
@@ -337,9 +337,3 @@ new Vue({
     store,
     data: {},
 }); ////////////////// Vue 인스턴스 //////////////////////
-
-        
-
-
-
-let exnum = 0;

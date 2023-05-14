@@ -512,4 +512,4 @@ const skinData = {
 
 // 내보내기
 
-export { skinData };
+export default skinData;

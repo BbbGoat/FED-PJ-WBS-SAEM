@@ -77,14 +77,14 @@ export default new Vuex.Store({
         setdd1: "",
         setdd2: "",
         setdd3: "",
-
+        
         // thumb박스 변수
         setimgsrc: "",
         settit: "",
         setdesc: "",
-
+        
         // lnb 사용 변수
-        lnbsrc : "",
+        setlnb: "",
         catnum: "",
 
         // 현재 url 변수
@@ -93,26 +93,20 @@ export default new Vuex.Store({
         curUrl1: "",
         navnum: "",
 
+
     }, /////// state 구역 ////////
 
     // (2) 데이터 변경 메서드구역:
     mutations: {
-        // catData(state, pm) {
-        //     // console.log("임시 뮤테이트");
+        // chgNavdt(st, pm) {
+        //     //////// 클릭된 gnb 번호로 업데이트하기 //////////////
 
-        //     // let product = state.goods[pm];
-        //     // console.log("결과값:",product.pd1.prdImg);
-        // },
-        chgNavdt(st, pm) {
-            //////// 클릭된 gnb 번호로 업데이트하기 //////////////
-
-            st.navnum = pm;
-            console.log("뮤테이션구역 넘어온 값:",st.navnum)
+        //     st.navnum = pm;
+        //     console.log("뮤테이션구역 넘어온 값:",st.navnum)
             
-            ///////////////////////////////////////////////
-        },
+        //     ///////////////////////////////////////////////
+        // },
         getLink(st,pm) {
-
 
             // 1. Get방식으로 넘어온 값 받기!
             st.curUrl = location.href;
