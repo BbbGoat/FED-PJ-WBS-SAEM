@@ -185,7 +185,7 @@ Vue.component("goods-comp",{
     methods: {
         // 카트 추가 메서드
         addCart(data) {
-            // console.log("해당제품 카트에 추가 시키기:", data, skinData[data]);
+            console.log("해당제품 카트에 추가 시키기:", data, skinData[data]);
 
             // 뱉어내기
             return skinData[data]

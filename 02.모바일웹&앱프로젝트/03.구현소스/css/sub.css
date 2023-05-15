@@ -138,10 +138,6 @@
     line-height: 4;
     color: #333;
 }
-/* .menu_wrap > h3::before {
-    content: '·';
-    display: inline-block;
-} */
 .menu {
     list-style: none;
 

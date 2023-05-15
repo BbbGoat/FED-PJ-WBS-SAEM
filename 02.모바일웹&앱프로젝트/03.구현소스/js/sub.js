@@ -53,9 +53,8 @@ window.addEventListener("DOMContentLoaded",()=>{
                     // 이미지박스
                     stkimg.removeAttribute("style");
                     // 텍스트박스
-                    stktxt.style.top = 0;
+                    stktxt.style.top = "-100px";
                     stktxt.style.opacity = 0;
-                    stktxt.style.transition = "0";
                 }
                 // 하단에서 픽스드 지우기
                 else if (botlimit > 0) {
