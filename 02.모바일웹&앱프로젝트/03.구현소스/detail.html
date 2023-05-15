@@ -13,11 +13,16 @@
     <!-- 메인 CSS -->
     <link rel="stylesheet" href="./css/detail.css">
     
+    <!-- 스와이퍼 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    
     <!-- 뷰JS 스탠드얼론 버전 가져오기! -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <!-- 뷰JS vuex CDN -->
     <script src="https://unpkg.com/vuex@3.0.0"></script>  
-
+    
+    <!-- 스와이퍼 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     
     <!-- 제이쿼리 라이브러리 -->
     <script src="./js/jquery-3.6.0.min.js"></script>
@@ -25,7 +30,7 @@
     
     <!-- 메인페이지 JS -->
     <script src="./js/common.js" type="module"></script>
-    <script></script>
+    <script src="./js/detail.js" type="module"></script>
 </head>
 <body>
     <!-- 상단영역 -->
@@ -64,12 +69,13 @@
                     <div class="detail_info">
                         <!-- 주요정보 -->
                         <div class="dt_tit">
-                            <h3>제품명 들어가는 란!!</h3>
+                            <small>category</small>
+                            <h3>제품명 들어가는 란 제품명 들어가는 란</h3>
                             <span>10000₩</span>
                         </div>
                         <!-- 서브정보 -->
                         <ul class="dt_subtit">
-                            <li><a href="#">사용법</a></li>
+                            <li class="on"><a href="#">사용법</a></li>
                             <li class="separator"></li>
                             <li><a href="#">향</a></li>
                         </ul>
@@ -80,26 +86,19 @@
                         </div>
                         
                     </div>
-                    <!-- 2. 이미지 영역 -->
+                    <!-- 2. 이미지 영역(대표이미지 스와이퍼) -->
                     <div class="detail_img">
-                        <div class="imgslide">
-                            <ul class="ui-draggable ui-draggable-handle">
-                                <li class="dtli ban3">
-                                    <img src="./images/cat_hair.jpg" alt="상세이미지">
-                                </li>
-                                <li class="dtli ban1">
-                                    <img src="./images/cat_travel.jpg" alt="상세이미지">
-                                </li>
-                                <li class="dtli ban2">
-                                    <img src="./images/cat_perfume.jpg" alt="상세이미지">
-                                </li>
-                            </ul>
-                            <ol class="indic">
-                                <li class="on"><span class="bld"></span></li>
-                                <li><span class="bld"></span></li>
-                                <li><span class="bld"></span></li>
-                            </ol>
+ 
+                        <!-- 스와이퍼 -->
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="./images/cat_perfume.jpg" alt="상세이미지"></div>
+                                <div class="swiper-slide"><img src="./images/cat_hair.jpg" alt="상세이미지"></div>
+                                <div class="swiper-slide"><img src="./images/cat_skin.jpg" alt="상세이미지"></div>
+                            </div>
+                            <div class="swiper-scrollbar"></div>
                         </div>
+
                     </div>
                     <!-- 3. 구매 인터페이스 영역 -->
                     <div class="detail_buy">
@@ -131,7 +130,7 @@
                                 <a href="#"><span>CART</span></a>
                                 <a href="#"><span>BUY</span></a>
                             </div>
-                            <div class="btn">
+                            <div class="btn nPay">
                                 <a href="#"><img src="https://aromatica.co.kr/layout/basic/img/icon/icon_npay.svg" alt="네이버페이"></a>
                             </div>
                         </div>
@@ -140,7 +139,12 @@
 
                 <!-- detail_section2 -->
                 <div class="dtsec2">
-
+                    <div class="detail_desc">
+                        <div class="left">
+                        </div>
+                        <div class="right">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
