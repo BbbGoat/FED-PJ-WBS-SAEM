@@ -19,21 +19,27 @@
     padding: 0 10px 0 30px;
 }
 .product_top {
-    margin-top: 150px;
+    margin-top: 140px;
     position: relative;
 }
 .cate_main_title {
     vertical-align: baseline;
     text-align: left;
+    margin-left: 50px;
+    line-height: 1.7;
+    color: #333
 }
 .cate_main_title h3 {
+    font-weight: 500;
     font-size: 3rem;
-    margin-top: 40px;
+    /* margin-top: 40px; */
 }
 .cate_main_title p {
-    font-size: 1.5rem;
-    margin-top: 10px;
-    font-weight: 500;
+    width: 500px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: 20px 0 40px;
+    color: #333;
 }
 
 /* 스티키박스 */
@@ -118,7 +124,7 @@
 .menu_wrap {
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: 43px;
     top: initial;
     left: 0;
     padding: 0 0 0 20px;
@@ -126,6 +132,16 @@
     overflow-x: initial;
     white-space: normal;
 }
+.menu_wrap > h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 4;
+    color: #333;
+}
+/* .menu_wrap > h3::before {
+    content: '·';
+    display: inline-block;
+} */
 .menu {
     list-style: none;
 

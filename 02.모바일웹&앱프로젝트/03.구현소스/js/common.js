@@ -119,6 +119,7 @@ Vue.component("goods-comp",{
                         <div class="inner">                                    
                             <div class="menuarea">
                                 <div class="menu_wrap">
+                                    <h3>카테고리</h3>
                                     <dl class="menu">
                                         <dd class="on" v-on:click="setCatnum('전체보기')"><a href="#">제품 모두 보기</a></dd>
                                         <dd v-for="(v,n) in $store.state.setlnb" v-on:click="setCatnum(n)"><a href="#">{{v}}</a></dd>
@@ -228,13 +229,14 @@ Vue.component("goods-comp",{
 
             let pm = store.state.curUrl0;
             let chgtit = store.state.gnb[pm].maintit
+            let chgsubtit = store.state.gnb[pm].maindesc
             // console.log(chgtit)
             
             // 타이틀 셋팅!
             leftTit.text(chgtit);
             stkTit.text(chgtit);
             // 서브타이틀 셋팅!
-            subTit.text("여기도변경예정!!!");
+            subTit.text(chgsubtit);
             
         }
     }
