@@ -96,8 +96,17 @@ export default new Vuex.Store({
         curUrl0: "",
         curUrl1: "",
 
-        // 디테일 값
-        detail: "",
+        // 디테일 기본
+        dtname: "",
+        dtprice: "",
+        dtinfo: "",
+        dtimg:"",
+        dtdata:"",
+        // 디테일 상세정보
+        dttit:"",
+        dtcont:"",
+
+        result: 0,
 
 
     }, /////// state 구역 ////////

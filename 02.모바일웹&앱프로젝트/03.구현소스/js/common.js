@@ -8,6 +8,8 @@ import skinData from "./gdsData/skinData.js";
 import perfumeData from "./gdsData/perfumeData.js";
 import homeData from "./gdsData/homeData.js";
 import giftData from "./gdsData/giftData.js";
+// 디테일 더미 데이터
+import dtimgData from "./gdsData/detailImg.js";
 
 /***************************************************** 
     뷰 컴포넌트로 데이터 셋업하기
@@ -134,7 +136,7 @@ Vue.component("goods-comp",{
                                 <div class="prdList">
                                     <!-- 상품리스트 -->
                                     <div class="gridbox" v-for="(v,i) in this.prdData[dataNum()]" :key="i" v-if="v.catnum === $store.state.catnum || $store.state.catnum === '전체보기'">
-                                            <a href="#" v-on:click.prevent="getData(prdData[dataNum()][i].data)">{{i}}
+                                            <a href="#" v-on:click.prevent="getData(prdData[dataNum()][i])">{{i}}
                                             <div class="prd_thumb">
                                                 <div class="prdImg">
                                                     <img v-bind:src="prdData[dataNum()][i].prdImg" alt="prdimage">
@@ -184,21 +186,19 @@ Vue.component("goods-comp",{
                     <div class="detail_info">
                         <!-- 주요정보 -->
                         <div class="dt_tit">
-                            <small>category</small>
-                            <h3>제품명 들어가는 란 제품명 들어가는 란</h3>
-                            <span>10000₩</span>
+                            <small v-text="$store.state.gnb[$store.state.curUrl0].maintit">category</small>
+                            <h3 v-text="$store.state.dtname">제품명 들어가는 란 제품명 들어가는 란</h3>
+                            <span v-text="numberWithCommas($store.state.dtprice)+'₩'"></span>
                         </div>
                         <!-- 서브정보 -->
-                        <ul class="dt_subtit">
-                            <li class="on"><a href="#">사용법</a></li>
-                            <li class="separator"></li>
-                            <li><a href="#">향</a></li>
+                        <ul class="dt_subtit" v-for="(v,cnt) in 2">
+                            <li class="on"><a href="#" v-text="$store.state.dttit[cnt]">사용법</a></li>
+                            <div class="dt_desc">
+                                <p v-text="$store.state.dtcont[cnt]">
+                                    사랑하는 사람과 함께 감사한 분과 함께 시작하는 지구를 위한 제로웨이스트 라이프
+                                </p>
+                            </div>
                         </ul>
-                        <div class="dt_desc">
-                            <p>
-                                사랑하는 사람과 함께 감사한 분과 함께 시작하는 지구를 위한 제로웨이스트 라이프
-                            </p>
-                        </div>
                         
                     </div>
                     <!-- 2. 이미지 영역(대표이미지 스와이퍼) -->
@@ -226,7 +226,7 @@ Vue.component("goods-comp",{
                                             <a href="#" class="qty-down">
                                                 <span class="minus">-</span>
                                             </a>
-                                            <input id="quantity" name="quantity_opt[]" value="1" type="text">
+                                            <input id="quantity" name="quantity_opt[]" value="1" type="text" v-on:click="calcFn()">
                                             <a href="#" class="qty-up">
                                                 <span class="plus">+</span>
                                             </a>
@@ -237,7 +237,7 @@ Vue.component("goods-comp",{
                             <!-- 가격란 -->
                             <div class="totalprice">
                                 <span class="total">
-                                    <strong>10000₩</strong>
+                                    <strong>{{numberWithCommas(Number($store.state.dtprice)*($store.state.result))}}₩</strong>
                                 </span>
                             </div>
                             <!-- 구매버튼 -->
@@ -271,6 +271,8 @@ Vue.component("goods-comp",{
             prdData: [skinData,perfumeData,homeData,giftData],
             // 리스트 갯수 변수
             listCnt: 2,
+            // 디테일 세부이미지 더미 데이터
+            dtimgData: dtimgData,
         }
     },
 
@@ -329,21 +331,48 @@ Vue.component("goods-comp",{
             // 서브타이틀 셋팅!
             subTit.text(chgsubtit);   
         },
-        getData(tgName) {
+        getData(pm) {
 
-            // 스토어 전역변수에 업데이트!
-            store.state.detail = tgName;
-            // console.log("넘어온 데이터 키값:",tgName);
-            // console.log("넘어온 데이터 키값:",store.state.setlnb);
-            console.log("전역변수에 업데이트:",store.state.detail);
+            // [ 스토어 전역변수에 업데이트! ]
+            
+            // 1. 기본정보 데이터
+            store.state.dtname = pm.pdInfo['name'];
+            store.state.dtprice = pm.pdInfo['price'];
+            store.state.dtinfo = pm.pdInfo['info'];
+            store.state.dtimg = pm.prdImg;
+            // data는 상세이미지 찾아가는 용도로 쓰는 데이터임!!
+            store.state.dtdata = pm.data;
+            // 2. 설명데이터
+            store.state.dttit = pm.pdDetail['title'];
+            store.state.dtcont = pm.pdDetail['content'];
+            
+
+            // 실험실~~~
+            console.log("전역변수에 업데이트:",store.state.dtprice);
+            console.log("전역변수에 업데이트:",store.state.dtdata);
+            console.log("전역변수에 업데이트:",store.state.dttit[0]);
+            console.log("전역변수에 업데이트 - 상세이미지 더미:",dtimgData[store.state.dtdata]);
+
+
+
 
             // 디테일박스 열기
             $(".dt_comp").css({visibility:"visible",opacity:1,});
             
+            // 박스닫기
             $(".nPay").click((e)=>{
                 $(".dt_comp").css({visibility:"hidden",opacity:0});
             });
             
+        },
+        // 수량증가 총결제액 계산함수
+        calcFn() {
+            let result = $("#quantity").val();
+
+            $("#quantity").keyup(function(){
+                result = $(this).val();
+                return store.state.result = Number(result);
+            })
         }
     }
 }); /////////////////// Vue 컴포넌트 ////////////////////////
