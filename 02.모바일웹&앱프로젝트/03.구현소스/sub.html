@@ -11,13 +11,19 @@
     <!-- 공통 CSS -->
     <link rel="stylesheet" href="./css/common.css">
     <!-- 메인 CSS -->
-    <link rel="stylesheet" href="./css/sub.css">
+    <link rel="stylesheet" href="./css/sub.css">    
+    <link rel="stylesheet" href="./css/detail.css">    
+    <!-- 스와이퍼 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    
     
     <!-- 뷰JS 스탠드얼론 버전 가져오기! -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <!-- 뷰JS vuex CDN -->
     <script src="https://unpkg.com/vuex@3.0.0"></script>  
 
+    <!-- 스와이퍼 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     
     <!-- 제이쿼리 라이브러리 -->
     <script src="./js/jquery-3.6.0.min.js"></script>
@@ -26,6 +32,7 @@
     <!-- 서브페이지 JS -->
     <script src="./js/common.js" type="module"></script>
     <script src="./js/sub.js" type="module"></script>
+    <script src="./js/detail.js" type="module"></script>
 </head>
 <body>
     <!-- 상단영역 -->
@@ -56,6 +63,7 @@
         <!-- 속박스 -->
         <div class="cont">
             <goods-comp></goods-comp>
+            <!-- <detail-comp></detail-comp> -->
         </div>
     </main>
     <!-- 하단영역 -->

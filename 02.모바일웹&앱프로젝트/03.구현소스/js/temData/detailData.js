@@ -1,68 +1,6 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aesop</title>
-    <link rel="shortcut icon" href="./images/favicon.ico" />
-    <!-- 폰트어썸 외부 링크 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-    <!-- 공통 CSS -->
-    <link rel="stylesheet" href="./css/common.css">
-    <!-- 메인 CSS -->
-    <link rel="stylesheet" href="./css/detail.css">
-    
-    <!-- 스와이퍼 CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    
-    <!-- 뷰JS 스탠드얼론 버전 가져오기! -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-    <!-- 뷰JS vuex CDN -->
-    <script src="https://unpkg.com/vuex@3.0.0"></script>  
-    
-    <!-- 스와이퍼 -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    
-    <!-- 제이쿼리 라이브러리 -->
-    <script src="./js/jquery-3.6.0.min.js"></script>
-    <script src="./js/jquery-ui.min.js"></script>
-    
-    <!-- 메인페이지 JS -->
-    <script src="./js/common.js" type="module"></script>
-    <script src="./js/detail.js" type="module"></script>
-</head>
-<body>
-    <!-- 상단영역 -->
-    <header id="top">
-        <!-- 속박스 -->
-        <div class="top fxbx">
-            <!-- GNB -->
-            <nav>
-                <div class="gnb">
-                    <!-- 1. 로고영역 -->
-                    <div class="logo">
-                        <a href="./index.html"><img src="./images/logo.png" alt="이솝로고"></a>
-                    </div>
-                    <!-- 2. 카테고리영역 -->
-                    <category-comp></category-comp>
-                </div>
-                <ul class="side">
-                    <!-- 3. 사이드영역 -->
-                    <li><a href="#">로그인</a></li>
-                    <li><a href="#">위시리스트</a></li>
-                    <li><a href="#">카트</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <!-- 메인영역 -->
-    <main id="cont">
-        <!-- 속박스 -->
-        <div class="cont">
-            <div class="dt_comp">
-
-            
+const detailData = {
+    detailarea: `
+        <div class="dt_comp">
             <!-- 여기부터 컴포넌트로! -->
             <div class="detailbx">
 
@@ -129,11 +67,11 @@
                                 </span>
                             </div>
                             <!-- 구매버튼 -->
-                            <div class="btn crtbtn">
+                            <div class="dtbtn crtbtn">
                                 <a href="#"><span>CART</span></a>
                                 <a href="#"><span>BUY</span></a>
                             </div>
-                            <div class="btn nPay">
+                            <div class="dtbtn nPay">
                                 <a href="#"><img src="https://aromatica.co.kr/layout/basic/img/icon/icon_npay.svg" alt="네이버페이"></a>
                             </div>
                         </div>
@@ -152,15 +90,7 @@
             </div>
             <!-- 여기까지! -->
         </div>
-        </div>
-    </main>
-    <!-- 하단영역 -->
-    <footer id="info">
-        <!-- 속박스 -->
-        <div class="info">
-            <!-- 푸터영역 -->
-            <foot-comp></foot-comp>
-        </div>
-    </footer>
-</body>
-</html>
+    `,
+}
+
+export default detailData;

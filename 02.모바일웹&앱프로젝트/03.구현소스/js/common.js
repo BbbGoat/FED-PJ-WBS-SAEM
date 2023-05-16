@@ -1,6 +1,9 @@
 // 스토어 불러오기
 import store from "./store.js";
+// 페이지 데이터
 import footData from "./temData/footerData.js";
+import detailData from "./temData/detailData.js";
+// 더미 데이터들
 import skinData from "./gdsData/skinData.js";
 import perfumeData from "./gdsData/perfumeData.js";
 import homeData from "./gdsData/homeData.js";
@@ -131,7 +134,7 @@ Vue.component("goods-comp",{
                                 <div class="prdList">
                                     <!-- 상품리스트 -->
                                     <div class="gridbox" v-for="(v,i) in this.prdData[dataNum()]" :key="i" v-if="v.catnum === $store.state.catnum || $store.state.catnum === '전체보기'">
-                                            <a href="#">{{i}}
+                                            <a href="#" v-on:click.prevent="getData(prdData[dataNum()][i].data)">{{i}}
                                             <div class="prd_thumb">
                                                 <div class="prdImg">
                                                     <img v-bind:src="prdData[dataNum()][i].prdImg" alt="prdimage">
@@ -171,11 +174,100 @@ Vue.component("goods-comp",{
                 </div>
             </div>
         </div>
+
+        <!-- 여기부터 디테일페이지! -->
+        <div class="dt_comp">
+            <div class="detailbx">
+                <!-- detail_section1 -->
+                <div class="dtsec1">
+                    <!-- 1. 제품정보 영역 -->
+                    <div class="detail_info">
+                        <!-- 주요정보 -->
+                        <div class="dt_tit">
+                            <small>category</small>
+                            <h3>제품명 들어가는 란 제품명 들어가는 란</h3>
+                            <span>10000₩</span>
+                        </div>
+                        <!-- 서브정보 -->
+                        <ul class="dt_subtit">
+                            <li class="on"><a href="#">사용법</a></li>
+                            <li class="separator"></li>
+                            <li><a href="#">향</a></li>
+                        </ul>
+                        <div class="dt_desc">
+                            <p>
+                                사랑하는 사람과 함께 감사한 분과 함께 시작하는 지구를 위한 제로웨이스트 라이프
+                            </p>
+                        </div>
+                        
+                    </div>
+                    <!-- 2. 이미지 영역(대표이미지 스와이퍼) -->
+                    <div class="detail_img">
+ 
+                        <!-- 스와이퍼 -->
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="./images/cat_perfume.jpg" alt="상세이미지"></div>
+                                <div class="swiper-slide"><img src="./images/cat_hair.jpg" alt="상세이미지"></div>
+                                <div class="swiper-slide"><img src="./images/cat_skin.jpg" alt="상세이미지"></div>
+                            </div>
+                            <div class="swiper-scrollbar"></div>
+                        </div>
+
+                    </div>
+                    <!-- 3. 구매 인터페이스 영역 -->
+                    <div class="detail_buy">
+                        <div class="buyarea">
+                            <!-- 수량선택 -->
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="quantity">
+                                            <a href="#" class="qty-down">
+                                                <span class="minus">-</span>
+                                            </a>
+                                            <input id="quantity" name="quantity_opt[]" value="1" type="text">
+                                            <a href="#" class="qty-up">
+                                                <span class="plus">+</span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <!-- 가격란 -->
+                            <div class="totalprice">
+                                <span class="total">
+                                    <strong>10000₩</strong>
+                                </span>
+                            </div>
+                            <!-- 구매버튼 -->
+                            <div class="dtbtn crtbtn">
+                                <a href="#"><span>CART</span></a>
+                                <a href="#"><span>BUY</span></a>
+                            </div>
+                            <div class="dtbtn nPay">
+                                <a href="#"><img src="https://aromatica.co.kr/layout/basic/img/icon/icon_npay.svg" alt="네이버페이"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- detail_section2 -->
+                <div class="dtsec2">
+                    <div class="detail_desc">
+                        <div class="left">
+                        </div>
+                        <div class="right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     `,
     data() {
         return {
-            // 외부 서브페이지 데이터
+            // 외부 더미 데이터들
             prdData: [skinData,perfumeData,homeData,giftData],
             // 리스트 갯수 변수
             listCnt: 2,
@@ -206,7 +298,6 @@ Vue.component("goods-comp",{
         },
         // url 읽어와서 카테고리마다 고유넘버 적용시키고 결과값으로 보내기
         dataNum(){
-
             let result = "";
             let cat = store.state.curUrl0;
 
@@ -236,11 +327,34 @@ Vue.component("goods-comp",{
             leftTit.text(chgtit);
             stkTit.text(chgtit);
             // 서브타이틀 셋팅!
-            subTit.text(chgsubtit);
+            subTit.text(chgsubtit);   
+        },
+        getData(tgName) {
+
+            // 스토어 전역변수에 업데이트!
+            store.state.detail = tgName;
+            // console.log("넘어온 데이터 키값:",tgName);
+            // console.log("넘어온 데이터 키값:",store.state.setlnb);
+            console.log("전역변수에 업데이트:",store.state.detail);
+
+            // 디테일박스 열기
+            $(".dt_comp").css({visibility:"visible",opacity:1,});
+            
+            $(".nPay").click((e)=>{
+                $(".dt_comp").css({visibility:"hidden",opacity:0});
+            });
             
         }
     }
 }); /////////////////// Vue 컴포넌트 ////////////////////////
+
+
+// [2] 뷰컴포넌트 - 푸터
+Vue.component("detail-comp",{
+    template: detailData.detailarea,
+}); //////////////////// Vue 컴포넌트 ///////////////////////
+
+
 
 
 
@@ -337,6 +451,10 @@ new Vue({
             
             let menuTxt = $(this).text();
             $(".stktxt > span").text(menuTxt);
+            
+            // !!! URL 강제 변경하기
+            // 변경이유 : SPA 변경시 전달변수 내용일치 -> 새로고침시 현재변경로딩!
+            history.pushState(null,null,"sub.html?cat="+store.state.curUrl0+"&"+menuTxt);
         }); ////////// click ///////////
 
 

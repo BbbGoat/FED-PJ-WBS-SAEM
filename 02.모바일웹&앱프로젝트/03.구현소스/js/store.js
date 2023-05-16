@@ -95,7 +95,9 @@ export default new Vuex.Store({
         curUrl: "",
         curUrl0: "",
         curUrl1: "",
-        navnum: "",
+
+        // 디테일 값
+        detail: "",
 
 
     }, /////// state 구역 ////////
@@ -110,6 +112,7 @@ export default new Vuex.Store({
             
         //     ///////////////////////////////////////////////
         // },
+        
         getLink(st,pm) {
 
             // 1. Get방식으로 넘어온 값 받기!
@@ -127,7 +130,6 @@ export default new Vuex.Store({
             st.curUrl = st.curUrl.split("=")[1];
             st.curUrl0 = st.curUrl.split("&")[0];
             st.curUrl1 = st.curUrl.split("&")[1];
-
             
             // // encodeURIComponent로 변환해서 보냈으므로 
             // // decodeURIComponent로 재변환!
