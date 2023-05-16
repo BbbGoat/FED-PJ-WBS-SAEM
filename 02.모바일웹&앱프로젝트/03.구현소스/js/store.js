@@ -98,6 +98,7 @@ export default new Vuex.Store({
 
         // 디테일 기본
         dtname: "",
+        dtdata_desc: "",
         dtprice: "",
         dtinfo: "",
         dtimg:"",
@@ -105,6 +106,7 @@ export default new Vuex.Store({
         // 디테일 상세정보
         dttit:"",
         dtcont:"",
+
 
         result: 0,
 

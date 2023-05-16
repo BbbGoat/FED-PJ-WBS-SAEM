@@ -45,15 +45,22 @@
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f0efe1;
 }
 .swiper-slide img {
-    display: block;
+    /* display: block;
     width: 100%;
     height: 100%;
+    object-fit: cover; */
+    position: relative;
+    display: block;
+    width: 80%;
+    transform: translateY(-50%);
+    top: 50%;
+    margin: 0 auto;
     object-fit: cover;
 }
 /* 스크롤바 색상 커스텀 */
@@ -70,45 +77,48 @@
 .detail_info {
     /* 등분할 */
     flex: 1;
-    margin: 0 50px;
+    margin: 0 0 0 100px;
     padding: 0 30px;
     width: 100%;
     max-width: 400px;
 }
 .dt_tit {
     color: #333;
-    border-bottom: 1px solid #deded3;
-    padding-bottom: 20px;
+    border-bottom: 2px solid #4a4a4a;
+    padding-bottom: 30px;
 }
 .dt_tit > small {
     display: block;
     font-size: 1.5rem;
     font-weight: 500;
     color: #888888;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .dt_tit > h3 {
     font-size: 3rem;
-    font-weight: 500;
-    margin-bottom: 30px;
+    font-weight: 400;
+    margin-bottom: 20px;
 }
 .dt_tit > span {
-    font-size: 1.8rem;
-    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    font-weight: 400;
     color: #252525;
 }
 .dt_subtit {
     display: flex;
-    gap: 20px;
-    align-items: center;
-    padding: 20px 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
 }
 .dt_subtit li {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 500;
 }
 .dt_subtit li.on a {
-    font-weight: 600;
+    font-weight: 500;
     color: #333;
 }
 .dt_subtit li a {
@@ -125,7 +135,7 @@
     overflow-y: auto;
 }
 .dt_desc > p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 400;
     color: #333;
 }
@@ -143,7 +153,7 @@
 .detail_buy {
     /* 등분할 */
     flex: 1;
-    margin: 0 50px;
+    margin: 0 100px 0 0;
     padding: 0 30px;
     width: 100%;
     max-width: 400px;
@@ -154,10 +164,14 @@
     margin: 0 auto;
     width: 100%;
 }
+.buyarea > tbody {
+    display: inline-table;
+    width: 100%;
+}
 .quantity {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #333;
+    border-bottom: 2px solid #333;
 }
 .quantity a {
     display: inline-block;
@@ -225,7 +239,7 @@ input {
     display: flex;
     width: 100%;
     text-align: center;
-    border: 1px solid #333;
+    border: 1px solid #ccc;
     margin-top: 10px;
 }
 .dtbtn > a {
@@ -234,6 +248,7 @@ input {
     height: 45px;
     line-height: 45px;
     font-size: 15px;
+    /* background-color: #ebeade; */
     transition: .3s ease-out;
 }
 .dtbtn > a:hover {

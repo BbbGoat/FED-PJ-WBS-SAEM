@@ -188,7 +188,7 @@ Vue.component("goods-comp",{
                         <div class="dt_tit">
                             <small v-text="$store.state.gnb[$store.state.curUrl0].maintit">category</small>
                             <h3 v-text="$store.state.dtname">제품명 들어가는 란 제품명 들어가는 란</h3>
-                            <span v-text="numberWithCommas($store.state.dtprice)+'₩'"></span>
+                            <span v-text="$store.state.dtdata_desc"></span>
                         </div>
                         <!-- 서브정보 -->
                         <ul class="dt_subtit" v-for="(v,cnt) in 2">
@@ -206,8 +206,8 @@ Vue.component("goods-comp",{
  
                         <!-- 스와이퍼 -->
                         <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="./images/cat_perfume.jpg" alt="상세이미지"></div>
+                            <div class="swiper-wrapper" v-for="(cnt) in 3">
+                                <div class="swiper-slide"><img v-bind:src="$store.state.dtimg" alt="상세이미지"></div>
                                 <div class="swiper-slide"><img src="./images/cat_hair.jpg" alt="상세이미지"></div>
                                 <div class="swiper-slide"><img src="./images/cat_skin.jpg" alt="상세이미지"></div>
                             </div>
@@ -241,11 +241,11 @@ Vue.component("goods-comp",{
                                 </span>
                             </div>
                             <!-- 구매버튼 -->
-                            <div class="dtbtn crtbtn">
+                            <div class="dtbtn crtbtn" v-on:click.prevent="">
                                 <a href="#"><span>CART</span></a>
                                 <a href="#"><span>BUY</span></a>
                             </div>
-                            <div class="dtbtn nPay">
+                            <div class="dtbtn nPay" v-on:click.prevent="">
                                 <a href="#"><img src="https://aromatica.co.kr/layout/basic/img/icon/icon_npay.svg" alt="네이버페이"></a>
                             </div>
                         </div>
@@ -340,18 +340,22 @@ Vue.component("goods-comp",{
             store.state.dtprice = pm.pdInfo['price'];
             store.state.dtinfo = pm.pdInfo['info'];
             store.state.dtimg = pm.prdImg;
-            // data는 상세이미지 찾아가는 용도로 쓰는 데이터임!!
+            // data는 상세이미지 찾아가는 용도로 쓰는 중분류 데이터임!! 아래와 순서조심!
             store.state.dtdata = pm.data;
+            store.state.dtdata_desc = dtimgData[store.state.dtdata]['desc'];
+
             // 2. 설명데이터
             store.state.dttit = pm.pdDetail['title'];
             store.state.dtcont = pm.pdDetail['content'];
+
             
 
             // 실험실~~~
             console.log("전역변수에 업데이트:",store.state.dtprice);
             console.log("전역변수에 업데이트:",store.state.dtdata);
             console.log("전역변수에 업데이트:",store.state.dttit[0]);
-            console.log("전역변수에 업데이트 - 상세이미지 더미:",dtimgData[store.state.dtdata]);
+            console.log("전역변수에 업데이트 - 상세이미지 더미 경로:",dtimgData[store.state.dtdata]['img'][0]);
+            console.log("전역변수에 업데이트 - 상세이미지 설명 경로:",store.state.dtdata_desc);
 
 
 
