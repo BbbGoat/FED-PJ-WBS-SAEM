@@ -211,8 +211,10 @@ input {
 /* 버튼 공통 */
 .btn {
     display: flex;
-    /* width: 100%; */
+    width: 100%;
     text-align: center;
+    border: 1px solid #333;
+    margin-top: 10px;
 }
 .btn > a {
     display: inline-block;
@@ -220,14 +222,28 @@ input {
     height: 45px;
     line-height: 45px;
     font-size: 15px;
-    /* background-color: #333; */
-    border: 1px solid #333;
-    border-collapse: collapse;
-    box-sizing: border-box;
+    transition: .3s ease-out;
+}
+.btn > a:hover {
+    color: #fff;
+    background-color: #333;
+
+}
+.crtbtn > a:first-child {
+    border-right: 1px solid #333;
 }
 .btn.nPay > a {
     width: 100%;
 }
+.btn.nPay > a img {
+    vertical-align: sub;
+}
+.btn.nPay > a:hover img {
+    filter: brightness(15);
+}
+
+
+
 
 .dtsec2 {
     position: relative;
