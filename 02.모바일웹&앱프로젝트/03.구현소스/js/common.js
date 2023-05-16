@@ -135,7 +135,7 @@ Vue.component("goods-comp",{
                             <div class="product_wrap">
                                 <div class="prdList">
                                     <!-- 상품리스트 -->
-                                    <div class="gridbox" v-for="(v,i) in this.prdData[dataNum()]" :key="i" v-if="v.catnum === $store.state.catnum || $store.state.catnum === '전체보기'">
+                                    <div class="gridbox" v-for="(v,i) in prdData[dataNum()]" :key="i" v-if="v.catnum === $store.state.catnum || $store.state.catnum === '전체보기'">
                                             <a href="#" v-on:click.prevent="getData(prdData[dataNum()][i])">{{i}}
                                             <div class="prd_thumb">
                                                 <div class="prdImg">
