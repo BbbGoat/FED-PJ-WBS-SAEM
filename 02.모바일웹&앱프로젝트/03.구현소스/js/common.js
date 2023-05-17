@@ -208,7 +208,7 @@ Vue.component("goods-comp",{
                         <div class="swiper mySwiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide"><img v-bind:src="$store.state.dtimg" alt="썸네일 대표이미지"></div>
-                                <div class="swiper-slide" v-for="cnt in 2"><img v-bind:src="$store.state.dtdata_img[cnt]" alt="썸네일 상세이미지"></div>
+                                <div class="swiper-slide" v-for="(v,n) in 2"><img v-bind:src="$store.state.dtdata_img[n]" alt="썸네일 상세이미지"></div>
                             </div>
                             <div class="swiper-scrollbar"></div>
                         </div>
