@@ -102,8 +102,8 @@ Vue.component("goods-comp",{
                     <div class="titbx">
                         <!-- 타이틀 -->
                         <div class="cate_main_title">
-                            <h3>스킨케어</h3>
-                            <p>천연성분으로 순수한 스킨케어를 경험해보세요</p>
+                            <h3></h3>
+                            <p></p>
                         </div>
                     </div>
                 </div>
@@ -206,10 +206,9 @@ Vue.component("goods-comp",{
  
                         <!-- 스와이퍼 -->
                         <div class="swiper mySwiper">
-                            <div class="swiper-wrapper" v-for="(cnt) in 3">
-                                <div class="swiper-slide"><img v-bind:src="$store.state.dtimg" alt="상세이미지"></div>
-                                <div class="swiper-slide"><img src="./images/cat_hair.jpg" alt="상세이미지"></div>
-                                <div class="swiper-slide"><img src="./images/cat_skin.jpg" alt="상세이미지"></div>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img v-bind:src="$store.state.dtimg" alt="썸네일 대표이미지"></div>
+                                <div class="swiper-slide" v-for="cnt in 2"><img v-bind:src="$store.state.dtdata_img[cnt]" alt="썸네일 상세이미지"></div>
                             </div>
                             <div class="swiper-scrollbar"></div>
                         </div>
@@ -343,6 +342,7 @@ Vue.component("goods-comp",{
             // data는 상세이미지 찾아가는 용도로 쓰는 중분류 데이터임!! 아래와 순서조심!
             store.state.dtdata = pm.data;
             store.state.dtdata_desc = dtimgData[store.state.dtdata]['desc'];
+            store.state.dtdata_img = dtimgData[store.state.dtdata]['img'];
 
             // 2. 설명데이터
             store.state.dttit = pm.pdDetail['title'];
@@ -366,6 +366,7 @@ Vue.component("goods-comp",{
             // 박스닫기
             $(".nPay").click((e)=>{
                 $(".dt_comp").css({visibility:"hidden",opacity:0});
+                // swiper.slideTo(0);
             });
             
         },

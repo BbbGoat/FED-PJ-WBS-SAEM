@@ -2,7 +2,7 @@
 const swiper = new Swiper(".mySwiper", {
     // Optional parameters
     // direction: 'vertical',
-    loop: true,
+    // loop: true,
 
     // If we need pagination
     pagination: {
@@ -21,4 +21,11 @@ const swiper = new Swiper(".mySwiper", {
         //   hide: true,
         clickable: true,
     },
+});
+
+
+
+// 박스닫기
+$(".nPay").click((e)=>{
+    swiper.slideTo(0);
 });
