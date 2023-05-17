@@ -340,7 +340,7 @@ Vue.component("goods-comp",{
             store.state.dtinfo = pm.pdInfo['info'];
             store.state.dtimg = pm.prdImg;
             // data는 상세이미지 찾아가는 용도로 쓰는 중분류 데이터임!! 아래와 순서조심!
-            store.state.dtdata = pm.data;
+            store.state.dtdata = pm.data; // 상품 데이터명
             store.state.dtdata_desc = dtimgData[store.state.dtdata]['desc'];
             store.state.dtdata_img = dtimgData[store.state.dtdata]['img'];
 

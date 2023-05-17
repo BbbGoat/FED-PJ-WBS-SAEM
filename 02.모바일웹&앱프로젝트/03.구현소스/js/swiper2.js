@@ -1,8 +1,9 @@
 // 스와이퍼 커스텀
-const swiper = new Swiper(".mySwiper", {
+const swiper = new Swiper(".mySwiper2", {
     // Optional parameters
-    // direction: 'vertical',
-    // loop: true,
+    direction: 'vertical',
+    // slidesPerView: 3,
+    loop: true,
 
     // If we need pagination
     pagination: {

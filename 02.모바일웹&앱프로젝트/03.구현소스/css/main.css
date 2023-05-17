@@ -142,6 +142,34 @@ main {
     font-weight: 400;
 }
 
+/* //////////////////////////////////////////// */
+
+/* 스와이퍼 커스텀 */
+.swiper.mySwiper2 {
+    width: 400px;
+    /* aspect-ratio: 1/1.3; */
+}
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+.mimg-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #fff; */
+}
+
+.mimg-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
 /* 슬라이드박스 최상위 부모 */
 .ban {
     position: relative;
@@ -175,7 +203,9 @@ main {
     height: 100%;
 }
 .txtarea {
-    height: 100%;
+    position: absolute;
+    /* top: 100%; */
+    /* height: 100%; */
     text-align: center;
     font-size: 1.4rem;
     line-height: 2.0;
