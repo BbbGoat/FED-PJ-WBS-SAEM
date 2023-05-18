@@ -54,7 +54,7 @@ const dtimgData = {
         desc: "우수한 품질의 다마스크장미꽃오일과 피부를 부드럽게 가꿔주는 식물성 추출물을 함유해 부드러우면서 꼼꼼한 세정을 전하는 향기로운 클렌징 젤"
     },
     body2: {
-        img: ["./images/goods/detail/detail1-4.webp","./images/goods/detail/detail2-12.webp"],
+        img: ["./images/goods/detail/detail1-4.webp","./images/goods/detail/detail2-1.webp"],
         desc: "피부 세정과 독특하고 따뜻한 풍성한 아로마로 기분을 북돋아주는 거품이 적은 클렌징 젤"
     },
     body3: {
