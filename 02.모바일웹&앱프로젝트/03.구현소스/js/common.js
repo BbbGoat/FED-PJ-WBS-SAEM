@@ -222,11 +222,11 @@ Vue.component("goods-comp",{
                                 <tr>
                                     <td>
                                         <span class="quantity">
-                                            <a href="#" class="qty-down">
+                                            <a href="#" class="qty-down" v-on:click.prevent="minusBtn()">
                                                 <span class="minus">-</span>
                                             </a>
                                             <input id="quantity" name="quantity_opt[]" value="1" type="text" v-on:click="calcFn()">
-                                            <a href="#" class="qty-up">
+                                            <a href="#" class="qty-up" v-on:click.prevent="plusBtn()">
                                                 <span class="plus">+</span>
                                             </a>
                                         </span>
@@ -244,7 +244,7 @@ Vue.component("goods-comp",{
                                 <a href="#"><span>CART</span></a>
                                 <a href="#"><span>BUY</span></a>
                             </div>
-                            <div class="dtbtn nPay" v-on:click.prevent="">
+                            <div class="dtbtn nPay" v-on:click.prevent="closeFn()">
                                 <a href="#">CLOSE
                                 <i class="fa-solid fa-xmark"></i>
                                 </a>
@@ -350,36 +350,69 @@ Vue.component("goods-comp",{
             store.state.dttit = pm.pdDetail['title'];
             store.state.dtcont = pm.pdDetail['content'];
 
-            
-
-            // 실험실~~~
-            console.log("전역변수에 업데이트:",store.state.dtprice);
-            console.log("전역변수에 업데이트:",store.state.dtdata);
-            console.log("전역변수에 업데이트:",store.state.dttit[0]);
-            console.log("전역변수에 업데이트 - 상세이미지 더미 경로:",dtimgData[store.state.dtdata]['img'][0]);
-            console.log("전역변수에 업데이트 - 상세이미지 설명 경로:",store.state.dtdata_desc);
-
-
-
-
             // 디테일박스 열기
-            $(".dt_comp").css({visibility:"visible",opacity:1,});
+            $(".dt_comp").css({visibility:"visible",opacity:1,});     
             
+        },
+        closeFn(){
             // 박스닫기
             $(".nPay").click((e)=>{
                 $(".dt_comp").css({visibility:"hidden",opacity:0});
-                // swiper.slideTo(0);
+                
+                // 초기화
+                store.state.result = 1;
+                $("#quantity").val(1);
             });
-            
         },
+        
         // 수량증가 총결제액 계산함수
         calcFn() {
-            let result = $("#quantity").val();
 
             $("#quantity").keyup(function(){
-                result = $(this).val();
-                return store.state.result = Number(result);
-            })
+                // 입력된 값
+                let result = $(this).val();
+
+                if (result === "") return;
+
+                if (isNaN(result) || result < 1 || result === "" || result.indexOf(".") !== -1) {
+                    // 초기화!
+                    $(this).val(1);
+                }
+                else {
+                    if (result >= 100) {
+                        alert("대량구매는 유선상으로 문의바랍니다. \nAesop Tel:123-4567")
+                        result = 1;
+                    }
+                    // 숫자 앞에 0 넣으면 없애기
+                    $(this).val(Number(result));
+                }
+
+                // 최종출력!!
+                store.state.result = Number(result);
+                
+                $("#quantity").blur(function(){
+                    if($(this).val().trim() === ""){
+                        $(this).val(1);
+                        store.state.result = 1;
+                    }
+                });
+            });
+        },
+        // 더하기버튼
+        plusBtn() {
+            let num = $("#quantity").val();
+            num++;
+            // 업데이트
+            $("#quantity").val(num);
+            store.state.result = num;
+        },
+        minusBtn(){
+            let num = $("#quantity").val();
+            num--;
+            if (num === 0) return;
+            // 업데이트
+            $("#quantity").val(num);
+            store.state.result = num;
         }
     }
 }); /////////////////// Vue 컴포넌트 ////////////////////////
@@ -411,6 +444,9 @@ new Vue({
     },
     
     mounted() {
+
+        // 부드러운 스크롤 JS 호출!
+        startSS();
 
         // 클릭시 li에 클래스 on
         $(".catbx li > a").click(function(e){
@@ -452,9 +488,7 @@ new Vue({
 new Vue({
     el: "#cont",
     store,
-    methods: {
-
-    },
+    methods: {},
     
     mounted() {
         

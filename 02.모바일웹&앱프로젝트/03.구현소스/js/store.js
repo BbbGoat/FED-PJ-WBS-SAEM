@@ -105,7 +105,7 @@ export default new Vuex.Store({
         dtcont:"",
 
 
-        result: 0,
+        result: 1,
 
 
     }, /////// state 구역 ////////
