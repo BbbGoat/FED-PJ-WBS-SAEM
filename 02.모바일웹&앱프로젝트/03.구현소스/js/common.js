@@ -136,7 +136,7 @@ Vue.component("goods-comp",{
                                 <div class="prdList">
                                     <!-- 상품리스트 -->
                                     <div class="gridbox" v-for="(v,i) in prdData[dataNum()]" :key="i" v-if="v.catnum === $store.state.catnum || $store.state.catnum === '전체보기'">
-                                            <a href="#" v-on:click.prevent="getData(prdData[dataNum()][i])">{{i}}
+                                            <a href="#" v-on:click.prevent="getData(prdData[dataNum()][i])">
                                             <div class="prd_thumb">
                                                 <div class="prdImg">
                                                     <img v-bind:src="prdData[dataNum()][i].prdImg" alt="prdimage">
@@ -245,7 +245,9 @@ Vue.component("goods-comp",{
                                 <a href="#"><span>BUY</span></a>
                             </div>
                             <div class="dtbtn nPay" v-on:click.prevent="">
-                                <a href="#"><img src="https://aromatica.co.kr/layout/basic/img/icon/icon_npay.svg" alt="네이버페이"></a>
+                                <a href="#">CLOSE
+                                <i class="fa-solid fa-xmark"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
