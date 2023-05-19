@@ -1,7 +1,8 @@
 [ 과제 링크모음!!!!!!!!! ]
 
 
-1. 사이트 모음
+1. SPA 사이트 모음
+https://www.awwwards.com/websites/single-page/
 
 1) milee
 https://www.milee.mx/
@@ -10,4 +11,12 @@ https://www.milee.mx/
 여기에 요소가 낙하하는 효과 넣고싶음!
 
 
-2. 
+2) diko
+https://www.diko.co/
+
+독특한 디자인요소 / 스크롤이벤트 多多多!!
+스크롤 이벤트 아이디어 얻기
+
+
+3) haus 
+https://happiest.madeinhaus.com/
