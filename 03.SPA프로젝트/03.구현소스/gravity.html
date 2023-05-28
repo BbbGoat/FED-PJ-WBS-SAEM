@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+</head>/*from   ww  w.  j  a v a2 s.  c o m*/
+<body>
+<canvas id="canvasOne" width="500" height="500">
+Your browser does not support the HTML 5 Canvas. 
+</canvas>
+
+  <script type="text/javascript">
+    function drawScreen() {
+
+      context.fillStyle = '#EEEEEE';
+      context.fillRect(0, 0, theCanvas.width, theCanvas.height);
+      //Box
+      context.strokeStyle = '#000000';
+      context.strokeRect(1, 1, theCanvas.width - 2, theCanvas.height - 2);
+
+      ball.velocityx = ball.velocityx - (ball.velocityx * friction);
+
+      ball.velocityy += gravity;
+
+      if ((ball.y + ball.radius) > theCanvas.height) {
+        ball.velocityy = -(ball.velocityy) * ball.elasticity;
+      }
+      ball.y += ball.velocityy;
+      ball.x += ball.velocityx;
+
+      context.fillStyle = "#000000";
+      context.beginPath();
+      context.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2, true);
+      context.closePath();
+      context.fill();
+
+    }
+    let speed = 6;
+
+    let gravity = .1;
+    let friction = .008;
+    let elasticity = .5;
+    let angle = 285;
+    let radians = angle * Math.PI / 180;
+    let radius = 15;
+
+    let vx = Math.cos(radians) * speed;
+    let vy = Math.sin(radians) * speed;
+
+    theCanvas = document.getElementById('canvasOne');
+    context = theCanvas.getContext('2d');
+
+    let p1 = {
+      x : 20,
+      y : theCanvas.height - radius
+    };
+    let ball = {
+      x : p1.x,
+      y : p1.y,
+      velocityx : vx,
+      velocityy : vy,
+      radius : radius,
+      elasticity : elasticity
+    };
+
+    function gameLoop() {
+      window.setTimeout(gameLoop, 20);
+      drawScreen()
+    }
+
+    gameLoop();
+  </script>
+
+</body>
+</html>

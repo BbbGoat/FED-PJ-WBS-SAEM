@@ -1,2 +1,39 @@
+https://velog.io/
+틈틈이 많이 읽어보기 - 현업자의 칼럼위주로 글 많다 
+
+
+https://curran.github.io/HTML5Examples/
+다양한 canvas 효과들 모음
+
+
 1. ripple 효과
 https://codesandbox.io/s/threejs-ripple-text-distortion-effect-wlt94
+
+2. canvas 그림판 기능
+1) 리액트 캔버스 사용하여 만들기
+https://velog.io/@mokyoungg/JS-JS%EC%97%90%EC%84%9C-Canvas-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0%EB%A7%88%EC%9A%B0%EC%8A%A4%EB%A1%9C-%EA%B7%B8%EB%A6%AC%EA%B8%B0
+2) JS에서 캔버스 사용하여 만들기
+https://velog.io/@hyunjoogo/JS-%EA%B7%B8%EB%A6%BC%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0
+
+3. canvas wave 효과
+https://velog.io/@jakeseo_me/%EC%9B%B9-%EC%95%84%ED%8A%B8%EC%9B%8C%ED%81%AC-1-%EB%82%98%EB%A7%8C%EC%9D%98-%ED%8C%8C%EB%8F%84-%EB%A7%8C%EB%93%A4%EC%96%B4%EB%B3%B4%EA%B8%B0
+
+
+4. canvas 공튀기기
+
+https://velog.io/@km2535/Canvas-11
+https://mrkool.tistory.com/45
+
+공튀기기 유튜브설명
+https://www.youtube.com/watch?v=spnBY-3EjT4
+
+스크롤 3D 애니메이션
+https://youtu.be/uCwdrRB8CRY
+
+스티키 슬라임 애니메이션 자바스크립트
+https://www.youtube.com/watch?v=PKQKIfv6yAw
+
+
+
+5. canvas 이미지 더하는법
+https://www.youtube.com/watch?v=BBvXJsDDYMc
