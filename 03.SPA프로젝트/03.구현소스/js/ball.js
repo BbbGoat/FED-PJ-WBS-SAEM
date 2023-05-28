@@ -1,5 +1,7 @@
 const CANVAS = document.getElementById("canvas");
 const CTX = CANVAS.getContext("2d");
+
+// 메인때문에 추가한거!!!
 const content = document.querySelector('.main-content h1');
 const contentPosition = content.getBoundingClientRect();
 

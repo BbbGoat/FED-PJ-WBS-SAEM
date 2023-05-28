@@ -37,3 +37,36 @@ https://www.youtube.com/watch?v=PKQKIfv6yAw
 
 5. canvas 이미지 더하는법
 https://www.youtube.com/watch?v=BBvXJsDDYMc
+
+
+
+6. hover effect
+
+https://gosnippets.com/snippets/3d-hover-plane-effect-with-pure-css-and-javascript
+
+https://tympanus.net/Tutorials/MotionHoverEffects/index.html
+https://tympanus.net/codrops/2019/10/21/how-to-create-motion-hover-effects-with-image-distortions-using-three-js/
+
+https://tympanus.net/Tutorials/GooeyImageHoverEffects/
+https://tympanus.net/codrops/2019/10/23/making-gooey-image-hover-effects-with-three-js/
+
+
+
+7. ripple, wave, liquid 효과 모음
+
+유튜브강의!! 이거 보고 오버시 이미지 변경되는부분 SVG 제작하기 🤍🤍🤍🤍
+https://www.youtube.com/watch?v=liW6bDLnuuk 
+
+만들고싶은 효과 - Future Splash
+http://paperjs.org/examples/future-splash/
+
+https://css-tricks.com/blobs/
+https://codepen.io/supah/pen/QyWwNd
+https://tympanus.net/Development/OrganicShapeAnimations/
+https://georgefrancis.dev/writing/create-a-liquid-hover-effect-with-gsap-and-svg/
+
+
+
+✨✨✨백그라운드 ripple 효과✨✨✨✨
+
+https://codepen.io/rachsmith/pen/pJbPyN
