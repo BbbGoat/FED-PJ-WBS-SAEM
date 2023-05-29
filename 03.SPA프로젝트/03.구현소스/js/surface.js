@@ -6,25 +6,35 @@
 
 let svgElemnt, path, bg;
 let connected, tweening, tween;
-let mousePos = {}, svgTop, svgLeft;
+let mousePos = {}, svgTop, svgWidth;
 
 function init() {
   svgElement = document.getElementById('svg');
   path = document.getElementById('curve');
   bg = document.getElementById("surface");
   setSVGTop();
-  setSVGLeft();
+  setSVGWidth();
   addListeners();
   loop();
+
 }
+
+// 리사이즈 이벤트 등록 ////
+window.addEventListener("resize", function(){
+  console.log("업데이트!!!");
+  addListeners();
+  setSVGWidth();
+  updateCurve();
+})
+
 
 function setSVGTop() {
   svgTop = svgElement.getBoundingClientRect().top;
 }
 
-function setSVGLeft() {
-  svgLeft = window.innerWidth;
-  console.log(svgLeft);
+function setSVGWidth() {
+  svgWidth = window.innerWidth;
+  // console.log(svgWidth);
 }
 
 function addListeners() {
@@ -35,7 +45,8 @@ function addListeners() {
 	});
   
   window.addEventListener('resize', setSVGTop);
-  window.addEventListener('resize', setSVGLeft);
+  window.addEventListener('resize', setSVGWidth, updatePath);
+
   
   path.addEventListener('mouseover', function() {
     // if we haven't connected yet and we're not tweening back to center, bgin connection
@@ -44,14 +55,18 @@ function addListeners() {
       svgElement.style.cursor = 'pointer';
     }
 	});
-}
+} //////////////// 이벤트 리스너 등록 //////////////
+
+
+
+
 
 function updateCurve() {
   let y = mousePos.y;
   let x = mousePos.x;
   y = mousePos.y;
   x = mousePos.x;
-  console.log("ddd",(150-y))
+
   // 달라붙기 한계값 설정
   if ((150-y) < -100 || (150-y) > 400) {
     connected = false;
@@ -59,19 +74,14 @@ function updateCurve() {
     svgElement.style.cursor = 'default';
     snapBack(x,y);
   } else {
-    //  path.setAttribute('d', 'M-10 150C142 150 480 -266 960 -266C1440 -266 1777 150 1930 150V310H-20V150Z');
     
     // 수정 버전
-     path.setAttribute('d', 'M-10 150C'+(svgLeft/100 * 74)/10+' 150 '+svgLeft/100 *25+' '+y+' '+svgLeft/2+' '+y+'C'+(svgLeft/100 * 74)+' '+y+' '+(svgLeft-100)+' 150 '+svgLeft+' 150V310H-20V150Z');
-     bg.setAttribute('d', 'M-10 150C'+(svgLeft/100 * 74)/10+' 150 '+svgLeft/100 *25+' '+y+' '+svgLeft/2+' '+y+'C'+(svgLeft/100 * 74)+' '+y+' '+(svgLeft-100)+' 150 '+svgLeft+' 150V310H-20V150Z');
+     path.setAttribute('d', 'M-10 150C'+(svgWidth/100 * 74)/10+' 150 '+svgWidth/100 *25+' '+y+' '+svgWidth/2+' '+y+'C'+(svgWidth/100 * 74)+' '+y+' '+(svgWidth-100)+' 150 '+svgWidth+' 150V310H-20V150Z');
+     bg.setAttribute('d', 'M-10 150C'+(svgWidth/100 * 74)/10+' 150 '+svgWidth/100 *25+' '+y+' '+svgWidth/2+' '+y+'C'+(svgWidth/100 * 74)+' '+y+' '+(svgWidth-100)+' 150 '+svgWidth+' 150V310H-20V150Z');
+
     // 1번 버전
     // path.setAttribute('d', 'M-10,150 Q1020,'+y+' 1930,150');
 
-    // M-10 150C142 150 480 '+y+' 960 '+y+'C1440 '+y+' 1777 150 1930 150V310H-20V150Z
-
-    // 이거 수정해야함
-    // M-10 150C153 150 479 50 961.5 50C1538.4 50 1853 150 1923 150V310H-20V150Z
-    
     // M-10 150C142 150 480 50 960 50C1440 50 1777 150 1930 150V310H-20V150Z
     // M-10 150C56 150 190 50 381 50C572 50 706 150 773 150V310H-20V150Z
     // M-10 150C37 150 125 50 250 50C375 50 462 150 510 150V310H-20V150Z
@@ -80,11 +90,11 @@ function updateCurve() {
 
 function snapBack(x,y) {
   tween = new TWEEN.Tween({ y: y, x: x })
-    .to({ y: 50, x:50 }, 1400)
+    .to({ y: 50, x: 50 }, 1400)
     .easing( TWEEN.Easing.Elastic.Out )
     .onUpdate( function (e) {
       updatePath(e.x, e.y);
-      console.log("끊어진 y값:",e.y)
+      // console.log("끊어진 y값:",e.y)
     }).onComplete(function() {
       tweening = false;
     }).start();
@@ -97,15 +107,15 @@ function updatePath(x,y) {
   // path.setAttribute('d', 'M-10 150C142.22222222222223 150 480 50 960 50C1440 50 1777.7777777777778 150 1930 150V310H-20V150Z');
   
   // 수정버전
-  path.setAttribute('d', 'M-10 150C'+(svgLeft/100 * 74)/10+' 150 '+svgLeft/100 *25+' '+y+' '+svgLeft/2+' '+y+'C'+(svgLeft/100 * 74)+' '+y+' '+(svgLeft-100)+' 150 '+svgLeft+' 150V310H-20V150Z');
-  bg.setAttribute('d', 'M-10 150C'+(svgLeft/100 * 74)/10+' 150 '+svgLeft/100 *25+' '+y+' '+svgLeft/2+' '+y+'C'+(svgLeft/100 * 74)+' '+y+' '+(svgLeft-100)+' 150 '+svgLeft+' 150V310H-20V150Z');
+  path.setAttribute('d', 'M-10 150C'+(svgWidth/100 * 74)/10+' 150 '+svgWidth/100 *25+' '+y+' '+svgWidth/2+' '+y+'C'+(svgWidth/100 * 74)+' '+y+' '+(svgWidth-100)+' 150 '+svgWidth+' 150V310H-20V150Z');
+  bg.setAttribute('d', 'M-10 150C'+(svgWidth/100 * 74)/10+' 150 '+svgWidth/100 *25+' '+y+' '+svgWidth/2+' '+y+'C'+(svgWidth/100 * 74)+' '+y+' '+(svgWidth-100)+' 150 '+svgWidth+' 150V310H-20V150Z');
 
   // 수정버전
   // path.setAttribute('d', 'M-10 150C142 150 480 '+y+' 960 '+y+'C1440 '+y+' 1777 150 1930 150V310H-20V150Z');
   // bg.setAttribute('d', 'M-10 150C142 150 480 '+y+' 960 '+y+'C1440 '+y+' 1777 150 1930 150V310H-20V150Z');
   // 1번버전
   // path.setAttribute('d', 'M-10,150 Q1020,'+y+' 1930,150');
-  console.log("x 값:",x,"y 값:",y);
+  // console.log("x 값:",x,"y 값:",y);
 }
 
 function loop(time) {
@@ -114,8 +124,4 @@ function loop(time) {
   requestAnimationFrame(loop);
 }
 
-window.onload = init, updatePath;
-
-
-
-
+window.onload = init, updateCurve;
