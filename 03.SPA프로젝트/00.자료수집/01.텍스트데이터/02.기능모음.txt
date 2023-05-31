@@ -70,3 +70,8 @@ https://georgefrancis.dev/writing/create-a-liquid-hover-effect-with-gsap-and-svg
 ✨✨✨백그라운드 ripple 효과✨✨✨✨
 
 https://codepen.io/rachsmith/pen/pJbPyN
+
+
+
+8. 채팅기능
+https://dororongju.tistory.com/151
