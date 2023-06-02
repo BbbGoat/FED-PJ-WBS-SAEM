@@ -35,6 +35,7 @@ https://www.youtube.com/watch?v=PKQKIfv6yAw
 
 
 
+
 5. canvas 이미지 더하는법
 https://www.youtube.com/watch?v=BBvXJsDDYMc
 
@@ -47,6 +48,9 @@ https://gosnippets.com/snippets/3d-hover-plane-effect-with-pure-css-and-javascri
 https://tympanus.net/Tutorials/MotionHoverEffects/index.html
 https://tympanus.net/codrops/2019/10/21/how-to-create-motion-hover-effects-with-image-distortions-using-three-js/
 
+
+오버시 박스 기울어지는 효과 💙
+https://codesandbox.io/s/step-01-uozmf?from-embed=&file=/src/Figure.js
 https://tympanus.net/Tutorials/GooeyImageHoverEffects/
 https://tympanus.net/codrops/2019/10/23/making-gooey-image-hover-effects-with-three-js/
 
@@ -75,3 +79,10 @@ https://codepen.io/rachsmith/pen/pJbPyN
 
 8. 채팅기능
 https://dororongju.tistory.com/151
+요소 추가시 최하단으로 스크롤 강제이동시키기!
+https://gurtn.tistory.com/149
+
+
+
+9. 떨어지면서 쌓이는 텍스트 효과
+https://wsss.tistory.com/2019
