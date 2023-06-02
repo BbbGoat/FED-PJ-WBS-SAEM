@@ -34,6 +34,8 @@ const Chat = (function(){
  
         return chatLi;
     }
+
+
  
     // 메세지 태그 append
     function appendMsgTag(LR_className, senderName, message) {
@@ -43,6 +45,7 @@ const Chat = (function(){
  
         // 스크롤바 아래 고정
         $('div.chat').scrollTop($('div.chat').prop('scrollHeight'));
+
     }
  
     // 메세지 전송
@@ -102,6 +105,8 @@ const Chat = (function(){
             console.log("엔터시 출력!!");
             appendMsgTag("left", data.senderName, imgSrc[random]);
         },3000);
+
+        
 
     } /////////// owrResive 함수 ////////////////////
  
