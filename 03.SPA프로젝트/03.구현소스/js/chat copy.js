@@ -30,17 +30,10 @@ const Chat = (function(){
     function createMsgTag(LR_className, senderName, message) {
         // 형식 가져오기
         let chatLi = $('div.chat.format ul li').clone();
-
-        
-        // 수신인 확인 : 아이콘 분기점!
-        console.log(senderName);
  
         // 값 채우기
         chatLi.addClass(LR_className);
-        // chatLi.find('.sender span').html(senderName);
-        if (senderName === 'D.SHRAG') {
-            chatLi.find('.message').prepend('<img class="minImg" src="./images/favicon.png">');
-        }
+        chatLi.find('.sender span').html(senderName);
         chatLi.find('.message span').html(message);
  
         return chatLi;
@@ -113,11 +106,9 @@ const Chat = (function(){
 
         // 작품 추천용 랜덤메시지 출력
         setTimeout(()=>{
-            appendMsgTag("left", owrData.senderName, `${msg[random2]}`);
-        },1500);
-        setTimeout(()=>{
-            appendMsgTag("left", owrData.senderName, `<img src="${imgSrc[random]}">`);
-        },2500);
+            console.log("엔터시 출력!!");
+            appendMsgTag("left", owrData.senderName, `${msg[random2]}<br><img src="${imgSrc[random]}">`);
+        },1000);
     }
 
  
