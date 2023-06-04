@@ -5,8 +5,12 @@ const Chat = (function(){
     function init() {
 
         // 0. 먼저 넣는 오너 텍스트
-        const owrMsg = ["1번텍스트입니다","2번텍스트입니다","3번텍스트입니다"];
-        owrResive(owrMsg);
+        const owrMsg = ["Hello",`<img src="./images/chat/pic-0.jpg">`,"Are you taking a good look around?","It's not?","Then I'll tell you the big news... Are you ready?"];
+        const owrData = {
+            "senderName" : "D.SHRAG",
+            "message" : owrMsg
+        };
+        owrResive(owrData);
         
         // enter 키 이벤트
         $(document).on('keydown', 'div.input-div textarea', function(e){
@@ -15,7 +19,7 @@ const Chat = (function(){
                 const message = $(this).val();
  
                 // 메시지 전송
-                sendMessage(message);
+                sendMessage(message,owrData);
                 // 입력창 clear
                 clearTextarea();
             }
@@ -29,8 +33,8 @@ const Chat = (function(){
  
         // 값 채우기
         chatLi.addClass(LR_className);
-        chatLi.find('.sender span').text(senderName);
-        chatLi.find('.message span').text(message);
+        chatLi.find('.sender span').html(senderName);
+        chatLi.find('.message span').html(message);
  
         return chatLi;
     }
@@ -45,19 +49,19 @@ const Chat = (function(){
  
         // 스크롤바 아래 고정
         $('div.chat').scrollTop($('div.chat').prop('scrollHeight'));
-
     }
  
     // 메세지 전송
-    function sendMessage(message) {
+    function sendMessage(message,owrData) {
         // 서버에 전송하는 코드로 후에 대체
-        const data = {
+        const guestData = {
             "senderName"    : "You",
             "message"        : message
         };
  
         // 통신하는 기능이 없으므로 여기서 receive
-        resive(data);
+        resive(guestData);
+        imgMsg(owrData);
     }
  
     // 메세지 입력박스 내용 지우기
@@ -66,49 +70,47 @@ const Chat = (function(){
     }
  
     // 메세지 수신
-    function resive(data) {
-        const LR = (data.senderName != myName)? "left" : "right";
-        appendMsgTag(LR, data.senderName, data.message);
+    function resive(guesetData) {
+        const LR = (guesetData.senderName != myName)? "left" : "right";
+        appendMsgTag(LR, guesetData.senderName, guesetData.message);
     }
 
     // 오너메세지 수신
-    function owrResive(message) {
-        const data = {
-            "senderName" : "D.SHRAG",
-            "message" : message
-        };
+    function owrResive(owrData) {
 
-        console.log(message);
+        console.log(owrData.message);
         
         let msgNum = 0
         // 기본메시지 출력하기
         setInterval(()=>{
-            if (msgNum === message.length) return;
-            appendMsgTag("left", data.senderName, message[msgNum]);
+            if (msgNum === owrData.message.length) return;
+            appendMsgTag("left", owrData.senderName, owrData.message[msgNum]);
             msgNum++
             console.log(msgNum)
         },1000);
         
-        
-        
-        // 엔터시 출력하는 곳으로 이동시켜야함!!!!!! ////////////
-        
-        const imgSrc = ["./images/pic-1.jpg","./images/pic-2.jpg","./images/pic-3.jpg,","./images/pic-4.jpg","./images/pic-5.jpg"];
+    } /////////// owrResive 함수 ////////////////////
+    
+    // 랜덤 이미지데이터 메세지 수신
+    function imgMsg(owrData) {
+
+        const imgSrc = ["./images/chat/pic-1.jpg","./images/chat/pic-2.jpg","./images/chat/pic-3.jpg","./images/chat/pic-4.jpg","./images/chat/pic-5.jpg","./images/chat/pic-6.jpg","./images/chat/pic-7.jpg","./images/chat/pic-8.jpg"];
+        const msg = ["Shocking true story...","It's a community issue...","PIP!","BOOOOOOM","Attention!!!"]
         
         // 메시지 객체 최대 개수
-        let num = imgSrc.length;
+        const num = imgSrc.length;
+        const msgNum = msg.length;
         // 메시지 객체 랜덤출력용 변수 만들기
         let random = Math.floor(Math.random(num)*num);
+        let random2 = Math.floor(Math.random(msgNum)*msgNum);
 
         // 작품 추천용 랜덤메시지 출력
         setTimeout(()=>{
             console.log("엔터시 출력!!");
-            appendMsgTag("left", data.senderName, imgSrc[random]);
-        },3000);
+            appendMsgTag("left", owrData.senderName, `${msg[random2]}<br><img src="${imgSrc[random]}">`);
+        },1000);
+    }
 
-        
-
-    } /////////// owrResive 함수 ////////////////////
  
     return {
         'init': init
