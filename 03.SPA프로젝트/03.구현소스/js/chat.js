@@ -102,7 +102,7 @@ const Chat = (function(){
     function imgMsg(owrData) {
 
         const imgSrc = ["./images/chat/pic-1.jpg","./images/chat/pic-2.jpg","./images/chat/pic-3.jpg","./images/chat/pic-4.jpg","./images/chat/pic-5.jpg","./images/chat/pic-6.jpg","./images/chat/pic-7.jpg","./images/chat/pic-8.jpg"];
-        const msg = ["Shocking true story...","It's a community issue...","PIP!","BOOOOOOM","Attention!!!"]
+        const msg = ["Shocking true story...","It's a community issue...","PIP PIP","BOOOOOOM","Attention!!!","Awesome"]
         
         // 메시지 객체 최대 개수
         const num = imgSrc.length;

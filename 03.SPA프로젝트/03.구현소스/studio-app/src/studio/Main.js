@@ -7,7 +7,8 @@ const Main = () => {
     return(
         <>
             <h2>Main 페이지</h2>
-            <h3>{cat_data['MAIN'].map((x)=>x.tit)}</h3>
+            <h3>{cat_data.MAIN[0].tit}</h3>
+            {/* <h3>{cat_data.MAIN.map((x)=>x.tit)}</h3> */}
         </>
     );
 

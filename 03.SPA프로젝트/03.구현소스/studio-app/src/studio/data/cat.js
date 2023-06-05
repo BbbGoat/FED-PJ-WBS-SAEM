@@ -24,6 +24,10 @@ const cat_data = {
             "src" : "./images/pic-4.jpg",
             "tit" : "콘텍트 영역입니다",
         },
+        {
+            "src" : "./images/pic-4.jpg",
+            "tit" : "asdf ed",
+        },
     ],
 };
 
