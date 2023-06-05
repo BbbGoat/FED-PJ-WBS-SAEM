@@ -2,7 +2,6 @@
 import React from "react";
 import cat_data from "./data/cat";
 
-console.log(cat_data.CONTACT)
 const Contact = () => {
 
     return(
