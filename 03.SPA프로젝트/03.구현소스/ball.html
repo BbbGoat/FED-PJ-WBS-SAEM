@@ -1,47 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>튕기는공</title>
-    <style>
-        body {
-            margin: 0;
-        }
-
-        canvas {
-            position: fixed;
-            z-index: -9999;
-        }
-
-        .main-content{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .main-content h1{
-            font-weight: 700;
-            font-size: 40px;
-            text-shadow: 0 0 2px #464646;
-            height: 300px;
-            border: 1px solid
-        }
-    </style>
-</head>
-<body>
+    <link rel="stylesheet" href="./css/ball.css" />
+  </head>
+  <body>
     <!-- 
         설명 유튜브
         https://www.youtube.com/watch?v=spnBY-3EjT4
      -->
-    <canvas id="canvas"></canvas>
-    
+    <div class="dummy"></div>
+    <div class="cvswrap">
+      <!-- 캔버스 -->
+      <canvas id="canvas"></canvas>
+    </div>
+    <div class="dummy"></div>
+
     <!-- <div class="main-content">
         <h1 class="text-center">버튼 들어갈 영역</h1>
     </div> -->
-    
-    <script src="./js/ball.js" defer></script>
-</body>
+
+    <script src="./js/ball.js"></script>
+  </body>
 </html>

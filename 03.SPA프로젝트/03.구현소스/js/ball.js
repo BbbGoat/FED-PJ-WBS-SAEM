@@ -1,17 +1,14 @@
 const CANVAS = document.getElementById("canvas");
 const CTX = CANVAS.getContext("2d");
 
-// 메인때문에 추가한거!!!
-// const content = document.querySelector('.main-content h1');
-// const contentPosition = content.getBoundingClientRect();
-
+// 디버깅 확인용
 const DEBUG = false;
 
 // 속도
 const FPS = 40;
 // 캔버스 벗어나지 않으려면 공 크기와 동일하게 맞춰줘야함
 const BALL_RADIUS = 50;
-const INIT_BALL_COUNT = 7;
+const INIT_BALL_COUNT = 10;
 const MAGIC_NUM = 4;
 const LIFETIME = 1000 * 30;
 let balls = [];
@@ -65,7 +62,7 @@ function init() {
   }
 
   setInterval(draw_canvas, 1000 / FPS);
-}
+} /////////////////// init /////////////////////
 
 function draw_canvas() {
   clear_canvas();
@@ -80,29 +77,26 @@ function clear_canvas() {
   CTX.clearRect(0, 0, CANVAS.width, CANVAS.height);
 }
 
+// 캔버스박스 높이,넓이값 설정
+let canvas_wrap = document.querySelector(".cvswrap");
+
 function set_canvas_size() {
-  CANVAS.height = window.innerHeight;
-  CANVAS.width = window.innerWidth;
+  CANVAS.height = canvas_wrap.clientHeight;
+  CANVAS.width = canvas_wrap.clientWidth;
+  // CANVAS.height = window.innerHeight;
+  // CANVAS.width = window.innerWidth;
 }
 
 function draw_ball(ball) {
   CTX.beginPath();
   
+  ///// 수정 ///////
   CTX.fillStyle = ball.color_hex + ball.opacity.toString(16);
   CTX.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
-
-  // arc를 아래로 대체하기
-  // new Image() -> drawImage
-  // img.src = balls[balls.length-1].imgary;
+  CTX.drawImage(img, ball.x-50, ball.y-50, 100, 100);
+  // CTX.fill();
   
-  ///// 수정 ///////
-  // ball.x, ball.y의 상수는 
-  
-  CTX.drawImage(img, ball.x-90, ball.y-90, 150, 150);
-  CTX.fill();
-  
-
-  // if (DEBUG) draw_ball_text(ball);
+  if (DEBUG) draw_ball_text(ball);
 }
 
 function draw_ball_text(ball) {
@@ -133,6 +127,7 @@ function move_ball(ball) {
     ball.velocity_x = ball.velocity_x * ball.friction;
   }
   ball.y += ball.velocity_y;
+  
   if (ball.y + ball.radius < CANVAS.height - MAGIC_NUM) {
     ball.velocity_y += 1;
   }
@@ -194,13 +189,11 @@ function random_num(min, max) {
 
 // 클릭시 추가 이벤트
 function click_handler(event) {
-  // document.body.append(img);
-  // 공추가
-  balls.push(new Ball(event.x, event.y));
+  // 클릭시 공 배열에 추가
+  balls.push(new Ball(event.x, event.y - CANVAS.getBoundingClientRect().top));
 
+  // 이미지변경
   let getSrc = balls[balls.length-1].imgary;
-  
-  // 찍어보기
   console.log(getSrc);
   img.src = getSrc
 }
