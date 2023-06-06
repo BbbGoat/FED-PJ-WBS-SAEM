@@ -2,12 +2,11 @@ const CANVAS = document.getElementById("canvas");
 const CTX = CANVAS.getContext("2d");
 
 // 메인때문에 추가한거!!!
-const content = document.querySelector('.main-content h1');
-const contentPosition = content.getBoundingClientRect();
-
-console.log("체크용!",contentPosition);
+// const content = document.querySelector('.main-content h1');
+// const contentPosition = content.getBoundingClientRect();
 
 const DEBUG = false;
+
 // 속도
 const FPS = 40;
 // 캔버스 벗어나지 않으려면 공 크기와 동일하게 맞춰줘야함
@@ -19,9 +18,13 @@ let balls = [];
 
 //// 이미지 생성 //////////
 let img = new Image();
-img.src = "./images/swan.png";
-// img.width = 50;
-// img.height = 50;
+
+// 초기 이미지 셋팅 ////
+const arr = ["./images/swan.png","./images/combo-1-maria.webp","./images/combo-2-glas.webp","./images/combo-3-corgi.webp"]
+let num = arr.length;
+let tgnum = Math.floor(Math.random(num)*num);
+// 이미지변경
+img.src = arr[tgnum];
 
 
 // Ball 클래스
@@ -36,6 +39,7 @@ class Ball {
     this.friction = Math.max(Math.random(), 0.5);
     this.create_time = Date.now();
     this.color_hex = "#" + [...Array(6)].map(() => random_num(0, 16).toString(16)).join("");
+    this.imgary = "./images/combo-" + [...Array(1)].map(() => random_num(0,4)) + ".webp";
     this.opacity = 255;
     this.fading = false;
     this.fade_interval_id;
@@ -83,20 +87,22 @@ function set_canvas_size() {
 
 function draw_ball(ball) {
   CTX.beginPath();
+  
   CTX.fillStyle = ball.color_hex + ball.opacity.toString(16);
+  CTX.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
 
   // arc를 아래로 대체하기
   // new Image() -> drawImage
-//   CTX.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
-  // CTX.fill();
-
+  // img.src = balls[balls.length-1].imgary;
+  
   ///// 수정 ///////
-  // CTX.drawImage(img, 150, 150, 50, 50);
   // ball.x, ball.y의 상수는 
+  
   CTX.drawImage(img, ball.x-90, ball.y-90, 150, 150);
   CTX.fill();
+  
 
-  if (DEBUG) draw_ball_text(ball);
+  // if (DEBUG) draw_ball_text(ball);
 }
 
 function draw_ball_text(ball) {
@@ -147,10 +153,10 @@ function move_ball(ball) {
     Math.floor(ball.velocity_y) === 0 &&
     ball.y + ball.radius > CANVAS.height - MAGIC_NUM
   ) {
-    // fade_ball(ball);
+    fade_ball(ball);
   } else {
     if (Date.now() - ball.create_time > LIFETIME) {
-    // fade_ball(ball);
+    fade_ball(ball);
     }
   }
 }
@@ -186,8 +192,17 @@ function random_num(min, max) {
   return Math.floor(r);
 }
 
+// 클릭시 추가 이벤트
 function click_handler(event) {
+  // document.body.append(img);
+  // 공추가
   balls.push(new Ball(event.x, event.y));
+
+  let getSrc = balls[balls.length-1].imgary;
+  
+  // 찍어보기
+  console.log(getSrc);
+  img.src = getSrc
 }
 
 init();
