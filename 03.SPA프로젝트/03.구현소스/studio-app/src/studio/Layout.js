@@ -19,21 +19,33 @@ const Layout = () => {
             <header className="top">
                 {/* 네비게이션 파트 */}
                 <nav className="gnb">
-                    <ul>
-                        <li>
-                            <Link to="/">HOME</Link>
-                        </li>
-                        <li>
-                            <Link to="/in">INFO</Link>
-                        </li>
-                        <li>
-                            <Link to="/wo">WORK</Link>
-                        </li>
-                        <li>
-                            <Link to="/ct">CONTACT</Link>
-                        </li>
-                    </ul>
+                    <Link to="/in">INFO</Link>
+                    <Link to="/wo">WORK</Link>
+                    <Link to="/ct">CONTACT</Link>
                 </nav>
+                {/* 모바일 파트 */}
+                <button className="button button_large">
+                    <span className="button_init">Menu</span>
+                    <span className="button_active">Close</span>
+                </button>
+                <div className="menu_open">
+                    <div className="menu_main">
+                        <Link to="/in" className="button_large">Info</Link>
+                        <Link to="/wo" className="button_large">Work</Link>
+                        <Link to="/ct" className="button_large">Contact</Link>
+                    </div>
+                </div>
+                <ul className="menu_secondary">
+                    <li><a href="#" target="_blank">Instagram</a></li>
+                    <li><a href="#" target="_blank">Tictok</a></li>
+                    <li><a href="#" target="_blank">Youtube</a></li>
+                </ul>
+
+                {/* 로고 파트 */}
+                <Link to="/" className="logo">
+                    <img src="./images/menu-small.gif" />
+                </Link>
+
             </header>
             {/* 2. 메인영역 */}
             <main className="cont">
