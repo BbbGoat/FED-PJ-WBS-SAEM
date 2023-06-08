@@ -1,6 +1,7 @@
 // Main 페이지 컴포넌트
 import React from "react";
 import cat_data from "./data/cat";
+import Surface from "./modules/Surface";
 
 const Main = () => {
 
@@ -9,6 +10,7 @@ const Main = () => {
             <h2>Main 페이지</h2>
             <h3>{cat_data.MAIN[0].tit}</h3>
             {/* <h3>{cat_data.MAIN.map((x)=>x.tit)}</h3> */}
+            <Surface />
         </>
     );
 

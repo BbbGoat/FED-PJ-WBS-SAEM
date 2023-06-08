@@ -1,4 +1,5 @@
 @charset "utf-8";
+/* Layout 페이지 CSS - layout.css */
 
 :root {
     --global-padding: 1rem;
@@ -97,6 +98,32 @@
     left: 0;
     transform: translateY(80%);
 }
+/* 하위메뉴 */
+.menu_open {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 100%;
+    left: 0;
+    right: 0;
+    /* 클릭이벤트시 0 -> 100vh */
+    /* 스크롤이동 막기 */
+    height: 0;
+    transition: height .5s;
+    background-color: #000;
+    overflow: hidden;
+}
+.menu_main {
+    padding: var(--global-padding);
+    flex-direction: column;
+    display: flex;
+}
+.menu_main > .button {
+    margin-bottom: var(--global-padding);
+}
+
+
+
 /* 로고 */
 .logo {
     width: 10vw;
@@ -122,8 +149,8 @@ h1{
     text-align: center;
     padding: 30px;
     background-color: #252525;
-    height: 500px;
-    color: #fff;
+    height: 900px;
+    color: #fff
 }
 .cont img{
     max-width: 100%;

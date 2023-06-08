@@ -91,3 +91,16 @@ https://wsss.tistory.com/2019
 10. javascript 2D rigid body physics engine 💙
 https://github.com/liabru/matter-js
 https://brm.io/matter-js/demo/#svg
+
+
+
+// 리액트 라우터 경로변경시 이슈...ㅠ
+https://stackoverflow.com/questions/45373742/detect-route-change-with-react-router
+
+
+// useEffect -> addEventListener
+https://babycoder05.tistory.com/entry/React-useEffect%EC%99%80-addEventListener-window-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A0%8C%EB%8D%94%EB%A7%81-%EA%B7%9C%EC%B9%99
+
+https://react.vlpt.us/basic/16-useEffect.html
+
+http://ngmsoftware.com/bbs/board.php?bo_table=study&wr_id=858&sfl=mb_id%2C1&stx=admin&sst=wr_good&sod=desc&sop=and&page=27

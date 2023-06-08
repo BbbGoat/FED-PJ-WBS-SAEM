@@ -30,9 +30,9 @@ const Layout = () => {
                 </button>
                 <div className="menu_open">
                     <div className="menu_main">
-                        <Link to="/in" className="button_large">Info</Link>
-                        <Link to="/wo" className="button_large">Work</Link>
-                        <Link to="/ct" className="button_large">Contact</Link>
+                        <Link to="/in" className="button button_large">Info</Link>
+                        <Link to="/wo" className="button button_large">Work</Link>
+                        <Link to="/ct" className="button button_large">Contact</Link>
                     </div>
                 </div>
                 <ul className="menu_secondary">
