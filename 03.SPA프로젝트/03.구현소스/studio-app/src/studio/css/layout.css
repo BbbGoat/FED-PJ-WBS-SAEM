@@ -99,20 +99,25 @@
     transform: translateY(80%);
 }
 /* 하위메뉴 */
-.menu_open {
-    position: absolute;
-    display: flex;
+.menu {
+    height: 0;
+    pointer-events: none;
+    background-color: #000;
     flex-direction: column;
+    transition: height .5s;
+    display: flex;
+    position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    /* 클릭이벤트시 0 -> 100vh */
-    /* 스크롤이동 막기 */
-    height: 0;
-    transition: height .5s;
-    background-color: #000;
     overflow: hidden;
 }
+/* class open */
+.menu.open {
+    height: 100vh;
+    pointer-events: auto;
+}
+/* 메뉴 메인 */
 .menu_main {
     padding: var(--global-padding);
     flex-direction: column;
@@ -121,7 +126,18 @@
 .menu_main > .button {
     margin-bottom: var(--global-padding);
 }
-
+/* 메뉴 두번째 */
+.menu_secondary {
+    bottom: var(--global-padding);
+    font-size: var(--copy-size);
+    padding: var(--global-padding);
+    flex-direction: column;
+    align-items: flex-start;
+    display: flex;
+}
+.menu_secondary li {
+    margin-top: 0.5rem;
+}
 
 
 /* 로고 */

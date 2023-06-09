@@ -28,18 +28,18 @@ const Layout = () => {
                     <span className="button_init">Menu</span>
                     <span className="button_active">Close</span>
                 </button>
-                <div className="menu_open">
+                <div className="menu open">
                     <div className="menu_main">
                         <Link to="/in" className="button button_large">Info</Link>
                         <Link to="/wo" className="button button_large">Work</Link>
                         <Link to="/ct" className="button button_large">Contact</Link>
                     </div>
+                    <ul className="menu_secondary">
+                        <li><a href="#" target="_blank">Instagram</a></li>
+                        <li><a href="#" target="_blank">Tictok</a></li>
+                        <li><a href="#" target="_blank">Youtube</a></li>
+                    </ul>
                 </div>
-                <ul className="menu_secondary">
-                    <li><a href="#" target="_blank">Instagram</a></li>
-                    <li><a href="#" target="_blank">Tictok</a></li>
-                    <li><a href="#" target="_blank">Youtube</a></li>
-                </ul>
 
                 {/* 로고 파트 */}
                 <Link to="/" className="logo">
