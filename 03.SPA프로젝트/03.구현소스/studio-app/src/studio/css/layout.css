@@ -1,17 +1,7 @@
 @charset "utf-8";
 /* Layout 페이지 CSS - layout.css */
 
-:root {
-    --global-padding: 1rem;
-    --copy-small-size: 1rem;
-    --copy-size: 1.2rem;
-    --copy-large-size: 1.3rem;
-    --h1-size: 1.5rem;
-    --h2-size: 1.2rem;
-    --h3-size: 1rem;
-    --button-text-size: 1.6rem;
-    --button-large-text-size: 2rem;
-}
+
 
 /* 헤더영역 - gnb */
 .top{
@@ -188,3 +178,5 @@ h1{
     background-image: linear-gradient(to bottom, #CCC, #777);
     color: #fff;
 }
+
+

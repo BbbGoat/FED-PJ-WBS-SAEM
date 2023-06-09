@@ -8,7 +8,7 @@
 
 /* 전체 글자크기 Root 셋팅! */
 html{
-    font-size: 10px;
+    font-size: 15px;
     /* 글자 rem단위 계산편의때문~! */
 }
 body * {
