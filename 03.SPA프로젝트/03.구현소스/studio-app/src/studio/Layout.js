@@ -1,6 +1,7 @@
 // 메인 레이아웃 컴포넌트
 import "./css/layout.css";
 import { Link, Outlet } from "react-router-dom";
+import "./modules/Gnb.js";
 
 /********************************************************* 
     [ 리액트 라우터와 연결하여 사용되는 라우터 컴포넌트 ]
@@ -28,7 +29,7 @@ const Layout = () => {
                     <span className="button_init">Menu</span>
                     <span className="button_active">Close</span>
                 </button>
-                <div className="menu open">
+                <div className="menu">
                     <div className="menu_main">
                         <Link to="/in" className="button button_large">Info</Link>
                         <Link to="/wo" className="button button_large">Work</Link>

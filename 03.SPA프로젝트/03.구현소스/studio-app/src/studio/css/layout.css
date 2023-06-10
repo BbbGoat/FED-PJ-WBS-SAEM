@@ -19,9 +19,7 @@
 }
 .gnb{
     flex-wrap: nowrap;
-    /* (min-width: 480px) */
-    /* display: flex; */
-    display: none;
+    display: flex;
 }
 .gnb a {
     text-transform: uppercase;
@@ -36,18 +34,8 @@
     transition: color .3s,background-color .3s;
 }
 /* 모바일일때 버튼 */
-.button_large {
-    /* (min-width: 480px) */
+.button.button_large {
     display: none;
-
-    width: calc(90vw - var(--global-padding)*3);
-    flex-shrink: 2;
-    padding-top: 0;
-    padding-bottom: 0;
-
-    font-size: var(--button-large-text-size);
-    border-width: 4px;
-    padding: 1rem 2.5rem;
 }
 .button {
     display: inline-block;
@@ -68,6 +56,11 @@
     position: relative;
     overflow: hidden;
 }
+/* 버튼 오버시 */
+.button:hover {
+    color: #000;
+    background-color: #fff;
+}
 .button_init {
     transition: transform .3s;
     display: block;
@@ -75,6 +68,10 @@
 
     padding-top: 1rem;
     padding-bottom: 1rem;
+}
+/* 버튼클릭시 */
+.switch .button_init {
+    transform: translateY(-100%);
 }
 .button_active {
     padding-top: 1rem;
@@ -87,6 +84,10 @@
     top: 50%;
     left: 0;
     transform: translateY(80%);
+}
+/* 버튼클릭시 */
+.switch .button_active {
+    transform: translateY(-50%);
 }
 /* 하위메뉴 */
 .menu {
@@ -133,9 +134,9 @@
 /* 로고 */
 .logo {
     width: 10vw;
-    min-width: 1rem;
-    flex-shrink: 0;
-    margin-left: 0;
+    min-width: 5rem;
+    flex-shrink: 2;
+    margin-left: 1rem;
 }
 .logo img {
     pointer-events: none;
@@ -180,3 +181,32 @@ h1{
 }
 
 
+/******************** 미디어쿼리 ********************/
+@media screen and (max-width:1300px) {
+
+}
+
+@media screen and (max-width:860px) {
+
+}
+
+@media screen and (max-width:480px)  {
+    .gnb {
+        display: none;
+    }
+    .top > button {
+        width: calc(90vw - var(--global-padding)*3);
+        flex-shrink: 2;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .button_large {
+        font-size: var(--button-large-text-size);
+        border-width: 4px;
+        padding: 1rem 2.5rem;
+    }
+    .button.button_large {
+        display: inline-block;
+    }
+   
+}
