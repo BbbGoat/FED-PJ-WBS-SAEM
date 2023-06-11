@@ -6,8 +6,6 @@ import $ from "jquery";
 
 $(()=>{
 
-    console.log("Gnb.js");
-    
     // 대상선정
     const button = $(".top > button");
     const menu = $(".menu");
@@ -16,7 +14,6 @@ $(()=>{
     // 클릭 이벤트
     button.click(function(e){
         e.preventDefault();
-        console.log("클릭확인!");
         // 클래스 추가/제거
         $(this).toggleClass("switch");
 
@@ -59,7 +56,6 @@ $(()=>{
     window.onresize = function(e){
         maxWidth = window.innerWidth;
         if (maxWidth > 480) {
-            console.log("리사이즈",maxWidth);
             let isB = button.is(".switch");
             if(isB) {
                 button.trigger("click");

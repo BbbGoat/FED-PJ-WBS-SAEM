@@ -136,10 +136,11 @@
 /* 로고 */
 .logo {
     width: 10vw;
-    min-width: 5rem;
-    flex-shrink: 2;
-    margin-left: 1rem;
+    min-width: 1rem;
+    flex-shrink: 0;
+    margin-left: 0;
 }
+
 .logo img {
     pointer-events: none;
     width: 100%;
@@ -184,15 +185,16 @@ h1{
 
 
 /******************** 미디어쿼리 ********************/
-@media screen and (max-width:1300px) {
+@media screen and (max-width:1200px) {
 
 }
 
-@media screen and (max-width:860px) {
+@media screen and (max-width:720px) {
 
 }
 
 @media screen and (max-width:480px)  {
+
     .gnb {
         display: none;
     }
@@ -210,6 +212,14 @@ h1{
     }
     .button.button_large {
         display: inline-block;
+    }
+
+    /* 로고 */
+    .logo {
+        width: 10vw;
+        min-width: 5rem;
+        flex-shrink: 2;
+        margin-left: 1rem;
     }
    
 }
