@@ -7,5 +7,68 @@
     background-color: #000;
 } */
 
-
-
+.welcome {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    padding-bottom: var(--global-padding);
+    /* z-index: -10; */
+    overflow: hidden;
+}
+.marquee {
+    position: relative;
+    overflow: visible;
+}
+.marquee.dynamic_font{
+    transform: translate(0, 0);
+    opacity: 1;
+}
+.marquee_inner {
+    width: fit-content;
+    /* transform: translate3d(var(--move-initial),0,0); */
+    transform: translateX(0%);
+    will-change: transform;
+    display: flex;
+    position: relative;
+    overflow: visible;
+    animation: txtAni 20s linear infinite;
+}
+.marquee_inner:nth-child(1){
+    left: 0%;
+}
+.marquee_inner:nth-child(2){
+    left: -30%;
+}
+.marquee_inner:nth-child(3){
+    left: 0%;
+}
+.marquee_inner:nth-child(4){
+    left: -30%;
+}
+@keyframes txtAni {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+.marquee_item {
+    height: 20vw;
+    align-items: center;
+    display: flex;
+    overflow: visible;
+    white-space: nowrap;
+}
+.marquee h2 {
+    line-height: 1.2;
+    font-size: 20vw;
+}
+.marquee img {
+    position: relative;
+    height: 100%;
+    width: auto;
+    margin: 0 var(--global-padding);
+    display: block;
+}

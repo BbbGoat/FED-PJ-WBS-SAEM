@@ -34,5 +34,6 @@
 }
 .intro_text p {
     display: inline-block;
+    text-align: left;
     font-weight: 500;
 }

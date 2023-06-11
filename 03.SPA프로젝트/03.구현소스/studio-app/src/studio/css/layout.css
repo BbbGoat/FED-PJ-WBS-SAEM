@@ -152,12 +152,11 @@
 .cont{
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    background-color: #252525;
-    height: 100%;
+    background-color: #000;
     color: #fff
 }
 .cont img{
-    max-width: 100%;
+    /* max-width: 100%; */
 }
 .cont h2 {
     font-size: 3vw;
