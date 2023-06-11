@@ -27,7 +27,31 @@ const img_data = [
 
 const jqFn = () => {
     $(()=>{
- 
+
+        // 대상수집
+        const marquee_item = $(".marquee_item");
+        const marquee_h2 = $(".marquee_item h2");
+        let maxWidth;
+
+        function marqueeFn() {
+            maxWidth = window.innerWidth;
+            if (maxWidth > 480) {
+                marquee_item.css({height:"120px"})
+                marquee_h2.css({fontSize:"120px"})
+            }
+            else {
+                marquee_item.css({height:"20vw"})
+                marquee_h2.css({fontSize:"20vw"})
+            }
+        }
+
+        // 리사이즈
+        window.onresize = function(e){
+            marqueeFn();
+        }
+
+        // 로드
+        window.onload = marqueeFn();
 
     })
 }
