@@ -26,7 +26,6 @@
 }
 .marquee_inner {
     width: fit-content;
-    /* transform: translate3d(var(--move-initial),0,0); */
     transform: translateX(0%);
     will-change: transform;
     display: flex;
@@ -38,7 +37,7 @@
     left: 0%;
 }
 .marquee_inner:nth-child(2){
-    left: -30%;
+    left: -10%;
 }
 .marquee_inner:nth-child(3){
     left: 0%;
