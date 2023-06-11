@@ -5,6 +5,13 @@
 @import url(./reset.css);
 
 
+/* Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+
+/* Noto sans kr */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
 
 
 :root {
@@ -17,30 +24,31 @@
   --h3-size: 1rem;
   --button-text-size: 1.4rem;
   --button-large-text-size: 2rem;
-
-  @include respond-to(small) {
-    --button-text-size: 1.6rem;
-  }
-
-  @include respond-to(medium) {
-    --copy-size: 1.5rem;
-    --copy-small-size: 1.2rem;
-    --copy-large-size: 1.8rem;
-    --h1-size: 4.5vw;
-    --h2-size: 3.5vw;
-    --h3-size: 2vw;
-    --button-text-size: 3.5vw;
-    --button-large-text-size: 5.5vw;
-  }
-
-  @include respond-to(large) {
-    --global-padding: 2.5vw;
-    --copy-size: 1.6vw;
-    --copy-large-size: 2.2vw;
-  }
-
-  @include respond-to(wide) {
-    --copy-small-size: 1.2vw;
-  }
 }
 
+/* 
+@include respond-to(small) {
+  --button-text-size: 1.6rem;
+}
+
+@include respond-to(medium) {
+  --copy-size: 1.5rem;
+  --copy-small-size: 1.2rem;
+  --copy-large-size: 1.8rem;
+  --h1-size: 4.5vw;
+  --h2-size: 3.5vw;
+  --h3-size: 2vw;
+  --button-text-size: 3.5vw;
+  --button-large-text-size: 5.5vw;
+}
+
+@include respond-to(large) {
+  --global-padding: 2.5vw;
+  --copy-size: 1.6vw;
+  --copy-large-size: 2.2vw;
+}
+
+@include respond-to(wide) {
+  --copy-small-size: 1.2vw;
+}
+ */

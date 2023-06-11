@@ -11,8 +11,9 @@ $(()=>{
     // 대상선정
     const button = $(".top > button");
     const menu = $(".menu");
+    const menu_second = $(".menu_secondary li");
 
-    // 클릭이벤트
+    // 클릭 이벤트
     button.click(function(e){
         e.preventDefault();
         console.log("클릭확인!");
@@ -23,19 +24,47 @@ $(()=>{
         let isB = $(this).is(".switch");
         // 조건문에 따라 menu에 클래스 open 넣기
         if (isB) {
+            // 클래스추가
             menu.addClass("open");
-            $('html, body').css({'overflow': 'hidden', 'height': '100%'});
-            // $('#element').on('scroll touchmove mousewheel', function(event) {
-            // event.preventDefault();
-            // event.stopPropagation();
-            // return false;
-            // });
+            // 스크롤고정
+            $('html, body').css({'overflow-y': 'hidden', 'height': '100%'});
+            // 외부링크 등장
+            menu_second.each((idx,ele)=>{
+                setTimeout(()=>{
+                    setTimeout(function(e) {
+                        $(ele).animate({
+                            opacity:1
+                        },200)
+                    }, 50*idx);
+                },400)
+            }); ///////// each ///////////
+
             }
         else {
+            // 클래스제거
             menu.removeClass("open");
-            $('html, body').css({'overflow': 'visible', 'height': 'auto'});
-            // $('#element').off('scroll touchmove mousewheel');
+            // 스크롤고정 해제
+            $('html, body').css({'overflow-y': 'auto', 'height': 'auto'});
+            // 외부링크 사라짐
+            menu_second.each((idx,ele)=>{
+                $(ele).animate({
+                    opacity:0
+                },0)
+            }); ///////// each ///////////
         }
     });
+    
+    // 리사이즈 이벤트
+    let maxWidth;
+    window.onresize = function(e){
+        maxWidth = window.innerWidth;
+        if (maxWidth > 480) {
+            console.log("리사이즈",maxWidth);
+            let isB = button.is(".switch");
+            if(isB) {
+                button.trigger("click");
+            }
+        }
+    }
 
 }); /////////////// jQB ////////////////////

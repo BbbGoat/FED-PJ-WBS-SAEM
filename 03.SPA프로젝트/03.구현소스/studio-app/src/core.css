@@ -3,12 +3,9 @@
 /* 공통클래스/웹폰트 CSS - core.css */
 /* 웹폰트, 공용클래스 */
 
-/* Noto sans kr */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-
 /* 전체 글자크기 Root 셋팅! */
 html{
-    font-size: 15px;
+    font-size: 16px;
     /* 글자 rem단위 계산편의때문~! */
 }
 body * {

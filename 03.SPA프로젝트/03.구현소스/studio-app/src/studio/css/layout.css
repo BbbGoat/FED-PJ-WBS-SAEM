@@ -2,9 +2,9 @@
 /* Layout 페이지 CSS - layout.css */
 
 
-
 /* 헤더영역 - gnb */
 .top{
+    font-family: 'Montserrat', sans-serif;
     padding-top: var(--global-padding);
     padding-bottom: var(--global-padding);
     padding-left: var(--global-padding);
@@ -27,7 +27,7 @@
     border-radius: 200px;
     margin-right: 1vw;
     padding: 0 4vw 0.3vw;
-    font-family: Grtsk Tera;
+    font-family: 'Montserrat', sans-serif;
     font-size: 4.5vw;
     font-weight: 400;
     text-decoration: none;
@@ -41,8 +41,8 @@
     display: inline-block;
     color: #fff;
     text-transform: uppercase;
-    font-family: Grtsk Tera;
-    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
     font-size: var(--button-text-size);
     text-align: center;
     background-color: #0000;
@@ -125,9 +125,11 @@
     flex-direction: column;
     align-items: flex-start;
     display: flex;
+    font-weight: 500;
 }
 .menu_secondary li {
-    margin-top: 0.5rem;
+    opacity: 0;
+    margin-top: 0.7rem;
 }
 
 
@@ -199,6 +201,7 @@ h1{
         flex-shrink: 2;
         padding-top: 0;
         padding-bottom: 0;
+        font-weight: 500;
     }
     .button_large {
         font-size: var(--button-large-text-size);
