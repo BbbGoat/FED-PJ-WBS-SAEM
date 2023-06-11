@@ -152,16 +152,18 @@ const Surface = () => {
 
     return(
         <>
-            <div className="section">
-            </div>
-
             {/* 마우스 오버시 달라붙는 SVG 코드 */}
             <div className="surface_box">
-                <svg id="svg" width="1920" height="300" preserveAspectRatio="none">
-                <path id="surface" d="M-10 150C142.22222222222223 150 480 50 960 50C1440 50 1777.7777777777778 150 1930 150V310H-20V150Z" fill="white" stroke="white" strokeWidth="20"></path>
-                <path id="curve" d="M-10 150C142.22222222222223 150 480 50 960 50C1440 50 1777.7777777777778 150 1930 150V310H-20V150Z" fill="none" stroke="white" strokeWidth="20" />
-                </svg>
-                
+              <svg id="svg" width="1920" height="300" preserveAspectRatio="none">
+              <path id="surface" d="M-10 150C142.22222222222223 150 480 50 960 50C1440 50 1777.7777777777778 150 1930 150V310H-20V150Z" fill="white" stroke="white" strokeWidth="20"></path>
+              <path id="curve" d="M-10 150C142.22222222222223 150 480 50 960 50C1440 50 1777.7777777777778 150 1930 150V310H-20V150Z" fill="none" stroke="white" strokeWidth="20" />
+              </svg>
+              {/* 텍스트영역 */}
+              <div className="intro_text">
+                <p>
+                  hallo, wir sind studio brot. agentur für fetzige reklame aka werbung und design. am liebsten konzipieren wir. brandings zum beispiel. oder kampagnen natürlich. zwischendurch backen wir brot. egal, ob branden oder backen - wir kultivieren all das, was wir lieben. zu unserem team gehören kreative mit jeder menge schmalz im kopf und brot im bauch. und kevin bacon, der beagle, der gehört auch dazu. gemeinsam begleiten wir den gesamten prozess unserer kunden, um kommunikative lösungen zu erarbeiten, die marke, eindruck, laune, appetit und nicht zuletzt umsatz machen. ganz schön dufte eigentlich.
+                </p>
+              </div>
             </div>
             {jqFn()}
 
