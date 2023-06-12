@@ -11,21 +11,21 @@ const cat_data = {
     "INFO":
         {
             "src" : "./images/pic-2.jpg",
-            "tit" : "인포 영역입니다",
+            "tit" : "UNSER PROZESS",
             "link" : "/in",
         },
     
     "WORK":
         {
             "src" : "./images/pic-3.jpg",
-            "tit" : "포트폴리오 영역입니다",
+            "tit" : "ALLE ARBEITEN",
             "link" : "/wo",
         },
     
     "CONTACT":
         {
             "src" : "./images/pic-4.jpg",
-            "tit" : "콘텍트 영역입니다",
+            "tit" : "ODER NICH",
             "link" : "/ct",
         },
 };

@@ -41,19 +41,19 @@ const Marquee = (props) => {
                     props.data.map((v,i)=>
                         <div key={i} className="marquee_inner">
                                 <div className="marquee_item">
-                                    <h2>{v.txt}</h2>
+                                    <h4>{v.txt}</h4>
                                     <img src={v.img} alt={v.alt} />
                                 </div>
                                 <div className="marquee_item">
-                                    <h2>{v.txt}</h2>
+                                    <h4>{v.txt}</h4>
                                     <img src={v.img} alt={v.alt} />
                                 </div>
                                 <div className="marquee_item">
-                                    <h2>{v.txt}</h2>
+                                    <h4>{v.txt}</h4>
                                     <img src={v.img} alt={v.alt} />
                                 </div>
                                 <div className="marquee_item">
-                                    <h2>{v.txt}</h2>
+                                    <h4>{v.txt}</h4>
                                     <img src={v.img} alt={v.alt} />
                                 </div>
                         </div>

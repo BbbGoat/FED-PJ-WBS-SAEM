@@ -18,12 +18,12 @@ const Btn = (props) => {
     console.log(cat_data[props.cat].link)
     return (
         <>
-            <div className="process-teaser_top-row">
-                <div className="process-teaser_marquee">
+            <div className="btn_wrap">
+                <div className="btn_marquee">
                     <Marquee data={marquee_data[props.cat]} />
                 </div>
+                <Link className="button" to={cat_data[props.cat].link}>{cat_data[props.cat].tit}</Link>
             </div>
-            <Link to={cat_data[props.cat].link}>내용들어감</Link>
             {jqFn()}
         </>
     );
