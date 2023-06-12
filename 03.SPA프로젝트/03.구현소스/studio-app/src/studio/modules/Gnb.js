@@ -14,7 +14,8 @@ $(()=>{
 
     // 클릭 이벤트
     button.click(function(e){
-        // e.preventDefault();
+        // 버튼 클릭시 최상단 이동
+        window.scrollTo(0, 0);
         
         // 클래스 추가/제거
         $(this).toggleClass("switch");

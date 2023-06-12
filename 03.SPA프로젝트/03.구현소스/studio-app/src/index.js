@@ -9,6 +9,7 @@ import Main from './studio/Main';
 import Info from './studio/Info';
 import Work from './studio/Work';
 import Contact from './studio/Contact';
+import ScrollTop from './studio/common/ScrollTop';
 // CSS
 import './index.css';
 
@@ -17,6 +18,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+    <ScrollTop />
       <Routes>
         {/* 중요! : 레이아웃 컴포넌트를 루트로 잡아준다! */}
         <Route path="/" element={<Layout />} >
