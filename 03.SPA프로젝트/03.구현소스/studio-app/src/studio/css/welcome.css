@@ -79,6 +79,7 @@
     align-items: center;
     display: flex;
     overflow: visible;
+    opacity: 0;
     white-space: nowrap;
 }
 .marquee h2 {

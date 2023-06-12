@@ -29,9 +29,26 @@ const jqFn = () => {
     $(()=>{
 
         // 대상수집
-        const marquee_item = $(".marquee_item");
-        const marquee_h2 = $(".marquee_item h2");
+        const marquee_item = $(".welcome .marquee_item");
+        const marquee_h2 = $(".welcome .marquee_item h2");
         let maxWidth;
+
+        // 초기값 셋팅
+        marquee_item.css({
+            animationPlayState: "running",
+            opacity:0
+        });
+
+        marquee_item.each((idx,ele)=>{
+            setTimeout(()=>{
+                setTimeout(function(e){
+                    $(ele).animate({
+                        opacity:1
+                    },400)
+                }, 20*idx)
+            },400)
+        })
+        
 
         function marqueeFn() {
             maxWidth = window.innerWidth;
