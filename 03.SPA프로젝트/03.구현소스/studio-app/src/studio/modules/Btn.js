@@ -1,21 +1,23 @@
 // Btn 모듈 - Btn.js
+// 라이브러리
 import $ from "jquery";
 import {Link} from "react-router-dom";
-import Marquee from "./Marquee";
-import marquee_data from "../data/marquee_data";
+// 데이터
 import cat_data from "../data/cat";
+import marquee_data from "../data/marquee_data";
+// 모듈
+import Marquee from "./Marquee";
+// CSS
 import "../css/btn.css";
 
 const jqFn = () => {
     $(()=>{
 
 
-    })
+    }); /////////// jQB ///////////
 }
 
 const Btn = (props) => {
-    let wawa = cat_data['INFO']
-    console.log(cat_data[props.cat].link)
     return (
         <>
             <div className="btn_wrap">

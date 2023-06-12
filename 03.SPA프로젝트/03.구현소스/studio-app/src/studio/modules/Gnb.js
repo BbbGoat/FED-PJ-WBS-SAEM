@@ -10,7 +10,6 @@ $(()=>{
     const button = $(".top > button");
     const menu = $(".menu");
     const menu_second = $(".menu_secondary li");
-    const top = $(".top");
 
     // 클릭 이벤트
     button.click(function(e){
