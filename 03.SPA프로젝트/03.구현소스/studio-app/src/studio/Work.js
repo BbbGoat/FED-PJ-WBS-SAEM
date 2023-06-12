@@ -7,7 +7,7 @@ const Work = () => {
     return(
         <>
             <h2>Work 페이지</h2>
-            <h3>{cat_data.WORK[0].tit}</h3>
+            {/* <h3>{cat_data.WORK[0].tit}</h3> */}
             {/* <h3>{cat_data.WORK.map((x)=>x.tit)}</h3> */}
         </>
     );

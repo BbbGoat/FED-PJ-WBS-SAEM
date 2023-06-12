@@ -2,11 +2,15 @@
 /* Surface 모듈용 CSS - surface.css */
 
 .surface_box {
-    position: absolute;   
+    position: relative;   
     left: 0;
     width: 100%;
     background-color: #000;
+    color: #000;
+    font-size: var(--copy-size);
+    width: 100%;
 }
+
 .surface_box #svg {
     z-index: 10;
     width: 100%;
@@ -16,11 +20,6 @@
     overflow: visible;
 }
 
-.surface_box {
-    color: #000;
-    font-size: var(--copy-size);
-    width: 100%;
-}
 
 
 /* 텍스트영역 */

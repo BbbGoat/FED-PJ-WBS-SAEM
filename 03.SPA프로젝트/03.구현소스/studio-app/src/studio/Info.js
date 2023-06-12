@@ -14,7 +14,7 @@ const Info = () => {
     return(
         <>
             <h2>Info 페이지</h2>
-            <h3>{cat_data.INFO[0].tit}</h3>
+            {/* <h3>{cat_data.INFO[0].tit}</h3> */}
             {jqFn()}
         </>
     );
