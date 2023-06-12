@@ -45,13 +45,10 @@ const jqFn = () => {
             }
         }
 
-        // 리사이즈
-        window.onresize = function(e){
-            marqueeFn();
-        }
+        $(window).on("resize",marqueeFn)
 
         // 로드
-        window.onload = marqueeFn();
+        marqueeFn();
 
     })
 }

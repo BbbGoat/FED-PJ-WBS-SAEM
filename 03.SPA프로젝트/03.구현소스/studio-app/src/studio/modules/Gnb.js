@@ -10,13 +10,15 @@ $(()=>{
     const button = $(".top > button");
     const menu = $(".menu");
     const menu_second = $(".menu_secondary li");
+    const top = $(".top");
 
     // 클릭 이벤트
     button.click(function(e){
-        e.preventDefault();
+        // e.preventDefault();
+        
         // 클래스 추가/제거
         $(this).toggleClass("switch");
-
+        
         // 확인변수
         let isB = $(this).is(".switch");
         // 조건문에 따라 menu에 클래스 open 넣기
