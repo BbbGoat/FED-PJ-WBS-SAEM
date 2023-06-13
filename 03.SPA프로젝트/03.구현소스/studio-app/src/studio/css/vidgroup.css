@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* Vidgroup 모듈용 CSS - vidgroup.css */
+
+/* 최상단 섹션박스 */
+.vidgroup {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: var(--global-padding);
+    margin-top: 0;
+}
+/* 반복요소박스 */
+.vidgroup_inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.vidgroup_inner::after {
+    content: '';
+    width: 44%;
+    padding-bottom: 45%;
+    display: block;
+    position: relative;
+}
+
+
+/* 비디오영역 */
+figure.video_area {
+    position: absolute;
+    width: 100%;
+    height: 230%;
+    top: 50%;
+    transform: translateY(-50%);
+    object-fit: cover;
+    opacity: .8;
+}
+/* 비디오 영역의 비디오 세부입니다! */
+video.videosrc {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* 텍스트영역 */
+.vidtxt_area {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transform: translateY(-50%);
+}
+.vidtxt_number {
+    width: 100%;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 3px;
+    font-size: 20vw;
+    font-weight: 700;
+    line-height: 1;
+}
+.vidtxt_title {
+    text-transform: lowercase;
+    font-weight: 700;
+    font-size: var(--copy-size);
+}
+
+/* 미디어쿼리 */
+
+@media screen and (min-width:720px) {
+    .vidgroup {
+        flex-direction: row;
+    }
+    .vidgroup_inner {
+        width: calc(100% / 3);
+        height: auto;
+    }
+    figure.video_area {
+        height: 100%;
+    }
+    .vidgroup_inner::after {
+        padding-bottom: 150%;
+    }
+}

@@ -4,48 +4,26 @@
 
 .btn_wrap {
     display: flex;
-    /* 모바일 row / pc column */
-    flex-direction: row;
-    width: 100%;
-    padding: var(--global-padding);
-    /* margin-bottom: var(--global-padding); */
-    /* flex-flow: column-reverse; */
+    flex-flow: column-reverse;
     align-items: center;
+    width: 100%;
     overflow: hidden;
+    padding: var(--global-padding);
+    margin-bottom: 0;
 }
 .btn_marquee {
+    width: 100%;
     flex-shrink: 2;
-    
-    margin-right: 2vw;
-    margin-top: 0;
-    /* margin-top: 1rem; */
+    margin-top: 1rem;
     overflow: hidden;
 }
-.btn_marquee .marquee_item {
-    height: 6.5vw;
-    padding: 1vw 0;
-    opacity: 1;
-}
 
-.btn_marquee .marquee_item h4 {
-    text-transform: uppercase;
-    font-size: 5.5vw;
-    font-style: italic;
-    font-weight: 700;
-}
-
-
-/* 버튼용 marquee 덮어쓰기 */
 .btn_marquee .marquee {
     position: relative;
     overflow: hidden;
     --offset: 20vw;
     --move-initial: calc(-25% + var(--offset));
     --move-final: calc(-50% + var(--offset));
-}
-.btn_marquee .marquee.dynamic_font{
-    transform: translate(0, 0);
-    opacity: 1;
 }
 
 .btn_marquee .marquee_inner {
@@ -57,6 +35,33 @@
     animation-play-state: running;
 }
 
+
+.btn_marquee .marquee_item {
+    height: 6.5vw;
+    padding: 1vw 0;
+    display: flex;
+    align-items: center;
+    opacity: 1;
+}
+.marquee_item * {
+    white-space: nowrap;
+}
+.btn_marquee .marquee_item h4 {
+    text-transform: uppercase;
+    font-size: 5.5vw;
+    font-style: italic;
+    font-weight: 700;
+}
+
+/* 버튼 */
+.btn_wrap > .button {
+    width: 100%;
+    flex-shrink: 0;
+    margin-top: 0;
+}
+
+
+
 @keyframes marquee {
     0% {
         transform: translate3d(var(--move-initial), 0, 0);
@@ -67,17 +72,20 @@
     }
 }
 
-/* .marquee img {
-    position: relative;
-    height: 100%;
-    width: auto;
-    margin: 0 var(--global-padding);
-    display: block;
-} */
 
 @media screen and (min-width:720px) {
+    .btn_wrap > .button {
+        width: auto;
+    }
     .button {
         border-width: 0.45vw;
         padding: 1.5vw 2.8vw;
+    }
+    .btn_wrap {
+        flex-direction: row;
+    }
+    .btn_marquee {
+        margin-top: 0;
+        margin-right: 2vw;
     }
 }
