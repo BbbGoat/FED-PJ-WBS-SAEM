@@ -159,6 +159,7 @@ function move_ball(ball) {
 /////////////////////////////////////////////
 function fade_ball(ball) {
   ball.fading = true;
+  console.log("고찌",ball)
   if (ball.fade_interval_id === undefined) {
     ball.fade_interval_id = setInterval(() => {
       fade_ball(ball);

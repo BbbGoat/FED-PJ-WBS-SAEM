@@ -5,6 +5,7 @@ import Surface from "./modules/Surface";
 import Welcome from "./modules/Welcome";
 import Btn from "./modules/Btn";
 import Vidgroup from "./modules/Vidgroup";
+import Ball from "./modules/Ball";
 
 const Main = () => {
 
@@ -19,6 +20,8 @@ const Main = () => {
 
             <Vidgroup />
             
+            {/* 캔버스 */}
+            <Ball />
             
             <Btn cat={"WORK"} />
             <Btn cat={"CONTACT"} />
