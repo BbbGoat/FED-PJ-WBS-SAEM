@@ -5,7 +5,7 @@ const cat_data = {
         {
             "src" : "./images/pic-1.jpg",
             "tit" : "메인 영역입니다",
-            "link" : "/",
+            "link" : "/main",
         },
     
     "INFO":

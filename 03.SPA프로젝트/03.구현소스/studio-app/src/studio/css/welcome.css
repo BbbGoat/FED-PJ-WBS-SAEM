@@ -41,8 +41,7 @@
     position: relative;
     transform: translate3d(var(--move-initial), 0, 0);
     animation: marquee 8s linear infinite;
-    /* animation-play-state: paused; */
-    animation-play-state: running;
+    animation-play-state: paused;
 }
 
 .marquee_inner:nth-child(1){

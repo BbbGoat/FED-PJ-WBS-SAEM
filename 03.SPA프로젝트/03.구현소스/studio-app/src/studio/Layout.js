@@ -43,7 +43,7 @@ const Layout = () => {
                 </div>
 
                 {/* 로고 파트 */}
-                <Link to="/" className="logo">
+                <Link to="/main" className="logo">
                     <img src="./images/menu-small.gif" />
                 </Link>
 

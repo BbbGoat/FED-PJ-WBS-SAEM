@@ -19,7 +19,7 @@ const Main = () => {
                 <div className="process-teaser">
                     {/* Video 영역 */}
                     <figure className="video">
-                        <video autoplay="true" class="videosrc" loop="true" muted="true" playsinline="true" poster="" preload="metadata">
+                        <video autoPlay={true} className="videosrc" loop={true} muted={true} playsInline={true} poster="" preload="metadata">
                             <source src="https://www.studiobrot.de/media/pages/wie/0fd2b66c03-1673622947/1-derteig-small.mp4" type="video/mp4" />
                         </video>
                     </figure>
@@ -32,7 +32,7 @@ const Main = () => {
                 <div className="process-teaser">
                     {/* Video 영역 */}
                     <figure className="video">
-                        <video autoplay="true" class="videosrc" loop="true" muted="true" playsinline="true" poster="" preload="metadata">
+                        <video autoPlay={true} className="videosrc" loop={true} muted={true} playsInline={true} poster="" preload="metadata">
                             <source src="https://www.studiobrot.de/media/pages/wie/19383b2f5f-1673622957/2-dasbacken-small.mp4" type="video/mp4" />
                         </video>
                     </figure>
@@ -45,7 +45,7 @@ const Main = () => {
                 <div className="process-teaser">
                     {/* Video 영역 */}
                     <figure className="video">
-                        <video autoplay="true" class="videosrc" loop="true" muted="true" playsinline="true" poster="" preload="metadata">
+                        <video autoPlay={true} className="videosrc" loop={true} muted={true} playsInline={true} poster="" preload="metadata">
                             <source src="https://www.studiobrot.de/media/pages/wie/b5b0865b86-1673622912/3-dasbrot-small.mp4" type="video/mp4" />
                         </video>
                     </figure>
