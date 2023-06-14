@@ -208,27 +208,27 @@ const jqFn = () => {
         // console.log(getSrc);
         img.src = getSrc;
       }
-    //   init();
 
+
+      
     ////////////////////////// 아이디어 정리중 ////////////////////////////
-    /* 
-        기능 : 스크롤 이벤트로 특정 스크롤값 도달시
-                init() 최초실행
-                -> 특정 지점부터 클래스를 넣기
-                    클래스 안에는 init을 실행기능 포함
-    */
+
+    // 한번만 실행 조건 변수
+    let check = true;
 
     $(window).on("scroll", function(){
 
-        // 조건문 달성시 실행!
         let top = canvas_wrap.getBoundingClientRect().top
-        console.log(top)
         
         if(top < 0) {
-            console.log("실행!")
+          if(check) {
+            init();
+            check = false;
+          }
         }
 
     }); ////////// scroll //////////////
+
 
 
   }); ///////// jQB //////////////////////////////////
