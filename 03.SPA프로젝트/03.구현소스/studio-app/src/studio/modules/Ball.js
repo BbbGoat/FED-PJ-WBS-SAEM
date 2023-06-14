@@ -1,7 +1,11 @@
 // Ball 모듈 - Ball.js
 import $ from "jquery";
 // CSS
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
 import "../css/Ball.css";
+import Scene from './Scene'
+
 
 const jqFn = () => {
   $(() => {
@@ -210,26 +214,30 @@ const jqFn = () => {
       }
 
 
-      
-    ////////////////////////// 아이디어 정리중 ////////////////////////////
 
-    // 한번만 실행 조건 변수
+    // 스크롤 이벤트로 캔버스 모듈 최초호출 /////////////
+      
+    // boolean 체크 변수
     let check = true;
 
     $(window).on("scroll", function(){
-
-        let top = canvas_wrap.getBoundingClientRect().top
+        let tgTop = canvas_wrap.getBoundingClientRect().top
         
-        if(top < 0) {
+        if(tgTop < 0) {
           if(check) {
+            // 최초호출!
             init();
+            // 한번만실행
             check = false;
-          }
+          } // if
         }
 
-    }); ////////// scroll //////////////
+    }); ////////// scroll /////////////////////////////
 
 
+    
+    // 추가작업
+    window.scene = new Scene()
 
   }); ///////// jQB //////////////////////////////////
 }; ///////////////////// jqFn ///////////////////////////////
@@ -238,9 +246,28 @@ const Ball = () => {
   return (
     <>
       
-      {/* 튕기는공 영역 */}
       <div className="cvswrap">
-        <div className="dummy">xprtmxmduddur</div>
+
+        {/* 텍스트 영역 */}
+        {/* <div className="ball_tit">
+          <span>
+            Ex Text
+          </span>
+        </div> */}
+
+        {/* 임시 제작소 */}
+        <section className="container">
+          <article className="tile">
+            <figure className="tile__figure">
+              {/* <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" className="tile__image" alt="My image" /> */}
+              <img data-src="./images/canvas_img.png" data-hover="./images/canvas_img.png" className="tile__image" alt="My image"/>
+            </figure>
+          </article>
+        </section>
+
+        <canvas id="stage"></canvas>
+
+        {/* 튕기는 공 */}
         <canvas id="canvas"></canvas>
       </div>
       
