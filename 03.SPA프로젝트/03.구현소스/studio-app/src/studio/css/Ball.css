@@ -34,9 +34,16 @@
 	z-index: 10;
 }
 
+
+
 .tile {
-	width: 35vw;
+    width: 35vw;
 	flex: 0 0 auto;
+}
+
+.tile__figure {
+    margin: 0;
+    padding: 0;
 }
 
 .tile__image {

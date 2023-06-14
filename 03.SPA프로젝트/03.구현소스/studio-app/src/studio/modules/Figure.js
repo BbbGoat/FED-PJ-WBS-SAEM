@@ -35,7 +35,7 @@ export default class Figure {
     }
 
     createMesh() {
-        this.geometry = new THREE.PlaneBufferGeometry(1, 1, 1, 1)
+        this.geometry = new THREE.PlaneGeometry(1, 1, 1, 1)
         this.material = new THREE.MeshBasicMaterial({
             map: this.image
         })

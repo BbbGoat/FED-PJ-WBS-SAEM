@@ -259,8 +259,8 @@ const Ball = () => {
         <section className="container">
           <article className="tile">
             <figure className="tile__figure">
-              {/* <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" className="tile__image" alt="My image" /> */}
-              <img data-src="./images/canvas_img.png" data-hover="./images/canvas_img.png" className="tile__image" alt="My image"/>
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" className="tile__image" alt="My image" />
+              {/* <img data-src="./images/canvas_img.png" data-hover="./images/canvas_img.png" className="tile__image" alt="My image"/> */}
             </figure>
           </article>
         </section>
