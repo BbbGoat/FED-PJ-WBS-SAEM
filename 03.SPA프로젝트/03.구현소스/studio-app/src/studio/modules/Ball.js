@@ -237,14 +237,13 @@ const jqFn = () => {
 const Ball = () => {
   return (
     <>
-      <div className="dummy"></div>
       
       {/* 튕기는공 영역 */}
       <div className="cvswrap">
+        <div className="dummy">xprtmxmduddur</div>
         <canvas id="canvas"></canvas>
       </div>
       
-      <div className="dummy"></div>
 
       {jqFn()}
     </>
