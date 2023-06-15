@@ -54,6 +54,11 @@ https://codesandbox.io/s/step-01-uozmf?from-embed=&file=/src/Figure.js
 https://tympanus.net/Tutorials/GooeyImageHoverEffects/
 https://tympanus.net/codrops/2019/10/23/making-gooey-image-hover-effects-with-three-js/
 
+https://github.com/danielkatz51/React-3D-Cards-Animation?ref=reactjsexample.com
+https://wsss.tistory.com/1628
+https://gosnippets.com/snippets/3d-hover-plane-effect-with-pure-css-and-javascript
+https://easeseas.es/posts/3d-tilt-hover-effect-accord/
+https://codesandbox.io/s/look-at-camera-with-vertex-shader-forked-ng6ozq?file=/src/App.js:0-838
 
 
 7. ripple, wave, liquid 효과 모음

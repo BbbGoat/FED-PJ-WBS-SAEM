@@ -1,10 +1,7 @@
 // Ball 모듈 - Ball.js
 import $ from "jquery";
 // CSS
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
 import "../css/Ball.css";
-import Scene from './Scene'
 
 
 const jqFn = () => {
@@ -237,8 +234,6 @@ const jqFn = () => {
 
     
     
-    // 추가작업
-    window.scene = new Scene()
 
   }); ///////// jQB //////////////////////////////////
 }; ///////////////////// jqFn ///////////////////////////////
@@ -255,30 +250,6 @@ const Ball = () => {
             Ex Text
           </span>
         </div> */}
-
-        {/* 임시 제작소 */}
-        {/* <section className="container">
-          <article className="tile">
-            <figure className="tile__figure">
-              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" className="tile__image" alt="My image" />
-            </figure>
-          </article>
-        </section> */}
-        <section className="container">
-				<article className="tile">
-					<figure className="tile__figure">
-						<img
-							src="./images/older.jpg"
-							data-hover="./images/young-crop.jpg"
-							className="tile__image"
-							alt="My image"
-							width="400"
-						/>
-					</figure>
-				</article>
-			</section>
-
-        <canvas id="stage"></canvas>
 
         {/* 튕기는 공 */}
         <canvas id="canvas"></canvas>
