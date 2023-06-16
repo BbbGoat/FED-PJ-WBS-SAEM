@@ -54,10 +54,12 @@ export default function Lookat() {
   
   
   return (
-    <Canvas className="cvs_look" camera={{ position: [0, 0.1, useImgSize()] }}>
-      <ambientLight />
-      <directionalLight position={[10, 10, 10]} />
-      <Model />
-    </Canvas>
+    <div className="cvswrap">
+      <Canvas className="canvas_tit" camera={{ position: [0, 0.1, useImgSize()] }}>
+        <ambientLight />
+        <directionalLight position={[10, 10, 10]} />
+        <Model />
+      </Canvas>
+    </div>
   )
 } /////////////// Lookat ////////////////
