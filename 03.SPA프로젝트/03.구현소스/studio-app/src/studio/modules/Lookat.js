@@ -15,7 +15,7 @@ function Model(props) {
   const mesh = useRef()
   // const { nodes } = useGLTF('./Model.glb')
   const [dummy] = useState(() => new THREE.Object3D())
-  let texture = new THREE.TextureLoader().load('./images/SWAN-1.png')
+  let texture = new THREE.TextureLoader().load('./images/SWAN-1.webp')
 
   useFrame((state, dt) => {
     dummy.lookAt(state.pointer.x, state.pointer.y, 2)
@@ -34,18 +34,19 @@ function Model(props) {
 export default function Lookat() {
 
 
-  useIsMobile();
-  console.log("호출중?",useIsMobile());
+  // useIsMobile();
+  // 호출하면 리턴값 isMobile이 찍힌다!
 
-  // 판별함수
-  const SetImgSize = () => {
+  // Hook으로 사용될 함수!
+  const useImgSize = () => {
 
     // 새로고침시에만 먹는 이슈.. -> 실시간으로 변동시켜보자
     if (useIsMobile()) {
-      console.log("true!!!")
+      console.log("true!!!");
       return 2
     }
     else {
+      console.log("false!!!");
       return 1
     }
 
@@ -53,7 +54,7 @@ export default function Lookat() {
   
   
   return (
-    <Canvas className="cvs_look" camera={{ position: [0, 0.1, SetImgSize()] }}>
+    <Canvas className="cvs_look" camera={{ position: [0, 0.1, useImgSize()] }}>
       <ambientLight />
       <directionalLight position={[10, 10, 10]} />
       <Model />

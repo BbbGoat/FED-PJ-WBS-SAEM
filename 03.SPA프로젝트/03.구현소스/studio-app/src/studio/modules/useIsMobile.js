@@ -9,10 +9,11 @@ export default function useIsMobile() {
     useEffect(() => {
 
         const onResize = () => {
-            if (window.innerWidth <= 768) {
-                console.log(getIsMobile,"호");
-                setIsMobile(getIsMobile());
+            if (isMobile) {
+                // console.log("true되는 조건:",getIsMobile);
+                setIsMobile(true);
             }
+            else setIsMobile(false);
         }
 
         window.addEventListener("resize", onResize);

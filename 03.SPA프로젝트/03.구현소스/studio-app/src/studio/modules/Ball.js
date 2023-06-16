@@ -28,10 +28,10 @@ const jqFn = () => {
 
       // 초기 이미지 셋팅 ////
       const arr = [
-        "./images/swan.png",
-        "./images/combo-1-maria.webp",
-        "./images/combo-2-glas.webp",
-        "./images/combo-3-corgi.webp",
+        "./images/combo-1.webp",
+        "./images/combo-2.webp",
+        "./images/combo-3.webp",
+        "./images/combo-4.webp",
       ];
       let num = arr.length;
       let tgnum = Math.floor(Math.random(num) * num);
@@ -50,7 +50,7 @@ const jqFn = () => {
           this.friction = Math.max(Math.random(), 0.5);
           this.create_time = Date.now();
           this.color_hex = "#" + [...Array(6)].map(() => random_num(0, 16).toString(16)).join("");
-          this.imgary = "./images/combo-" + [...Array(1)].map(() => random_num(0, 4)) + ".webp";
+          this.imgary = "./images/combo-" + [...Array(1)].map(() => random_num(0, 5)) + ".webp";
           this.opacity = 255;
           this.fading = false;
           this.fade_interval_id = undefined;
@@ -206,7 +206,7 @@ const jqFn = () => {
 
         // 이미지변경
         let getSrc = balls[balls.length - 1].imgary;
-        // console.log(getSrc);
+        console.log(getSrc);
         img.src = getSrc;
       }
 
