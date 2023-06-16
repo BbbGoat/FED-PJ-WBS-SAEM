@@ -278,14 +278,16 @@ class Bowwow extends React.Component {
                  }
 
     return (
-      <div className='wrapper' style={offset}>
-        <div className="shape">
+      <div className='movetit_wrap' style={offset}>
+        <p className="pop link">www.D.SHRIG.com</p>
+        <p className="pop min">-</p>
+        <p className="pop close">x</p>
+        {/* <div className="shape">
+        </div> */}
+        <div className="shape2">마우스커서 큰거 들어갈 예정
         </div>
-        <div className="shape2">
-        </div>
-        <div className="shape3">
-        </div>
-        <p>Move your mouse or finger around</p>
+        {/* <div className="shape3">
+        </div> */}
       </div>
     )
   }
@@ -297,12 +299,6 @@ const Ball = () => {
     <>
       
       <div className="cvswrap">
-
-        {/* 텍스트 영역 */}
-        {/* <div className="ball_tit">
-          <span>SHOP</span>
-          <span>NOW</span>
-        </div> */}
 
 
         <Bowwow />

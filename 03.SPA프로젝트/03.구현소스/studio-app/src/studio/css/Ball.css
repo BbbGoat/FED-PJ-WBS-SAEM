@@ -1,82 +1,52 @@
 @charset "utf-8";
 /* Ball 모듈용 CSS - ball.css */
 
-.ball_tit {
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-
-    position: relative;
-    width: 100%;
-    /* 중앙이동 */
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    pointer-events: none;
-    user-select: none;
-}
-/* .ball_tit > span {
-    font-size: 10vw;
-    font-size: var(--button-large-text-size);
-    color: #fff;
-    font-style: italic;
-    text-transform: uppercase;
-    -webkit-text-fill-color: #000;
-    -webkit-text-stroke: 3px ;
-    font-weight: 700;
-    pointer-events: none;
-} */
 
 /***************************************************************** 
+
+    Bowwow 컴포넌트....
 
     오버효과 CSS로 만드는 중 ...
 
 *****************************************************************/
 
-
-
   
-.wrapper {
-
+.movetit_wrap {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) perspective(600px) rotateY(20deg) rotateX(10deg);
-    background: #1d3557;
+    /* background: #1d3557; */
     transform-style: preserve-3d;
-    width: 200px;
+    width: 760px;
     height: 300px;
     border-radius: 10px;
     pointer-events: none;
+    background: url(../../../public/images/SWAN-1.webp) no-repeat center/cover;
+
+    outline: 1px solid #ccc;
 }
 .shape {
-
-    background: #457b9d;
+    /* background: #457b9d; */
     border-radius: 10px;
-    width: 200px;
+    width: 40vw;
     height: 300px;
-    transform: translateZ(50px) scale(.85);
+    transform: translateZ(50px) scale();
     opacity: 0.8;
 }
-
-
 .shape2 {
-
     position: absolute;
     top: 0;
     left: 0;
     z-index: 2;
     width: 250px;
-    height: 350px;
-    transform: translateZ(150px) translateX(-27px) translateY(-26px) scale(.55);
+    height: 300px;
+    transform: translateZ(150px) translateX(220%) translateY(50px) scale(.55);
     border: 3px solid rgba(255, 255, 255, 1);
     background: #a8dadc;
-    opacity: 0.3;
+    opacity: 0.6;
     border-radius: 8px;
 }
-
 .shape3 {
     position: absolute;
     top: 0;
@@ -89,9 +59,23 @@
     border-radius: 8px;
     border: 3px solid hotpink;
     transform: translateZ(200px) translateX(25px) translateY(25px) scale(.65);
-
 }
-
+.pop.link {
+    border-bottom: 1px solid #ccc;
+}
+.pop.min {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    width: 40px;
+    border-right: 1px solid #ccc;
+}
+.pop.close {
+    position: absolute;
+    top: 0;
+    width: 40px;
+    border-right: 1px solid #ccc;
+}
 
 /***************************************************************** 
 *****************************************************************/
