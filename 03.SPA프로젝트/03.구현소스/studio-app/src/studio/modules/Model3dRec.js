@@ -1,4 +1,4 @@
-// Lookat 모듈 - Lookat.js
+// Model3dRec 모듈 - Model3dRec.js
 import * as THREE from 'three'
 import { useEffect, useRef, useState } from 'react'
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
@@ -6,7 +6,7 @@ import { Canvas, useFrame, useLoader } from '@react-three/fiber'
 import { easing } from 'maath'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 // CSS
-import "../css/lookat.css"
+import "../css/model3dRec.css"
 import useIsMobile from "./useIsMobile";
 
 
@@ -14,16 +14,16 @@ import useIsMobile from "./useIsMobile";
 function Model(props) {
 
   const mesh = useRef()
-  const nodes = useLoader(GLTFLoader, 'Thonker.glb')
+  const nodes = useLoader(GLTFLoader, 'heart_red.glb')
   const [dummy] = useState(() => new THREE.Object3D())
 
   useFrame((state, dt) => {
     dummy.lookAt(state.pointer.x, state.pointer.y, 2)
     easing.dampQ(mesh.current.quaternion, dummy.quaternion, 0.15, dt)
   })
-  return (
+  return (  
     <mesh ref={mesh} {...props}>
-      <primitive object={nodes.scene} rotation-y={0.8} />
+      <primitive object={nodes.scene} rotation={[ 0, 0.7, -0.1 ]} />
       <meshNormalMaterial />
     </mesh>
   )
@@ -55,9 +55,16 @@ export default function Lookat() {
   return (
     <div className="cvswrap">
       <Canvas className="canvas_tit" camera={{ position: [1, 0.1, useImgSize()] }}>
+
+        {/* 조명설정 */}
+        <spotLight/>
+        <rectAreaLight/>
+        <pointLight position={[0, 20, 10]} intensity={1.5} />
         <ambientLight />
+        
         {/* <directionalLight position={[10, 10, 10]} /> */}
-        <Model />
+
+        <Model position={[-0.0, 0.0, -0]} scale={2}/>
         <axesHelper args={[5]} />
       </Canvas>
     </div>

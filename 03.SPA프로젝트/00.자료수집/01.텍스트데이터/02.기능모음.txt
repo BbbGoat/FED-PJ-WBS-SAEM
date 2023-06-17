@@ -60,6 +60,8 @@ https://gosnippets.com/snippets/3d-hover-plane-effect-with-pure-css-and-javascri
 https://easeseas.es/posts/3d-tilt-hover-effect-accord/
 https://codesandbox.io/s/look-at-camera-with-vertex-shader-forked-ng6ozq?file=/src/App.js:0-838
 
+react 3D 모델링 하는 방법
+https://sbcode.net/react-three-fiber/gltfloader/
 
 7. ripple, wave, liquid 효과 모음
 

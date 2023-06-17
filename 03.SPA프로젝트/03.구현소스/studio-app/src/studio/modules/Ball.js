@@ -292,7 +292,7 @@ class Bowwow extends React.Component {
     )
   }
 
-}
+} ////////////////// Bowwow Class ///////////////////////
 
 const Ball = () => {
   return (
@@ -300,13 +300,12 @@ const Ball = () => {
       
       <div className="cvswrap">
 
-
+        {/* 움직이는 CSS */}
         <Bowwow />
-
         {/* 튕기는 공 */}
         <canvas id="canvas"></canvas>
+
       </div>
-      
 
       {jqFn()}
     </>
