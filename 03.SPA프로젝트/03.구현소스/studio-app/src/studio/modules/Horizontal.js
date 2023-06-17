@@ -31,18 +31,21 @@ const jqFn = () => {
         // 타겟선정
         const tgBox = document.querySelector(".horizontal_box");
         const stkBox = document.querySelector(".horizontal_inner");
+        const body = document.querySelector("body");
 
         function init() {
             setContainerSize();
-        }
-        init();
-        
+        }        
+
         function setContainerSize() {
-            const setHeight = stkBox.scrollWidth;
+            let setHeight = stkBox.clientWidth;
             tgBox.setAttribute('style', 'height: ' + setHeight + 'px');
+            $(window).on("resize", function(){
+                setHeight = stkBox.clientWidth;
+                tgBox.setAttribute('style', 'height: ' + setHeight + 'px');
+            })
         }
-        const body = document.querySelector("body");
-        console.log(body);
+        
         // 스크롤시 스티키 구간에서 가로방향 이동 구현
         window.addEventListener("scroll", movePage);
         body.setAttribute('style', 'overflow: visible');
@@ -55,9 +58,10 @@ const jqFn = () => {
         **************************************/
         function movePage() {
             let tgPos = retVal(tgBox);
+            console.log(stkBox.scrollWidth);
             console.log("바운딩값:",tgPos);
 
-            if (tgPos <= 0 && tgPos >= -3000) {
+            if (tgPos <= 0 && tgPos >= -2600) {
                 stkBox.style.top = "60px";
                 stkBox.style.transform = `translate3d(${tgPos}px, 0, 0)`;
             }
@@ -65,8 +69,10 @@ const jqFn = () => {
                 stkBox.style.transform = 'translate3d(0,0,0)';
             }
 
-            
         } ////////// movePage 함수 ///////////
+
+        // 최초호출
+        init();
 
         
     }); ///////// jQB //////////////////
