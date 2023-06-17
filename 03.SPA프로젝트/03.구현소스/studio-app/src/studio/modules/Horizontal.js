@@ -67,9 +67,10 @@ const jqFn = () => {
             // 백분율화
             let percentNum = tgPos * 100 / 2600
             // -20%~20% 사이로 만들기
-            let resultNum = (-(percentNum) / 100 * 40 ) - 20
-
+            let resultNum = (-(percentNum) / 100 * 40 ) -20
+            
             if (tgPos <= 0 && tgPos >= -2600) {
+                console.log(resultNum)
                 stkBox.style.top = "60px";
                 stkBox.style.transform = `translate3d(${tgPos}px, 0, 0)`;
 
@@ -80,12 +81,19 @@ const jqFn = () => {
             }
             else if (tgPos > 0) {
                 stkBox.style.transform = 'translate3d(0,0,0)';
+                console.log("시작점!")
 
-                // $(".video_area").css({
-                //     top: "auto",
-                //     transform: `translate3d(-20%,0,0)`,
-                // });
+                $(".video_area").css({
+                    transform: `translate3d(-20%,0,0)`,
+                });
             }
+            else if (tgPos < -2600) {
+                $(".video_area").css({
+                    top: "auto",
+                    transform: `translate3d(20%,0,0)`,
+                });
+            }
+
 
         } ////////// movePage 함수 ///////////
 
