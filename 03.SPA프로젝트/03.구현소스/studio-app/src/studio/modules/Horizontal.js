@@ -31,6 +31,7 @@ const jqFn = () => {
         // 타겟선정
         const tgBox = document.querySelector(".horizontal_box");
         const stkBox = document.querySelector(".horizontal_inner");
+        const vidBox = document.querySelector(".video_area")
         const body = document.querySelector("body");
 
         function init() {
@@ -58,15 +59,32 @@ const jqFn = () => {
         **************************************/
         function movePage() {
             let tgPos = retVal(tgBox);
-            console.log(stkBox.scrollWidth);
-            console.log("바운딩값:",tgPos);
+
+            // 이미지이동값 = 윈도우높이 * 스크롤이동값 / 페이지전체길이
+            // docH : boxOffsetH = scrollY : percentNum
+            // percentNum = boxOffsetH * scrollY / docH;
+
+            // 백분율화
+            let percentNum = tgPos * 100 / 2600
+            // -20%~20% 사이로 만들기
+            let resultNum = (-(percentNum) / 100 * 40 ) - 20
 
             if (tgPos <= 0 && tgPos >= -2600) {
                 stkBox.style.top = "60px";
                 stkBox.style.transform = `translate3d(${tgPos}px, 0, 0)`;
+
+                $(".video_area").css({
+                    top: "auto",
+                    transform: `translate3d(${resultNum}%,0,0)`,
+                });
             }
             else if (tgPos > 0) {
                 stkBox.style.transform = 'translate3d(0,0,0)';
+
+                // $(".video_area").css({
+                //     top: "auto",
+                //     transform: `translate3d(-20%,0,0)`,
+                // });
             }
 
         } ////////// movePage 함수 ///////////

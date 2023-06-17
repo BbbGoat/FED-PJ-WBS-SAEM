@@ -98,7 +98,8 @@
         margin-bottom: 0;
     }
     .horizontal_section .video_area {
-        /* transform: translate3d(-20%, 0px, 0px); */
+        top: auto;
+        transform: translate3d(-20%, 0px, 0px);
     }
     .content_img::after {
         padding-bottom: 150%
