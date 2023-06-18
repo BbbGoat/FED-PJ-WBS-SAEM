@@ -2,6 +2,7 @@
 import React from "react";
 import $ from "jquery";
 import Horizontal from "./modules/Horizontal";
+import Additional from "./modules/Additional";
 
 const jqFn = () => {
     $(()=>{
@@ -15,6 +16,7 @@ const Info = () => {
     return(
         <>
             <Horizontal />
+            <Additional />
             {jqFn()}
         </>
     );

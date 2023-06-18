@@ -49,18 +49,7 @@
     object-fit: cover;
     position: absolute;
 }
-/* .videosrc {
-    height: 100%;
-    width: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-} */
 
-.vidtxt_area {
-
-}
 /* 1-2. 설명박스 */
 .horizontal_box .content_desc {
     display: flex;
@@ -74,6 +63,8 @@
     line-height: 1;
 }
 .horizontal_box .content_desc > p {
+    text-align: left;
+    font-weight: 500;
     margin-top: var(--global-padding);
     font-size: var(--copy-small-size);
 }

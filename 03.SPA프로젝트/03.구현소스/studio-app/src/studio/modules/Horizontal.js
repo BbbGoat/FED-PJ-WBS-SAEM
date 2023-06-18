@@ -3,8 +3,6 @@ import React from "react";
 import $ from "jquery";
 import "../css/horizontal.css"
 
-import useIsMobile from "./useIsMobile";
-
 
 const info_data = [
     {
@@ -97,15 +95,16 @@ const jqFn = () => {
         **************************************/
         
         // 윈도우 가로사이즈
-        let winW = window.innerWidth
+        let winW = window.innerWidth;
      
         window.addEventListener("resize", chgMove);
 
         function chgMove() {
-            winW = window.innerWidth
+            winW = window.innerWidth;
 
             // 모바일버전
             if (winW <= 720) {
+
                 // 초기화
                 stkBox.style.transform = `translate3d(0, 0, 0)`;
                 $(".video_area").css({
@@ -139,7 +138,6 @@ const jqFn = () => {
 
 
 const Horizontal = () => {
-    useIsMobile();
     
     return (
         <>
