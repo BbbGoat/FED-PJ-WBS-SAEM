@@ -3,6 +3,8 @@ import React from "react";
 import $ from "jquery";
 import "../css/horizontal.css"
 
+import useIsMobile from "./useIsMobile";
+
 
 const info_data = [
     {
@@ -27,29 +29,20 @@ const info_data = [
 
 const jqFn = () => {
     $(()=>{
-        console.log("가로스크롤 셋팅중!");
+        
         // 타겟선정
         const tgBox = document.querySelector(".horizontal_box");
         const stkBox = document.querySelector(".horizontal_inner");
-        const vidBox = document.querySelector(".video_area")
         const body = document.querySelector("body");
-
-        function init() {
-            setContainerSize();
-        }        
-
-        function setContainerSize() {
-            let setHeight = stkBox.clientWidth;
-            tgBox.setAttribute('style', 'height: ' + setHeight + 'px');
-            $(window).on("resize", function(){
-                setHeight = stkBox.clientWidth;
-                tgBox.setAttribute('style', 'height: ' + setHeight + 'px');
-            })
-        }
         
-        // 스크롤시 스티키 구간에서 가로방향 이동 구현
-        window.addEventListener("scroll", movePage);
+        
+        // 최초로드시 셋팅! /////////////////////
+        // 오버플로우 히든 해제
         body.setAttribute('style', 'overflow: visible');
+        // 박스 전체 높이값 최초 설정
+        let setHeight = stkBox.clientWidth;
+        tgBox.setAttribute('style', 'height: ' + setHeight + 'px')
+
 
         const retVal = x => x.getBoundingClientRect().top;
 
@@ -70,8 +63,8 @@ const jqFn = () => {
             let resultNum = (-(percentNum) / 100 * 40 ) -20
             
             if (tgPos <= 0 && tgPos >= -2600) {
-                console.log(resultNum)
-                stkBox.style.top = "60px";
+                // console.log(resultNum);
+                stkBox.style.top = "66px";
                 stkBox.style.transform = `translate3d(${tgPos}px, 0, 0)`;
 
                 $(".video_area").css({
@@ -81,7 +74,7 @@ const jqFn = () => {
             }
             else if (tgPos > 0) {
                 stkBox.style.transform = 'translate3d(0,0,0)';
-                console.log("시작점!")
+                // console.log("시작점!");
 
                 $(".video_area").css({
                     transform: `translate3d(-20%,0,0)`,
@@ -93,12 +86,51 @@ const jqFn = () => {
                     transform: `translate3d(20%,0,0)`,
                 });
             }
-
-
+            
+            
         } ////////// movePage 함수 ///////////
+        
+        
+        /************************************** 
+            함수명 : onResize
+            기능 : 모바일상태 구하는 함수
+        **************************************/
+        
+        // 윈도우 가로사이즈
+        let winW = window.innerWidth
+     
+        window.addEventListener("resize", chgMove);
+
+        function chgMove() {
+            winW = window.innerWidth
+
+            // 모바일버전
+            if (winW <= 720) {
+                // 초기화
+                stkBox.style.transform = `translate3d(0, 0, 0)`;
+                $(".video_area").css({
+                    top: "auto",
+                    transform: `translate3d(0,0,0)`,
+                });
+                tgBox.setAttribute('style', 'height: auto');
+
+                
+                // 스크롤 기능 제거
+                window.removeEventListener("scroll", movePage);
+            }
+            // pc버전
+            else {
+                setHeight = stkBox.clientWidth;
+                tgBox.setAttribute('style', 'height: ' + setHeight + 'px');
+
+                // 스크롤시 스티키 구간에서 가로방향 이동 구현
+                window.addEventListener("scroll", movePage);
+            }
+            
+        }
 
         // 최초호출
-        init();
+        chgMove();
 
         
     }); ///////// jQB //////////////////
@@ -107,6 +139,8 @@ const jqFn = () => {
 
 
 const Horizontal = () => {
+    useIsMobile();
+    
     return (
         <>
            
