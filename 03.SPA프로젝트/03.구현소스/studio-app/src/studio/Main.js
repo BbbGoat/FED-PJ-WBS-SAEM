@@ -6,6 +6,7 @@ import Welcome from "./modules/Welcome";
 import Btn from "./modules/Btn";
 import Vidgroup from "./modules/Vidgroup";
 import Ball from "./modules/Ball";
+import WorkList from "./modules/WorkList";
 
 const Main = () => {
 
@@ -24,6 +25,8 @@ const Main = () => {
             <Ball />
             
             <Btn cat={"WORK"} />
+            <WorkList />
+            
             <Btn cat={"CONTACT"} />
         </>
     );

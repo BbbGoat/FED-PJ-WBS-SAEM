@@ -29,6 +29,7 @@ export default function App() {
           <Route path="in" element={<Info />} />
           <Route path="wo" element={<Work />} />
           <Route path="ct" element={<Contact />} />
+
         </Route>
       </Routes>
     </BrowserRouter>
