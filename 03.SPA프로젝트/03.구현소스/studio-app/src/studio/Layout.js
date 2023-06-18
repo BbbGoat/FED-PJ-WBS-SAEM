@@ -47,17 +47,39 @@ const Layout = () => {
                     <img src="./images/menu-small.gif" />
                 </Link>
 
+
+
             </header>
             {/* 2. 메인영역 */}
             <main className="cont">
                 {/* 출력파트 : 각 페이지의 컴포넌트가 출력됨 */}
                 <Outlet />
             </main>
+
+
+
             {/* 3.하단영역 */}
-            <footer className="info">
-                All Site Content © &amp; TM DC, unless otherwise noted here.
-                <br /> 
-                All rights reserved. 
+            <footer className="footer">
+                <div className="footer_information">
+                    <div className="footer_contact">
+                        <a target="_blank" href="mailto:eat.it@studiobrot.de">eat.it@studiobrot.de</a>
+                        <a target="_blank" href="tel:+49 (0) 711 500 963 36">+49 (0) 711 500 963 36</a>
+                        <p>Tübinger Str. 87</p>
+                        <p>70178 Stuttgart</p>
+                    </div>
+                    <img className="back-to-top" src="https://www.studiobrot.de/media/pages/footer/18dea29923-1671746882/studiobrot-brot-menu.gif" sizes="(max-width: 800px) 360px,(min-width: 200px) 160px, 360px" />
+                </div>
+                <ul className="sns_navigation">
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/studiobrot/">Instagram</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/studiobrot/">Ticktok</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/studiobrot/">Homepage</a>
+                    </li>
+                </ul>
             </footer>
         </>
     );

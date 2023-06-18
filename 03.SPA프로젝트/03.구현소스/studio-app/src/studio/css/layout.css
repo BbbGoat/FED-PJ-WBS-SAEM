@@ -169,15 +169,58 @@
 
 
 /*************** 하단영역 ***************/
-.info{
-    text-align: center;
-    /* padding: 30px; */
-    background-image: linear-gradient(to bottom, #CCC, #777);
+/* 푸터 최상단박스 */
+.footer{
+    padding-left: var(--global-padding);
+    padding-right: var(--global-padding);
+    padding-bottom: var(--global-padding);
+    padding-top: 4rem;
     color: #fff;
+    width: 100vw;
+    background-color: #000;
+    overflow: hidden;
 }
 
 
+/* 1. 주소지 링크 영역 */
+.footer_information {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+/* 1) 주소지 감싸는 박스 */
+.footer_contact {
+    font-size: 4vw;
+    flex-direction: column;
+    align-items: flex-start;
+    display: flex;
+}
+.footer_contact a:nth-child(2) {
+    margin-bottom: 4vw;
+}
+/* 2) 최상단 이동 빵버튼 */
+.back-to-top {
+    width: 15vw;
+    height: auto;
+    margin-right: 3vw;
+}
 
+
+/* 2. SNS 링크 영역 */
+.sns_navigation {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 4vw;
+    display: flex;
+}
+.sns_navigation li {
+    margin-right: 1rem;
+}
+.sns_navigation li a {
+    font-weight: 500;
+}
 
 
 /****************************************************** 

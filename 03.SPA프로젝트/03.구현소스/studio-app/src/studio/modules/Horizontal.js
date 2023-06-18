@@ -79,6 +79,7 @@ const jqFn = () => {
                 });
             }
             else if (tgPos < -2600) {
+                stkBox.style.transform = `translate3d(-2600px, 0, 0)`;
                 $(".video_area").css({
                     top: "auto",
                     transform: `translate3d(20%,0,0)`,

@@ -16,9 +16,18 @@ const Additional = () => {
             {/* 화이트버전 */}
             <div className="typo-animation typo-animation-light">
                 <div className="typo-animation_wrapper">
-                    <div className="typo-animation_content">
-                        {/* SVG 요소 */}
 
+                    {/* SVG 요소 */}
+                    <div className="typo_box stretched_text">
+                        <p>D</p>
+                        <p>S</p>
+                        <p>H</p>
+                        <p>R</p>
+                        <p>I</p>
+                        <p>G</p>
+                    </div>
+                    
+                    <div className="typo-animation_content">
                         {/* 텍스트영역 */}
                         <div className="typo-animation_text">
                             <h2>haltungsnote: brotal gut.</h2>
@@ -38,10 +47,10 @@ const Additional = () => {
             {/* 블랙버전 */}
             <div className="typo-animation">
                 <div className="typo-animation_wrapper">
-                    {/* 내용 */}
-                    <div className="typo-animation_content">
-                        {/* SVG 요소 */}
+                    {/* SVG 요소 */}
 
+                    {/* 내용 */}
+                    <div className="typo-animation_content">    
                         {/* 스티커영역 */}
                         <div className="typo-animation_image-wrapper">
                             <img className="typo-animation_image" src="./images/emoji_2.svg" alt="움직이는 스티커" />
