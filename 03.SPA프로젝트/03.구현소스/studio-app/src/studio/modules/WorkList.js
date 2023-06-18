@@ -55,14 +55,15 @@ const WorkList = () => {
             {/* 메인 리스트 */}
             <div className="featured-project">
 
-                <Link to="/" className="featured-project__bottom-row">
+                <Link to="/" className="featured-project_bottom-row">
                     {/* 이미지영역 */}
-                    <img alt="featured project" loading="lazy" width="1536" height="864" src="https://www.studiobrot.de/media/pages/arbeiten/myspa/ae7603ad50-1673621037/intro.webp" />
+                    <img src="https://www.studiobrot.de/media/pages/arbeiten/myspa/ae7603ad50-1673621037/intro.webp" loading="lazy" alt="featured project" />
 
                     {/* 텍스트영역 */}
-                    <div className="featured-project__card">
+                    <div className="featured-project_card">
                         <h2>MYSPA</h2>
                         <p>Campaigning / Art Direction / Corporate Design / Artwork / Copywriting / Illustrations / Social Media</p>
+                        <div className="button" href="https://www.studiobrot.de/arbeiten/charly">View</div>
                     </div>
                 </Link>
 
@@ -71,27 +72,29 @@ const WorkList = () => {
             {/* 나머지 리스트 */}
             <div className="project-list">
 
-                {/* divider는 구분선 역할 */}
-                <div className="project__divider"></div>
-
                 {/* 여기부터 map 돌리기 */}
                 
+                {/* divider는 구분선 역할 */}
+                <div className="project_divider"></div>
                 {
                     work_data.map((x,i)=>
-                        <a to="/" className="project__item" key={i}>
+                        <a to="/" className="project_item" key={i} >
                             {/* 이미지영역 */}
-                            <img alt="featured project" src={x.src} />
+                            <img src={x.src} alt="프로젝트" />
         
                             {/* 텍스트영역 */}
-                            <h2 className="project__title">
-                                <span className="project__title-el project__title-el--first">{x.tit}</span>
-                                <span className="project__title-el project__title-el--second">{x.tit}</span>
+                            <h2 className="project_title">
+                                <span className="project_title-ele first">{x.tit}</span>
+                                <span className="project_title-ele second">{x.tit}</span>
                             </h2>
-                            <p className="project__tags">{x.desc}</p>
-                            <div class="button" href="https://www.studiobrot.de/arbeiten/charly">View</div>
+                            <p className="project_desc">{x.desc}</p>
+                            <div className="button" href="https://www.studiobrot.de/arbeiten/charly">View</div>
                         </a>
-                    )
+                    ) /////////// map //////////////
                 }
+
+                {/* divider는 구분선 역할 */}
+                <div className="project_divider"></div>
 
             </div>
         </>

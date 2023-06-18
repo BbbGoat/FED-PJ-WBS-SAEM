@@ -1,3 +1,185 @@
 @charset "utf-8";
 /* WorkList 페이지 CSS - worklist.css */
 
+/* 1. 메인리스트 */
+
+.featured-project {
+    padding: var(--global-padding);
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+/* Link 라우터(a태그) 클래스 */
+.featured-project_bottom-row {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+/* 1-1. 이미지영역 */
+.featured-project_bottom-row img {
+    width: 100%;
+    max-height: calc(var(--100vh) - var(--global-padding)*2);
+    border-radius: 20px;
+    overflow: hidden;
+}
+/* 1-2. 텍스트영역 */
+.featured-project_card {
+    padding: var(--global-padding);
+    background-color: #000;
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+.featured-project_card h2 {
+    font-size: var(--h2-size);
+    text-transform: uppercase;
+    text-align: center;
+}
+.featured-project_card p {
+    text-transform: lowercase;
+    font-size: var(--copy-small-size);
+}
+.featured-project_card .button {
+    display: none;
+}
+
+
+
+
+/* 2. 서브리스트 */
+.project-list{
+    padding: 0 var(--global-padding);
+    /* width: 100vw; */
+    position: relative;
+    overflow: hidden;
+}
+/* 구분선 */
+.project_divider {
+    display: none;
+}
+.project_item {
+    margin-bottom: calc(var(--global-padding)*2);
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+/* 2-1. 이미지영역 */
+.project_item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+/* 2-2. 텍스트영역 */
+.project_title {
+    font-size: var(--h2-size);
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin: 1rem 0 0;
+}
+/* 0. 공통 */
+.project_title-ele {
+    
+}
+.project_title-ele.first {
+    
+}
+.project_title-ele.second {
+    display: none;
+}
+
+.project_desc {
+    text-align: center;
+    text-transform: lowercase;
+    font-size: var(--copy-small-size);
+}
+.project_item .button {
+    display: none;
+}
+
+@media screen and (min-width:720px) {
+    /* 메인리스트 */
+    .featured-project_card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .featured-project_card h2 {
+        margin-bottom: 1rem;
+        line-height: 1;
+    }
+    .featured-project_card .button {
+        display: block;
+        margin-top: 4vw;
+    }
+
+    /* 서브리스트 */
+    .project-list {
+        margin-top: calc(var(--global-padding)*8);
+        margin-bottom: calc(var(--global-padding)*8);
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 0;
+        padding-bottom: 0;
+        display: flex;
+    }
+    .project_divider {
+        width: 100%;
+        height: 0.3vw;
+        background-color: #fff;
+        margin: 0 auto;
+        display: block;
+    }
+    .project_item {
+        padding: var(--global-padding)0;
+        flex-direction: row;
+        margin-bottom: 0;
+    }
+    .project_item img {
+        display: none;
+    }
+    .project_title {
+        margin: 0;
+        margin-right: var(--global-padding);
+        font-size: var(--h1-size);
+        opacity: 1;
+        transition: opacity .3s;
+        position: relative;
+        overflow: hidden;
+    }
+    /* 공통 */
+    .project_title-ele {
+        height: 100%;
+        display: block;
+    }
+    .project_title-ele.first {
+        position: relative;
+    }
+    .project_title-ele.second {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 100%;
+    }
+    .project_desc {
+        max-width: 40vw;
+        text-align: right;
+        font-size: var(--copy-small-size);
+        transition: opacity .3s;
+    }
+
+    .project_item .button {
+        margin-right: var(--global-padding);
+        opacity: 0;
+        transition: transform .5s,opacity .3s;
+        display: block;
+        position: absolute;
+        right: 0;
+        transform: translate(100%);
+    }
+    
+}

@@ -152,20 +152,10 @@
 .cont{
     font-family: 'Montserrat', sans-serif;
     text-align: center;
+    font-weight: 500;
     background-color: #000;
     color: #fff
 }
-.cont img{
-    /* max-width: 100%; */
-}
-.cont h2 {
-    font-size: 3vw;
-}
-.cont h3 {
-    font-size: 2.5vw;
-}
-
-
 
 
 /*************** 하단영역 ***************/
@@ -179,17 +169,17 @@
     width: 100vw;
     background-color: #000;
     overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 }
 
 
 /* 1. 주소지 링크 영역 */
 .footer_information {
-    font-family: 'Montserrat', sans-serif;
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    font-weight: 500;
 }
 /* 1) 주소지 감싸는 박스 */
 .footer_contact {
