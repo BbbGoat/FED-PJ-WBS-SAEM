@@ -3,13 +3,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// 컴포넌트들?
+// 컴포넌트들
 import Layout from './studio/Layout';
 import Main from './studio/Main';
 import Info from './studio/Info';
 import Work from './studio/Work';
 import Contact from './studio/Contact';
 import ScrollTop from './studio/common/ScrollTop';
+import Detail from './studio/Detail';
 // CSS
 import './index.css';
 
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="in" element={<Info />} />
           <Route path="wo" element={<Work />} />
           <Route path="ct" element={<Contact />} />
+          <Route path="det" element={<Detail />} />
 
         </Route>
       </Routes>

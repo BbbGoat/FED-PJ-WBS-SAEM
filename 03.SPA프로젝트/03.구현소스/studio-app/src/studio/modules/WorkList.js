@@ -1,51 +1,14 @@
 // WorkList 모듈 - WorkList.js
 import $ from "jquery";
-import "../css/worklist.css";
 import { Link } from "react-router-dom";
+import { work_data, featured_data} from "../data/work_data";
+import "../css/worklist.css";
 
 const jqFn = () => {
     $(()=>{
 
     }); ///////// jQB ///////////////
 }; ////////////// jqFn /////////////////
-
-const work_data = [
-    {
-        "idx":1,
-        "src":"https://www.studiobrot.de/media/pages/arbeiten/charly/8aff3ecd91-1673621027/charly-case-0.webp",
-        "tit":"Charly  ",
-        "desc":"Corporate Design / Logo / Illustrations / Copywriting / Artwork",
-        "url":"./https://www.studiobrot.de/arbeiten/roberta-goods",
-    },
-    {
-        "idx":2,
-        "src":"https://www.studiobrot.de/media/pages/arbeiten/roberta-goods/043fa44333-1673621029/robertagoods-case-1.webp",
-        "tit":"Roberta Goods  ",
-        "desc":"Corporate Design / Naming / Logo / Copywriting / UX & UI / App & Terminal Design",
-        "url":"./https://www.studiobrot.de/arbeiten/roberta-goods",
-    },
-    {
-        "idx":3,
-        "src":"https://www.studiobrot.de/media/pages/arbeiten/the-ratskeller/4aee7feb8e-1673621046/ratskeller-case-1.webp",
-        "tit":"The Ratskeller  ",
-        "desc":"Corporate Design / Naming / Logo / Digital / Website / Social Media",
-        "url":"./https://www.studiobrot.de/arbeiten/roberta-goods",
-    },
-    {
-        "idx":4,
-        "src":"https://www.studiobrot.de/media/pages/arbeiten/adventskacklender/eeb003b352-1673621016/adventskacklender-case-1.webp",
-        "tit":"Kacklender  ",
-        "desc":"Campaigning / Product Design / Schabernack / Illustrations / Artwork",
-        "url":"./https://www.studiobrot.de/arbeiten/roberta-goods",
-    },
-    {
-        "idx":5,
-        "src":"https://www.studiobrot.de/media/pages/arbeiten/mallofit/eb68de2c03-1673621039/mallofit-case-1-v2.webp",
-        "tit":"Mallofit  ",
-        "desc":"Corporate Design / Logo / Screendesign / Digital / Copywriting",
-        "url":"./https://www.studiobrot.de/arbeiten/roberta-goods",
-    },
-];
 
 
 const WorkList = () => {
@@ -55,15 +18,15 @@ const WorkList = () => {
             {/* 메인 리스트 */}
             <div className="featured-project">
 
-                <Link to="/" className="featured-project_bottom-row">
+                <Link to="/det" className="featured-project_bottom-row" state={{desc:featured_data.desc, tit:featured_data.tit}}>
                     {/* 이미지영역 */}
-                    <img src="https://www.studiobrot.de/media/pages/arbeiten/myspa/ae7603ad50-1673621037/intro.webp" loading="lazy" alt="featured project" />
+                    <img src={featured_data.src} loading="lazy" alt="최신 프로젝트" />
 
                     {/* 텍스트영역 */}
                     <div className="featured-project_card">
-                        <h2>MYSPA</h2>
-                        <p>Campaigning / Art Direction / Corporate Design / Artwork / Copywriting / Illustrations / Social Media</p>
-                        <div className="button" href="https://www.studiobrot.de/arbeiten/charly">View</div>
+                        <h2>{featured_data.tit}</h2>
+                        <p>{featured_data.desc}</p>
+                        <div className="button">View</div>
                     </div>
                 </Link>
 
@@ -78,7 +41,7 @@ const WorkList = () => {
                 <div className="project_divider"></div>
                 {
                     work_data.map((x,i)=>
-                        <a to="/" className="project_item" key={i} >
+                        <Link to="/det" className="project_item" key={i} state={{desc:x.desc, tit:x.tit}}>
                             {/* 이미지영역 */}
                             <img src={x.src} alt="프로젝트" />
         
@@ -88,8 +51,8 @@ const WorkList = () => {
                                 <span className="project_title-ele second">{x.tit}</span>
                             </h2>
                             <p className="project_desc">{x.desc}</p>
-                            <div className="button" href="https://www.studiobrot.de/arbeiten/charly">View</div>
-                        </a>
+                            <div className="button">View</div>
+                        </Link>
                     ) /////////// map //////////////
                 }
 
