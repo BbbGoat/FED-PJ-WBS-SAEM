@@ -10,6 +10,7 @@ $(()=>{
     const button = $(".top > button");
     const menu = $(".menu");
     const menu_second = $(".menu_secondary li");
+    const gnb = $(".gnb a");
 
     // 클릭 이벤트
     button.click(function(e){
@@ -52,6 +53,24 @@ $(()=>{
             }); ///////// each ///////////
         }
     });
+
+    // PC버전 Gnb 클릭 이벤트
+    gnb.click(function(){
+        $(this).addClass("active").siblings().removeClass("active");
+    });
+
+    // gnb 메인 바로가기 버튼
+    $(".logo").click(function(){
+        gnb.removeClass("active");
+    });
+
+    // 푸터 위로가기 버튼
+    $(".back-to-top").click(function(){
+        window.scrollTo(0,0);
+        $(this).css({cursor:"pointer"})
+    });
+
+    
     
     // 리사이즈 이벤트
     let maxWidth;

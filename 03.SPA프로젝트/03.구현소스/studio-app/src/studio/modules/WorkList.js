@@ -18,7 +18,7 @@ const WorkList = () => {
             {/* 메인 리스트 */}
             <div className="featured-project">
 
-                <Link to="/det" className="featured-project_bottom-row" state={{desc:featured_data.desc, tit:featured_data.tit}}>
+                <Link to="/wo/det" className="featured-project_bottom-row" state={{desc:featured_data.desc, tit:featured_data.tit}}>
                     {/* 이미지영역 */}
                     <img src={featured_data.src} loading="lazy" alt="최신 프로젝트" />
 
@@ -41,7 +41,7 @@ const WorkList = () => {
                 <div className="project_divider"></div>
                 {
                     work_data.map((x,i)=>
-                        <Link to="/det" className="project_item" key={i} state={{desc:x.desc, tit:x.tit}}>
+                        <Link to="/wo/det" className="project_item" key={i} state={{desc:x.desc, tit:x.tit}}>
                             {/* 이미지영역 */}
                             <img src={x.src} alt="프로젝트" />
         

@@ -1,7 +1,15 @@
 // 상세페이지 컴포넌트 - Detial.js
+import $ from "jquery";
 import { useLocation } from "react-router-dom";
 
 // 라우터 파라미터값 받아서 데이터 처리!
+
+const jqFn = () => {
+    $(()=>{
+
+        
+    }); //////////// jQB ///////////////////
+}; ///////////////// jqFn 함수 ///////////////////
 
 function Detail(props) {
 
@@ -22,6 +30,8 @@ function Detail(props) {
             <div className="facts">
                 <h3>이미지 들어갈 부분!! work.js에 이미지 데이터 추가하기</h3>
             </div>
+
+            {jqFn()}
         </>
     );
     

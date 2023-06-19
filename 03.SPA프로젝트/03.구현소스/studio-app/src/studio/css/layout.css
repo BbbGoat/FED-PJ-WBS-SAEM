@@ -33,6 +33,11 @@
     text-decoration: none;
     transition: color .3s,background-color .3s;
 }
+header .gnb a:hover, header .gnb a.active {
+    color: #000;
+    background-color: #fff;
+}
+
 /* 모바일일때 버튼 */
 .button.button_large {
     display: none;
@@ -62,6 +67,7 @@
     background-color: #fff;
 }
 .button_init {
+    line-height: 1;
     transition: transform .3s;
     display: block;
     position: relative;
@@ -172,6 +178,13 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
 }
+.footer--light {
+    color: #000;
+    background-color: #fff;
+    margin-top: 0;
+    padding-top: 4rem;
+}
+
 
 
 /* 1. 주소지 링크 영역 */
@@ -187,6 +200,9 @@
     flex-direction: column;
     align-items: flex-start;
     display: flex;
+}
+.footer--light .footer_contact a {
+    color: #000;
 }
 .footer_contact a:nth-child(2) {
     margin-bottom: 4vw;
@@ -210,6 +226,9 @@
 }
 .sns_navigation li a {
     font-weight: 500;
+}
+.footer--light .sns_navigation li a {
+    color: #000;
 }
 
 

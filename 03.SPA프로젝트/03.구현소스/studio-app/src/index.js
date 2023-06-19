@@ -30,7 +30,7 @@ export default function App() {
           <Route path="in" element={<Info />} />
           <Route path="wo" element={<Work />} />
           <Route path="ct" element={<Contact />} />
-          <Route path="det" element={<Detail />} />
+          <Route path="/wo/det" element={<Detail />} />
 
         </Route>
       </Routes>
