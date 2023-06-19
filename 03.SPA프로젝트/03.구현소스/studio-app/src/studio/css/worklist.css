@@ -139,6 +139,8 @@
         flex-direction: row;
         margin-bottom: 0;
     }
+
+    
     .project_item img {
         display: none;
     }
@@ -151,6 +153,7 @@
         position: relative;
         overflow: hidden;
     }
+
     /* 공통 */
     .project_title-ele {
         height: 100%;
@@ -171,6 +174,9 @@
         font-size: var(--copy-small-size);
         transition: opacity .3s;
     }
+    .project_item:hover .project_desc {
+        opacity: 0;
+    }
 
     .project_item .button {
         margin-right: var(--global-padding);
@@ -180,6 +186,10 @@
         position: absolute;
         right: 0;
         transform: translate(100%);
+    }
+    .project_item:hover .button {
+        opacity: 1;
+        transform: translate(0%);
     }
     
 }
