@@ -6,7 +6,7 @@ import "../css/worklist.css";
 
 const jqFn = () => {
     $(()=>{
-
+        $(".project_item").before(`<div class="project_divider"></div>`);
     }); ///////// jQB ///////////////
 }; ////////////// jqFn /////////////////
 
@@ -36,9 +36,6 @@ const WorkList = () => {
             <div className="project-list">
 
                 {/* 여기부터 map 돌리기 */}
-                
-                {/* divider는 구분선 역할 */}
-                <div className="project_divider"></div>
                 {
                     work_data.map((x,i)=>
                         <Link to="/wo/det" className="project_item" key={i} state={{desc:x.desc, tit:x.tit}}>
@@ -60,6 +57,7 @@ const WorkList = () => {
                 <div className="project_divider"></div>
 
             </div>
+            {jqFn()}
         </>
     );
     
