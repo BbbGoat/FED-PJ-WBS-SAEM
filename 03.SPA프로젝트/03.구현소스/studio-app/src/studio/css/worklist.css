@@ -193,3 +193,14 @@
     }
     
 }
+
+@media screen and (min-width: 960px) {
+    .project_desc {
+        max-width: 30vw;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .project_desc {
+        max-width: 20vw;
+    }
+}
