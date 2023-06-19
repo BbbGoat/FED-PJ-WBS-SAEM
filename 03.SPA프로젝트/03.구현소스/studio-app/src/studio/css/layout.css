@@ -212,6 +212,7 @@ header .gnb a:hover, header .gnb a.active {
     width: 15vw;
     height: auto;
     margin-right: 3vw;
+    cursor: pointer;
 }
 
 

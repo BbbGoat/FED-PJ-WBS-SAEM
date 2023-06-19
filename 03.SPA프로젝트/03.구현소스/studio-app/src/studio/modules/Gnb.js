@@ -67,7 +67,6 @@ $(()=>{
     // 푸터 위로가기 버튼
     $(".back-to-top").click(function(){
         window.scrollTo(0,0);
-        $(this).css({cursor:"pointer"})
     });
 
     

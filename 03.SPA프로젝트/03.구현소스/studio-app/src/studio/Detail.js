@@ -1,6 +1,7 @@
 // 상세페이지 컴포넌트 - Detial.js
 import $ from "jquery";
 import { useLocation } from "react-router-dom";
+import "./css/detail.css";
 
 // 라우터 파라미터값 받아서 데이터 처리!
 
@@ -23,6 +24,17 @@ function Detail(props) {
     
     return(
         <>
+            {/* <header>
+                <button target="_blank" onClick={history.back()} className="project-back-button back-button button button--onlight button__large">Zurück</button>
+                </header>
+            */}
+
+             
+            {/* 디테일에서만 들어가는 헤더 */}
+            <div className="detail_header">
+                <button className="project-back-button back-button button button--onlight button__large">Zurück</button>
+            </div>
+            
             <h2>{tit}</h2>
             <div className="desc">
                 {desc}

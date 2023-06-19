@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+.detail_header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #000;
+    z-index: 2000;
+    padding-top: var(--global-padding);
+    padding-bottom: var(--global-padding);
+    padding-left: var(--global-padding);
+    padding-right: var(--global-padding);
+}
+.detail_header .button {
+    font-size: 4.2vw;
+}
