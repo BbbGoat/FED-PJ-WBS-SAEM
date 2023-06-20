@@ -38,7 +38,15 @@ const WorkList = () => {
                 {/* 여기부터 map 돌리기 */}
                 {
                     work_data.map((x,i)=>
-                        <Link to="/wo/det" className="project_item" key={i} state={{desc:x.desc, tit:x.tit}}>
+                        <Link to="/wo/det" className="project_item" key={i}
+                         state={{
+                            src:x.src,
+                            desc:x.desc, 
+                            tit:x.tit,
+                            detail:x.detail,
+                            sub:x.sub,
+                            }}>
+
                             {/* 이미지영역 */}
                             <img src={x.src} alt="프로젝트" />
         

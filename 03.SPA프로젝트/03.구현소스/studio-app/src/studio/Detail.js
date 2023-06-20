@@ -16,12 +16,15 @@ function Detail(props) {
 
     // 라우터 전달값을 받기위한 useLocation 생성하기!
     const loc = useLocation();
+
     // 보낸 속성명을 변수에 할당하기!
     // state.속성명 : 내가 라우터를 통해 보낸 속성값 받기
-    // 1. 캐릭터이름
-    const tit = loc.state.tit;
-    const desc = loc.state.desc;
-    
+    const src = loc.state.src;
+    // const tit = loc.state.tit;
+    // const desc = loc.state.desc;
+    const detail = loc.state.detail;
+    const imgsrc = loc.state.sub;
+
     return(
         <>
             {/* <header>
@@ -32,16 +35,35 @@ function Detail(props) {
              
             {/* 디테일에서만 들어가는 헤더 */}
             <div className="detail_header">
-                <button className="project-back-button back-button button button--onlight button__large">Zurück</button>
+                <button className="project-back-button back-button button button--light button_large">Zurück</button>
             </div>
+
+            {/* 배경색상 바꾸기 */}
+            <div className="project-background-cover"></div>
             
-            <h2>{tit}</h2>
-            <div className="desc">
-                {desc}
-            </div>
-            <div className="facts">
-                <h3>이미지 들어갈 부분!! work.js에 이미지 데이터 추가하기</h3>
-            </div>
+            {/* 이미지란 */}
+            <img src={src} className="project_mainban" alt="메인이미지" />
+            
+            {/* 텍스트란 */}
+            <div className="project_txtbox">
+                <section className="grid">
+                    <div className="column">
+                        <p>{detail}</p>
+                    </div>
+                </section>
+
+                {/* 상세이미지란 */}                
+                {
+                    imgsrc.map((x,i)=>
+                        <section key={i}>
+                            <div className="column">
+                                <img src={x} alt="상세이미지" />
+                            </div>
+                        </section>
+                    )
+                }                
+
+            </div>            
 
             {jqFn()}
         </>
