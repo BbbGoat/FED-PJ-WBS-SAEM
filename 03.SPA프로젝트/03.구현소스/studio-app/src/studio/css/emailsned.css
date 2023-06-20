@@ -1,2 +1,48 @@
 @charset "utf-8";
 /* EmailSend 모듈 CSS - emailsend.css */
+
+.services {
+    display: flex;
+    flex-direction: column;
+    padding: var(--global-padding);
+}
+.services_title {
+    width: 100%;
+    margin-bottom: var(--global-padding);
+    line-height: 1.1;
+    text-align: left;
+
+    /* h2 설정 */
+    font-size: var(--h2-size);
+    font-weight: 700;
+}
+.services_list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+.services_list h3 {
+    display: flex;
+    align-items: center;
+    font-size: var(--copy-size);
+    border: 3px solid #fff;
+    border-radius: 40px;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 0 1rem;
+}
+
+@media screen and (min-width: 960px) {
+    .services {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .services_title {
+        width: 50%;
+        margin-bottom: 0;
+    }
+    .services_list {
+        width: 50%;
+    }
+}

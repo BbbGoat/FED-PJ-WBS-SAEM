@@ -53,6 +53,10 @@ const EmailSend = () => {
             <Services data={email_data.works} tit="I usually do this" />
             <Services data={email_data.others} tit="I do things like this, too" />
 
+            {/* form 태그 */}
+            <form className="contact" method="post" action="process.php">
+            </form>
+
         </>
     );
 
