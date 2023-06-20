@@ -7,6 +7,7 @@ import Btn from "./modules/Btn";
 import Vidgroup from "./modules/Vidgroup";
 import Ball from "./modules/Ball";
 import WorkList from "./modules/WorkList";
+import EmailSend from "./modules/EmailSend";
 
 const Main = () => {
 
@@ -16,18 +17,18 @@ const Main = () => {
             <Welcome />
             <Surface />
 
-            {/* section1 */}
+            {/* Info section */}
             <Btn cat={"INFO"} />
-
             <Vidgroup />
-            
-            {/* 캔버스 */}
             <Ball />
             
+            {/* Work section */}
             <Btn cat={"WORK"} />
             <WorkList />
             
+            {/* Contact section */}
             <Btn cat={"CONTACT"} />
+            <EmailSend />
         </>
     );
 
