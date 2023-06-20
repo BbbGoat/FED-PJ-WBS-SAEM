@@ -7,7 +7,6 @@ import "./css/detail.css";
 
 const jqFn = () => {
     $(()=>{
-
         
     }); //////////// jQB ///////////////////
 }; ///////////////// jqFn 함수 ///////////////////
@@ -25,6 +24,10 @@ function Detail(props) {
     const detail = loc.state.detail;
     const imgsrc = loc.state.sub;
 
+    const goBack = () => {
+        window.history.back();
+    }
+
     return(
         <>
             {/* <header>
@@ -35,7 +38,7 @@ function Detail(props) {
              
             {/* 디테일에서만 들어가는 헤더 */}
             <div className="detail_header">
-                <button className="project-back-button back-button button button--light button_large">Zurück</button>
+                <button className="project-back-button back-button button button--light button_large" onClick={goBack}>Zurück</button>
             </div>
 
             {/* 배경색상 바꾸기 */}

@@ -13,19 +13,22 @@ const jqFn = () => {
 
 const WorkList = () => {
     
+    const data = featured_data;
+    
     return (
         <>
             {/* 메인 리스트 */}
             <div className="featured-project">
 
-                <Link to="/wo/det" className="featured-project_bottom-row" state={{desc:featured_data.desc, tit:featured_data.tit}}>
+                <Link to="/wo/det" className="featured-project_bottom-row"
+                 state={{ src:data.src, desc:data.desc, tit:data.tit, detail:data.detail, sub:data.sub }}>
                     {/* 이미지영역 */}
-                    <img src={featured_data.src} loading="lazy" alt="최신 프로젝트" />
+                    <img src={data.src} loading="lazy" alt="최신 프로젝트" />
 
                     {/* 텍스트영역 */}
                     <div className="featured-project_card">
-                        <h2>{featured_data.tit}</h2>
-                        <p>{featured_data.desc}</p>
+                        <h2>{data.tit}</h2>
+                        <p>{data.desc}</p>
                         <div className="button">View</div>
                     </div>
                 </Link>

@@ -51,7 +51,11 @@ const featured_data = {
         "src":"https://www.studiobrot.de/media/pages/arbeiten/myspa/ae7603ad50-1673621037/intro.webp",
         "tit":"MYSPA  ",
         "desc":"Campaigning / Art Direction / Corporate Design / Artwork / Copywriting / Illustrations / Social Media",
-        "url":"https://www.studiobrot.de/arbeiten/charly",
+        "detail":"studio brot gets ready to rumble, denn auch der härteste Schwergewichts-Boxer braucht einen smoothen Look. Genau den haben wir Victor Daniel verpasst. Neben dem Corporate Design haben wir ein Shooting umgesetzt, aus dem eine Menge schlagfertiger Content für seinen Social Media Kanal entstanden ist. Zudem haben wir uns um die richtigen Punchlines für Merch-Artikel gekümmert. Heavyweight Headlines? Here you go! Hier geben die Texte den Ton an, denn hinter jeder rechten Geraden steckt ein schlauer Kopf. Boxen ist Entertainment und bolde An- und Aussagen gehören genauso dazu, wie eine gute Beinarbeit.",
+        "sub":[
+            "https://www.studiobrot.de/media/pages/arbeiten/charly/583d305d94-1673621025/charly-case-3-2.webp",
+            "https://www.studiobrot.de/media/pages/arbeiten/charly/098a8732cb-1673621026/charly-case-3.webp",
+        ],
     };
 
 export { work_data, featured_data };
