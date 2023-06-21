@@ -151,8 +151,11 @@
     position: absolute;
     top: 50%;
     right: 1rem;
-    transform: translateY(-50%);
-    
+    transform: translateY(-50%);   
+}
+.chat_button:hover {
+    color: #fff;
+    background-color: #000;
 }
 .chat_button svg {
     height: 100%;

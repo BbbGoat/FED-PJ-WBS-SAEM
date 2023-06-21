@@ -28,6 +28,15 @@ const ChatFn = (function(){
                 clearTextarea();
             }
         });
+        $(".chat_button").click(function(e){
+            e.preventDefault();
+            const message = $(".input_wrap textarea").val();
+ 
+            // 메시지 전송
+            sendMessage(message,owrData);
+            // 입력창 clear
+            clearTextarea();
+        })
     }
  
     // 메세지 태그 생성
@@ -98,7 +107,7 @@ const ChatFn = (function(){
             appendMsgTag("left", owrData.senderName, owrData.message[msgNum]);
             msgNum++
             console.log("msgNum",msgNum);
-        },3000);
+        },2000);
         
     } /////////// owrResive 함수 ////////////////////
     
@@ -136,13 +145,7 @@ const ChatFn = (function(){
 
 const jqFn = () => {
     $(()=>{
-        // if문으로 시작점 지정하기
         const chatbx = document.querySelector(".chat_wrap");
-        const retVal = x => x.getBoundingClientRect().top;
-        // let tgpos = retVal(chatbx);
-        // console.log(tgpos);
-        
-
         // boolean 체크 변수
         let check = true;
         
@@ -183,7 +186,7 @@ const Chat = () => {
                 </div>
                 <div className="input-div">
                     <div className="input_wrap">
-                    <textarea placeholder="Press Enter for send message."></textarea>
+                    <textarea placeholder="Just say anything and play with me."></textarea>
                     <button className="chat_button">
                         <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path stroke="currentColor" d="M27 1.25903L22.5849 24.459L17.1887 18.1318L8.84906 30.259V19.1863L10.3208 17.6906L12.283 15.6964M27 1.25903L1 13.9136L12.283 15.6964M27 1.25903L12.283 15.6964" strokeWidth="2" strokeLinejoin="round"></path>
