@@ -1,6 +1,13 @@
 @charset "utf-8";
 /* EmailSend 모듈 CSS - emailsend.css */
 
+
+
+
+/************************************* 
+    services 영역
+*************************************/
+
 .services {
     display: flex;
     flex-direction: column;
@@ -32,6 +39,55 @@
     margin-right: 0.5rem;
     padding: 0 1rem;
 }
+
+
+/************************************* 
+    contact 영역
+*************************************/
+
+/* 최상위요소 */
+.contact {
+    padding: var(--global-padding);
+    position: relative;
+    overflow: hidden;
+}
+.contact_headline {
+    width: 100%;
+    margin-top: calc(var(--global-padding)*4);
+    text-align: center;
+    padding: 0 var(--global-padding);
+}
+.contact h3 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: var(--global-padding);
+}
+
+/* 공용 속성 */
+.field {
+    
+}
+.field_top {
+
+}
+.field_message {
+
+}
+.field_bottom {
+
+}
+
+
+.checkmark {
+    
+}
+
+
+
+
+/* 미디어쿼리 */
+
+
 
 @media screen and (min-width: 960px) {
     .services {

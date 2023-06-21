@@ -52,9 +52,41 @@ const EmailSend = () => {
         <>
             <Services data={email_data.works} tit="I usually do this" />
             <Services data={email_data.others} tit="I do things like this, too" />
-
+            
+            
             {/* form 태그 */}
             <form className="contact" method="post" action="process.php">
+
+                <h3 className="contact_headline">schreib deinem lieblingsbrot</h3>
+
+                <div className="field field_top">
+                    <label for="email">von:</label>
+                    <input type="email" id="email" placeholder="Deine Mailadresse" value required />
+                </div>
+                
+                <div className="field">
+                    <label for="subject">betreff:</label>
+                    <input type="text" id="subject" placeholder="Schreibt einfach hier rein, worum es ungefähr geht." value required />
+                </div>
+
+                <div className="field field_message">
+                    <label for="text">von:</label>
+                    <textarea type="text" id="text" placeholder="Freunde, let’s go, do the write thing!" required></textarea>
+                </div>
+
+                <div className="field_bottom">
+                    <label className="checkbox_cont">
+                        <p>
+                            hiermit bestätige ich, die datenschutzrichtlinien gelesen zu haben.
+                        </p>
+                        <input type="checkbox" id="checkbox" required />
+                        <span className="checkmark"></span>
+                    </label>
+                    <input className="button" type="submit" value="SENDEN" action="#contact-section" />
+                </div>
+                
+
+
             </form>
 
         </>
