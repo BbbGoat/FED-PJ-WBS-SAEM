@@ -182,7 +182,14 @@ const Chat = () => {
                     </ul>
                 </div>
                 <div className="input-div">
+                    <div className="input_wrap">
                     <textarea placeholder="Press Enter for send message."></textarea>
+                    <button className="chat_button">
+                        <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke="currentColor" d="M27 1.25903L22.5849 24.459L17.1887 18.1318L8.84906 30.259V19.1863L10.3208 17.6906L12.283 15.6964M27 1.25903L1 13.9136L12.283 15.6964M27 1.25903L12.283 15.6964" strokeWidth="2" strokeLinejoin="round"></path>
+                        </svg>
+                    </button>
+                    </div>
                 </div>
             
                 {/* 포멧 */}
