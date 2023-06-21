@@ -60,17 +60,17 @@ const EmailSend = () => {
                 <h3 className="contact_headline">schreib deinem lieblingsbrot</h3>
 
                 <div className="field field_top">
-                    <label for="email">von:</label>
+                    <label htmlFor="email">von:</label>
                     <input type="email" id="email" placeholder="Deine Mailadresse" required />
                 </div>
                 
                 <div className="field">
-                    <label for="subject">betreff:</label>
+                    <label htmlFor="subject">betreff:</label>
                     <input type="text" id="subject" placeholder="Schreibt einfach hier rein, worum es ungefähr geht." required />
                 </div>
 
                 <div className="field field_message">
-                    <label for="text">nachricht:</label>
+                    <label htmlFor="text">nachricht:</label>
                     <textarea type="text" id="text" placeholder="Freunde, let’s go, do the write thing!" required></textarea>
                 </div>
 
