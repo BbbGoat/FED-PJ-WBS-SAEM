@@ -8,6 +8,7 @@ import Vidgroup from "./modules/Vidgroup";
 import Ball from "./modules/Ball";
 import WorkList from "./modules/WorkList";
 import EmailSend from "./modules/EmailSend";
+import Chat from "./modules/Chat";
 
 const Main = () => {
 
@@ -28,6 +29,7 @@ const Main = () => {
             
             {/* Contact section */}
             <Btn cat={"CONTACT"} />
+            <Chat />
             <EmailSend />
         </>
     );
