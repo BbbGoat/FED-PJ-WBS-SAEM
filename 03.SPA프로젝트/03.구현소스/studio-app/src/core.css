@@ -6,13 +6,16 @@
 /* 전체 글자크기 Root 셋팅! */
 html{
     font-size: 16px;
-    /* 글자 rem단위 계산편의때문~! */
 }
 body * {
     /* 공사중 표시 */
     outline: 1px dashed gray;
     line-height: 1.5;
     box-sizing: border-box;
+}
+::selection {
+    color: #fff;
+    background-color: #fbb;
 }
 
 

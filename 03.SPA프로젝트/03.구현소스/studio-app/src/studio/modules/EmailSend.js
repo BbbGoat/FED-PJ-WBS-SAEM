@@ -61,16 +61,16 @@ const EmailSend = () => {
 
                 <div className="field field_top">
                     <label for="email">von:</label>
-                    <input type="email" id="email" placeholder="Deine Mailadresse" value required />
+                    <input type="email" id="email" placeholder="Deine Mailadresse" required />
                 </div>
                 
                 <div className="field">
                     <label for="subject">betreff:</label>
-                    <input type="text" id="subject" placeholder="Schreibt einfach hier rein, worum es ungefähr geht." value required />
+                    <input type="text" id="subject" placeholder="Schreibt einfach hier rein, worum es ungefähr geht." required />
                 </div>
 
                 <div className="field field_message">
-                    <label for="text">von:</label>
+                    <label for="text">nachricht:</label>
                     <textarea type="text" id="text" placeholder="Freunde, let’s go, do the write thing!" required></textarea>
                 </div>
 

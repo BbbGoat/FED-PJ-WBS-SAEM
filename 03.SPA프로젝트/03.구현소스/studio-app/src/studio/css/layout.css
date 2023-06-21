@@ -157,7 +157,7 @@ header .gnb a:hover, header .gnb a.active {
 
 .cont{
     font-family: 'Montserrat', sans-serif;
-    text-align: center;
+    /* text-align: center; */
     font-weight: 500;
     background-color: #000;
     color: #fff
