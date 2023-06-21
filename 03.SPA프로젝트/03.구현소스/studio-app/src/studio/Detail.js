@@ -1,15 +1,12 @@
-// 상세페이지 컴포넌트 - Detial.js
+// Detail 페이지 컴포넌트 - Detial.js
 import $ from "jquery";
 import { useLocation } from "react-router-dom";
 import "./css/detail.css";
 
-// 라우터 파라미터값 받아서 데이터 처리!
 
-const jqFn = () => {
-    $(()=>{
-        
-    }); //////////// jQB ///////////////////
-}; ///////////////// jqFn 함수 ///////////////////
+/******************************************** 
+    라우터 파라미터값 받아서 데이터 처리!
+********************************************/
 
 function Detail(props) {
 
@@ -67,8 +64,6 @@ function Detail(props) {
                 }                
 
             </div>            
-
-            {jqFn()}
         </>
     );
     
