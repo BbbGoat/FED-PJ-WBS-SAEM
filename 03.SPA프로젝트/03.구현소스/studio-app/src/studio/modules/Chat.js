@@ -173,8 +173,8 @@ const Chat = () => {
             {/* 웹소켓 기능 제외한 채팅모듈 */}
             <div className="chat_wrap">
                 <div className="header">
-                    <h3>STIMMEN AUS DEM BACKOFEN</h3>
-                    <button className="button">Alle Nachrichten</button>
+                    {/* <h3>STIMMEN AUS DEM BACKOFEN</h3> */}
+                    {/* <button className="button">Alle Nachrichten</button> */}
                 </div>
                 <div className="chat scbar">
                     <ul>
