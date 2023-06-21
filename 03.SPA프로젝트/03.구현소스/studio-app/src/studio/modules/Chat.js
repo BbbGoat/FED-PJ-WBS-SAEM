@@ -22,20 +22,27 @@ const ChatFn = (function(){
                 e.preventDefault();
                 const message = $(this).val();
  
-                // 메시지 전송
-                sendMessage(message,owrData);
-                // 입력창 clear
-                clearTextarea();
+                if (message == "") return;
+                else {
+                    // 메시지 전송
+                    sendMessage(message,owrData);
+                    // 입력창 clear
+                    clearTextarea();
+                }
             }
         });
         $(".chat_button").click(function(e){
             e.preventDefault();
             const message = $(".input_wrap textarea").val();
- 
-            // 메시지 전송
-            sendMessage(message,owrData);
-            // 입력창 clear
-            clearTextarea();
+
+            // 빈값 방지
+            if (message == "") return;
+            else {
+                // 메시지 전송
+                sendMessage(message,owrData);
+                // 입력창 clear
+                clearTextarea();
+            }
         })
     }
  
@@ -46,7 +53,7 @@ const ChatFn = (function(){
 
         
         // 수신인 확인 : 아이콘 분기점!
-        console.log(senderName);
+        // console.log(senderName);
  
         // 값 채우기
         chatLi.addClass(LR_className);
@@ -106,7 +113,7 @@ const ChatFn = (function(){
             if (msgNum === owrData.message.length) return;
             appendMsgTag("left", owrData.senderName, owrData.message[msgNum]);
             msgNum++
-            console.log("msgNum",msgNum);
+            // console.log("msgNum",msgNum);
         },2000);
         
     } /////////// owrResive 함수 ////////////////////
@@ -151,8 +158,8 @@ const jqFn = () => {
         
         $(window).on("scroll", function(){
             let tgTop = chatbx.getBoundingClientRect().top
-            
-            if(tgTop < 500) {
+            // console.log(tgTop);
+            if(tgTop < 1000) {
                 if(check) {
                     // 호출하기
                     ChatFn.init();

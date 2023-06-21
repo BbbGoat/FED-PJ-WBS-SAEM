@@ -105,6 +105,7 @@
     position: relative;
 }
 .contact .field textarea {
+    --100vh: 959px;
     height: 45vw;
     max-height: calc(var(--100vh)/2);
     margin-bottom: calc(var(--global-padding)*4);

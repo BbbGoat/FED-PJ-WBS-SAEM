@@ -21,7 +21,6 @@ const Main = () => {
             {/* Info section */}
             <Btn cat={"INFO"} />
             <Vidgroup />
-            <Ball />
             
             {/* Work section */}
             <Btn cat={"WORK"} />
@@ -30,6 +29,7 @@ const Main = () => {
             {/* Contact section */}
             <Btn cat={"CONTACT"} />
             <Chat />
+            <Ball />
             <EmailSend />
         </>
     );

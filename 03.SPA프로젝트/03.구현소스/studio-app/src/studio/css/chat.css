@@ -138,6 +138,8 @@
     padding: 1.5rem 0 0 2rem;
     line-height: 1.1;
     margin-top: 7px;
+    
+    outline: 0;
     resize: none;
 }
 .chat_button {

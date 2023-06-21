@@ -24,7 +24,8 @@
     pointer-events: none;
     background: url(../../../public/images/SWAN-1.webp) no-repeat center/cover;
 
-    outline: 1px solid #ccc;
+    text-align: center;
+    outline: 3px solid #ccc;
 }
 .shape {
     /* background: #457b9d; */
@@ -61,20 +62,20 @@
     transform: translateZ(200px) translateX(25px) translateY(25px) scale(.65);
 }
 .pop.link {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 3px solid #ccc;
 }
 .pop.min {
     position: absolute;
     top: 0;
     left: 40px;
     width: 40px;
-    border-right: 1px solid #ccc;
+    border-right: 3px solid #ccc;
 }
 .pop.close {
     position: absolute;
     top: 0;
     width: 40px;
-    border-right: 1px solid #ccc;
+    border-right: 3px solid #ccc;
 }
 
 /***************************************************************** 
