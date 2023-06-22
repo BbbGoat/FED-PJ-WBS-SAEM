@@ -43,13 +43,15 @@ const Gooey = () => {
                             <g style={{filter:"url(#gooey)", animation: '9s linear 0s infinite normal none running rotate_back'}}>
                                 <circle cx="50%" cy="60%" r="62" fill="white" style={{animation: '12s ease-in-out -3s infinite alternate none running blob_four'}}>
                                 </circle>
-                                <circle cx="50%" cy="60%" r="56" fill="white" style={{animation: '9s ease-in-out -3s infinite alternate none running blob_three'}}>
+                                <circle cx="50%" cy="50%" r="60" fill="white" style={{animation: '9s ease-in-out -3s infinite alternate none running blob_three'}}>
                                 </circle>
                                 <circle cx="50%" cy="50%" r="75" fill="white" style={{animation: "6s ease-in-out -3s infinite alternate none running blob_two"}}>
                                 </circle>
                                 <circle cx="50%" cy="50%" r="75" fill="white" style={{animation: "8s ease-in-out -3s infinite alternate none running blob_two"}}>
                                 </circle>
                                 <circle cx="50%" cy="50%" r="64" fill="white" style={{animation: "5s ease-in-out -3s infinite alternate none running blob_one"}}>
+                                </circle>
+                                <circle cx="50%" cy="50%" r="30" fill="white" style={{animation: "3s ease-in-out -3s infinite alternate none running blob_one"}}>
                                 </circle>
                             </g>
                         </mask>
