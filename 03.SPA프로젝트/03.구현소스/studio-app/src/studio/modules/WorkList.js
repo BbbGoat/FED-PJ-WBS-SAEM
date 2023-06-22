@@ -17,6 +17,9 @@ const jqFn = () => {
 
         console.log(svgImg);
         svgImg.attr("href", "https://www.studiobrot.de/media/pages/arbeiten/roberta-goods/043fa44333-1673621029/robertagoods-case-1.webp")
+
+        // 스크롤 이벤트 제작
+        
     
         
     }); ///////// jQB ///////////////
