@@ -11,7 +11,7 @@ import EmailSend from "./modules/EmailSend";
 import Chat from "./modules/Chat";
 
 const Main = () => {
-
+    
     return(
         <>
             {/* 메인 최상단 배너 */}

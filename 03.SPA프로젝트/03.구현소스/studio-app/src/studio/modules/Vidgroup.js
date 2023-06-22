@@ -8,7 +8,7 @@ const jqFn = () => {
     }); /////////////////// jQB ////////////////////////
 }
 
-const Vidgroup = () => {
+const Vidgroup = (props) => {
     return (
         <>
             <div className="vidgroup">

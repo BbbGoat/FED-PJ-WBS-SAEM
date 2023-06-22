@@ -65,7 +65,7 @@ const jqFn = () => {
                 stkBox.style.top = "66px";
                 stkBox.style.transform = `translate3d(${tgPos}px, 0, 0)`;
 
-                $(".video_area").css({
+                $(".parallax").css({
                     top: "auto",
                     transform: `translate3d(${resultNum}%,0,0)`,
                 });
@@ -74,13 +74,13 @@ const jqFn = () => {
                 stkBox.style.transform = 'translate3d(0,0,0)';
                 // console.log("시작점!");
 
-                $(".video_area").css({
+                $(".parallax").css({
                     transform: `translate3d(-20%,0,0)`,
                 });
             }
             else if (tgPos < -2600) {
                 stkBox.style.transform = `translate3d(-2600px, 0, 0)`;
-                $(".video_area").css({
+                $(".parallax").css({
                     top: "auto",
                     transform: `translate3d(20%,0,0)`,
                 });
@@ -112,6 +112,7 @@ const jqFn = () => {
                     top: "auto",
                     transform: `translate3d(0,0,0)`,
                 });
+                $(".video_area").attr("style","");
                 tgBox.setAttribute('style', 'height: auto');
 
                 
@@ -152,7 +153,7 @@ const Horizontal = () => {
                             <div className="horizontal_section" key={i}>
                                 <div className="content_img">
                                     {/* Video 영역 */}
-                                    <figure className="video_area">
+                                    <figure className="video_area parallax">
                                         <video autoPlay={true} className="videosrc" loop={true} muted={true} playsInline={true} poster="">
                                             <source src={x.vidsrc} type="video/mp4" />
                                         </video>

@@ -144,7 +144,8 @@ const ChatFn = (function(){
     return {
         'init': init
     };
-})();
+
+})(); /////////////////////// ChatFn ///////////////////////
  
 // $(function(){
 //     ChatFn.init();
@@ -161,6 +162,9 @@ const jqFn = () => {
             // console.log(tgTop);
             if(tgTop < 1000) {
                 if(check) {
+                    console.log("init 호출");
+                    clearInterval();
+                    clearTimeout();
                     // 호출하기
                     ChatFn.init();
                     // 한번만실행
@@ -170,14 +174,12 @@ const jqFn = () => {
 
     }); ////////// scroll /////////////////////////////
 
-
-        
-
-    })
-}
+    }); ///////// jQB /////////////
+} ///////////// jqFn //////////////////////
 
 
 const Chat = () => {
+    
     return(
         <>
             {/* 웹소켓 기능 제외한 채팅모듈 */}
