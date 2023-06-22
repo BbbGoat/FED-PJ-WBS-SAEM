@@ -7,10 +7,56 @@ import Goo from "gooey-react";
 
 const jqFn = () => {
     $(()=>{
+        // 구분선 요소 추가
         $(".project_item").before(`<div class="project_divider"></div>`);
+
+
+        // 대상요소
+        const goo = $(".goo");
+        const svgImg = $(".goo_cont image");
+
+        console.log(svgImg);
+        svgImg.attr("href", "https://www.studiobrot.de/media/pages/arbeiten/roberta-goods/043fa44333-1673621029/robertagoods-case-1.webp")
+    
+        
     }); ///////// jQB ///////////////
 }; ////////////// jqFn /////////////////
 
+
+const Gooey = () => {
+    return (
+        <>
+            <div className="goo">
+                {/* <Goo intensity="strong"> */}
+                    <svg role="img" aria-label="Example of a gooey effect" className="goo_cont" id="goosvg">
+                        <image href="https://www.studiobrot.de/media/pages/arbeiten/charly/8aff3ecd91-1673621027/charly-case-0.webp" mask="url(#mask)" width="100%" height="100%" preserveAspectRatio="xMidYMax slice" />
+
+                        {/* defs 설정 */}
+                        <defs>
+                            <filter id="gooey" height="130%">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
+                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                            </filter>
+                        </defs>
+
+                        <mask id="mask" x="0" y="0">
+                            <g style={{filter:"url(#gooey)", animation: '9s linear 0s infinite normal none running rotate_back'}}>
+                                <circle cx="50%" cy="50%" r="92" fill="white" style={{animation: '12s ease-in-out -3s infinite alternate none running blob_four'}}>
+                                </circle>
+                                <circle cx="50%" cy="50%" r="86" fill="white" style={{animation: '9s ease-in-out -3s infinite alternate none running blob_three'}}>
+                                </circle>
+                                <circle cx="50%" cy="50%" r="75" fill="white" style={{animation: "6s ease-in-out -3s infinite alternate none running blob_two"}}>
+                                </circle>
+                                <circle cx="50%" cy="50%" r="64" fill="white" style={{animation: "3s ease-in-out -3s infinite alternate none running blob_one"}}>
+                                </circle>
+                            </g>
+                        </mask>
+                    </svg>
+                {/* </Goo> */}
+            </div>
+        </>
+    );
+}
 
 const WorkList = () => {
     
@@ -18,6 +64,7 @@ const WorkList = () => {
     
     return (
         <>
+
             {/* 메인 리스트 */}
             <div className="featured-project">
                 
@@ -35,6 +82,9 @@ const WorkList = () => {
                 </Link>
 
             </div>
+
+            
+            <Gooey />
 
             {/* 나머지 리스트 */}
             <div className="project-list">
@@ -70,22 +120,6 @@ const WorkList = () => {
 
             </div>
 
-            <div className="goo">
-                <Goo intensity="strong">
-                    <svg role="img" aria-label="Example of a gooey effect" className="w-64 h-64" id="goosvg">
-                        <g style={{animation: '9s linear 0s infinite normal none running rotate_back'}}>
-                            <circle cx="50%" cy="50%" r="42" fill="lightseagreen" style={{animation: '12s ease-in-out -3s infinite alternate none running blob_four'}}>
-                            </circle>
-                            <circle cx="50%" cy="50%" r="36" fill="mediumaquamarine" style={{animation: '9s ease-in-out -3s infinite alternate none running blob_three'}}>
-                            </circle>
-                            <circle cx="50%" cy="50%" r="30" fill="palegreen" style={{animation: "6s ease-in-out -3s infinite alternate none running blob_two"}}>
-                            </circle>
-                            <circle cx="50%" cy="50%" r="24" fill="mediumspringgreen" style={{animation: "3s ease-in-out -3s infinite alternate none running blob_one"}}>
-                            </circle>
-                        </g>
-                    </svg>
-                </Goo>
-            </div>
             {jqFn()}
         </>
     );
