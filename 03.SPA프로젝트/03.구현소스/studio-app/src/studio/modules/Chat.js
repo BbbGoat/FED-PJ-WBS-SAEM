@@ -5,8 +5,6 @@ import "../css/chat.css";
 const ChatFn = (function(){
     const myName = "You";
 
-    console.log("요기")
-
     
     // init 함수
     function init() {
@@ -161,8 +159,8 @@ const ChatFn = (function(){
 // boolean 체크 변수
 const jqFn = () => {
     $(()=>{
-        let check = true;
         
+        let check = true;
         const chatbx = document.querySelector(".chat_wrap");
         
         $(window).on("scroll", function(){
@@ -172,8 +170,6 @@ const jqFn = () => {
                 if(check) {
                     // 한번만실행
                     check = false;
-                    
-                    // $(".chat ul").html("");
 
                     console.log("init 호출",check);
                     // 호출하기
