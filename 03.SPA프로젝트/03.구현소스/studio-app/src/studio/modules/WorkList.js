@@ -3,6 +3,7 @@ import $ from "jquery";
 import { Link } from "react-router-dom";
 import { work_data, featured_data} from "../data/work_data";
 import "../css/worklist.css";
+import Goo from "gooey-react";
 
 const jqFn = () => {
     $(()=>{
@@ -19,7 +20,7 @@ const WorkList = () => {
         <>
             {/* 메인 리스트 */}
             <div className="featured-project">
-
+                
                 <Link to="/wo/det" className="featured-project_bottom-row"
                  state={{ src:data.src, desc:data.desc, tit:data.tit, detail:data.detail, sub:data.sub }}>
                     {/* 이미지영역 */}
@@ -67,6 +68,23 @@ const WorkList = () => {
                 {/* divider는 구분선 역할 */}
                 <div className="project_divider"></div>
 
+            </div>
+
+            <div className="goo">
+                <Goo intensity="strong">
+                    <svg role="img" aria-label="Example of a gooey effect" className="w-64 h-64" id="goosvg">
+                        <g style={{animation: '9s linear 0s infinite normal none running rotate_back'}}>
+                            <circle cx="50%" cy="50%" r="42" fill="lightseagreen" style={{animation: '12s ease-in-out -3s infinite alternate none running blob_four'}}>
+                            </circle>
+                            <circle cx="50%" cy="50%" r="36" fill="mediumaquamarine" style={{animation: '9s ease-in-out -3s infinite alternate none running blob_three'}}>
+                            </circle>
+                            <circle cx="50%" cy="50%" r="30" fill="palegreen" style={{animation: "6s ease-in-out -3s infinite alternate none running blob_two"}}>
+                            </circle>
+                            <circle cx="50%" cy="50%" r="24" fill="mediumspringgreen" style={{animation: "3s ease-in-out -3s infinite alternate none running blob_one"}}>
+                            </circle>
+                        </g>
+                    </svg>
+                </Goo>
             </div>
             {jqFn()}
         </>

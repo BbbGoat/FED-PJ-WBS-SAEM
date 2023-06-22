@@ -1,6 +1,60 @@
 @charset "utf-8";
 /* WorkList 페이지 CSS - worklist.css */
 
+/********************************************************** 
+                        goo 영역
+**********************************************************/
+
+#goosvg * { transform-origin: 50% }
+
+/* 최상위요소 키프레임 */
+@keyframes rotate_back {
+    0% {
+        transform: none;
+    }
+    100% {
+        transform: rotate(-1turn);
+    }
+}
+
+
+@keyframes blob_one {
+    0% {
+        transform: none;
+    }
+    100% {
+        transform: rotate(-1turn) translate(-12.5%,-12.5%);
+    }
+}
+@keyframes blob_two {
+    0% {
+        transform: none;
+    }
+    100% {
+        transform: rotate(-1turn) translate(12.5%,-12.5%);
+    }
+}
+@keyframes blob_three {
+    0% {
+        transform: none;
+    }
+    100% {
+        transform: rotate(-1turn) translate(-12.5%,12.5%);
+    }
+}
+@keyframes blob_four {
+    0% {
+        transform: none;
+    }
+    100% {
+        transform: rotate(-1turn) translate(-12.5%,-12.5%);
+    }
+}
+
+
+
+
+
 /* 1. 메인리스트 */
 
 .featured-project {
