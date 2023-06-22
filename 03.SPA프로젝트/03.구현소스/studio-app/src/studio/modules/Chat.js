@@ -4,9 +4,14 @@ import "../css/chat.css";
 
 const ChatFn = (function(){
     const myName = "You";
- 
+
+    console.log("요기")
+
+    
     // init 함수
     function init() {
+        clearInterval(setI);
+        $('div.chat:not(.format) ul').html('');
 
         // 0. 먼저 넣는 오너 텍스트
         const owrMsg = ["Hello",`<img src="./images/chat/pic-0.gif">`,"Are you taking a good look around?","It's not?","Then I'll tell you the big news..."];
@@ -102,6 +107,8 @@ const ChatFn = (function(){
         appendMsgTag(LR, guesetData.senderName, guesetData.message);
     }
 
+    let setI;
+
     // 오너메세지 수신
     function owrResive(owrData) {
 
@@ -109,7 +116,7 @@ const ChatFn = (function(){
         
         let msgNum = 0
         // 기본메시지 출력하기
-        setInterval(()=>{
+        setI = setInterval(()=>{
             if (msgNum === owrData.message.length) return;
             appendMsgTag("left", owrData.senderName, owrData.message[msgNum]);
             msgNum++
@@ -151,24 +158,26 @@ const ChatFn = (function(){
 //     ChatFn.init();
 // });
 
+// boolean 체크 변수
 const jqFn = () => {
     $(()=>{
-        const chatbx = document.querySelector(".chat_wrap");
-        // boolean 체크 변수
         let check = true;
+        
+        const chatbx = document.querySelector(".chat_wrap");
         
         $(window).on("scroll", function(){
             let tgTop = chatbx.getBoundingClientRect().top
             // console.log(tgTop);
             if(tgTop < 1000) {
                 if(check) {
-                    console.log("init 호출");
-                    clearInterval();
-                    clearTimeout();
-                    // 호출하기
-                    ChatFn.init();
                     // 한번만실행
                     check = false;
+                    
+                    // $(".chat ul").html("");
+
+                    console.log("init 호출",check);
+                    // 호출하기
+                    ChatFn.init();
                 } // if
             }
 

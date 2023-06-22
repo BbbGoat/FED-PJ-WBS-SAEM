@@ -65,6 +65,14 @@ https://sbcode.net/react-three-fiber/gltfloader/
 
 7. ripple, wave, liquid 효과 모음
 
+끈적거리는 액체 블롭 💙
+https://gooey-react.netlify.app/examples/around-the-web/
+https://codepen.io/cassie-codes/details/zWJxXj
+
+차선책..!
+https://codepen.io/justinjunodev/pen/RwqWYgG
+
+
 유튜브강의!! 이거 보고 오버시 이미지 변경되는부분 SVG 제작하기 🤍🤍🤍🤍
 https://www.youtube.com/watch?v=liW6bDLnuuk 
 
@@ -111,3 +119,8 @@ https://babycoder05.tistory.com/entry/React-useEffect%EC%99%80-addEventListener-
 https://react.vlpt.us/basic/16-useEffect.html
 
 http://ngmsoftware.com/bbs/board.php?bo_table=study&wr_id=858&sfl=mb_id%2C1&stx=admin&sst=wr_good&sod=desc&sop=and&page=27
+
+
+
+CSS 버튼 클릭시 폭죽 터지는 효과
+https://codepen.io/coopergoeke/pen/wvaYMbJ
