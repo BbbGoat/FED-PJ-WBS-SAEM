@@ -3,7 +3,7 @@ import $ from "jquery";
 import { Link } from "react-router-dom";
 import { work_data, featured_data} from "../data/work_data";
 import "../css/worklist.css";
-import Gooey from "./Gooey";
+// import Gooey from "./Gooey";
 
 const jqFn = () => {
     $(()=>{
