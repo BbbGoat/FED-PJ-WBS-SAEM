@@ -12,17 +12,24 @@ const jqFn = () => {
 
 
         // 대상요소
-        const goo = $(".goo");
+        const goo = $(".goo_cont");
         const svgImg = $(".goo_cont image");
-
-        console.log(svgImg);
-        svgImg.attr("href", "https://www.studiobrot.de/media/pages/arbeiten/roberta-goods/043fa44333-1673621029/robertagoods-case-1.webp")
-
+        
         // 스크롤 이벤트 제작
-        $(".project_item").hover(function(){
-            console.log("인!")
-        },function(){
-            console.log("아웃!")
+        $(".project_item").mouseenter(function(e){
+            let chgSrc = e.currentTarget.firstChild.getAttribute("src");
+            console.log(chgSrc);
+            
+            // 이미지변경!
+            svgImg.attr("href", chgSrc);
+        })
+        
+        $(document).on("mousemove scroll",function(e){
+            console.log("움직여",e.clientX, e.clientY);
+            goo.css({
+                left: `${(e.clientX-100)/2}px`,
+                top:`${(e.clientY-300)}px`,
+            })
         })
         
     
@@ -49,15 +56,15 @@ const Gooey = () => {
 
                         <mask id="mask" x="0" y="0">
                             <g style={{filter:"url(#gooey)", animation: '9s linear 0s infinite normal none running rotate_back'}}>
-                                <circle cx="50%" cy="70%" r="82" fill="white" style={{animation: '12s ease-in-out -3s infinite alternate none running blob_four'}}>
+                                <circle cx="50%" cy="60%" r="82" fill="white" style={{animation: '12s ease-in-out -3s infinite alternate none running blob_four'}}>
                                 </circle>
-                                <circle cx="50%" cy="55%" r="90" fill="white" style={{animation: '9s ease-in-out -3s infinite alternate none running blob_three'}}>
+                                <circle cx="50%" cy="50%" r="70" fill="white" style={{animation: '9s ease-in-out -3s infinite alternate none running blob_three'}}>
                                 </circle>
-                                <circle cx="50%" cy="50%" r="105" fill="white" style={{animation: "6s ease-in-out -3s infinite alternate none running blob_two"}}>
+                                <circle cx="50%" cy="50%" r="85" fill="white" style={{animation: "6s ease-in-out -3s infinite alternate none running blob_two"}}>
                                 </circle>
-                                <circle cx="50%" cy="60%" r="105" fill="white" style={{animation: "8s ease-in-out -3s infinite alternate none running blob_two"}}>
+                                <circle cx="50%" cy="50%" r="85" fill="white" style={{animation: "8s ease-in-out -3s infinite alternate none running blob_two"}}>
                                 </circle>
-                                <circle cx="50%" cy="70%" r="74" fill="white" style={{animation: "5s ease-in-out -3s infinite alternate none running blob_one"}}>
+                                <circle cx="50%" cy="50%" r="94" fill="white" style={{animation: "5s ease-in-out -3s infinite alternate none running blob_one"}}>
                                 </circle>
                                 <circle cx="50%" cy="50%" r="60" fill="white" style={{animation: "3s ease-in-out -3s infinite alternate none running blob_one"}}>
                                 </circle>
