@@ -16,21 +16,27 @@ const jqFn = () => {
         const svgImg = $(".goo_cont image");
         
         // 스크롤 이벤트 제작
-        $(".project_item").mouseenter(function(e){
+        $(".project_item").hover(function(e){
             let chgSrc = e.currentTarget.firstChild.getAttribute("src");
-            console.log(chgSrc);
+            // console.log(chgSrc);
             
             // 이미지변경!
             svgImg.attr("href", chgSrc);
+            goo.css({display:"block"});
+        })
+        $(".project-list").mouseleave(function(){
+            console.log("아웃!");
+            goo.css({display:"none"});
+
         })
         
         $(document).on("mousemove scroll",function(e){
-            console.log("움직여",e.clientX, e.clientY);
+            // console.log("움직여",e.clientX, e.clientY);
             goo.css({
                 left: `${(e.clientX-100)/2}px`,
                 top:`${(e.clientY-300)}px`,
             })
-        })
+        }) //////// mousemove ////////
         
     
         

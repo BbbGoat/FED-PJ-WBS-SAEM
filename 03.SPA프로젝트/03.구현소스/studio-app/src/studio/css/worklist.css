@@ -20,11 +20,9 @@
     top: 0;
     left: 0;
     will-change: transform;
-    /* transition: .3s linear; */
-
     transform: translate(50%, 0%);
     /* 오버시 none에서 block으로 변경 */
-    display: block;
+    display: none;
 }
 
 /* 최상위요소 키프레임 */
