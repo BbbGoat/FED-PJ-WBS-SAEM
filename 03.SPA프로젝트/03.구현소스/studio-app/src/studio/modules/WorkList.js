@@ -32,9 +32,17 @@ const jqFn = () => {
         });
 
         let winW = window.innerWidth;
+        
         $(window).on("resize",function(){
             winW = $(window).width();
             // console.log(winW);
+            if (winW <= 720) {
+            }
+            else {
+                
+            }
+
+            
         })
         
         
