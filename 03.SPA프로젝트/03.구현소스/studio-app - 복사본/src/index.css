@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* 전체페이지 공통 CSS */
+
+@import url(./core.css);
+@import url(./reset.css);
+
+
+/* Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+
+/* Noto sans kr */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+
+
+
+/* 루트값 */
+
+:root {
+  --global-padding: 1rem;
+  --copy-small-size: 1rem;
+  --copy-size: 1.2rem;
+  --copy-large-size: 1.3rem;
+  --h1-size: 1.5rem;
+  --h2-size: 1.2rem;
+  --h3-size: 1rem;
+  --button-text-size: 1.4rem;
+  --button-large-text-size: 2rem;
+}
+
+
+/* 루트값 미디어쿼리 */
+
+
+
+@media screen and (min-width: 480px) {
+  :root {
+    --button-text-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  :root {
+    --copy-size: 1.5rem;
+    --copy-small-size: 1.2rem;
+    --copy-large-size: 1.8rem;
+    --h1-size: 4.5vw;
+    --h2-size: 3.5vw;
+    --h3-size: 2vw;
+    --button-text-size: 3.5vw;
+    --button-large-text-size: 5.5vw;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  :root {
+    --global-padding: 2.5vw;
+    --copy-size: 1.6vw;
+      --copy-large-size: 2.2vw;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+  :root {
+      --copy-small-size: 1.2vw;
+  }
+}

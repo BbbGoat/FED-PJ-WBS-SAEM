@@ -1,0 +1,222 @@
+@charset "utf-8";
+/* EmailSend 모듈 CSS - emailsend.css */
+
+
+
+
+/************************************* 
+    services 영역
+*************************************/
+
+.services {
+    display: flex;
+    flex-direction: column;
+    padding: var(--global-padding);
+}
+.services_title {
+    width: 100%;
+    margin-bottom: var(--global-padding);
+    line-height: 1.1;
+    text-align: left;
+
+    /* h2 설정 */
+    font-size: var(--h2-size);
+    font-weight: 700;
+}
+.services_list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+.services_list h3 {
+    display: flex;
+    align-items: center;
+    font-size: var(--copy-size);
+    border: 3px solid #fff;
+    border-radius: 40px;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 0 1rem;
+}
+
+
+/************************************* 
+    contact 영역
+*************************************/
+
+/* 최상위요소 */
+.contact {
+    padding: var(--global-padding);
+    position: relative;
+    overflow: hidden;
+}
+.contact_headline {
+    width: 100%;
+    margin-top: calc(var(--global-padding)*4);
+    text-align: center;
+    padding: 0 var(--global-padding);
+}
+.contact h3 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: var(--global-padding);
+
+    font-size: var(--h3-size);
+    font-weight: 700;
+}
+
+/* 공용 속성 */
+.contact .field {
+    font-size: var(--copy-size);
+    border: 3px solid #fff;
+    border-bottom: 0;
+    /* font-family: ; */
+    position: relative;
+}
+
+.contact .field_top {
+    border-radius: 20px 20px 0 0;
+}
+.contact label {
+    left: var(--global-padding);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.contact .field input {
+    padding-left: 100px;
+}
+.field input {
+    width: 100%;
+    min-height: 6vw;
+    color: #fff;
+    padding: var(--global-padding);
+    font-size: inherit;
+    background-color: #0000;
+    border: 0 solid #0000;
+    outline: 0;
+    font-family: inherit;
+}
+.field_message {
+    padding-top: var(--global-padding);
+}
+.field_message label {
+    position: relative;
+}
+.contact .field textarea {
+    --100vh: 959px;
+    height: 45vw;
+    max-height: calc(var(--100vh)/2);
+    margin-bottom: calc(var(--global-padding)*4);
+    resize: none;
+}
+.contact .field textarea {
+    width: 100%;
+    min-height: 6vw;
+    color: #fff;
+    padding: var(--global-padding);
+    font-size: inherit;
+    background-color: #0000;
+    border: 0 solid #0000;
+    outline: 0;
+    font-family: inherit;
+}
+
+.field_bottom {
+    padding: var(--global-padding);
+    border: 3px solid #fff;
+    border-radius: 0 0 20px 20px;
+}
+.field_bottom label {
+    position: relative;
+}
+.contact label.checkbox_cont {
+    margin-bottom: var(--global-padding);
+    cursor: pointer;
+    font-size: var(--copy-small-size);
+    -webkit-user-select: none;
+    user-select: none;
+    width: 100%;
+    padding-left: 48px;
+    display: block;
+    position: relative;
+    left: 0;
+    transform: none;
+}
+.checkbox_cont p {
+    text-align: left;
+}
+.checkbox_cont input {
+    opacity: 0;
+    /* cursor: pointer; */
+    height: 0;
+    width: 0;
+    position: absolute;
+}
+.checkmark {
+    height: 32px;
+    width: 32px;
+    border: 3px solid #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.checkbox_cont input:checked~.checkmark::after {
+    display: block;
+    box-sizing: inherit;
+}
+
+.checkbox_cont .checkmark::after {
+    width: 8px;
+    height: 14px;
+    border: 3px solid #fff;
+    border-width: 0 3px 3px 0;
+    top: 5px;
+    left: 9px;
+    transform: rotate(45deg);
+}
+.checkmark::after {
+    content: '';
+    display: none;
+    position: absolute;
+}
+
+
+
+.contact .button {
+    width: 100%;
+}
+
+
+
+
+/************** 미디어쿼리 **************/
+
+
+@media screen and (min-width: 720px) {
+    .contact .field {
+        border-width: 0.3vw;
+    }
+    .contact .field input {
+        padding-left: 120px;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .services {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .services_title {
+        width: 50%;
+        margin-bottom: 0;
+    }
+    .services_list {
+        width: 50%;
+    }
+
+    .contact .field input {
+        padding-left: 10vw;
+    }
+}

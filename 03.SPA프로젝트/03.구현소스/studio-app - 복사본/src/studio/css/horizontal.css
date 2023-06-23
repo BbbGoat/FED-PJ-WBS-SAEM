@@ -1,0 +1,106 @@
+@charset "urf-8";
+/* Horizontal 모듈용 CSS - horizontal.css */
+
+/* 최상위 박스~ */
+.horizontal_box {
+    position: relative;
+    /* height: auto; */
+    min-height: 100vw;
+    margin-bottom: var(--global-padding);
+    
+}
+.horizontal_inner {
+    top: 0;
+    
+    transform: translate3d(0px, 0px, 0px);
+    padding: var(--global-padding);
+    width: 100%;
+}
+
+/* 1. 공통 섹션박스 */
+.horizontal_section {
+    position: relative;
+    flex-direction: column;
+    flex-shrink: 0;
+    display: flex;
+    
+}
+/* 1-1. 이미지박스 */
+.content_img {
+    position: relative;
+
+    width: 100%;
+    margin-bottom: var(--global-padding);
+    border-radius: 20px;
+    flex-shrink: 0;
+    overflow: hidden;
+    transform: translateZ(0);
+}
+.content_img::after {
+    content: '';
+    width: 100%;
+    padding-bottom: 100%;
+    display: block;
+    position: relative;
+}
+.horizontal_section .video_area {
+    opacity: .8;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+/* 1-2. 설명박스 */
+.horizontal_box .content_desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: calc(var(--global-padding)*4);
+}
+.horizontal_box .content_desc > h2 {
+    font-size: var(--h1-size);
+    line-height: 1;
+}
+.horizontal_box .content_desc > p {
+    text-align: left;
+    font-weight: 500;
+    margin-top: var(--global-padding);
+    font-size: var(--copy-small-size);
+}
+
+
+
+@media screen and (min-width:720px) {
+    .horizontal_inner {
+        position: sticky;
+        top: 0;
+        display: flex;
+        width: fit-content;
+        padding-right: 0;
+    }
+    .horizontal_section {
+        flex-direction: row;
+    }
+    .content_img {
+        max-width: 500px;
+        max-height: calc(var(--100vh)*.9);
+        width: 80vw;
+        margin-bottom: 0;
+    }
+    .horizontal_section .video_area {
+        top: auto;
+        transform: translate3d(-20%, 0px, 0px);
+    }
+    .content_img::after {
+        padding-bottom: 150%
+    }
+    .horizontal_box .content_desc {
+        padding: 0 var(--global-padding);
+        padding-right: calc(var(--global-padding)*4);
+        min-width: 540px;
+        width: 50vw;
+        margin-bottom: 0;
+    }
+
+}
