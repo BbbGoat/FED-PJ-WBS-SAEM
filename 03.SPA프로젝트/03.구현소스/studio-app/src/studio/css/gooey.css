@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+
+/********************************************************** 
+                        goo 영역
+**********************************************************/
+
+#goosvg * { transform-origin: 50% }
+/* 최상위박스 */
+.goo {
+    margin-top: calc(var(--global-padding)*8);
+    margin-bottom: calc(var(--global-padding)*8);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.goo_cont {
+    position: fixed;
+    width: 500px;
+    height: 600px;
+    top: 0;
+    left: 0;
+    will-change: transform;
+    transform: translate(50%, 0%);
+    /* 오버시 none에서 block으로 변경 */
+    display: none;
+}
+
+/* 최상위요소 키프레임 */
+@keyframes rotate_back {
+    0% {
+        transform: none;
+    }
+    100% {
+        transform: rotate(-1turn);
+    }
+}
+
+
+@keyframes blob_one {
+    0% {
+        transform: none;
+    }
+    100% {
+        transform: rotate(-1turn) translate(-12.5%,-12.5%);
+    }
+}
+@keyframes blob_two {
+    0% {
+        transform: none;
+    }
+    100% {
+        transform: rotate(-1turn) translate(12.5%,-12.5%);
+    }
+}
+@keyframes blob_three {
+    0% {
+        transform: none;
+    }
+    100% {
+        transform: rotate(-1turn) translate(-12.5%,12.5%);
+    }
+}
+@keyframes blob_four {
+    0% {
+        transform: none;
+    }
+    100% {
+        transform: rotate(-1turn) translate(-12.5%,-12.5%);
+    }
+}
+
+
