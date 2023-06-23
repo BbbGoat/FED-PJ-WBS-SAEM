@@ -15,8 +15,8 @@
 }
 .goo_cont {
     position: fixed;
-    width: 300px;
-    height: 500px;
+    width: 500px;
+    height: 600px;
     top: 0;
     left: 0;
     will-change: transform;
