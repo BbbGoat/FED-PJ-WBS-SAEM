@@ -66,7 +66,7 @@ const jqFn = () => {
             // if we haven't connected yet and we're not tweening back to center, bgin connection
             if (!connected && !tweening) {
             connected = true;
-            svgElement.style.cursor = 'pointer';
+            // svgElement.style.cursor = 'pointer';
             }
         });
 
@@ -85,7 +85,7 @@ const jqFn = () => {
       if ((150-y) < -100 || (150-y) > 500) {
         connected = false;
         tweening = true;
-        svgElement.style.cursor = 'default';
+        // svgElement.style.cursor = 'default';
         
         snapBack(x,y);
     } else {

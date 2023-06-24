@@ -6,9 +6,7 @@ const jqFn = () => {
   $(() => {
 
     // 커서 초기화!!! //////////////////
-    $("html").css({cursor:"none"});
-    $("a").css({cursor:"none"});
-    $("textarea").css({cursor:"none"});
+    $("html, a, textarea, label, input").css({cursor:"none"});
 
     
     const cursor = $(".cursor");
