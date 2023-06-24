@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/* play with vars for different effets */
+
+
+.cursor {
+    width: 82px;
+    height: 90px;
+    position: fixed;
+    pointer-events: none;
+    left: 34px;
+    top: 38px;
+    z-index: 9999;
+    background-image: url(../cursor-hand.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 100% auto;
+    transition: opacity .15s;
+    opacity: 1;
+}
+.cursor.cursoract {
+    background-image: url(../cursor-hand--active.png);    
+}
+
+
+.cursor2 {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    border-radius: 100%;
+    background-color: palevioletred;
+    position: fixed;
+    transition: width .15s,height .15s,opacity .15s;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9998;
+}
+.cursor2.cursorinteractive {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+}

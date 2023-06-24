@@ -2,6 +2,7 @@
 import "./css/layout.css";
 import { Link, Outlet } from "react-router-dom";
 import "./modules/Gnb.js";
+import Cursor from "./Cursor";
 
 /********************************************************* 
     [ 리액트 라우터와 연결하여 사용되는 라우터 컴포넌트 ]
@@ -16,6 +17,9 @@ const Layout = () => {
 
     return (
         <>
+            <Cursor />
+
+
             {/* 1. 상단영역 */}
             <header className="top">
                 {/* 네비게이션 파트 */}
@@ -50,12 +54,13 @@ const Layout = () => {
 
 
             </header>
+
+
             {/* 2. 메인영역 */}
             <main className="cont">
                 {/* 출력파트 : 각 페이지의 컴포넌트가 출력됨 */}
                 <Outlet />
             </main>
-
 
 
             {/* 3.하단영역 */}

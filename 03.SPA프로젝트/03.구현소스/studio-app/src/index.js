@@ -18,23 +18,25 @@ import './index.css';
 export default function App() {
 
   return (
-    <BrowserRouter>
-    {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
-    <ScrollTop />
-      <Routes>
-        {/* 중요! : 레이아웃 컴포넌트를 루트로 잡아준다! */}
-        <Route path="/" element={<Layout />} >
-          {/* 하위라우트 셋팅 */}
-          <Route index element={<Main />} />
-          <Route path="main" element={<Main />} />
-          <Route path="in" element={<Info />} />
-          <Route path="wo" element={<Work />} />
-          <Route path="ct" element={<Contact />} />
-          <Route path="/wo/det" element={<Detail />} />
+    <>  
+      <BrowserRouter>
+      {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
+        <ScrollTop />
+        <Routes>
+          {/* 중요! : 레이아웃 컴포넌트를 루트로 잡아준다! */}
+          <Route path="/" element={<Layout />} >
+            {/* 하위라우트 셋팅 */}
+            <Route index element={<Main />} />
+            <Route path="main" element={<Main />} />
+            <Route path="in" element={<Info />} />
+            <Route path="wo" element={<Work />} />
+            <Route path="ct" element={<Contact />} />
+            <Route path="/wo/det" element={<Detail />} />
 
-        </Route>
-      </Routes>
-    </BrowserRouter>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
   
 } //////////////// App 컴포넌트 /////////////////

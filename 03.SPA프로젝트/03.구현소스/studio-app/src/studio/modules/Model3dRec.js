@@ -34,8 +34,7 @@ const SnsBtn = () => {
     <>
       <div className='sns_wrap'>
         <a className='button' href='' target='_blank'>FOLG HALT</a>
-        <div className='sns_bx'></div>
-        {/* <div className='button'>MALAKA!</div> */}
+        {/* <div className='sns_bx'></div> */}
         <a className='button' href='' target='_blank'>MALAKA!</a>
       </div>
     </>
@@ -73,8 +72,8 @@ export default function Model3dRec() {
         
         {/* <directionalLight position={[10, 10, 10]} /> */}
 
-        <Model position={[-0.0, 0.0, -0]} scale={2}/>
-        <axesHelper args={[5]} />
+        <Model position={[-0.0, 0.0, -0]} scale={1.8}/>
+        {/* <axesHelper args={[5]} /> */}
 
       </Canvas>
 

@@ -9,7 +9,7 @@ html{
 }
 body * {
     /* 공사중 표시 */
-    outline: 1px dashed gray;
+    /* outline: 1px dashed gray; */
     line-height: 1.5;
     box-sizing: border-box;
 }
