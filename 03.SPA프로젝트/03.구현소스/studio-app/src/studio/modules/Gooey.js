@@ -7,48 +7,85 @@ const jqFn = () => {
         // 대상요소
         const goo = $(".goo_cont");
         const svgImg = $(".goo_cont image");
-        
-        // 스크롤 이벤트 제작
-        // 마우스인!
-        $(".project_item").hover(function(e){
-            let chgSrc = e.currentTarget.firstChild.getAttribute("src");
-            
-            // 이미지변경!
-            svgImg.attr("href", chgSrc);
-            goo.css({display:"block"});
-        });
-        // 마우스아웃!
-        $(".project-list").mouseleave(function(){
-            // console.log("아웃!");
-            goo.css({display:"none"});
-
-        });
 
         let winW = window.innerWidth;
+
+        // 모바일/PC 상태 체크용 변수
+        let isMobile;
+
         
+        // 리사이즈 이벤트 등록 ////////////
         $(window).on("resize",function(){
             winW = $(window).width();
-            console.log(winW);
+            
+            // 업데이트!
+            sizeCheck();
+
+            // 호출하면 다중호출되는 이슈때문에...
+            // mouseEvt(isMobile);
+
+        });
+
+        function sizeCheck() {
             if (winW <= 720) {
+                console.log("모바일")
+                return isMobile = 1;
             }
             else {
-                
+                console.log("pc화면")
+                return isMobile = 2;
             }
+        }
 
-            
-        })
+        // 최초값 셋팅 함수 호출 : 사이즈설정, 클래스설정
+        sizeCheck();
+        mouseEvt(isMobile);
+
         
+        function mouseEvt(props) {
+
+            if (props == 1) {
+                console.log("실행안함");
+                // $(".project_item").hover(function() { return false; });
+                // $(".project_item").off("hover");
+                // $(".project-list").off("mouseleave");
+                
+            } //////// if /////////
+
+            else if (props == 2) {
+                console.log("이때만 실행");
+
+                    
+                // 스크롤 이벤트 제작 /////////////
+                // 마우스인!
+                $(".project_item").hover(function(e){
+                    let chgSrc = e.currentTarget.firstChild.getAttribute("src");
+                    
+                    // 이미지변경!
+                    svgImg.attr("href", chgSrc);
+                    goo.css({display:"block"});
+                });
+
+                // 마우스아웃!
+                $(".project-list").mouseleave(function(e){
+                    // console.log("아웃!");
+                    goo.css({display:"none"});
         
-        // 공식
-        // 윈도우 가로크기 : 박스 크기
-        $(document).on("mousemove scroll",function(e){
-            // console.log("움직여",e.clientX, e.clientY);
-            goo.css({
-                // left: `calc(${(e.clientX/winW*100)/2}%)`,
-                left: `calc(${(e.clientX/winW*100)/2}% - ${goo.width()/2}px)`,
-                top:`${(e.clientY-300)}px`,
-            })
-        }) //////// mousemove ////////
+                });
+                $(document).on("mousemove",function(e){
+                    console.log("움직여",e.clientX, e.clientY);
+                    goo.css({
+                        // left: `calc(${(e.clientX/winW*100)/2}%)`,
+                        left: `calc(${(e.clientX/winW*100)/2}% - ${goo.width()/2}px)`,
+                        top:`${(e.clientY-300)}px`,
+                    });
+                }); //////// mousemove ////////
+                
+            } ////////// else if ///////////////////
+
+    
+        } ///////////// mouseEvt 함수 //////////////////////
+
     
     });
 }

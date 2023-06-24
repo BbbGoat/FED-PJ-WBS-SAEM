@@ -10,10 +10,10 @@
 #goosvg * { transform-origin: 50% }
 /* 최상위박스 */
 .goo {
-    margin-top: calc(var(--global-padding)*8);
+    /* margin-top: calc(var(--global-padding)*8);
     margin-bottom: calc(var(--global-padding)*8);
     padding-top: 0;
-    padding-bottom: 0;
+    padding-bottom: 0; */
 }
 .goo_cont {
     position: fixed;

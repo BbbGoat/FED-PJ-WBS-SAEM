@@ -126,7 +126,7 @@ const jqFn = () => {
     
     // 리사이즈 이벤트 등록 ////
     window.addEventListener("resize", function(){
-        console.log("업데이트!!!");
+        // console.log("업데이트!!!");
         addListeners();
         setSVGWidth();
         updateCurve();
