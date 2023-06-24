@@ -77,8 +77,11 @@ export default function Model3dRec() {
         <axesHelper args={[5]} />
 
       </Canvas>
-        {/* 버튼모듈 추가 */}
-        <SnsBtn />
+
+
+      {/* 버튼모듈 추가 */}
+      <SnsBtn />
+      
     </div>
   )
 } /////////////// Model3dRec ////////////////

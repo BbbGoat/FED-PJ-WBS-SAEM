@@ -5,9 +5,6 @@ import "../css/chat.css";
 const ChatFn = (function(){
     const myName = "You";
 
-    console.log("요기")
-
-    
     // init 함수
     function init() {
         clearInterval(setI);
@@ -154,16 +151,12 @@ const ChatFn = (function(){
 
 })(); /////////////////////// ChatFn ///////////////////////
  
-// $(function(){
-//     ChatFn.init();
-// });
-
 // boolean 체크 변수
 const jqFn = () => {
     $(()=>{
-        let check = true;
         
         const chatbx = document.querySelector(".chat_wrap");
+        let check = true;
         
         $(window).on("scroll", function(){
             let tgTop = chatbx.getBoundingClientRect().top
@@ -172,10 +165,6 @@ const jqFn = () => {
                 if(check) {
                     // 한번만실행
                     check = false;
-                    
-                    // $(".chat ul").html("");
-
-                    console.log("init 호출",check);
                     // 호출하기
                     ChatFn.init();
                 } // if
