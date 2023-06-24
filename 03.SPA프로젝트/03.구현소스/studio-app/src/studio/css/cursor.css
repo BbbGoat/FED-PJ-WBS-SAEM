@@ -17,6 +17,8 @@
     background-size: 100% auto;
     transition: opacity .15s;
     opacity: 1;
+    transition-duration: 100ms;
+    will-change: transform;
 }
 .cursor.cursoract {
     background-image: url(../cursor-hand--active.png);    
