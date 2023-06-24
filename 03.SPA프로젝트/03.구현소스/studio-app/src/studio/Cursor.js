@@ -5,12 +5,14 @@ import "./css/cursor.css";
 const jqFn = () => {
   $(() => {
 
-    $("body").css({cursor:"none"})
+    // 커서 초기화!!! //////////////////
+    $("html").css({cursor:"none"});
+    $("a").css({cursor:"none"});
+    $("textarea").css({cursor:"none"});
+
+    
     const cursor = $(".cursor");
     const cursor2 = $(".cursor2");
-    
-    // 걸어야할 이벤트 ///////////////////
-    // mousemove mousedown mouseup mouseenter mouseleave
     
     // 변수
     let posX, posY;
@@ -19,9 +21,15 @@ const jqFn = () => {
         // 재할당
         posX = e.clientX;
         posY = e.clientY;
+
+        cursor.addClass("curinit");
         
         cursor.css({
             transform: `translate3d(calc(${posX}px - 50%), calc(${posY}px - 50%), 0px)`,
+        })
+        cursor2.css({
+            top: `${posY}px`,
+            left: `${posX}px`,
         })
     });
     $(document).mouseup(function(e){
@@ -34,7 +42,14 @@ const jqFn = () => {
         cursor.addClass("cursoract");
         cursor2.addClass("cursorinteractive");
     });
-
+    $('a').mouseenter(function(e){
+        console.log("엔터야");
+        cursor2.addClass("cursorinnerhover");
+    });
+    $('a').mouseleave(function(e){
+        cursor2.removeClass("cursorinnerhover");
+    })
+    
 
   });
 };
