@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-const getIsMobile = () => window.innerWidth <= 720;
+const getIsMobile = () => window.innerWidth <= 960;
 
 export default function useIsMobile() {
 
@@ -10,7 +10,7 @@ export default function useIsMobile() {
 
         const onResize = () => {
             if (isMobile) {
-                console.log("true되는 조건:",getIsMobile);
+                // console.log("true되는 조건:",getIsMobile);
                 setIsMobile(true);
             }
             else setIsMobile(false);

@@ -1,13 +1,12 @@
 // Model3dRec 모듈 - Model3dRec.js
 import * as THREE from 'three'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
-// import { useLoader } from '@react-three/drei'
 import { easing } from 'maath'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-// CSS
-import "../css/model3dRec.css"
 import useIsMobile from "./useIsMobile";
+// CSS
+import "../css/model3drec.css"
 
 
 // 컴포넌트
@@ -30,9 +29,20 @@ function Model(props) {
 } /////////////// Model ////////////////
 
 
-export default function Lookat() {
+const SnsBtn = () => {
+  return(
+    <>
+      <div className='sns_wrap'>
+        <a className='button' href='' target='_blank'>FOLG HALT</a>
+        <div className='sns_bx'></div>
+        {/* <div className='button'>MALAKA!</div> */}
+        <a className='button' href='' target='_blank'>MALAKA!</a>
+      </div>
+    </>
+  );
+};
 
-
+export default function Model3dRec() {
   // useIsMobile();
   // 호출하면 리턴값 isMobile이 찍힌다!
 
@@ -41,20 +51,19 @@ export default function Lookat() {
 
     // 새로고침시에만 먹는 이슈.. -> 실시간으로 변동시켜보자
     if (useIsMobile()) {
-      console.log("true!!!");
-      return 2
+      // console.log("true!!!");
+      return 1.3
     }
     else {
-      console.log("false!!!");
+      // console.log("false!!!");
       return 1
     }
 
   } //////// SetImgSize 메서드 /////////
   
-  
   return (
     <div className="cvswrap">
-      <Canvas className="canvas_tit" camera={{ position: [1, 0.1, useImgSize()] }}>
+      <Canvas className="canvas_tit" camera={{ position: [useImgSize(), 0.1, useImgSize()] }}>
 
         {/* 조명설정 */}
         <spotLight/>
@@ -66,7 +75,10 @@ export default function Lookat() {
 
         <Model position={[-0.0, 0.0, -0]} scale={2}/>
         <axesHelper args={[5]} />
+
       </Canvas>
+        {/* 버튼모듈 추가 */}
+        <SnsBtn />
     </div>
   )
-} /////////////// Lookat ////////////////
+} /////////////// Model3dRec ////////////////

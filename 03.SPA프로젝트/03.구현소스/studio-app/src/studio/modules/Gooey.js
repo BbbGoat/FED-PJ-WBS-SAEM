@@ -28,7 +28,7 @@ const jqFn = () => {
         
         $(window).on("resize",function(){
             winW = $(window).width();
-            // console.log(winW);
+            console.log(winW);
             if (winW <= 720) {
             }
             else {

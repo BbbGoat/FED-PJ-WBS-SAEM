@@ -1,4 +1,6 @@
 @charset "utf-8";
+/* Model3dRec 모듈용 CSS - model3drec.css */
+
 
 /* body {
     margin: 0;
@@ -6,8 +8,55 @@
     min-height: 100vh;
     background: #000;
   } */
-  
-  .canvas_tit {
-    height: 100% !important;
+
+.canvas_tit {
+  height: 100% !important;
+}
+
+
+/********** SnsBtn CSS 영역 **********/
+
+.sns_wrap {
+  position: absolute;
+  width: 55%;
+  /* top: 50%; */
+  left: 50%;
+  bottom: 0%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+.sns_wrap .button {
+  margin-bottom: var(--global-padding);
+  width: 100%;
+  pointer-events: all;
+}
+
+@media screen and (min-width: 720px) {
+  .sns_wrap {
+    flex-direction: row;
+    /* align-items: flex-end; */
+    
+    justify-content: space-between;
+
+    width: 100%;
+    bottom: 15%;
+    padding: 0 var(--global-padding);
   }
-  
+  .sns_wrap .button {
+    /* order: 2; */
+    width: 35%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .sns_wrap {
+    bottom: 10%;
+  }
+  .sns_wrap .button {
+    width: 33%;
+  }
+}

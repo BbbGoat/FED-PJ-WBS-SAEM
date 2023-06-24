@@ -7,7 +7,6 @@ const Contact = () => {
 
     return(
         <>
-            <h2>Contact 페이지</h2>
             <Model3dRec />
         </>
     );
