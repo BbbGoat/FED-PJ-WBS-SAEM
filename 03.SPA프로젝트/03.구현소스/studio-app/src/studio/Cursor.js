@@ -6,7 +6,7 @@ const jqFn = () => {
   $(() => {
 
     // 커서 초기화!!! //////////////////
-    $("html, a, textarea, label, input").css({cursor:"none"});
+    // $("html, a, textarea, label, input").css({cursor:"none"});
 
     
     const cursor = $(".cursor");
@@ -41,7 +41,7 @@ const jqFn = () => {
         cursor2.addClass("cursorinteractive");
     });
     $('a').mouseenter(function(e){
-        console.log("엔터야");
+        // console.log("엔터야");
         cursor2.addClass("cursorinnerhover");
     });
     $('a').mouseleave(function(e){

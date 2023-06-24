@@ -17,6 +17,9 @@ body * {
     color: #fff;
     background-color: #fbb;
 }
+html, a, body, input, label, textarea {
+    cursor: none;
+}
 
 
 /******************** 2. 공통 클래스 ********************/
