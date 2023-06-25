@@ -74,13 +74,13 @@ const jqFn = () => {
                     });
                     // 마우스인!
                     $(".project-list").mouseenter(function(e){
-                        goo.css({display:"block"}).delay(100).animate({opacity:1});
+                        goo.css({display:"block"}).delay(100).animate({opacity:1},200);
 
                     })
                     // 마우스아웃!
                     $(".project-list").mouseleave(function(e){
                         // console.log("아웃!");
-                        goo.css({display:"none"}).animate({opacity:0});
+                        goo.css({display:"none"}).animate({opacity:0},200);
                     });
                     $(".project-list").on("mousemove",function(e){
                         console.log("움직여",e.clientX, e.clientY);
