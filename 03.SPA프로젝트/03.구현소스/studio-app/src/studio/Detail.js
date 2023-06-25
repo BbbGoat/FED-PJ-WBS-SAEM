@@ -1,6 +1,6 @@
 // Detail 페이지 컴포넌트 - Detial.js
 import $ from "jquery";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./css/detail.css";
 
 
@@ -21,9 +21,11 @@ function Detail(props) {
     const detail = loc.state.detail;
     const imgsrc = loc.state.sub;
 
-    const goBack = () => {
-        window.history.back();
-    }
+    // const goBack = () => {
+    //     window.history.back();
+    // }
+
+    const navigate = useNavigate();
 
     return(
         <>
@@ -35,7 +37,7 @@ function Detail(props) {
              
             {/* 디테일에서만 들어가는 헤더 */}
             <div className="detail_header">
-                <button className="project-back-button back-button button button--light button_large" onClick={goBack}>Zurück</button>
+                <button className="project-back-button back-button button button--light button_large" onClick={()=>{navigate(-1);}}>Zurück</button>
             </div>
 
             {/* 배경색상 바꾸기 */}
