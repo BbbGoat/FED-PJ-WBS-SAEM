@@ -62,6 +62,10 @@ $(()=>{
         $(this).addClass("active").siblings().removeClass("active");
     });
 
+    $(".menu_main > a").click(function(){
+        button.trigger("click");
+    })
+
     // gnb 메인 바로가기 버튼
     $(".logo").click(function(){
         gnb.removeClass("active");
@@ -136,11 +140,11 @@ const Gnb = (props) => {
     
     useEffect(()=>{
         // timeout();
-        console.log("useEffect 구역!!!");
+        // console.log("useEffect 구역!!!");
 
         // 타임아웃후 아래 리턴!
         return () => {
-            console.log("타임아웃클리어!!!");
+            // console.log("타임아웃클리어!!!");
             clearTimeout(timeout);
         };
     }); ////////// useEffect ///////////
@@ -158,6 +162,7 @@ const Gnb = (props) => {
             {/* <Link to="/in">INFO</Link>
             <Link to="/wo">WORK</Link>
             <Link to="/ct">CONTACT</Link> */}
+
             <a onClick={timeout}>{props.cat}</a>
             
         </>
@@ -165,8 +170,76 @@ const Gnb = (props) => {
 }
 
 const GnbMob = (props) => {
+
+    const navigate = useNavigate();
+    
+    const timeout = () => {
+        console.log("타임아웃 시작");
+        
+        // 대상수집
+        const top = $(".transition-top .transition-title");
+        const bottom = $(".transition-bottom .transition-title");
+        const cover = $(".cover");
+
+        // jQuery animate 설정구역
+        top.each((idx,ele)=>{
+            $(ele).delay(idx*50).animate({
+                opacity:1
+            },0).delay(700).animate({
+                opacity:0
+            },0)
+        });
+
+        bottom.each((idx,ele)=>{
+            $(ele).delay(idx*50).animate({
+                opacity:1
+            },0).delay(700).animate({
+                opacity:0
+            },0)
+        });
+
+        cover.css({zIndex:10000}).animate({
+            opacity:1,
+        },400).delay(400).animate({
+            opacity:0,
+            zIndex:-1,
+        },400)
+
+
+        // 타임아웃 설정 구역
+        setTimeout(()=>{
+            linkToNav();
+            console.log("타임아웃 작동중");
+        },600);
+        
+    }; //////////// timeout 함수 ///////////
+    
+    useEffect(()=>{
+        // timeout();
+        // console.log("useEffect 구역!!!");
+
+        // 타임아웃후 아래 리턴!
+        return () => {
+            // console.log("타임아웃클리어!!!");
+            clearTimeout(timeout);
+        };
+    }); ////////// useEffect ///////////
+    
+
+    // 이동경로
+    const linkToNav = () => {
+        navigate(cat_data[props.cat].link);
+    }
+
+
+    
     return (
         <>
+            {/* <Link to="/in" className="button button_large">Info</Link>
+            <Link to="/wo" className="button button_large">Work</Link>
+            <Link to="/ct" className="button button_large">Contact</Link> */}
+            
+            <a className="button button_large" onClick={timeout}>{props.cat}</a>
         </>
     );
 }

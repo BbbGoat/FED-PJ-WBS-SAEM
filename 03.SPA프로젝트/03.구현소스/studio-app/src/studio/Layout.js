@@ -41,11 +41,11 @@ const Layout = () => {
                     <span className="button_init">Menu</span>
                     <span className="button_active">Close</span>
                 </button>
-                <div className="menu">
+                <div className="menu" onClick={handleClick}>
                     <div className="menu_main">
-                        <Link to="/in" className="button button_large">Info</Link>
-                        <Link to="/wo" className="button button_large">Work</Link>
-                        <Link to="/ct" className="button button_large">Contact</Link>
+                        <GnbMob cat={"INFO"} />
+                        <GnbMob cat={"WORK"} />
+                        <GnbMob cat={"CONTACT"} />
                     </div>
                     <ul className="menu_secondary">
                         <li><a href="#" target="_blank">Instagram</a></li>

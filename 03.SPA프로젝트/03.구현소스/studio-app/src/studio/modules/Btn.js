@@ -64,11 +64,11 @@ const Btn = (props) => {
     
     useEffect(()=>{
         // timeout();
-        console.log("useEffect 구역!!!");
+        // console.log("useEffect 구역!!!");
 
         // 타임아웃후 아래 리턴!
         return () => {
-            console.log("타임아웃클리어!!!");
+            // console.log("타임아웃클리어!!!");
             clearTimeout(timeout);
         };
     }); ////////// useEffect ///////////
