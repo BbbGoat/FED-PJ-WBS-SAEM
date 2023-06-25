@@ -18,11 +18,11 @@
     transform: translate(-50%, -50%) perspective(600px) rotateY(20deg) rotateX(10deg);
     /* background: #1d3557; */
     transform-style: preserve-3d;
-    width: 760px;
-    height: 300px;
+    width: 320px;
+    height: 470px;
     border-radius: 10px;
     pointer-events: none;
-    background: url(../../../public/images/SWAN-1.webp) no-repeat center/cover;
+    /* background: url(../../../public/images/SWAN-1.webp) no-repeat center/cover; */
 
     text-align: center;
     outline: 3px solid #ccc;
@@ -40,9 +40,10 @@
     top: 0;
     left: 0;
     z-index: 2;
-    width: 250px;
-    height: 300px;
-    transform: translateZ(150px) translateX(220%) translateY(50px) scale(.55);
+
+    width: 200px;
+    height: 260px;
+    transform: translateZ(150px) translateX(89%) translateY(200px) scale(.55);
     border: 3px solid rgba(255, 255, 255, 1);
     background: #a8dadc;
     opacity: 0.6;
@@ -96,4 +97,29 @@
     position: absolute;
     background-color: transparent;
     z-index: 10;
+}
+
+@media screen and (min-width: 720px) {
+    .movetit_wrap {
+        width: 525px;
+        height: 270px;
+        background: url(../../../public/images/SWAN-1.webp) no-repeat center/cover;
+    }
+    .shape2 {
+        width: 200px;
+        height: 260px;
+        transform: translateZ(150px) translateX(180%) translateY(85px) scale(.55);
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .movetit_wrap {
+        width: 760px;
+        height: 300px;
+    }
+    .shape2 {
+        width: 250px;
+        height: 300px;
+        transform: translateZ(150px) translateX(220%) translateY(50px) scale(.55);
+    }
 }

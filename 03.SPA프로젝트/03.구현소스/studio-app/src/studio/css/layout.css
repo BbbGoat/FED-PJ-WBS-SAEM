@@ -2,7 +2,7 @@
 /* Layout 페이지 CSS - layout.css */
 
 .cover {
-    overflow: hidden;
+    /* overflow: hidden; */
     position: fixed;
     top: 0;
     left: 0;
