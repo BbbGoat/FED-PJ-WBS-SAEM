@@ -1,9 +1,11 @@
 // 메인 레이아웃 컴포넌트
-import "./css/layout.css";
 import { Link, Outlet } from "react-router-dom";
-import "./modules/Gnb.js";
-import Cursor from "./Cursor";
+import { useState } from "react";
 import Transition from "./Transition";
+import Cursor from "./Cursor";
+// import "./modules/Gnb.js";
+import { Gnb, GnbMob } from "./modules/Gnb";
+import "./css/layout.css";
 
 /********************************************************* 
     [ 리액트 라우터와 연결하여 사용되는 라우터 컴포넌트 ]
@@ -15,19 +17,24 @@ import Transition from "./Transition";
 *********************************************************/
 
 const Layout = () => {
+    
+    const [num, setNum] = useState(0);
+    function randomNumberInRange(min, max) {return Math.floor(Math.random() * (max - min + 1)) + min;}
+    const handleClick = () => {setNum(randomNumberInRange(0, 2));};
 
     return (
         <>
             <Cursor />
+            <div className="cover"></div>
 
 
             {/* 1. 상단영역 */}
             <header className="top">
                 {/* 네비게이션 파트 */}
-                <nav className="gnb">
-                    <Link to="/in">INFO</Link>
-                    <Link to="/wo">WORK</Link>
-                    <Link to="/ct">CONTACT</Link>
+                <nav className="gnb" onClick={handleClick}>
+                    <Gnb cat={"INFO"}/>
+                    <Gnb cat={"WORK"}/>
+                    <Gnb cat={"CONTACT"}/>
                 </nav>
                 {/* 모바일 파트 */}
                 <button className="button button_large">
@@ -88,7 +95,7 @@ const Layout = () => {
                 </ul>
             </footer>
 
-            <Transition />
+            <Transition num={num} />
         </>
     );
   

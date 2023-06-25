@@ -8,7 +8,7 @@ import "./css/detail.css";
     라우터 파라미터값 받아서 데이터 처리!
 ********************************************/
 
-function Detail(props) {
+function Detail() {
 
     // 라우터 전달값을 받기위한 useLocation 생성하기!
     const loc = useLocation();
@@ -25,11 +25,6 @@ function Detail(props) {
 
     return(
         <>
-            {/* <header>
-                <button target="_blank" onClick={history.back()} className="project-back-button back-button button button--onlight button__large">Zurück</button>
-                </header>
-            */}
-
              
             {/* 디테일에서만 들어가는 헤더 */}
             <div className="detail_header">

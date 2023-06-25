@@ -1,5 +1,5 @@
 // Main 페이지 컴포넌트
-import React from "react";
+import React, { useState } from "react";
 // 모듈 불러오기
 import Surface from "./modules/Surface";
 import Welcome from "./modules/Welcome";
@@ -11,6 +11,10 @@ import EmailSend from "./modules/EmailSend";
 import Chat from "./modules/Chat";
 
 const Main = () => {
+
+    const [num, setNum] = useState(0);
+    function randomNumberInRange(min, max) {return Math.floor(Math.random() * (max - min + 1)) + min;}
+    const handleClick = () => {setNum(randomNumberInRange(0, 2));};    
     
     return(
         <>
@@ -19,7 +23,7 @@ const Main = () => {
             <Surface />
 
             {/* Info section */}
-            <Btn cat={"INFO"} />
+            <Btn cat={"INFO"}/>
             <Vidgroup />
             <Ball />
             

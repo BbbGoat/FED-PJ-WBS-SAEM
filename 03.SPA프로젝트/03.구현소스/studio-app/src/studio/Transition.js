@@ -16,13 +16,11 @@ const transition_data = [{
 
 }];
 
-const Transition = () => {
+const Transition = (props) => {
 
+    console.log("Transition 컴포넌트 props.num:",props.num)
     // console.log(transition_data.top[0]);
 
-    // 랜덤수 설정
-    let randomNum = Math.floor(Math.random()*3)
-    console.log(randomNum)
     
     return (
         <>
@@ -33,7 +31,7 @@ const Transition = () => {
                             Array(8).fill(
                                 transition_data.map((v,i)=>
                                     <div className="transition-title" key={i}>
-                                        <img src={v.top[randomNum]} alt="트랜지션 이미지" />
+                                        <img src={v.top[props.num]} alt="트랜지션 이미지" />
                                     </div>
                                 )
                             )
@@ -45,7 +43,7 @@ const Transition = () => {
                             Array(8).fill(
                                 transition_data.map((v,i)=>
                                     <div className="transition-title" key={i}>
-                                        <img src={v.bottom[randomNum]} alt="트랜지션 이미지" />
+                                        <img src={v.bottom[props.num]} alt="트랜지션 이미지" />
                                     </div>
                                 )
                             )

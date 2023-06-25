@@ -12,35 +12,54 @@ import "../css/btn.css";
 import { useEffect, useState } from "react";
 
 const jqFn = () => {
-    $(()=>{
-
-        
-    }); /////////// jQB ///////////
+    $(()=>{}); /////////// jQB ///////////
 }
 
 const Btn = (props) => {
 
-    // 가져오기
-    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
-
+    
     const timeout = () => {
         console.log("타임아웃 시작");
         
+    
+        // 대상수집
+        const top = $(".transition-top .transition-title");
+        const bottom = $(".transition-bottom .transition-title");
+        const cover = $(".cover");
 
 
+        // jQuery animate 설정구역
+        top.each((idx,ele)=>{
+            $(ele).delay(idx*50).animate({
+                opacity:1
+            },0).delay(700).animate({
+                opacity:0
+            },0)
+        });
 
-        
+        bottom.each((idx,ele)=>{
+            $(ele).delay(idx*50).animate({
+                opacity:1
+            },0).delay(700).animate({
+                opacity:0
+            },0)
+        });
 
-        // 광클방지 넣어야함
-        
+        cover.css({zIndex:10000}).animate({
+            opacity:1,
+        },400).delay(400).animate({
+            opacity:0,
+            zIndex:-1,
+        },400)
 
+
+        // 타임아웃 설정 구역
         setTimeout(()=>{
-            // 이동할 페이지
-            // navigate(cat_data[props.cat].link);
-            onClickBtn();
-            console.log("타임아웃 작동중")
-        },2000);
+            linkToNav();
+            console.log("타임아웃 작동중");
+        },600);
+        
     }; //////////// timeout 함수 ///////////
     
     useEffect(()=>{
@@ -54,15 +73,10 @@ const Btn = (props) => {
         };
     }); ////////// useEffect ///////////
     
-    
-    //////////////////////////////////
 
-    // 미리 만들어둔거
-    const onClickBtn = () => {
-
+    // 이동경로
+    const linkToNav = () => {
         navigate(cat_data[props.cat].link);
-
-        
     }
     
     return (
