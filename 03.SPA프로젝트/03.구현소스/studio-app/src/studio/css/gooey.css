@@ -24,7 +24,9 @@
     will-change: transform;
     transform: translate(50%, 0%);
     /* 오버시 none에서 block으로 변경 */
+    opacity: 0;
     display: none;
+    transition: opacity .3s ease 0;
 }
 
 /* 최상위요소 키프레임 */

@@ -9,7 +9,7 @@
     pointer-events: none;
     left: 34px;
     top: 38px;
-    z-index: 9999;
+    z-index: 999999;
     background-image: url(../cursor-hand.png);
     background-repeat: no-repeat;
     background-position: top left;
@@ -32,7 +32,7 @@
     height: 0;
     opacity: 0;
     border-radius: 100%;
-    background-color: palevioletred;
+    background-color: #fbb;
     position: fixed;
     transition: width .15s,height .15s,opacity .15s;
     transform: translate(-50%, -50%);

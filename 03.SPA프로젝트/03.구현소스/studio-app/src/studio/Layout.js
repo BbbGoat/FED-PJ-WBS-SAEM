@@ -6,6 +6,7 @@ import Cursor from "./Cursor";
 // import "./modules/Gnb.js";
 import { Gnb, GnbMob } from "./modules/Gnb";
 import "./css/layout.css";
+import Logo from "./modules/Logo";
 
 /********************************************************* 
     [ 리액트 라우터와 연결하여 사용되는 라우터 컴포넌트 ]
@@ -18,6 +19,7 @@ import "./css/layout.css";
 
 const Layout = () => {
     
+    // 랜덤수 출력용
     const [num, setNum] = useState(0);
     function randomNumberInRange(min, max) {return Math.floor(Math.random() * (max - min + 1)) + min;}
     const handleClick = () => {setNum(randomNumberInRange(0, 2));};
@@ -29,9 +31,9 @@ const Layout = () => {
 
 
             {/* 1. 상단영역 */}
-            <header className="top">
+            <header className="top" onClick={handleClick}>
                 {/* 네비게이션 파트 */}
-                <nav className="gnb" onClick={handleClick}>
+                <nav className="gnb">
                     <Gnb cat={"INFO"}/>
                     <Gnb cat={"WORK"}/>
                     <Gnb cat={"CONTACT"}/>
@@ -41,7 +43,7 @@ const Layout = () => {
                     <span className="button_init">Menu</span>
                     <span className="button_active">Close</span>
                 </button>
-                <div className="menu" onClick={handleClick}>
+                <div className="menu">
                     <div className="menu_main">
                         <GnbMob cat={"INFO"} />
                         <GnbMob cat={"WORK"} />
@@ -55,11 +57,7 @@ const Layout = () => {
                 </div>
 
                 {/* 로고 파트 */}
-                <Link to="/main" className="logo">
-                    <img src="./images/menu-small.gif" />
-                </Link>
-
-
+                <Logo />
 
             </header>
 

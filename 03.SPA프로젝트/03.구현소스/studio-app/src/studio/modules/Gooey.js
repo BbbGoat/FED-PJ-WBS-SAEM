@@ -54,6 +54,8 @@ const jqFn = () => {
                     // console.log("실행안함");
                     $(".project_item").hover(function() { return false; });
                     $(".project_item").off("hover");
+                    $(".project_item").off("mouseenter");
+                    $(".project-list").off("mouseenter");
                     $(".project-list").off("mouseleave");
                     $(".project-list").off("mousemove");
                     
@@ -64,19 +66,21 @@ const jqFn = () => {
     
                         
                     // 스크롤 이벤트 제작 /////////////
-                    // 마우스인!
+                    // 호버시 이미지변경!
                     $(".project_item").hover(function(e){
                         let chgSrc = e.currentTarget.firstChild.getAttribute("src");
-                        
-                        // 이미지변경!
                         svgImg.attr("href", chgSrc);
-                        goo.css({display:"block"});
+                        
                     });
-    
+                    // 마우스인!
+                    $(".project-list").mouseenter(function(e){
+                        goo.css({display:"block"}).delay(100).animate({opacity:1});
+
+                    })
                     // 마우스아웃!
                     $(".project-list").mouseleave(function(e){
                         // console.log("아웃!");
-                        goo.css({display:"none"});
+                        goo.css({display:"none"}).animate({opacity:0});
                     });
                     $(".project-list").on("mousemove",function(e){
                         console.log("움직여",e.clientX, e.clientY);

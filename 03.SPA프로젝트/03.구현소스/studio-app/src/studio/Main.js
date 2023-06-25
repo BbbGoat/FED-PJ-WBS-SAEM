@@ -12,10 +12,6 @@ import Chat from "./modules/Chat";
 
 const Main = () => {
 
-    const [num, setNum] = useState(0);
-    function randomNumberInRange(min, max) {return Math.floor(Math.random() * (max - min + 1)) + min;}
-    const handleClick = () => {setNum(randomNumberInRange(0, 2));};    
-    
     return(
         <>
             {/* 메인 최상단 배너 */}

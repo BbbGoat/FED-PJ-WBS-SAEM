@@ -14,14 +14,15 @@
     z-index: 2000;
     background-color: #fff;
 
-    position: relative;
+    position: absolute;
+    /* position: relative; */
     width: 100%;
-    /* top: 0; */
+    top: 0;
 }
 .detail_header .button {
     display: inline-block;
     width: 100%;
-    cursor: pointer;
+    cursor: none;
 }
 .detail_header .button_large {
     font-size: var(--button-large-text-size);
