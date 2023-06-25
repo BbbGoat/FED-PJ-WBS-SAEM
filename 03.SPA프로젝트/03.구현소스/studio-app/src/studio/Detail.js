@@ -21,10 +21,6 @@ function Detail(props) {
     const detail = loc.state.detail;
     const imgsrc = loc.state.sub;
 
-    // const goBack = () => {
-    //     window.history.back();
-    // }
-
     const navigate = useNavigate();
 
     return(

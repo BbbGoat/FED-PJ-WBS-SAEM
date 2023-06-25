@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // 컴포넌트들
 import Layout from './studio/Layout';
 import Main from './studio/Main';
@@ -17,8 +17,6 @@ import './index.css';
 
 export default function App() {
 
-  // const navigate = useNavigate();
-  
   return (
     <>  
       <BrowserRouter>

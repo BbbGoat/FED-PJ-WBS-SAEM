@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* Transition 모듈용 CSS - transition.css */
+
+.transition {
+    z-index: 100000;
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+}
+
+/* 탑 */
+.transition-top {
+    z-index: 100;
+    width: fit-content;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* 바텀 */
+.transition-bottom {
+    width: fit-content;
+    flex-direction: row-reverse;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* 공통 */
+.transition-title {
+    height: 50vh;
+    width: 12.5vw;
+    /* opacity: 0; */
+    position: relative;
+    overflow: visible;
+}
+.transition-title img {
+    height: 100%;
+    width: auto;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%)scale(1.1);
+}

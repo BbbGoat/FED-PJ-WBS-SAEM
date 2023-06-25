@@ -3,6 +3,7 @@ import "./css/layout.css";
 import { Link, Outlet } from "react-router-dom";
 import "./modules/Gnb.js";
 import Cursor from "./Cursor";
+import Transition from "./Transition";
 
 /********************************************************* 
     [ 리액트 라우터와 연결하여 사용되는 라우터 컴포넌트 ]
@@ -86,6 +87,8 @@ const Layout = () => {
                     </li>
                 </ul>
             </footer>
+
+            <Transition />
         </>
     );
   
