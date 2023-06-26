@@ -7,11 +7,15 @@ const transition_data = [{
         "./images/combo-0.webp",
         "./images/combo-2.webp",
         "./images/combo-4.webp",
+        "./images/combo-6.webp",
+        "./images/combo-8.webp",
     ],
     bottom:[
         "./images/combo-1.webp",
         "./images/combo-3.webp",
         "./images/combo-5.webp",
+        "./images/combo-7.webp",
+        "./images/combo-8.webp",
     ],
 
 }];

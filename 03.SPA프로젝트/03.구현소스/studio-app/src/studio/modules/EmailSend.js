@@ -3,6 +3,7 @@ import $, { data } from "jquery";
 import "../css/emailsned.css";
 
 
+
 // I usually do this
 // I do things like this, too // I do this sometimes
 
@@ -85,8 +86,6 @@ const EmailSend = () => {
                     <input className="button" type="submit" value="SEND" action="#contact-section" />
                 </div>
                 
-
-
             </form>
 
         </>
