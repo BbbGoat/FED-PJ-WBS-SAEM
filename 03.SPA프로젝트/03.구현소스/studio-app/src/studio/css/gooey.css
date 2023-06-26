@@ -22,7 +22,7 @@
     top: 0;
     left: 0;
     will-change: transform;
-    transform: translate(50%, 0%);
+    transform: translate(0%, 0%);
     /* 오버시 none에서 block으로 변경 */
     opacity: 0;
     display: none;
@@ -74,3 +74,9 @@
 }
 
 
+
+@media screen and (min-width:960px) {
+    .goo_cont {
+        transform: translate(50%, 0%);
+    }
+}

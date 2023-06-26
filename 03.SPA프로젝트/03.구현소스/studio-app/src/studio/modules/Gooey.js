@@ -82,11 +82,22 @@ const jqFn = () => {
                         // console.log("아웃!");
                         goo.css({display:"none"}).animate({opacity:0},200);
                     });
-                    $(".project-list").on("mousemove",function(e){
-                        console.log("움직여",e.clientX, e.clientY);
+                    // x : e.clientX = 340 : winW
+                    //  x= e.clintX *340 / winW
+                    $(".project-list").on("mousemove",function(e){ 
+                        // console.log("움직여",e.clientX, e.clientY);
+
+                        // 백분율화
+                        let percentNum = e.clientX * 100 / winW
+                        // console.log(percentNum)
+                        // -20%~20% 사이로 만들기
+                        let resultNum = (percentNum) - 20
+                        console.log(resultNum)
                         goo.css({
                             // left: `calc(${(e.clientX/winW*100)/2}%)`,
-                            left: `calc(${(e.clientX/winW*100)/2}% - ${goo.width()/2}px)`,
+                            // left: `calc(${(e.clientX/winW*100)/2}% )`,
+                            left: `calc(${resultNum/2}%)`,
+
                             top:`${(e.clientY-300)}px`,
                         });
                     }); //////// mousemove ////////
