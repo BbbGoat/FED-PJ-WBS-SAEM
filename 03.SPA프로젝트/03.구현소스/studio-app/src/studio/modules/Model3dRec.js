@@ -33,9 +33,8 @@ const SnsBtn = () => {
   return(
     <>
       <div className='sns_wrap'>
-        <a className='button' href='' target='_blank'>FOLG HALT</a>
-        {/* <div className='sns_bx'></div> */}
-        <a className='button' href='' target='_blank'>MALAKA!</a>
+        <a className='button' href="https://davidshrigley.com/" target='_blank'>HOMEPAGE</a>
+        <a className='button' href="https://www.instagram.com/DavidShrigley/" target='_blank'>INSTAGRAM</a>
       </div>
     </>
   );

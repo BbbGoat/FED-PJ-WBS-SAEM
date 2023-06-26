@@ -161,7 +161,7 @@ const Surface = () => {
               {/* 텍스트영역 */}
               <div className="intro_text">
                 <p>
-                  hallo, wir sind studio brot. agentur für fetzige reklame aka werbung und design. am liebsten konzipieren wir. brandings zum beispiel. oder kampagnen natürlich. zwischendurch backen wir brot. egal, ob branden oder backen - wir kultivieren all das, was wir lieben. zu unserem team gehören kreative mit jeder menge schmalz im kopf und brot im bauch. und kevin bacon, der beagle, der gehört auch dazu. gemeinsam begleiten wir den gesamten prozess unserer kunden, um kommunikative lösungen zu erarbeiten, die marke, eindruck, laune, appetit und nicht zuletzt umsatz machen. ganz schön dufte eigentlich.
+                  hello, I'm David Shrigley. I work drawing, painting, sculpture, installation, photography, animation, and print. I publish books, produces music, occasionally designs tattoos and creates all manner of other paraphernalia. I want to provide a unique art, and I want to provide experience experience that all people can access. I have held solo exhibitions in museums around the world, and my work can be seen in famous collections, including the Museum of Modern Art. (New York), Tate Britain (London), and the National Gallery of Denmark (Copenhagen). Art is for everyone and I welcome everything!
                 </p>
               </div>
             </div>

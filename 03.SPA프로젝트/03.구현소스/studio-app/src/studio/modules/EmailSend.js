@@ -57,32 +57,32 @@ const EmailSend = () => {
             {/* form 태그 */}
             <form className="contact" method="post" action="process.php">
 
-                <h3 className="contact_headline">schreib deinem lieblingsbrot</h3>
+                <h3 className="contact_headline">A love letter to send your heart</h3>
 
                 <div className="field field_top">
-                    <label htmlFor="email">von:</label>
-                    <input type="email" id="email" placeholder="Deine Mailadresse" required />
+                    <label htmlFor="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter Mailadresse" required />
                 </div>
                 
                 <div className="field">
-                    <label htmlFor="subject">betreff:</label>
-                    <input type="text" id="subject" placeholder="Schreibt einfach hier rein, worum es ungefähr geht." required />
+                    <label htmlFor="subject">Title:</label>
+                    <input type="text" id="subject" placeholder="Tell me what you need to do here" required />
                 </div>
 
                 <div className="field field_message">
-                    <label htmlFor="text">nachricht:</label>
-                    <textarea type="text" id="text" placeholder="Freunde, let’s go, do the write thing!" required></textarea>
+                    <label htmlFor="text">Message:</label>
+                    <textarea type="text" id="text" placeholder="Friends, let’s go, do the write thing!" required></textarea>
                 </div>
 
                 <div className="field_bottom">
                     <label className="checkbox_cont">
                         <p>
-                            hiermit bestätige ich, die datenschutzrichtlinien gelesen zu haben.
+                            I confirm that I have read the Privacy Policy.
                         </p>
                         <input type="checkbox" id="checkbox" required />
                         <span className="checkmark"></span>
                     </label>
-                    <input className="button" type="submit" value="SENDEN" action="#contact-section" />
+                    <input className="button" type="submit" value="SEND" action="#contact-section" />
                 </div>
                 
 

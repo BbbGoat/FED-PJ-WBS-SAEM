@@ -50,9 +50,9 @@ const Layout = () => {
                         <GnbMob cat={"CONTACT"} />
                     </div>
                     <ul className="menu_secondary">
-                        <li><a href="#" target="_blank">Instagram</a></li>
-                        <li><a href="#" target="_blank">Tictok</a></li>
-                        <li><a href="#" target="_blank">Youtube</a></li>
+                        <li><a href="https://www.instagram.com/DavidShrigley/" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.tiktok.com/@d.shrig?lang=en" target="_blank">Tictok</a></li>
+                        <li><a href="https://davidshrigley.com/" target="_blank">Homepage</a></li>
                     </ul>
                 </div>
 
@@ -73,22 +73,22 @@ const Layout = () => {
             <footer className="footer">
                 <div className="footer_information">
                     <div className="footer_contact">
-                        <a target="_blank" href="mailto:eat.it@studiobrot.de">eat.it@studiobrot.de</a>
+                        <a target="_blank" href="mailto:eat.it@studiobrot.de">info@davidshrigley.com</a>
                         <a target="_blank" href="tel:+49 (0) 711 500 963 36">+49 (0) 711 500 963 36</a>
-                        <p>Tübinger Str. 87</p>
-                        <p>70178 Stuttgart</p>
+                        <p>Tullinsgade 3</p>
+                        <p>Copenhagen Denmark</p>
                     </div>
                     <img className="back-to-top" src="https://www.studiobrot.de/media/pages/footer/18dea29923-1671746882/studiobrot-brot-menu.gif" sizes="(max-width: 800px) 360px,(min-width: 200px) 160px, 360px" />
                 </div>
                 <ul className="sns_navigation">
                     <li>
-                        <a target="_blank" href="https://www.instagram.com/studiobrot/">Instagram</a>
+                        <a target="_blank" href="https://www.instagram.com/DavidShrigley/">Instagram</a>
                     </li>
                     <li>
-                        <a target="_blank" href="https://www.instagram.com/studiobrot/">Ticktok</a>
+                        <a target="_blank" href="https://www.tiktok.com/@d.shrig?lang=en">Ticktok</a>
                     </li>
                     <li>
-                        <a target="_blank" href="https://www.instagram.com/studiobrot/">Homepage</a>
+                        <a target="_blank" href="https://davidshrigley.com/">Homepage</a>
                     </li>
                 </ul>
             </footer>
