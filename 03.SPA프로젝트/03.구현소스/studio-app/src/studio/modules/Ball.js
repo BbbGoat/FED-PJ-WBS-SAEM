@@ -284,7 +284,7 @@ class Bowwow extends React.Component {
         <p className="pop close">x</p>
         {/* <div className="shape">
         </div> */}
-        <div className="shape2">마우스커서 큰거 들어갈 예정
+        <div className="shape2">
         </div>
         {/* <div className="shape3">
         </div> */}

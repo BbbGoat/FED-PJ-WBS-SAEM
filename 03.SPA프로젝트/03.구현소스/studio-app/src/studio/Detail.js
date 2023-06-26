@@ -28,7 +28,7 @@ function Detail() {
              
             {/* 디테일에서만 들어가는 헤더 */}
             <div className="detail_header">
-                <button className="project-back-button back-button button button--light button_large" onClick={()=>{navigate(-1);}}>Zurück</button>
+                <button className="project-back-button back-button button button--light button_large" onClick={()=>{navigate(-1);}}>Back</button>
             </div>
 
             {/* 배경색상 바꾸기 */}
@@ -45,7 +45,7 @@ function Detail() {
                     </div>
                 </section>
 
-                {/* 상세이미지란 */}                
+                {/* 상세이미지란 */}
                 {
                     imgsrc.map((x,i)=>
                         <section key={i}>

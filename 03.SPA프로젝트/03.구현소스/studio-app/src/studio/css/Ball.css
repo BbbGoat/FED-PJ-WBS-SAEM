@@ -43,11 +43,12 @@
 
     width: 200px;
     height: 260px;
-    transform: translateZ(150px) translateX(89%) translateY(200px) scale(.55);
-    border: 3px solid rgba(255, 255, 255, 1);
+    transform: translateZ(150px) translateX(90%) translateY(200px) scale(.55);
+    /* border: 3px solid rgba(255, 255, 255, 1); */
     background: #a8dadc;
-    opacity: 0.6;
+    opacity: 1;
     border-radius: 8px;
+    background: url(../../../public/images/mouse.svg) no-repeat center/cover;
 }
 .shape3 {
     position: absolute;
@@ -108,18 +109,18 @@
     .shape2 {
         width: 200px;
         height: 260px;
-        transform: translateZ(150px) translateX(180%) translateY(85px) scale(.55);
+        transform: translateZ(150px) translateX(180%) translateY(85px) scale(.40);
     }
 }
 
 @media screen and (min-width: 960px) {
     .movetit_wrap {
-        width: 760px;
-        height: 300px;
+        width: 960px;
+        height: 350px;
     }
     .shape2 {
         width: 250px;
         height: 300px;
-        transform: translateZ(150px) translateX(220%) translateY(50px) scale(.55);
+        transform: translateZ(150px) translateX(300%) translateY(100px) scale(.50);
     }
 }

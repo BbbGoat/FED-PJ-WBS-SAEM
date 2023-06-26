@@ -11,21 +11,21 @@ const cat_data = {
     "INFO":
         {
             "src" : "./images/pic-2.jpg",
-            "tit" : "UNSER PROZESS",
+            "tit" : "INFORMATION",
             "link" : "/in",
         },
     
     "WORK":
         {
             "src" : "./images/pic-3.jpg",
-            "tit" : "ALLE ARBEITEN",
+            "tit" : "WORK LIST",
             "link" : "/wo",
         },
     
     "CONTACT":
         {
             "src" : "./images/pic-4.jpg",
-            "tit" : "ODER NICH",
+            "tit" : "CONTACT",
             "link" : "/ct",
         },
 };
