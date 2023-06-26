@@ -4,23 +4,23 @@ import "../css/welcome.css";
 
 const img_data = [
     {
-        "txt":"hallo, wir sind",
-        "img":"./images/favicon.png",
+        "txt":"hello, I am",
+        "img":"./images/welcome-1.webp",
         "alt":"이미지1",
     },
     {
-        "txt":"asdfsadf",
-        "img":"./images/favicon.png",
+        "txt":"david shrigley",
+        "img":"./images/welcome-2.webp",
         "alt":"이미지2",
     },
     {
-        "txt":"WWWzzxcvvbvgew",
-        "img":"./images/favicon.png",
+        "txt":"an artist with",
+        "img":"./images/welcome-3.webp",
         "alt":"이미지3",
     },
     {
-        "txt":"EXTRA-sdklfjwl",
-        "img":"./images/favicon.png",
+        "txt":"an original world",
+        "img":"./images/welcome-4.webp",
         "alt":"이미지4",
     },
 ];
@@ -56,9 +56,9 @@ const jqFn = () => {
 
         function marqueeFn() {
             maxWidth = window.innerWidth;
-            if (maxWidth > 480) {
-                marquee_item.css({height:"120px"})
-                marquee_h2.css({fontSize:"120px"})
+            if (maxWidth >= 960) {
+                marquee_item.css({height:"150px"})
+                marquee_h2.css({fontSize:"150px"})
             }
             else {
                 marquee_item.css({height:"20vw"})

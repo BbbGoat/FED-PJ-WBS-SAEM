@@ -3,21 +3,21 @@
 const marquee_data = {
     "INFO":[
         {
-            "img" : "./images/pic-1.jpg",
-            "txt" : "SHOWREEL",
+            "img" : "./images/cat/mqimg-1.svg",
+            "txt" : "INTRODUCTION",
             "alt" : "info 카테고리 이동",
         },
     ],
     "WORK":[
         {
-            "img" : "./images/pic-2.jpg",
-            "txt" : "EXPERIMENTS",
+            "img" : "./images/cat/mqimg-2.svg",
+            "txt" : "WORKPIECE",
             "alt" : "work 카테고리 이동",
         },
     ],
     "CONTACT":[
         {
-            "img" : "./images/pic-3.jpg",
+            "img" : "./images/cat/mqimg-1.svg",
             "txt" : "CONTACT",
             "alt" : "contact 카테고리 이동",
         },
