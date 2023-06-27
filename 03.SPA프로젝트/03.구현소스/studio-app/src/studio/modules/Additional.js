@@ -53,9 +53,9 @@ const Additional = () => {
                     <div className="typo-animation_content">    
                         {/* 스티커영역 */}
                         <div className="typo-animation_image-wrapper">
-                            <img className="typo-animation_image" src="./images/emoji_2.svg" alt="움직이는 스티커" />
-                            <img className="typo-animation_image" src="./images/emoji_2.svg" alt="움직이는 스티커" />
-                            <img className="typo-animation_image" src="./images/emoji_2.svg" alt="움직이는 스티커" />
+                            <img className="typo-animation_image rimg" src="./images/emoji_2.svg" alt="움직이는 스티커" />
+                            <img className="typo-animation_image rimg" src="./images/emoji_2.svg" alt="움직이는 스티커" />
+                            <img className="typo-animation_image rimg" src="./images/emoji_2.svg" alt="움직이는 스티커" />
                         </div>
                         {/* 텍스트영역 */}
                         <div className="typo-animation_text">

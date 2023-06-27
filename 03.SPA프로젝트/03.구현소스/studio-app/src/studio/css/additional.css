@@ -57,6 +57,9 @@
     animation: typoAni .5s linear alternate infinite;
     -webkit-animation-play-state: running;
 }
+.typo-animation_image.rimg {
+    filter: invert(100%);
+}
 .typo-animation_image:hover {
     -webkit-animation-play-state: paused;
 }
