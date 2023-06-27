@@ -45,7 +45,7 @@
     height: 260px;
     transform: translateZ(150px) translateX(90%) translateY(200px) scale(.55);
     /* border: 3px solid rgba(255, 255, 255, 1); */
-    background: #a8dadc;
+    /* background: #a8dadc; */
     opacity: 1;
     border-radius: 8px;
     background: url(../../../public/images/mouse.svg) no-repeat center/cover;
@@ -104,7 +104,7 @@
     .movetit_wrap {
         width: 525px;
         height: 270px;
-        background: url(../../../public/images/SWAN-1.webp) no-repeat center/cover;
+        background: url(../../../public/images/SWAN-2.webp) no-repeat center/cover;
     }
     .shape2 {
         width: 200px;
