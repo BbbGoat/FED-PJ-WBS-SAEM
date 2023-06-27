@@ -2,7 +2,7 @@
 import React from "react";
 import $ from "jquery";
 // CSS
-import "../css/Ball.css";
+import "../css/ball.css";
 
 
 const jqFn = () => {
