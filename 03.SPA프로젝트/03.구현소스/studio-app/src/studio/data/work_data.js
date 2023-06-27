@@ -4,9 +4,9 @@ const work_data = [
     {
         "idx":1,
         "src":"../images/work/02/img-1.webp",
-        "tit":"Charly  ",
-        "desc":"Corporate Design / Logo / Illustrations / Copywriting / Artwork",
-        "detail":"Take your skills to places. Arbeiten und Reisen oder Reisen und Arbeiten oder beim Reisen Arbeiten und beim Arbeiten Reisen? Charly ist die Plattform, die all das möglich macht. Sie bietet Arbeitnehmern und -gebern die Möglichkeit, mit wenigen Klicks die perfekte Destination zu finden. Einen Ort, an dem man alles kann: arbeiten und Urlaub machen. Oder kurz: seinen Lebensmittelpunkt lang- oder kurzfristig verlegen. Alleine oder als Team. Wir fanden das so spannend und dieses Team dazu so charmant, dass wir losgelegt haben mit den Basics. Der Name war klar, das Corporate Design dazu ein Prozess. Gemeinsam mit Team Charly haben wir eine Welt entwickelt, in der all das Platz findet, was Charly ausmacht. Neben der digitalen Denke, auf der hier der Fokus lag, haben wir außerdem Lukas ins Spiel gebracht oder anders: seine Illustrationen. Meet the new normal und checkt Charly, wenn ihr das nächste Mal auf der Suche nach einem Ort seid, der alles kann.&nbsp;",
+        "tit":"philosophers pot",
+        "desc":"Limited Edition pot / Ceramic / €250.00 ",
+        "detail":"With the face of a philosopher, this bowl can be a vase for flowers or an all-around bowl for soup, snacks, and sweet candies. Designed lovingly by David Shrigley, it will be the perfect object for your living room, kitchen, and studio. Meet a philosopher who is ready to talk to you anytime, anywhere!",
         "sub":[
             "../images/work/02/img-2.webp",
             "../images/work/02/img-3.webp",
@@ -19,9 +19,9 @@ const work_data = [
     {
         "idx":2,
         "src":"../images/work/03/img-1.webp",
-        "tit":"Roberta Goods  ",
-        "desc":"Corporate Design / Naming / Logo / Copywriting / UX & UI / App & Terminal Design",
-        "detail":"studio brot gets ready to rumble, denn auch der härteste Schwergewichts-Boxer braucht einen smoothen Look. Genau den haben wir Victor Daniel verpasst. Neben dem Corporate Design haben wir ein Shooting umgesetzt, aus dem eine Menge schlagfertiger Content für seinen Social Media Kanal entstanden ist. Zudem haben wir uns um die richtigen Punchlines für Merch-Artikel gekümmert. Heavyweight Headlines? Here you go! Hier geben die Texte den Ton an, denn hinter jeder rechten Geraden steckt ein schlauer Kopf. Boxen ist Entertainment und bolde An- und Aussagen gehören genauso dazu, wie eine gute Beinarbeit.",
+        "tit":"Day is Night Mat",
+        "desc":"open edition / Cotton Polyester / €16.00",
+        "detail":"David Shrigley's iconic black humor message was engraved on a cozy floor mat. The crooked handwriting and cute twist color are impressive, and it becomes a great decoration even if it is easily placed anywhere in a plain space. The bottom surface is non-slip, so it can be stably fixed where it wants to be.",
         "sub":[
             "../images/work/03/img-2.webp",
             "../images/work/03/img-3.webp",
@@ -33,10 +33,9 @@ const work_data = [
     {
         "idx":3,
         "src":"../images/work/04/img-1.webp",
-        "tit":"The Ratskeller  ",
-        "desc":"Corporate Design / Naming / Logo / Digital / Website / Social Media",
-        "desc":"Corporate Design / Naming / Logo / Copywriting / UX & UI / App & Terminal Design",
-        "detail":"studio brot gets ready to rumble, denn auch der härteste Schwergewichts-Boxer braucht einen smoothen Look. Genau den haben wir Victor Daniel verpasst. Neben dem Corporate Design haben wir ein Shooting umgesetzt, aus dem eine Menge schlagfertiger Content für seinen Social Media Kanal entstanden ist. Zudem haben wir uns um die richtigen Punchlines für Merch-Artikel gekümmert. Heavyweight Headlines? Here you go! Hier geben die Texte den Ton an, denn hinter jeder rechten Geraden steckt ein schlauer Kopf. Boxen ist Entertainment und bolde An- und Aussagen gehören genauso dazu, wie eine gute Beinarbeit.",
+        "tit":"swan-thing",
+        "desc":"Inflatable / polyurethane/ tube / €50.00",
+        "detail":"The Ridiculous Inflatable Swan-Thing first started life as a simple line drawing, developing into a limited edition sculptural piece cast in polyurethane resin. Soon after the Swan-Thing found life in an inflatable form. Its elegant neck has extended up to 13 metres tall in various installations internationally, but here we present the more modest 90cm tall version, created by our friends Third Drawer Down. Enjoy the Ridiculous Inflatable Swan-Thing as a toy, a pool float or as an inflatable sculpture placed in your home. Definitely not a life-saving device.",
         "sub":[
             "../images/work/04/img-01.webp",
             "../images/work/04/img-2.webp",
@@ -50,9 +49,9 @@ const work_data = [
     {
         "idx":4,
         "src":"../images/work/05/img-1.webp",
-        "tit":"Kacklender  ",
-        "desc":"Campaigning / Product Design / Schabernack / Illustrations / Artwork",
-        "detail":"studio brot gets ready to rumble, denn auch der härteste Schwergewichts-Boxer braucht einen smoothen Look. Genau den haben wir Victor Daniel verpasst. Neben dem Corporate Design haben wir ein Shooting umgesetzt, aus dem eine Menge schlagfertiger Content für seinen Social Media Kanal entstanden ist. Zudem haben wir uns um die richtigen Punchlines für Merch-Artikel gekümmert. Heavyweight Headlines? Here you go! Hier geben die Texte den Ton an, denn hinter jeder rechten Geraden steckt ein schlauer Kopf. Boxen ist Entertainment und bolde An- und Aussagen gehören genauso dazu, wie eine gute Beinarbeit.",
+        "tit":"a curious foot",
+        "desc":"Ceramic Sculpture / Egg stand / €50.00",
+        "detail":"A cast porcelain sculpture in the shape of a left foot. This curious object can be displayed as a sculpture in your home or can be used more functionally. A shallow dip in the ankle is ideal to put small things in: paperclips, serving salt and other spices or a delicious boiled egg.",
         "sub":[
             "../images/work/05/img-2.webp",
             "../images/work/05/img-3.webp",
@@ -66,9 +65,9 @@ const work_data = [
     {
         "idx":5,
         "src":"../images/work/06/img-1.webp",
-        "tit":"Mallofit  ",
-        "desc":"Corporate Design / Logo / Screendesign / Digital / Copywriting",
-        "detail":"studio brot gets ready to rumble, denn auch der härteste Schwergewichts-Boxer braucht einen smoothen Look. Genau den haben wir Victor Daniel verpasst. Neben dem Corporate Design haben wir ein Shooting umgesetzt, aus dem eine Menge schlagfertiger Content für seinen Social Media Kanal entstanden ist. Zudem haben wir uns um die richtigen Punchlines für Merch-Artikel gekümmert. Heavyweight Headlines? Here you go! Hier geben die Texte den Ton an, denn hinter jeder rechten Geraden steckt ein schlauer Kopf. Boxen ist Entertainment und bolde An- und Aussagen gehören genauso dazu, wie eine gute Beinarbeit.",
+        "tit":"the tea is alive",
+        "desc":"Limited Edition / Teapot set / €250.00",
+        "detail":"A delight when serving morning or afternoon tea, this limited edition Shrigley teapot also offers sculptural qualities that can be displayed for daily visual joy. Our teapots are handmade in England using the traditional method of fine bone china production. Liquid clay is poured into bespoke moulds before going through twenty different hand processes and three firings in a kiln. As these teapots are individually made by hand, they differ from each other very slightly, making each object unique",
         "sub":[
             "../images/work/06/img-2.webp",
             "../images/work/06/img-3.webp",
@@ -81,9 +80,9 @@ const work_data = [
     {
         "idx":6,
         "src":"../images/work/07/img-1.webp",
-        "tit":"Mallofit  ",
-        "desc":"Corporate Design / Logo / Screendesign / Digital / Copywriting",
-        "detail":"studio brot gets ready to rumble, denn auch der härteste Schwergewichts-Boxer braucht einen smoothen Look. Genau den haben wir Victor Daniel verpasst. Neben dem Corporate Design haben wir ein Shooting umgesetzt, aus dem eine Menge schlagfertiger Content für seinen Social Media Kanal entstanden ist. Zudem haben wir uns um die richtigen Punchlines für Merch-Artikel gekümmert. Heavyweight Headlines? Here you go! Hier geben die Texte den Ton an, denn hinter jeder rechten Geraden steckt ein schlauer Kopf. Boxen ist Entertainment und bolde An- und Aussagen gehören genauso dazu, wie eine gute Beinarbeit.",
+        "tit":"heroin & cocaine",
+        "desc":"Porcelain / Salt & pepper shakers / €50.00",
+        "detail":"Cast porcelain sculptural salt & pepper shakers labelled Heroin and Cocaine. These shakers were originally commissioned for the Collection Lambert in Avignon in 2000 and specially re-commissioned for David Shrigley's major solo exhibition at London's Hayward Gallery in 2012. This latest edition is created by our friends Third Drawer Down. Can be displayed as small sculptures in your home as well as used functionally on your table or in your kitchen.",
         "sub":[
             "../images/work/07/img-2.webp",
             "../images/work/07/img-3.webp",

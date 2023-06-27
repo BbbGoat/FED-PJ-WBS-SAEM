@@ -127,23 +127,23 @@ const Gooey = () => {
 
                         <mask id="mask" x="0" y="0">
                             <g style={{filter:"url(#gooey)", animation: '9s linear 0s infinite normal none running rotate_back'}}>
-                                <circle cx="50%" cy="60%" r="92" fill="white" style={{animation: '12s ease-in-out -3s infinite alternate none running blob_four'}}>
+                                <circle cx="50%" cy="60%" r="92" fill="white" style={{animation: '7s ease-in-out -3s infinite alternate none running blob_four'}}>
                                 </circle>
-                                <circle cx="50%" cy="40%" r="92" fill="white" style={{animation: '12s ease-in-out -3s infinite alternate none running blob_four'}}>
+                                <circle cx="50%" cy="50%" r="92" fill="white" style={{animation: '7s ease-in-out -3s infinite alternate none running blob_four'}}>
                                 </circle>
                                 <circle cx="40%" cy="50%" r="80" fill="white" style={{animation: '9s ease-in-out -3s infinite alternate none running blob_three'}}>
                                 </circle>
                                 <circle cx="30%" cy="40%" r="85" fill="white" style={{animation: "6s ease-in-out -3s infinite alternate none running blob_two"}}>
                                 </circle>
-                                <circle cx="40%" cy="70%" r="95" fill="white" style={{animation: "8s ease-in-out -3s infinite alternate none running blob_two"}}>
+                                <circle cx="50%" cy="70%" r="95" fill="white" style={{animation: "8s ease-in-out -3s infinite alternate none running blob_two"}}>
                                 </circle>
-                                <circle cx="60%" cy="40%" r="54" fill="white" style={{animation: "3s ease-in-out -3s infinite alternate none running blob_five"}}>
+                                <circle cx="60%" cy="50%" r="74" fill="white" style={{animation: "3s ease-in-out -3s infinite alternate none running blob_five"}}>
                                 </circle>
-                                <circle cx="30%" cy="40%" r="74" fill="white" style={{animation: "4s ease-in-out -3s infinite alternate none running blob_five"}}>
+                                <circle cx="30%" cy="50%" r="74" fill="white" style={{animation: "4s ease-in-out -3s infinite alternate none running blob_five"}}>
                                 </circle>
                                 <circle cx="50%" cy="50%" r="80" fill="white" style={{animation: "3s ease-in-out -3s infinite alternate none running blob_one"}}>
                                 </circle>
-                                <circle cx="50%" cy="60%" r="100" fill="white" style={{animation: "5s ease-in-out -3s infinite alternate none running blob_five"}}>
+                                <circle cx="50%" cy="50%" r="100" fill="white" style={{animation: "5s ease-in-out -3s infinite alternate none running blob_five"}}>
                                 </circle>
 
                             </g>
