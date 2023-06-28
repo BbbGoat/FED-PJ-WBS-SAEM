@@ -5,22 +5,22 @@ import "../css/welcome.css";
 const img_data = [
     {
         "txt":"hello, I am",
-        "img":"./images/welcome-1.webp",
+        "img":"./images/ballimg-3.webp",
         "alt":"이미지1",
     },
     {
         "txt":"david shrigley",
-        "img":"./images/welcome-2.webp",
+        "img":"./images/ballimg-6.webp",
         "alt":"이미지2",
     },
     {
         "txt":"an artist with",
-        "img":"./images/welcome-3.webp",
+        "img":"./images/ballimg-7.webp",
         "alt":"이미지3",
     },
     {
         "txt":"an original world",
-        "img":"./images/welcome-4.webp",
+        "img":"./images/ballimg-8.webp",
         "alt":"이미지4",
     },
 ];
