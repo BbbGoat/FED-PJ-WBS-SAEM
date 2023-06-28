@@ -22,7 +22,7 @@
     height: 470px;
     border-radius: 10px;
     pointer-events: none;
-    background: url(../../../public/images/SWAN-M4.webp) no-repeat center/cover;
+    background: url(../../../public/images/SWAN-M1.webp) no-repeat center/cover;
 
     text-align: center;
     outline: 3px solid #ccc;
@@ -104,7 +104,7 @@
     .movetit_wrap {
         width: 525px;
         height: 270px;
-        background: url(../../../public/images/SWAN-2.webp) no-repeat center/cover;
+        background: url(../../../public/images/SWAN-1.webp) no-repeat center/cover;
     }
     .shape2 {
         width: 200px;
