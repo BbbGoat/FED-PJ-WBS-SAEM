@@ -8,6 +8,20 @@ const jqFn = () => {
     // 커서 초기화!!! //////////////////
     // $("html, a, textarea, label, input").css({cursor:"none"});
 
+    const isMobile = () => {
+        try {
+          document.createEvent("TouchEvent");
+          return true;
+        } catch (e) {
+          return false;
+        }
+    };
+    
+    if (isMobile() === true) {
+        console.log("모바일상태");
+        return;
+    }
+
     
     const cursor = $(".cursor");
     const cursor2 = $(".cursor2");
