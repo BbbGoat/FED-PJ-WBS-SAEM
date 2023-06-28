@@ -22,7 +22,7 @@ const transition_data = [{
 
 const Transition = (props) => {
 
-    console.log("Transition 컴포넌트 props.num:",props.num)
+    // console.log("Transition 컴포넌트 props.num:",props.num)
     // console.log(transition_data.top[0]);
 
     
