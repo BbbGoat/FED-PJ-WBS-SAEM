@@ -116,7 +116,7 @@ const Gooey = () => {
             <div className="goo">
                 {/* <Goo intensity="strong"> */}
                     <svg role="img" aria-label="Example of a gooey effect" className="goo_cont" id="goosvg">
-                        <image href="./images/work/img-1.webp" mask="url(#mask)" width="100%" height="100%" preserveAspectRatio="xMidYMax slice" />
+                        <image href="./images/work/01/img-1.webp" mask="url(#mask)" width="100%" height="100%" preserveAspectRatio="xMidYMax slice" />
 
                         {/* defs 설정 */}
                         <defs>
