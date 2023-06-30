@@ -15,8 +15,10 @@ const Main = () => {
     return(
         <>
             {/* 메인 최상단 배너 */}
-            <Welcome />
-            <Surface />
+            <div className="mainbx" style={{overflow:"hidden"}}>
+                <Welcome />
+                <Surface />
+            </div>
 
             {/* Info section */}
             <Btn cat={"INFO"}/>
