@@ -22,7 +22,7 @@ const Vidgroup = (props) => {
                     {/* text 영역 */}
                     <div className="vidtxt_area">
                         <span className="vidtxt_number">1</span>
-                        <span className="vidtxt_title">das brot</span>
+                        <span className="vidtxt_title">about</span>
                     </div>
                 </div>
                 <div className="vidgroup_inner">
@@ -35,7 +35,7 @@ const Vidgroup = (props) => {
                     {/* text 영역 */}
                     <div className="vidtxt_area">
                         <span className="vidtxt_number">2</span>
-                        <span className="vidtxt_title">das brot</span>
+                        <span className="vidtxt_title">progress</span>
                     </div>
                 </div>
                 <div className="vidgroup_inner">
@@ -48,7 +48,7 @@ const Vidgroup = (props) => {
                     {/* text 영역 */}
                     <div className="vidtxt_area">
                         <span className="vidtxt_number">3</span>
-                        <span className="vidtxt_title">das brot</span>
+                        <span className="vidtxt_title">history</span>
                     </div>
                 </div>
             </div>

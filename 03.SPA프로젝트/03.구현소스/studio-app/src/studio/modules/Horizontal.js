@@ -8,20 +8,20 @@ const info_data = [
     {
         "idx":"1",
         "vidsrc":"https://www.studiobrot.de/media/pages/wie/0fd2b66c03-1673622947/1-derteig-small.mp4",
-        "tit":"der starter",
-        "desc":"der starter kann aus einem gemeinsamen arbeitsmeeting aka kick-off bestehen. er kann aber auch aus einem ersten kennenlernen sein. oder aber auch aus einem konkreten, schriftlichen briefing. hier versuchen wir alles rund um die aufgabenstellung, die marke selbst, ihre ziele und visionen, produkte, dienstleistungen oder services, kurz: ihre rezeptur und dna zu erfahren. wir stellen fragen, die mal mehr und mal weniger angenehm sind, um der sache auf den grund zu gehen. diesen input nehmen wir mit, um ihn anschließend in der agentur unterzumischen. im nächsten schritt vermengen wir ihn dann mit unserem kommunikativen knowhow, denken über gehaltvolle lösungswege nach und füttern ihn so lange, bis der kreative starter bereit für den backvorgang ist.",
+        "tit":"About",
+        "desc":"Shrig Shop is a shop in Copenhagen founded by artist David Shrigley and long-term gallerist and friend Nicolai Wallner. Together we make limited editions and other great stuff, serving as an extension of David Shrigley's artistic practice. David Shrigley (b.1968, UK) works across drawing, painting, sculpture, installation, photography, animation, and print. He publishes books, produces music, occasionally designs tattoos and creates all manner of other paraphernalia. He mix the communication-how, I think about rich solutions and prepare for rich solutions, and prepare for creative ideas.",
     },
     {
         "idx":"2",
         "vidsrc":"https://www.studiobrot.de/media/pages/wie/19383b2f5f-1673622957/2-dasbacken-small.mp4",
-        "tit":"das backen",
-        "desc":"der backvorgang beginnt mit dem starter – ihr erinnert euch? wir schnappen uns also den starter und holen alles aus ihm raus, was wir gerade eben noch untergerührt haben: den kundenseitigen input, das wissen über die zielgruppe und eine mögliche ansprache, die merkmale der produkte und den aktuellen stand der dinge auf dem markt da draußen. wir drehen und wenden all das, was wir aus dem ersten schritt mitgenommen und mit unserem wissen angereichert haben. wir durchleuchten, teilen gedanken und erkenntnisse, erarbeiten ansätze, diskutieren über ideen, und recherchieren insights. wir kneten, denken, rollen aus und verwerfen. und zwar so lange, bis der kreativ-konzeptionelle prozess auf betriebstemperatur gebracht wurde und bereit ist für den ofen.",
+        "tit":"Progress",
+        "desc":"The progress of work is sharing ideas, developing, discussion and research. He kneels, rolls, lands, and looks back. This deep creative processes lead his world. He is one of those unique artists, like Andy Warhol or Keith Haring, who is recognised within the art world but whose reach extends far beyond to impact our wider culture. Shrig Shop is an alternative to the gallery space, offering a place where David Shrigley's work is accessible to everyone, whether it is as significant as a print or as humble as a postcard. Art is for everyone and at Shrig Shop all are welcome.",
     },
     {
         "idx":"3",
         "vidsrc":"https://www.studiobrot.de/media/pages/wie/b5b0865b86-1673622912/3-dasbrot-small.mp4",
-        "tit":"das brot",
-        "desc":"ob die idee aufgegangen ist? das erfahren wir erst, wenn das brot über die theke geht. genau hier und jetzt zeigt sich, ob es der zielgruppe optisch und inhaltlich schmeckt. in form kreativer maßnahmen kommuniziert eine wortgewandte, stringente, überzeugende, emotionale, authentische, sympathische und visuell starke marke. eine brand, die über alle kanäle hinweg anziehend duftet, satt macht, schmeckt und für ordentlich umsatz sorgt. die strategische aufgabenstellung, die wir im starter gemeinsam angerührt haben und die kreativen umsetzungsideen, die wir im backvorgang entwickelt haben, treffen hier auf die menschen, mit denen wir das brot brechen wollen: unsere konsumenten.",
+        "tit":"History",
+        "desc":"David Shrigley has received international critical acclaim for his work and in 2020 was awarded an OBE for Services to Visual Arts. In 2016, he was awarded the Fourth Plinth Commission for sculpture in Trafalgar Square and was nominated for the prestigious Turner Prize Award in 2013. David Shrigley has had solo exhibitions in museum worldwide and his works are found in prominent collections, including Museum of Modern Art (New York), Tate Britain (London), the National Gallery of Denmark (Copenhagen), amongst many others.",
     },
 ];
 
