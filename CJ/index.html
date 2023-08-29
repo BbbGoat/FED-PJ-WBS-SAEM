@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>웹프로젝트 - CJ그룹</title>
+        <!-- 파비콘 넣기 -->
+        <!-- <link rel="shortcut icon" href="./images/icon.jpg" type="image/x-icon" /> -->
+        <!-- 폰트어썸 외부 링크 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+        <!-- 메인 CSS -->
+        <link rel="stylesheet" href="./css/main.css">
+        <!-- 미디어쿼리 CSS -->
+        <link rel="stylesheet" href="./css/media.css">
+        <!-- 메인 JS -->
+        <script src="./js/common.js"></script>
+        <script src="./js/main.js"></script>
+        <script src="./js/news.js" type="module"></script>
+        <script src="./js/slide.js" type="module"></script>
+        <script src="js/smoothScroll20.js"></script>
+    </head>
+    <body class="scbar">
+        <!-- 1. 상단영역 -->
+        <div id="top">
+            <!-- top 속박스 header -->
+            <header class="top">
+                <!-- 네비게이터 뒷배경 검은색 반투명값 -->
+                <div class="blackbx"></div>
+                <!-- 최상단  -->
+                <div class="inner_wrap">
+                    <div class="inner">
+                        <!-- 로고영역 -->
+                        <h1 class="logo">
+                            <a href="index.html" title="메인으로">
+                                <img src="./images/cj_logo2.svg" alt="CJ그룹 로고" />
+                            </a>
+                            <a href="index.html" title="메인으로">
+                                <img src="./images/cj_logo.png" alt="CJ그룹 로고" />
+                            </a>
+                        </h1>
+                        <!-- GNB영역 -->
+                        <nav class="gnb">
+                            <ul>
+                                <li><a href="#">#LIVE NEW CJ</a></li>
+                                <li><a href="#">CJ Now</a></li>
+                                <li>
+                                    <a href="#">Brand</a>
+                                    <div class="depth2">
+                                        <ul>
+                                            <li><a href="#">Best Brand</a></li>
+                                            <li><a href="#">건강</a></li>
+                                            <li><a href="#">즐거움</a></li>
+                                            <li><a href="#">편리</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">Sustainability</a>
+                                    <div class="depth2">
+                                        <ul>
+                                            <li><a href="#">ESG 지향점</a></li>
+                                            <li><a href="#">ESG 성과</a></li>
+                                            <li><a href="#">ESG 보고서</a></li>
+                                            <li><a href="#">윤리경영</a></li>
+                                            <li><a href="#">CJ나눔재단</a></li>
+                                            <li><a href="#">CJ문화재단</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="sep">
+                                    <a href="#">CJ소개</a>
+                                    <div class="depth2">
+                                        <ul>
+                                            <li><a href="#">회사소개</a></li>
+                                            <li><a href="#">연혁</a></li>
+                                            <li><a href="#">계열사</a></li>
+                                            <li><a href="#">글로벌 CJ</a></li>
+                                            <li><a href="#">스포츠</a></li>
+                                            <li><a href="#">투자정보</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">인재채용</a>
+                                    <div class="depth2">
+                                        <ul>
+                                            <li><a href="#">채용공고</a></li>
+                                            <li><a href="#">직무정보</a></li>
+                                            <li><a href="#">CJ인 인터뷰</a></li>
+                                            <li><a href="#">Q&amp;A</a></li>
+                                            <li><a href="#">공지사항</a></li>
+                                            <li><a href="#">My Page</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- 사이드 메뉴 -->
+                        <aside class="tmenu">
+                            <!-- 언어선택박스 -->
+                            <div class="lang">
+                                <!-- 언어선택 메인 -->
+                                <p class="main_lang">
+                                    <a href="#">
+                                        KOR
+                                        <span class="btn_icon"><i class="fa-solid fa-chevron-down"></i></span>
+                                        <span class="btn_icon_close"><i class="fa-solid fa-chevron-up"></i></span>
+                                    </a>
+                                </p>
+                                <!-- 언어선택 리스트 -->
+                                <div class="list_lang">
+                                    <ul>
+                                        <li>
+                                            <a href="#">ENG</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">CHN</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 검색박스 -->
+                            <div class="search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <!-- // 상단영역 -->
+        <div class="mtop">
+            <!-- 네비게이터 뒷배경 검은색 반투명값 -->
+            <div class="m_blackbx"></div>
+            <!-- 최상단  -->
+            <div class="m_inner_wrap">
+                <div class="inner">
+                    <!-- 로고영역 -->
+                    <h1 class="mlogo">
+                        <a href="index.html" title="메인으로">
+                            <img src="./images/cj_logo2.svg" alt="CJ그룹 로고" />
+                        </a>
+                        <a href="index.html" title="메인으로">
+                            <img src="./images/cj_logo.png" alt="CJ그룹 로고" />
+                        </a>
+                    </h1>
+                    <!-- 햄버거영역 -->
+                    <a href="#sitemap" class="ham"></a>
+                </div>
+            </div>
+            <div class="nav_subpage">
+                <div class="sub_header">
+                    <div class="inner">
+                        <!-- 로고영역 -->
+                        <h1 class="mlogo">
+                            <a href="index.html" title="메인으로">
+                                <img src="./images/cj_logo.png" alt="CJ그룹 로고" />
+                            </a>
+                        </h1>
+                        <!-- 햄버거영역 -->
+                        <a href="#" class="sub_close"></a>
+                    </div>
+                </div>
+                <!-- 3-1. 사이트맵 -->
+                <div class="sub_sitemap">
+                    <!-- 사이트맵 리스트 -->
+                    <dl class="sub_list">
+                        <dt>
+                            <a href="#">#LIVE NEW CJ</a>
+                            <button class="btn_m_footer" alt="하위메뉴 닫기"><span></span></button>
+                        </dt>
+                        <dl class="submenu">
+                        </dl>
+                        <dt>
+                            <a href="#">CJ Now</a>
+                            <button class="btn_m_footer" alt="하위메뉴 닫기"><span></span></button>
+                        </dt>
+                        <dl class="submenu">
+                        </dl>
+                        <dt>
+                            <a href="#">Brand</a>
+                            <button class="btn_m_footer" alt="하위메뉴 닫기"><span></span></button>
+                        </dt>
+                        <dl class="submenu">
+                            <dd><a href="#">Best Brand</a></dd>
+                            <dd><a href="#">건강</a></dd>
+                            <dd><a href="#">즐거움</a></dd>
+                            <dd><a href="#">편리</a></dd>
+                        </dl>
+                        <dt>
+                            <a href="#">Sustainability</a>
+                            <button class="btn_m_footer" alt="하위메뉴 닫기"><span></span></button>
+                        </dt>
+                        <dl class="submenu">
+                            <dd><a href="#">ESG 지향점</a></dd>
+                            <dd><a href="#">ESG 성과</a></dd>
+                            <dd><a href="#">ESG 보고서</a></dd>
+                            <dd><a href="#">윤리경영</a></dd>
+                            <dd><a href="#">CJ나눔재단</a></dd>
+                            <dd><a href="#">CJ문화재단</a></dd>
+                        </dl>
+                        <dt>
+                            <a href="#">CJ소개</a>
+                            <button class="btn_m_footer" alt="하위메뉴 닫기"><span></span></button>
+                        </dt>
+                        <dl class="submenu">
+                            <dd><a href="#">회사소개</a></dd>
+                            <dd><a href="#">연혁</a></dd>
+                            <dd><a href="#">계열사</a></dd>
+                            <dd><a href="#">글로벌 CJ</a></dd>
+                            <dd><a href="#">스포츠</a></dd>
+                        </dl>
+                        <dt>
+                            <a href="#">인재채용</a>
+                            <button class="btn_m_footer" alt="하위메뉴 닫기"><span></span></button>
+                        </dt>
+                        <dl class="submenu">
+                            <dd><a href="#">채용공고</a></dd>
+                            <dd><a href="#">직무정보</a></dd>
+                            <dd><a href="#">CJ인 인터뷰</a></dd>
+                            <dd><a href="#">Q&amp;A</a></dd>
+                            <dd><a href="#">공지사항</a></dd>
+                            <dd><a href="#">My Page</a></dd>
+                        </dl>
+                    </dl>
+                </div>
+                <!-- 3-2. 법적고지 -->
+                <div class="sub_policy">
+                    <p>
+                        <a href="#">공지사항</a>
+                        <a href="#">온라인제보</a>
+                        <a href="#">고객센터</a>
+                    </p>
+                </div>
+                <!-- 3-3. 저작권자 -->
+                <div class="sub_copy">
+                    <!-- 저작권표기 -->
+                    <p class="copyright">© 씨제이㈜. All Rights Reserved.</p>
+                    <!-- sns아이콘 -->
+                    <div class="sns">
+                        <a href="#" title="페이스북" target="_blank">
+                            <span class="ir">CJ 페이스북</span>
+                        </a>
+                        <a href="#" title="유투브" target="_blank">
+                            <span class="ir">CJ 유투브</span>
+                        </a>
+                        <a href="#" title="뉴스룸" target="_blank">
+                            <span class="ir">CJ News</span>
+                        </a>
+                        <a href="#" title="네이버 포스트" target="_blank">
+                            <span class="ir">CJ 네이버 포스트</span>
+                        </a>
+                        <a href="#" title="링크드인" target="_blank">
+                            <span class="ir">CJ 링크드인</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 2. 메인영역 -->
+        <div id="cont">
+            <main class="cont">
+                <section class="sec mainVid">
+                    <div class="fixed_box">
+                        <video
+                            id="mainVid"
+                            class="video"
+                            poster="https://images.cj.net/upfiles/main_index/0000007175520006515707371.png"
+                            src="./images/mainmov.mp4"
+                            autoplay
+                            muted
+                            playsinline
+                            loop
+                        ></video>
+                    </div>
+                    <div class="circle_timer">
+                        <a href="#">
+                            <svg>
+                                <defs>
+                                    <linearGradient x1="60%" y1="90%" x2="0%" y2="10%" id="linearGradient-1">
+                                        <!-- 파랑 -->
+                                        <stop stop-color="#54AFFF" offset="0%"></stop>
+                                        <!-- 주황 -->
+                                        <stop stop-color="#FF953E" offset="30%"></stop>
+                                        <!-- 빨강 -->
+                                        <stop stop-color="#FF0D00" offset="100%"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <circle id="circle_path" class="svg1" cx="30" cy="30" r="29" transform="rotate(-90,30,30)" />
+                            </svg>
+                            <i class="timer_icon">
+                                <img src="./images/ico_pause_play.png" alt="일시정지">
+                            </i>
+                        </a>
+                    </div>
+                    <span class="fadeout"></span>
+                </section>
+                <section class="sec livenewcj">
+                    <div class="wrap">
+                        <div class="title_area">
+                            <h3>
+                                <a href="#" title="#LIVE NEW CJ 바로가기"
+                                    ><span class="titsvg">
+                                        <svg 
+                                            width="359px"
+                                            height="63px"
+                                            version="1.1"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        >
+                                            <defs>
+                                                <linearGradient
+                                                    id="gradient"
+                                                    x1="26.4596404%"
+                                                    y1="58.5735288%"
+                                                    x2="87.9485355%"
+                                                    y2="58.5735288%"
+                                                >
+                                                    <stop stop-color="#F02C34" offset="0%"></stop>
+                                                    <stop stop-color="#F13233" offset="42.7146323%"></stop>
+                                                    <stop stop-color="#FFA11A" offset="80.0244598%"></stop>
+                                                    <stop stop-color="#1A7CD2" offset="100%"></stop>
+                                                </linearGradient>
+                                                <linearGradient
+                                                    id="gradient2"
+                                                    x1="26.4596404%"
+                                                    y1="58.5735288%"
+                                                    x2="87.9485355%"
+                                                    y2="58.5735288%"
+                                                >
+                                                    <stop stop-color="#1A7CD2" offset="0%"></stop>
+                                                    <stop stop-color="#F02C34" offset="100%"></stop>
+                                                </linearGradient>
+                                            </defs>
+
+                                            <pattern
+                                                id="pattern"
+                                                x="0"
+                                                y="0"
+                                                width="300%"
+                                                height="100%"
+                                                patternUnits="userSpaceOnUse"
+                                            >
+                                                <rect x="-120%" y="0" width="100%" height="100%" fill="url(#gradient)">
+                                                    <animate
+                                                        attributeType="XML"
+                                                        attributeName="x"
+                                                        from="-120%"
+                                                        to="0%"
+                                                        dur="6s"
+                                                        repeatCount="indefinite"
+                                                    ></animate>
+                                                </rect>
+
+                                                <rect x="-20%" y="0" width="22%" height="100%" fill="url(#gradient2)">
+                                                    <animate
+                                                        attributeType="XML"
+                                                        attributeName="x"
+                                                        from="-21%"
+                                                        to="100%"
+                                                        dur="6s"
+                                                        repeatCount="indefinite"
+                                                    ></animate>
+                                                </rect>
+                                                <rect x="0%" y="0" width="100%" height="100%" fill="url(#gradient)">
+                                                    <animate
+                                                        attributeType="XML"
+                                                        attributeName="x"
+                                                        from="0%"
+                                                        to="120%"
+                                                        dur="6s"
+                                                        repeatCount="indefinite"
+                                                    ></animate>
+                                                </rect>
+                                            </pattern>
+
+                                            <g
+                                                id="Page-1"
+                                                stroke="none"
+                                                stroke-width="1"
+                                                fill="none"
+                                                fill-rule="evenodd"
+                                            >
+                                                <mask id="mask-2" fill="white">
+                                                    <use xlink:href="#path-1"></use>
+                                                </mask>
+                                                <text id="Fill-1" fill="url(#pattern)" fill-rule="nonzero">
+                                                    <tspan x="0" y="42">#LIVE NEW CJ</tspan>
+                                                </text>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </h3>
+                            <p>
+                                <span>CJ가 제안하는 새로운 라이프 스타일로<br />당신의 평범한 일상을 새롭게!</span>
+                            </p>
+                            <a href="#" class="morebtn" title="#LIVE NEW CJ">전체보기</a>
+                        </div>
+                        <!-- 컨텐츠박스1 -->
+                        <div class="area_box">
+                            <div class="img_area">
+                                <a href="#" class="vid">
+                                    <video src="./images/vid01.mp4" muted loop preload="auto" autoplay></video>
+                                </a>
+                                <a href="#" class="thumb thb1">
+                                    <img src="./images/vid-img01.png" alt="썸네일">
+                                </a>
+                                <span class="sticker stk1">
+                                    <img src="./images/stk01.png" alt="스티커이미지">
+                                </span>
+                            </div>
+                            <div class="text_area">
+                                <h4>초대합니다💌<br>나만의 힐링 모먼트가 있는 <br>식물리에의 정원으로🥰</h4>
+                                <p>여러분 오늘 하루는 좀 쉬셨나요😌?<br>우리는 가끔씩 꿈꾸곤 합니다.💚</p>
+                                <a href="#" class="tbx">
+                                <span class="viewbtn">자세히보기</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- 컨텐츠박스2 -->
+                        <div class="area_box reverse">
+                            <div class="img_area">
+                                <a href="#" class="vid">
+                                    <video src="./images/vid02.mp4" muted loop preload="auto" autoplay></video>
+                                </a>
+                                <a href="#" class="thumb thb2">
+                                    <img src="./images/vid-img02.png" alt="썸네일">
+                                </a>
+                                <span class="sticker stk2">
+                                    <img src="./images/stk02.png" alt="스티커이미지">
+                                </span>
+                            </div>
+                            <div class="text_area">
+                                <h4>식물리에도 🌱<br>잠시 쉬어가는 순간 🤗<br>요리는 마음의 집중!🥗</h4>
+                                <p>식물과 요리의 공통점은🤔?<br>왠지 모르게 빠져들게 만든다는 점💘!</p>
+                                <a href="#" class="tbx">
+                                    <span class="viewbtn">자세히보기</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- 컨텐츠박스3 -->
+                        <div class="area_box">
+                            <div class="img_area">
+                                <a href="#" class="vid">
+                                    <video src="./images/vid03.mp4" muted loop preload="auto" autoplay></video>
+                                </a>
+                                <a href="#" class="thumb thb3">
+                                    <img src="./images/vid-img03.png" alt="썸네일">
+                                </a>
+                                <span class="sticker stk3">
+                                    <img src="./images/stk03.png" alt="스티커이미지">
+                                </span>
+                            </div>
+                            <div class="text_area">
+                                <h4>여기 식멍 미슐랭이네..👀<br>식집사의 플랜테리어✨</h4>
+                                <p>싱그러움 음미하게 만드는 새로운 식멍…?<br>식꾸로 시작했다🍃 보면 볼수록 빠져든다?!</p>
+                                <a href="#" class="tbx">
+                                    <span class="viewbtn">자세히보기</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="sec cjnow">
+                    <div class="wrap">
+                        <div class="title_area">
+                            <h3>
+                                <a href="#" title="CJ Now 바로가기">CJ Now</a>
+                            </h3>
+                            <p>
+                                <span>CJ의 최신 소식을 지금 만나보세요</span>
+                            </p>
+                            <a href="#" class="morebtn" title="CJ Now">전체보기</a>
+                        </div>
+                        <!-- 데스크탑 -->
+                        <div class="news_area">
+                            <div class="news_img">
+                                <a href="#">
+                                    <img src="./images/news01.png" alt="뉴스이미지1">
+                                </a>
+                            </div>
+                            <div class="news_text">
+                                <ul>
+                                    <li class="on"><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 모바일 -->
+                        <div class="news_area2">
+                            <div class="news_img set">
+                                <a href="#">
+                                    <img src="./images/news01.png" alt="뉴스이미지1">
+                                </a>
+                            </div>
+                            <div class="news_text2">
+                                <ul>
+                                    <li><a href="#"></a></li>
+                                    <div class="news_subimg set">
+                                        <a href="#">
+                                            <img src="./images/news01.png" alt="뉴스이미지1">
+                                        </a>
+                                    </div>
+                                    <li><a href="#"></a></li>
+                                    <div class="news_subimg set">
+                                        <a href="#">
+                                            <img src="./images/news01.png" alt="뉴스이미지1">
+                                        </a>
+                                    </div>
+                                    <li><a href="#"></a></li>
+                                    <div class="news_subimg set">
+                                        <a href="#">
+                                            <img src="./images/news01.png" alt="뉴스이미지1">
+                                        </a>
+                                    </div>
+                                    <li><a href="#"></a></li>
+                                    <div class="news_subimg set">
+                                        <a href="#">
+                                            <img src="./images/news01.png" alt="뉴스이미지1">
+                                        </a>
+                                    </div>
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="sec brand">
+                    <div class="title_area">
+                        <div class="tlj_logo">
+                            <img src="./images/tlj_logo.png" alt="뚜레주르로고">
+                        </div>
+                        <h3>
+                            <a href="#" title="BEST BRAND 바로가기"
+                                ><span>
+                                    BEST BRAND
+                                </span>
+                            </a>
+                        </h3>
+                        <p>
+                            <span>건강한 데일리 베이커리 뚜레주르</span>
+                        </p>
+                        <!-- <a href="#" class="morebtn" title="BEST BRAND">전체보기</a> -->
+                        <a href="#" class="tbx"><span class="viewbtn">자세히보기</span></a>
+                    </div>
+                    <div class="video_box">
+                        <video
+                            class="video"
+                            poster=""
+                            src="./images/touslesjours.mp4"
+                            autoplay
+                            muted
+                            playsinline
+                            loop
+                            controlsList="nodownload"
+                        ></video>
+                    </div>
+                    <div class="circle_timer">
+                        <a href="#">
+                            <svg>
+                                <defs>
+                                    <linearGradient x1="60%" y1="90%" x2="0%" y2="10%" id="linearGradient-1">
+                                        <!-- 파랑 -->
+                                        <stop stop-color="#54AFFF" offset="0%"></stop>
+                                        <!-- 주황 -->
+                                        <stop stop-color="#FF953E" offset="30%"></stop>
+                                        <!-- 빨강 -->
+                                        <stop stop-color="#FF0D00" offset="100%"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <circle id="circle_path" class="svg2" cx="30" cy="30" r="29" transform="rotate(-90,30,30)" />
+                            </svg>
+                            <i class="timer_icon">
+                                <img src="./images/ico_pause_play.png" alt="재생">
+                            </i>
+                        </a>
+                    </div>
+                </section>
+                <section class="sec csv">
+                    <div class="wrap">
+                        <div class="title_area">
+                            <h3>
+                                <a href="#" title="Sustainability 바로가기">Sustainability</a>
+                            </h3>
+                            <p>
+                                <span>글로벌 수준의 ESG 경쟁력 확보를 기반으로 신뢰받는 기업</span>
+                            </p>
+                            <a href="#" class="morebtn" title="Sustainability">전체보기</a>
+                        </div>
+                        <div class="csv_area">
+                            <div id="slide">
+                                <!-- 슬라이드 -->
+                                <ul>
+                                </ul>
+                            </div>
+                            <!-- 이동버튼 -->
+                            <div class="slide_btn">
+                                <a href="#" class="sbtn1"><img src="./images/btn_L.png" alt="왼쪽이동버튼"></a>
+                                <a href="#" class="sbtn2"><img src="./images/btn_R.png" alt="오른쪽이동버튼"></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="sec cjlog">
+                    <div class="wrap">
+                        <div class="title_area">
+                            <h3>
+                                <a href="#" title="CJ Log 바로가기">CJ Log</a>
+                            </h3>
+                            <!-- <p>
+                                <span>CJ가 제안하는 새로운 라이프 스타일로<br />당신의 평범한 일상을 새롭게!</span>
+                            </p> -->
+                            <a href="#" class="morebtn" title="CJ Log">전체보기</a>
+                        </div>
+                        <div class="log_area">
+                            <div class="log_gridbox">
+                                <div class="log ban1">
+                                    <a href="#">
+                                        <img src="" alt="cjlog">
+                                    </a>
+                                </div>
+                                <div class="log ban2 rw1">
+                                    <a href="#">
+                                        <img src="" alt="cjlog">
+                                    </a>
+                                </div>
+                                <div class="log ban3 rw1">
+                                    <a href="#">
+                                        <img src="" alt="cjlog">
+                                    </a>
+                                </div>
+                                <div class="log ban4 rw2">
+                                    <a href="#">
+                                        <img src="" alt="cjlog">
+                                    </a>
+                                </div>
+                                <div class="log ban5 rw2">
+                                    <a href="#">
+                                        <img src="" alt="cjlog">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <!-- // 메인영역 -->
+        </div>
+        <!-- 3. 하단영역 -->
+        <div id="info">
+            <!-- 위로가기 버튼 -->
+            <a href="#" class="btn_top">
+                <span class="arrow"
+                    ><img src="https://images.cj.net/images/common/img_scroll_arrow.png" alt="Top"
+                /></span>
+            </a>
+            <footer class="info">
+                <div class="wrap">
+                    <!-- 3-1. 사이트맵 -->
+                    <div class="area_sitemap">
+                        <!-- 사이트맵 리스트 -->
+                        <ul class="sitemap">
+                            <li><a href="#">#LIVE NEW CJ</a></li>
+                            <li><a href="#">CJ Now</a></li>
+                            <li>
+                                <a href="#">Brand</a>
+                                <div class="map_list">
+                                    <ul>
+                                        <li><a href="#">Best Brand</a></li>
+                                        <li><a href="#">건강</a></li>
+                                        <li><a href="#">즐거움</a></li>
+                                        <li><a href="#">편리</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">Sustainability</a>
+                                <div class="map_list">
+                                    <ul>
+                                        <li><a href="#">ESG 지향점</a></li>
+                                        <li><a href="#">ESG 성과</a></li>
+                                        <li><a href="#">ESG 보고서</a></li>
+                                        <li><a href="#">윤리경영</a></li>
+                                        <li><a href="#">CJ나눔재단</a></li>
+                                        <li><a href="#">CJ문화재단</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="sep">
+                                <a href="#">CJ소개</a>
+                                <div class="map_list">
+                                    <ul>
+                                        <li><a href="#">회사소개</a></li>
+                                        <li><a href="#">연혁</a></li>
+                                        <li><a href="#">계열사</a></li>
+                                        <li><a href="#">글로벌 CJ</a></li>
+                                        <li><a href="#">스포츠</a></li>
+                                        <li><a href="#">투자정보</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">인재채용</a>
+                                <div class="map_list">
+                                    <ul>
+                                        <li><a href="#">채용공고</a></li>
+                                        <li><a href="#">직무정보</a></li>
+                                        <li><a href="#">CJ인 인터뷰</a></li>
+                                        <li><a href="#">Q&amp;A</a></li>
+                                        <li><a href="#">공지사항</a></li>
+                                        <li><a href="#">My Page</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 3-2. 법적고지 -->
+                    <div class="area_policy">
+                        <p>
+                            <a href="#" class="privacy">개인정보처리방침</a>
+                            <a href="#">이용약관</a>
+                            <a href="#">공지사항</a>
+                            <a href="#" target="_blank" title="새 창 열림">온라인제보<span class="outlink"></span></a>
+                            <a href="#">고객센터</a>
+                            <a href="#">사이트맵</a>
+                        </p>
+                    </div>
+                    <!-- 3-3. 저작권자 -->
+                    <div class="area_copy">
+                        <!-- 저작권표기 -->
+                        <p class="copyright">© 씨제이㈜. All Rights Reserved.</p>
+                        <!-- sns아이콘 -->
+                        <div class="sns">
+                            <a href="#" title="페이스북" target="_blank">
+                                <span class="ir">CJ 페이스북</span>
+                            </a>
+                            <a href="#" title="유투브" target="_blank">
+                                <span class="ir">CJ 유투브</span>
+                            </a>
+                            <a href="#" title="뉴스룸" target="_blank">
+                                <span class="ir">CJ News</span>
+                            </a>
+                            <a href="#" title="네이버 포스트" target="_blank">
+                                <span class="ir">CJ 네이버 포스트</span>
+                            </a>
+                            <a href="#" title="링크드인" target="_blank">
+                                <span class="ir">CJ 링크드인</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- 모바일용 푸터 -->
+            <footer class="info m_footer">
+                <div class="wrap">
+                    <!-- 3-1. 사이트맵 -->
+                    <div class="area_sitemap">
+                        <!-- 사이트맵 리스트 -->
+                        <dl class="m_sitemap">
+                            <dt>
+                                <a href="#">#LIVE NEW CJ</a>
+                                <button class="btn_m_footer" alt="하위메뉴 닫기"><span></span></button>
+                            </dt>
+                            <dl class="submenu">
+                            </dl>
+                            <dt>
+                                <a href="#">CJ Now</a>
+                                <button class="btn_m_footer" alt="하위메뉴 닫기"><span></span></button>
+                            </dt>
+                            <dl class="submenu">
+                            </dl>
+                            <dt>
+                                <a href="#">Brand</a>
+                                <button class="btn_m_footer" alt="하위메뉴 닫기"><span></span></button>
+                            </dt>
+                            <dl class="submenu">
+                                <dd><a href="#">Best Brand</a></dd>
+                                <dd><a href="#">건강</a></dd>
+                                <dd><a href="#">즐거움</a></dd>
+                                <dd><a href="#">편리</a></dd>
+                            </dl>
+                            <dt>
+                                <a href="#">Sustainability</a>
+                                <button class="btn_m_footer" alt="하위메뉴 닫기"><span></span></button>
+                            </dt>
+                            <dl class="submenu">
+                                <dd><a href="#">ESG 지향점</a></dd>
+                                <dd><a href="#">ESG 성과</a></dd>
+                                <dd><a href="#">ESG 보고서</a></dd>
+                                <dd><a href="#">윤리경영</a></dd>
+                                <dd><a href="#">CJ나눔재단</a></dd>
+                                <dd><a href="#">CJ문화재단</a></dd>
+                            </dl>
+                            <dt>
+                                <a href="#">CJ소개</a>
+                                <button class="btn_m_footer" alt="하위메뉴 닫기"><span></span></button>
+                            </dt>
+                            <dl class="submenu">
+                                <dd><a href="#">회사소개</a></dd>
+                                <dd><a href="#">연혁</a></dd>
+                                <dd><a href="#">계열사</a></dd>
+                                <dd><a href="#">글로벌 CJ</a></dd>
+                                <dd><a href="#">스포츠</a></dd>
+                            </dl>
+                            <dt>
+                                <a href="#">인재채용</a>
+                                <button class="btn_m_footer" alt="하위메뉴 닫기"><span></span></button>
+                            </dt>
+                            <dl class="submenu">
+                                <dd><a href="#">채용공고</a></dd>
+                                <dd><a href="#">직무정보</a></dd>
+                                <dd><a href="#">CJ인 인터뷰</a></dd>
+                                <dd><a href="#">Q&amp;A</a></dd>
+                                <dd><a href="#">공지사항</a></dd>
+                                <dd><a href="#">My Page</a></dd>
+                            </dl>
+                        </dl>
+                    </div>
+
+                    <!-- 3-2. 법적고지 -->
+                    <div class="area_policy">
+                        <p>
+                            <a href="#" class="privacy">개인정보처리방침</a>
+                            <a href="#">이용약관</a>
+                            <a href="#">공지사항</a>
+                            <a href="#">온라인제보</a>
+                            <a href="#">고객센터</a>
+                            <a href="#">사이트맵</a>
+                        </p>
+                    </div>
+                    <!-- 3-3. 저작권자 -->
+                    <div class="area_copy">
+                        <!-- 저작권표기 -->
+                        <p class="copyright">© 씨제이㈜. All Rights Reserved.</p>
+                        <!-- sns아이콘 -->
+                        <div class="sns">
+                            <a href="#" title="페이스북" target="_blank">
+                                <span class="ir">CJ 페이스북</span>
+                            </a>
+                            <a href="#" title="유투브" target="_blank">
+                                <span class="ir">CJ 유투브</span>
+                            </a>
+                            <a href="#" title="뉴스룸" target="_blank">
+                                <span class="ir">CJ News</span>
+                            </a>
+                            <a href="#" title="네이버 포스트" target="_blank">
+                                <span class="ir">CJ 네이버 포스트</span>
+                            </a>
+                            <a href="#" title="링크드인" target="_blank">
+                                <span class="ir">CJ 링크드인</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
