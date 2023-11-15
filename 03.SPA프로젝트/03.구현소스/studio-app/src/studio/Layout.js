@@ -78,7 +78,7 @@ const Layout = () => {
                         <p>Tullinsgade 3</p>
                         <p>Copenhagen Denmark</p>
                     </div>
-                    <img className="back-to-top" src="https://www.studiobrot.de/media/pages/footer/18dea29923-1671746882/studiobrot-brot-menu.gif" sizes="(max-width: 800px) 360px,(min-width: 200px) 160px, 360px" />
+                    <img className="back-to-top" src="./images/menu-small.gif" sizes="(max-width: 800px) 360px,(min-width: 200px) 160px, 360px" />
                 </div>
                 <ul className="sns_navigation">
                     <li>
