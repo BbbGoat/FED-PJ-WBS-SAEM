@@ -154,7 +154,7 @@ const Horizontal = () => {
                                 <div className="content_img">
                                     {/* Video 영역 */}
                                     <figure className="video_area parallax">
-                                        <div autoPlay={true} className="videosrc" loop={true} muted={true} playsInline={true}>
+                                        <div className="videosrc">
                                             <img src={x.vidsrc} />
                                         </div>
                                     </figure>
